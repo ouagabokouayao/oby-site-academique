@@ -19,6 +19,7 @@ screenshots/
 playwright-report/
 test-results/
 rapport-*.md
+assets/img/media/a-valider/
 
 # dossiers locaux non publiables dans le dépôt GitHub du site public
 docs/

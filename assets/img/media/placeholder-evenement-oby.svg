@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="620" viewBox="0 0 900 620" role="img" aria-label="Visuel documentaire événement OBY">
+  <rect width="900" height="620" fill="#081A2F"/>
+  <path d="M80 392 C220 345 310 437 450 386 C590 335 683 382 820 336" fill="none" stroke="#C8A96B" stroke-opacity=".42" stroke-width="2"/>
+  <path d="M80 430 C232 376 334 466 474 415 C612 365 704 409 820 372" fill="none" stroke="#F6F3EA" stroke-opacity=".16" stroke-width="2"/>
+  <rect x="84" y="82" width="732" height="456" fill="none" stroke="#C8A96B" stroke-opacity=".32"/>
+  <text x="116" y="180" fill="#F6F3EA" font-family="Georgia, serif" font-size="78" font-weight="700">OBY</text>
+  <text x="116" y="238" fill="#C8A96B" font-family="Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="3">ÉVÉNEMENT ACADÉMIQUE</text>
+  <text x="116" y="294" fill="#F6F3EA" fill-opacity=".78" font-family="Arial, sans-serif" font-size="26">Visuel documentaire prévu</text>
+</svg>

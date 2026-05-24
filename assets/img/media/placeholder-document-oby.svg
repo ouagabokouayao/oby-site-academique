@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="620" viewBox="0 0 900 620" role="img" aria-label="Support documentaire OBY">
+  <rect width="900" height="620" fill="#FFFFFF"/>
+  <rect x="120" y="84" width="660" height="452" fill="#F6F3EA" stroke="#B8BEC6" stroke-opacity=".55"/>
+  <line x1="174" y1="232" x2="726" y2="232" stroke="#C8A96B" stroke-width="2" stroke-opacity=".62"/>
+  <line x1="174" y1="284" x2="690" y2="284" stroke="#081A2F" stroke-width="2" stroke-opacity=".14"/>
+  <line x1="174" y1="332" x2="644" y2="332" stroke="#081A2F" stroke-width="2" stroke-opacity=".14"/>
+  <text x="174" y="176" fill="#081A2F" font-family="Georgia, serif" font-size="72" font-weight="700">OBY</text>
+  <text x="174" y="404" fill="#123A6D" font-family="Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="3">SUPPORT DOCUMENTAIRE</text>
+  <text x="174" y="458" fill="#5E6672" font-family="Arial, sans-serif" font-size="26">Publication après validation</text>
+</svg>
