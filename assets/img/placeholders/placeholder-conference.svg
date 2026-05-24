@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="650" viewBox="0 0 900 650" role="img" aria-label="Visuel de conférence">
+  <rect width="900" height="650" fill="#FFFFFF"/>
+  <rect x="52" y="52" width="796" height="546" rx="10" fill="#F6F3EA" stroke="#C8A96B" stroke-opacity=".45"/>
+  <text x="100" y="315" fill="#081A2F" font-family="Georgia, serif" font-size="74" font-weight="700">OBY</text>
+  <text x="100" y="370" fill="#5E6672" font-family="Arial, sans-serif" font-size="30">Visuel de conférence</text>
+</svg>

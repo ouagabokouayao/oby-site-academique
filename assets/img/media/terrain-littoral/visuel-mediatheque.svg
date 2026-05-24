@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="650" viewBox="0 0 900 650" role="img" aria-label="Médiathèque documentaire">
+  <rect width="900" height="650" fill="#081A2F"/>
+  <path d="M0 190c124-31 207 31 332 3 114-26 169-83 301-55 100 21 162 67 267 38" fill="none" stroke="#C8A96B" stroke-opacity=".25"/>
+  <text x="80" y="315" fill="#C8A96B" font-family="Georgia, serif" font-size="86" font-weight="700">OBY</text>
+  <text x="80" y="372" fill="#F6F3EA" font-family="Arial, sans-serif" font-size="30">Médiathèque documentaire</text>
+</svg>

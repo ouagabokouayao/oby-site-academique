@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-label="Logo OUAGA Bokoua Yao OBY">
+  <defs>
+    <style>
+      .serif { font-family: "Cormorant Garamond", "Libre Baskerville", Georgia, serif; font-weight: 600; }
+      .sans { font-family: "Inter", "Source Sans 3", Arial, sans-serif; }
+    </style>
+  </defs>
+  <rect width="1200" height="360" fill="none"/>
+  <text x="215" y="183" text-anchor="middle" class="serif" font-size="128" fill="#081A2F" letter-spacing="-6">OBY</text>
+  <path d="M117 204 C168 230, 256 230, 318 201" fill="none" stroke="#C8A96B" stroke-width="5" stroke-linecap="round"/>
+  <line x1="390" y1="64" x2="390" y2="296" stroke="#C8A96B" stroke-width="3"/>
+  <text x="720" y="142" text-anchor="middle" class="serif" font-size="76" fill="#C8A96B" letter-spacing="1">OUAGA Bokoua Yao</text>
+  <line x1="515" y1="178" x2="925" y2="178" stroke="#C8A96B" stroke-width="2"/>
+  <text x="720" y="242" text-anchor="middle" font-family="Inter, Source Sans 3, Arial, sans-serif" font-size="27" font-weight="600" letter-spacing="2.5" fill="#081A2F">
+    DROIT DE LA MER · GOUVERNANCE MARITIME · LITTORAL
+  </text>
+  <text x="720" y="282" text-anchor="middle" font-family="Inter, Source Sans 3, Arial, sans-serif" font-size="27" font-weight="600" letter-spacing="2.5" fill="#081A2F">
+    MÉDIATION · INNOVATION
+  </text>
+</svg>

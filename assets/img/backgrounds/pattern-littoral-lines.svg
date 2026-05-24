@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520" role="img" aria-label="Lignes littorales abstraites">
+  <rect width="1000" height="520" fill="none"/>
+  <g fill="none" stroke="#C8A96B" stroke-opacity="0.16" stroke-width="1.2">
+    <path d="M0 90c96 28 151-36 239-6 85 28 123 94 231 72 102-21 144-91 256-66 82 18 145 69 274 26"/>
+    <path d="M0 170c110 35 164-43 262-10 88 30 132 92 238 70 115-24 154-97 276-66 74 19 142 62 224 32"/>
+    <path d="M0 250c92 24 154-27 241-5 99 24 139 93 251 74 99-16 152-82 262-62 87 16 141 68 246 38"/>
+    <path d="M0 330c104 37 172-44 273-9 89 30 125 91 236 69 109-21 161-85 273-57 81 20 138 58 218 35"/>
+  </g>
+</svg>

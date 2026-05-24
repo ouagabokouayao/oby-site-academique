@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="650" viewBox="0 0 900 650" role="img" aria-label="Travaux académiques">
+  <rect width="900" height="650" fill="#F6F3EA"/>
+  <rect x="116" y="90" width="360" height="470" rx="5" fill="#FFFFFF" stroke="#081A2F" stroke-opacity=".15"/>
+  <path d="M160 190h250M160 235h250M160 280h205M160 360h250M160 405h185" stroke="#081A2F" stroke-opacity=".23" stroke-width="10"/>
+  <text x="535" y="310" fill="#081A2F" font-family="Georgia, serif" font-size="62" font-weight="700">OBY</text>
+  <text x="535" y="360" fill="#5E6672" font-family="Arial, sans-serif" font-size="28">Travaux académiques</text>
+</svg>

@@ -1,0 +1,38 @@
+.DS_Store
+Thumbs.db
+node_modules/
+.env
+.env.*
+*.log
+.cache/
+.tmp/
+temp/
+__pycache__/
+*.zip
+*.bak
+*.old
+*.tmp
+
+# fichiers locaux ou de travail
+captures/
+screenshots/
+playwright-report/
+test-results/
+rapport-*.md
+
+# dossiers locaux non publiables dans le dépôt GitHub du site public
+docs/
+backups/
+exports/
+documents/
+sources/
+
+# éviter tout ajout accidentel de sources privées si copiées ici
+docs/sources/
+
+# documents académiques de travail non intégrés au site public
+assets/documents/*
+!assets/documents/
+!assets/documents/cv/
+!assets/documents/cv/cv-academique-oby-public.pdf
+!assets/documents/cv/cv-academique-oby-public.docx
