@@ -640,6 +640,19 @@ select:focus-visible {
   object-fit: cover;
 }
 
+body[data-page="ressources"] .media-frame {
+  aspect-ratio: 900 / 650;
+  min-height: auto;
+  padding: clamp(10px, 2vw, 18px);
+  background: var(--white);
+}
+
+body[data-page="ressources"] .media-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .split {
   display: grid;
   grid-template-columns: 0.92fr 1.08fr;
