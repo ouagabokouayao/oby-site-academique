@@ -5,12 +5,12 @@
     "annee": "2017",
     "lieu": "Abidjan, Côte d'Ivoire",
     "categorie": "evenement-academique",
-    "typeMedia": "placeholder",
+    "typeMedia": "visuel-documentaire",
     "evenementLie": "Dialogue des politiques : gouvernance des ressources et des activités maritimes pour le développement durable en Afrique",
     "pageLiee": "interventions.html#dialogue-politiques-abidjan-2017",
     "fichier": "assets/img/media/placeholder-evenement-oby.svg",
-    "statut": "a-integrer",
-    "description": "Visuel documentaire prévu pour relier cette participation à la médiathèque.",
+    "statut": "media-non-publie",
+    "description": "Trace documentaire conservée en interne.",
     "notePrudence": "Aucun média privé n'est publié sans validation préalable."
   },
   {
@@ -19,13 +19,13 @@
     "annee": "2016",
     "lieu": "Lomé",
     "categorie": "evenement-academique",
-    "typeMedia": "placeholder",
+    "typeMedia": "visuel-documentaire",
     "evenementLie": "Sommet de Lomé sur la sécurité et sûreté maritimes en Afrique",
     "pageLiee": "interventions.html#sommet-lome-securite-maritime-2016",
     "fichier": "assets/img/media/placeholder-evenement-oby.svg",
-    "statut": "a-integrer",
-    "description": "Média associé à intégrer après validation.",
-    "notePrudence": "Publication limitée aux documents ou visuels validés."
+    "statut": "media-non-publie",
+    "description": "Trace documentaire conservée en interne.",
+    "notePrudence": "Aucun média privé n'est publié sans validation préalable."
   },
   {
     "id": "accord-cap-abidjan-2016",
@@ -33,13 +33,13 @@
     "annee": "2016",
     "lieu": "Abidjan",
     "categorie": "evenement-academique",
-    "typeMedia": "placeholder",
+    "typeMedia": "visuel-documentaire",
     "evenementLie": "Séminaire régional relatif à l'accord du Cap 2012 sur la sécurité des navires de pêche",
     "pageLiee": "interventions.html#accord-cap-abidjan-2016",
     "fichier": "assets/img/media/placeholder-evenement-oby.svg",
-    "statut": "a-integrer",
-    "description": "Support à publier après validation.",
-    "notePrudence": "Aucun document institutionnel sensible n'est publié."
+    "statut": "media-non-publie",
+    "description": "Trace documentaire conservée en interne.",
+    "notePrudence": "Aucun média privé n'est publié sans validation préalable."
   },
   {
     "id": "delimitation-maritime-africaine-paris-2019",
@@ -47,13 +47,13 @@
     "annee": "2019",
     "lieu": "AAPDI, Paris",
     "categorie": "evenement-academique",
-    "typeMedia": "placeholder",
+    "typeMedia": "visuel-documentaire",
     "evenementLie": "Contentieux de la délimitation maritime africaine",
     "pageLiee": "interventions.html#delimitation-maritime-africaine-paris-2019",
     "fichier": "assets/img/media/placeholder-evenement-oby.svg",
-    "statut": "a-integrer",
-    "description": "Visuel documentaire prévu.",
-    "notePrudence": "Média à intégrer uniquement si les droits de diffusion sont vérifiés."
+    "statut": "media-non-publie",
+    "description": "Trace documentaire conservée en interne.",
+    "notePrudence": "Aucun média privé n'est publié sans validation préalable."
   },
   {
     "id": "economie-bleue-golfe-guinee-paris-2019",
@@ -61,13 +61,13 @@
     "annee": "2019",
     "lieu": "Paris",
     "categorie": "evenement-academique",
-    "typeMedia": "placeholder",
+    "typeMedia": "visuel-documentaire",
     "evenementLie": "Sécuriser l'économie bleue dans le Golfe de Guinée : quels enjeux ?",
     "pageLiee": "interventions.html#economie-bleue-golfe-guinee-paris-2019",
     "fichier": "assets/img/media/placeholder-evenement-oby.svg",
-    "statut": "a-integrer",
-    "description": "Média associé à intégrer.",
-    "notePrudence": "Publication après validation du support."
+    "statut": "media-non-publie",
+    "description": "Trace documentaire conservée en interne.",
+    "notePrudence": "Aucun média privé n'est publié sans validation préalable."
   },
   {
     "id": "cop24-coy24-katowice-2018",
@@ -75,13 +75,13 @@
     "annee": "2018",
     "lieu": "Katowice",
     "categorie": "evenement-academique",
-    "typeMedia": "placeholder",
+    "typeMedia": "visuel-documentaire",
     "evenementLie": "COP24 / COY24",
     "pageLiee": "interventions.html#cop24-coy24-katowice-2018",
     "fichier": "assets/img/media/placeholder-evenement-oby.svg",
-    "statut": "a-integrer",
-    "description": "Trace documentaire prévue.",
-    "notePrudence": "Aucune photo personnelle ou privée n'est publiée sans validation."
+    "statut": "media-non-publie",
+    "description": "Trace documentaire conservée en interne.",
+    "notePrudence": "Aucun média privé n'est publié sans validation préalable."
   },
   {
     "id": "forum-mouillage-mediterranee-2024",
@@ -89,13 +89,13 @@
     "annee": "2024",
     "lieu": "DIRM Méditerranée, Marseille",
     "categorie": "evenement-academique",
-    "typeMedia": "placeholder",
+    "typeMedia": "visuel-documentaire",
     "evenementLie": "Forum Mouillage Méditerranée",
     "pageLiee": "interventions.html#forum-mouillage-mediterranee-2024",
     "fichier": "assets/img/media/placeholder-evenement-oby.svg",
-    "statut": "a-integrer",
-    "description": "Visuel documentaire prévu.",
-    "notePrudence": "Média à valider avant publication."
+    "statut": "media-non-publie",
+    "description": "Trace documentaire conservée en interne.",
+    "notePrudence": "Aucun média privé n'est publié sans validation préalable."
   },
   {
     "id": "proteus-mediterranee-2024",
@@ -103,13 +103,13 @@
     "annee": "2024",
     "lieu": "Aix-Marseille",
     "categorie": "evenement-academique",
-    "typeMedia": "placeholder",
+    "typeMedia": "visuel-documentaire",
     "evenementLie": "Journée d'étude PROTEUS : transition pour une Méditerranée durable et résiliente",
     "pageLiee": "interventions.html#proteus-mediterranee-2024",
     "fichier": "assets/img/media/placeholder-evenement-oby.svg",
-    "statut": "a-integrer",
-    "description": "Support à publier après validation.",
-    "notePrudence": "Aucun document sensible n'est intégré."
+    "statut": "media-non-publie",
+    "description": "Trace documentaire conservée en interne.",
+    "notePrudence": "Aucun média privé n'est publié sans validation préalable."
   },
   {
     "id": "medpan-port-cros-2024",
@@ -117,13 +117,13 @@
     "annee": "2024",
     "lieu": "Port-Cros / La Londe-les-Maures",
     "categorie": "terrain-institution",
-    "typeMedia": "placeholder",
+    "typeMedia": "visuel-documentaire",
     "evenementLie": "Atelier régional MedPAN sur le tourisme dans les aires marines protégées",
     "pageLiee": "interventions.html#medpan-port-cros-2024",
     "fichier": "assets/img/media/placeholder-terrain-oby.svg",
-    "statut": "a-integrer",
-    "description": "Média lié à un contexte de terrain et d'institution à intégrer après validation.",
-    "notePrudence": "Aucune photo de personne ou de terrain privé n'est publiée sans validation."
+    "statut": "media-non-publie",
+    "description": "Trace documentaire de terrain conservée en interne.",
+    "notePrudence": "Aucun média privé n'est publié sans validation préalable."
   },
   {
     "id": "vive-mer-mediterranee-amu-2024",
@@ -131,13 +131,13 @@
     "annee": "2024",
     "lieu": "Aix-Marseille Université",
     "categorie": "evenement-academique",
-    "typeMedia": "placeholder",
+    "typeMedia": "visuel-documentaire",
     "evenementLie": "Pour que vive la Mer Méditerranée : vers une économie bleue durable",
     "pageLiee": "interventions.html#vive-mer-mediterranee-amu-2024",
     "fichier": "assets/img/media/placeholder-evenement-oby.svg",
-    "statut": "a-integrer",
-    "description": "Visuel documentaire prévu.",
-    "notePrudence": "Support à publier après validation."
+    "statut": "media-non-publie",
+    "description": "Trace documentaire conservée en interne.",
+    "notePrudence": "Aucun média privé n'est publié sans validation préalable."
   },
   {
     "id": "protection-environnement-mediterranee-2025",
@@ -145,13 +145,13 @@
     "annee": "2025",
     "lieu": "Marseille / Luminy-Océanomed",
     "categorie": "evenement-academique",
-    "typeMedia": "placeholder",
+    "typeMedia": "visuel-documentaire",
     "evenementLie": "Nouveaux enjeux de protection de l'environnement en Méditerranée",
     "pageLiee": "interventions.html#protection-environnement-mediterranee-2025",
     "fichier": "assets/img/media/placeholder-evenement-oby.svg",
-    "statut": "a-integrer",
-    "description": "Média associé à intégrer.",
-    "notePrudence": "Publication après validation du visuel."
+    "statut": "media-non-publie",
+    "description": "Trace documentaire conservée en interne.",
+    "notePrudence": "Aucun média privé n'est publié sans validation préalable."
   },
   {
     "id": "indemer-usages-mer-monaco-2025",
@@ -159,13 +159,13 @@
     "annee": "2025",
     "lieu": "Monaco",
     "categorie": "evenement-academique",
-    "typeMedia": "placeholder",
+    "typeMedia": "visuel-documentaire",
     "evenementLie": "Colloque INDEMER sur les usages contemporains de la mer",
     "pageLiee": "interventions.html#indemer-usages-mer-monaco-2025",
     "fichier": "assets/img/media/placeholder-evenement-oby.svg",
-    "statut": "a-integrer",
-    "description": "Visuel documentaire prévu.",
-    "notePrudence": "Média à intégrer si le support public est validé."
+    "statut": "media-non-publie",
+    "description": "Trace documentaire conservée en interne.",
+    "notePrudence": "Aucun média privé n'est publié sans validation préalable."
   },
   {
     "id": "academies-marine-europeennes-ensm-2025",
@@ -173,13 +173,13 @@
     "annee": "2025",
     "lieu": "ENSM Marseille",
     "categorie": "evenement-academique",
-    "typeMedia": "placeholder",
+    "typeMedia": "visuel-documentaire",
     "evenementLie": "Colloque des Académies de marine européennes",
     "pageLiee": "interventions.html#academies-marine-europeennes-ensm-2025",
     "fichier": "assets/img/media/placeholder-evenement-oby.svg",
-    "statut": "a-integrer",
-    "description": "Média associé à intégrer.",
-    "notePrudence": "Support à publier après validation."
+    "statut": "media-non-publie",
+    "description": "Trace documentaire conservée en interne.",
+    "notePrudence": "Aucun média privé n'est publié sans validation préalable."
   },
   {
     "id": "ersuma-ohada-propriete-intellectuelle-2022",
@@ -187,13 +187,13 @@
     "annee": "2022",
     "lieu": "ERSUMA / OHADA",
     "categorie": "document-public",
-    "typeMedia": "placeholder",
+    "typeMedia": "support",
     "evenementLie": "Protection des droits de propriété intellectuelle dans l'espace OHADA",
     "pageLiee": "interventions.html#ersuma-ohada-propriete-intellectuelle-2022",
     "fichier": "assets/img/media/placeholder-document-oby.svg",
-    "statut": "a-integrer",
-    "description": "Document public ou support à valider.",
-    "notePrudence": "Aucun certificat ou attestation non validé n'est publié."
+    "statut": "media-non-publie",
+    "description": "Support associé conservé en interne.",
+    "notePrudence": "Publication limitée aux documents autorisés."
   },
   {
     "id": "arbitrage-investissements-afrique-2020",
@@ -201,13 +201,13 @@
     "annee": "2020",
     "lieu": "Paris",
     "categorie": "document-public",
-    "typeMedia": "placeholder",
+    "typeMedia": "support",
     "evenementLie": "Évolution et adaptation du droit des investissements et de l'arbitrage en Afrique",
     "pageLiee": "interventions.html#arbitrage-investissements-afrique-2020",
     "fichier": "assets/img/media/placeholder-document-oby.svg",
-    "statut": "a-integrer",
-    "description": "Support documentaire à publier après validation.",
-    "notePrudence": "Aucun document sensible n'est intégré."
+    "statut": "media-non-publie",
+    "description": "Support associé conservé en interne.",
+    "notePrudence": "Publication limitée aux documents autorisés."
   },
   {
     "id": "portrait-academique-oby",
@@ -215,13 +215,13 @@
     "annee": "",
     "lieu": "",
     "categorie": "portrait-identite",
-    "typeMedia": "placeholder",
+    "typeMedia": "portrait-identite",
     "evenementLie": "",
     "pageLiee": "profil.html",
     "fichier": "assets/img/media/placeholder-portrait-oby.svg",
-    "statut": "a-integrer",
-    "description": "Emplacement réservé à un portrait officiel futur.",
-    "notePrudence": "Portrait à publier uniquement après validation explicite."
+    "statut": "media-non-publie",
+    "description": "Portrait public conservé hors ligne tant qu’il n’est pas autorisé.",
+    "notePrudence": "Aucun portrait privé n'est publié sans validation préalable."
   },
   {
     "id": "identite-partage-oby",
@@ -235,6 +235,6 @@
     "fichier": "assets/img/social/oby-og-image.png",
     "statut": "public-valide",
     "description": "Image publique de partage et d'identité académique du site OBY.",
-    "notePrudence": "Visuel institutionnel non personnel."
+    "notePrudence": "Support public du site."
   }
 ]
