@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sweet-hummingbird-fbab70.netlify.app/sitemap.xml
