@@ -2,9 +2,9 @@
 
 Site personnel académique et intellectuel de **OUAGA Bokoua Yao**.
 
-Statut : **V1.4.3 — version publique enrichie de référence**.
+Statut courant : **V1.5.4 — stabilisation gratuite avant domaine personnalisé**.
 
-URL publique provisoire : <https://sweet-hummingbird-fbab70.netlify.app/>
+URL publique Netlify : <https://sweet-hummingbird-fbab70.netlify.app/>
 
 ## Description
 
@@ -14,18 +14,23 @@ Le site est volontairement non commercial. Il ne constitue ni une agence, ni une
 
 ## Technologies
 
-- HTML statique
+- HTML
 - CSS
-- JavaScript léger
-- Déploiement Netlify
+- JavaScript statique
+- GitHub
+- Netlify
 
-## Contenu public
+## Contenus publics
 
-- Pages publiques du site OBY
-- Assets graphiques OBY
-- CV académique public :
-  - `assets/documents/cv/cv-academique-oby-public.pdf`
-  - `assets/documents/cv/cv-academique-oby-public.docx`
+- Profil académique
+- Axes de recherche
+- Travaux & publications
+- Distinctions & bourses
+- Participations & interventions
+- Bibliothèque & ressources
+- Médiathèque
+- CV académique public
+- Contact
 
 Le CV intégré est un CV académique public, trié et nettoyé. Le CV standard brut et les sources privées ne doivent pas être ajoutés à ce dépôt.
 
@@ -43,28 +48,32 @@ Le CV intégré est un CV académique public, trié et nettoyé. Le CV standard 
 - `ecosysteme.html`
 - `contact.html`
 - `mentions-legales.html`
+- `404.html`
 - `assets/css/style.css`
 - `assets/js/main.js`
 - `assets/img/`
+- `assets/data/`
 - `assets/documents/cv/`
 - `netlify.toml`
+- `robots.txt`
+- `sitemap.xml`
 
 ## Règles de publication
 
+- Conserver un site personnel académique, sobre et non commercial.
+- Ne pas publier de sources privées.
+- Ne pas publier de badges sensibles, QR codes, codes-barres, accréditations privées ou médias non validés.
 - Ne pas publier le CV standard brut.
-- Ne pas publier `docs/sources/`, `backups/`, anciens ZIP, rapports internes ou fichiers de travail.
-- Ne pas publier de données personnelles sensibles ou d'informations privées.
-- Ne pas mélanger OBY avec des projets professionnels distincts.
-- Garder AquaLab uniquement comme initiative distincte et sobre lorsqu'elle est mentionnée.
+- Ne pas publier `docs/sources/`, `backups/`, anciens ZIP, rapports privés ou fichiers de travail non publics.
+- Ne pas ajouter de données personnelles sensibles ou d'informations privées.
+- Conserver la séparation entre OBY, AquaLab et les autres projets professionnels distincts.
 
-## GitHub
+## Workflow GitHub / Netlify
 
-Nom recommandé du dépôt privé : `oby-site-academique`.
+1. Modifier localement dans le dossier du site.
+2. Vérifier les pages, les liens, les assets, les JSON et le responsive.
+3. Créer un commit Git local.
+4. Pousser vers GitHub après validation.
+5. Netlify déploie automatiquement depuis GitHub.
 
-Après création du dépôt privé sur GitHub :
-
-```bash
-git remote add origin URL_DU_DEPOT_GITHUB
-git branch -M main
-git push -u origin main
-```
+Le glisser-déposer Netlify ne doit être utilisé qu'en urgence, afin de garder GitHub comme source de référence.
