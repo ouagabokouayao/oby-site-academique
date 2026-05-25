@@ -236,5 +236,47 @@
     "statut": "public-valide",
     "description": "Image publique de partage et d'identité académique du site OBY.",
     "notePrudence": "Support public du site."
+  },
+  {
+    "id": "obligation-proteger-milieu-marin-monaco-2023",
+    "titre": "L'obligation des États de protéger et préserver le milieu marin",
+    "annee": "2023",
+    "lieu": "Monaco",
+    "categorie": "evenement-academique",
+    "typeMedia": "visuel-documentaire",
+    "evenementLie": "L'obligation des États de protéger et préserver le milieu marin",
+    "pageLiee": "interventions.html#obligation-proteger-milieu-marin-monaco-2023",
+    "fichier": "assets/img/media/placeholder-evenement-oby.svg",
+    "statut": "media-non-publie",
+    "description": "Trace documentaire conservée en interne.",
+    "notePrudence": "Aucun badge brut, QR code ou média sensible n'est publié."
+  },
+  {
+    "id": "euromaritime-blue-growth-2022",
+    "titre": "Euromaritime / Blue Growth Exhibition",
+    "annee": "2022",
+    "lieu": "Marseille",
+    "categorie": "evenement-academique",
+    "typeMedia": "visuel-documentaire",
+    "evenementLie": "Euromaritime / Blue Growth Exhibition",
+    "pageLiee": "interventions.html#euromaritime-blue-growth-2022",
+    "fichier": "assets/img/media/placeholder-evenement-oby.svg",
+    "statut": "media-non-publie",
+    "description": "Trace documentaire identifiée, conservée hors ligne en raison d’éléments sensibles sur badge.",
+    "notePrudence": "Aucun badge brut, QR code ou média sensible n'est publié."
+  },
+  {
+    "id": "emerging-valley-2024",
+    "titre": "Emerging Valley",
+    "annee": "2024",
+    "lieu": "The Camp, Aix-en-Provence",
+    "categorie": "evenement-academique",
+    "typeMedia": "visuel-documentaire",
+    "evenementLie": "Emerging Valley",
+    "pageLiee": "interventions.html#emerging-valley-2024",
+    "fichier": "assets/img/media/placeholder-evenement-oby.svg",
+    "statut": "media-non-publie",
+    "description": "Trace documentaire identifiée, conservée hors ligne en raison d’éléments sensibles sur badge.",
+    "notePrudence": "Aucun badge brut, QR code ou média sensible n'est publié."
   }
 ]
