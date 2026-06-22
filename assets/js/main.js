@@ -302,9 +302,10 @@ if ("IntersectionObserver" in window) {
   const render = (items) => {
     const query = normalize(searchInput?.value || "");
     const type = typeSelect?.value || "";
-    const filtered = query
+    const hasSearch = Boolean(query || type);
+    const filtered = hasSearch
       ? items.filter((item) => {
-          const matchesQuery = textFor(item).includes(query);
+          const matchesQuery = !query || textFor(item).includes(query);
           const matchesType = !type || item.type === type;
           return matchesQuery && matchesType;
         })
@@ -316,9 +317,9 @@ if ("IntersectionObserver" in window) {
     }
 
     if (note) {
-      note.textContent = query
+      note.textContent = hasSearch
         ? "Résultats issus des pages et données publiques du site."
-        : "Entrez un mot-clé pour lancer la recherche.";
+        : "Entrez un mot-clé ou choisissez un type pour lancer la recherche.";
     }
 
     if (results) {
@@ -326,7 +327,7 @@ if ("IntersectionObserver" in window) {
     }
 
     if (empty) {
-      empty.hidden = query ? visible.length > 0 : true;
+      empty.hidden = hasSearch ? visible.length > 0 : true;
     }
   };
 
@@ -358,6 +359,7 @@ if ("IntersectionObserver" in window) {
 
       render(items);
       controls?.addEventListener("input", () => render(items));
+      controls?.addEventListener("change", () => render(items));
       controls?.addEventListener("reset", () => window.setTimeout(() => render(items), 0));
     })
     .catch(() => {
