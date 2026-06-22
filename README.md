@@ -29,10 +29,10 @@ Le site est volontairement non commercial. Il ne constitue ni une agence, ni une
 - Participations & interventions
 - Bibliothèque & ressources
 - Médiathèque
-- CV académique public
+- CV académique transmis sur demande
 - Contact
 
-Le CV intégré est un CV académique public, trié et nettoyé. Le CV standard brut et les sources privées ne doivent pas être ajoutés à ce dépôt.
+Le CV académique n’est pas publié comme fichier de référence tant qu’une version pleinement publiable n’est pas validée. Le CV standard brut et les sources privées ne doivent pas être ajoutés à ce dépôt.
 
 ## Structure principale
 
