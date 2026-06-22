@@ -1320,13 +1320,15 @@ body[data-page="ressources"] .media-frame img {
 
   .hero-position,
   .hero-signature {
-    width: 100%;
-    max-width: 100%;
+    display: block;
+    width: 280px;
+    max-width: 280px;
     overflow-wrap: anywhere;
   }
 
   .hero-signature {
     font-size: 1.25rem;
+    line-height: 1.36;
   }
 
   .hero-position {
@@ -1351,19 +1353,26 @@ body[data-page="ressources"] .media-frame img {
   }
 
   .hero-panel {
-    width: 100%;
-    max-width: 100%;
+    justify-self: center;
+    width: min(100%, calc(100vw - 36px));
+    max-width: calc(100vw - 36px);
     min-height: 310px;
-    padding: 28px;
+    padding: 24px;
   }
 
   .hero-panel p {
-    max-width: 100%;
+    width: 100%;
+    max-width: min(100%, 28ch);
+    font-size: 0.96rem;
+    line-height: 1.55;
     overflow-wrap: anywhere;
+    word-break: normal;
   }
 
   .hero-panel h2 {
-    font-size: 1.7rem;
+    max-width: 100%;
+    font-size: 1.62rem;
+    overflow-wrap: anywhere;
   }
 
   .hero-proof {
@@ -1492,6 +1501,16 @@ body[data-page="ressources"] .media-frame img {
     padding-left: 12px;
     padding-right: 12px;
   }
+
+  .hero-panel {
+    width: min(100%, calc(100vw - 36px));
+    max-width: calc(100vw - 36px);
+    padding: 22px;
+  }
+
+  .hero-panel::before {
+    inset: 14px;
+  }
 }
 
 @media (max-width: 375px) {
@@ -1515,5 +1534,15 @@ body[data-page="ressources"] .media-frame img {
 
   .card {
     padding: 18px;
+  }
+
+  .hero-panel {
+    width: min(100%, calc(100vw - 32px));
+    max-width: calc(100vw - 32px);
+    padding: 20px;
+  }
+
+  .hero-panel p {
+    font-size: 0.94rem;
   }
 }
