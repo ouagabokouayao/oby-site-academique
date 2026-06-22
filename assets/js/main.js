@@ -258,7 +258,7 @@ if ("IntersectionObserver" in window) {
   const controls = searchRoot.querySelector("[data-search-controls]");
   const results = searchRoot.querySelector("[data-search-results]");
   const empty = searchRoot.querySelector("[data-search-empty]");
-  const count = searchRoot.querySelector("[data-search-count]");
+  const status = searchRoot.querySelector("[data-search-status]");
   const note = searchRoot.querySelector("[data-search-note]");
   const searchInput = controls?.elements.q;
   const typeSelect = controls?.elements.type;
@@ -312,14 +312,14 @@ if ("IntersectionObserver" in window) {
       : [];
     const visible = filtered.slice(0, 36);
 
-    if (count) {
-      count.textContent = String(visible.length);
+    if (status) {
+      status.textContent = hasSearch ? `${visible.length} résultat${visible.length > 1 ? "s" : ""}` : "Recherche prête";
     }
 
     if (note) {
       note.textContent = hasSearch
         ? "Résultats issus des pages et données publiques du site."
-        : "Entrez un mot-clé ou choisissez un type pour lancer la recherche.";
+        : "Entrez un mot-clé ou choisissez un type pour explorer le site.";
     }
 
     if (results) {
