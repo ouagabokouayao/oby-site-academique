@@ -1141,6 +1141,11 @@ body[data-page="ressources"] .media-frame img {
   overflow-wrap: anywhere;
 }
 
+.map-result-header .button {
+  flex: 0 0 auto;
+  white-space: normal;
+}
+
 .map-results {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1694,6 +1699,10 @@ body[data-page="ressources"] .media-frame img {
   }
 
   .map-toolbar .button {
+    width: 100%;
+  }
+
+  .map-result-header .button {
     width: 100%;
   }
 

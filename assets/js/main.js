@@ -69,11 +69,15 @@ if ("IntersectionObserver" in window) {
   const total = mapRoot.querySelector("[data-map-total]");
   const refCount = mapRoot.querySelector("[data-ref-count]");
   const mediaCount = mapRoot.querySelector("[data-media-count]");
+  const totalInline = mapRoot.querySelector("[data-map-total-inline]");
+  const mapNote = mapRoot.querySelector("[data-map-note]");
+  const showAllButton = mapRoot.querySelector("[data-map-show-all]");
   const axisSelect = controls?.elements.axe;
   const typeSelect = controls?.elements.type;
   const searchInput = controls?.elements.q;
   const maxInitialCards = 18;
   const maxFilteredCards = 24;
+  let showAll = false;
 
   const escapeHtml = (value) =>
     String(value ?? "")
@@ -142,8 +146,6 @@ if ("IntersectionObserver" in window) {
         <div class="map-card-links">
           <a href="axes-recherche.html">Axes</a>
           <a href="travaux-publications.html">Travaux</a>
-          <a href="carnet-idees.html">Carnet</a>
-          <a href="bibliotheque-ressources.html">Bibliothèque</a>
         </div>
       </article>
     `;
@@ -160,11 +162,26 @@ if ("IntersectionObserver" in window) {
       const matchesType = !type || subject.statut === type;
       return matchesQuery && matchesAxis && matchesType;
     });
-    const limit = hasFilter ? maxFilteredCards : maxInitialCards;
+    const limit = showAll ? filtered.length : hasFilter ? maxFilteredCards : maxInitialCards;
     const visible = filtered.slice(0, limit);
 
     if (count) {
       count.textContent = String(visible.length);
+    }
+
+    if (mapNote) {
+      if (showAll) {
+        mapNote.textContent = "ensemble des sujets correspondant aux filtres actifs.";
+      } else if (hasFilter) {
+        mapNote.textContent = "résultat filtré. Ajustez la recherche ou les filtres pour élargir l'exploration.";
+      } else {
+        mapNote.textContent =
+          "sélection initiale. Utilisez les filtres ou la recherche pour explorer l'ensemble de la cartographie.";
+      }
+    }
+
+    if (showAllButton) {
+      showAllButton.hidden = showAll || filtered.length <= visible.length;
     }
 
     if (results) {
@@ -186,6 +203,10 @@ if ("IntersectionObserver" in window) {
         total.textContent = String(subjects.length);
       }
 
+      if (totalInline) {
+        totalInline.textContent = String(subjects.length);
+      }
+
       if (refCount) {
         refCount.textContent = String(references.length);
       }
@@ -198,9 +219,17 @@ if ("IntersectionObserver" in window) {
       fillSelect(typeSelect, uniqueValues(subjects, "statut"));
       render(subjects);
 
-      controls?.addEventListener("input", () => render(subjects));
+      controls?.addEventListener("input", () => {
+        showAll = false;
+        render(subjects);
+      });
       controls?.addEventListener("reset", () => {
+        showAll = false;
         window.setTimeout(() => render(subjects), 0);
+      });
+      showAllButton?.addEventListener("click", () => {
+        showAll = true;
+        render(subjects);
       });
     })
     .catch(() => {
