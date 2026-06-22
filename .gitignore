@@ -23,6 +23,7 @@ assets/img/media/a-valider/
 
 # dossiers locaux non publiables dans le dépôt GitHub du site public
 docs/
+docs-publication/
 backups/
 exports/
 documents/
