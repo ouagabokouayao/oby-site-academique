@@ -27,6 +27,7 @@ backups/
 exports/
 documents/
 sources/
+_site-public-oby-*/
 
 # éviter tout ajout accidentel de sources privées si copiées ici
 docs/sources/
