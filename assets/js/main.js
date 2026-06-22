@@ -247,3 +247,210 @@ if ("IntersectionObserver" in window) {
       }
     });
 })();
+
+(() => {
+  const searchRoot = document.querySelector("[data-global-search]");
+
+  if (!searchRoot) {
+    return;
+  }
+
+  const controls = searchRoot.querySelector("[data-search-controls]");
+  const results = searchRoot.querySelector("[data-search-results]");
+  const empty = searchRoot.querySelector("[data-search-empty]");
+  const count = searchRoot.querySelector("[data-search-count]");
+  const note = searchRoot.querySelector("[data-search-note]");
+  const searchInput = controls?.elements.q;
+  const typeSelect = controls?.elements.type;
+
+  const escapeHtml = (value) =>
+    String(value ?? "")
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+
+  const normalize = (value) =>
+    String(value ?? "")
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase();
+
+  const pages = [
+    { title: "Accueil", type: "Page", category: "Présentation", url: "index.html" },
+    { title: "Profil", type: "Page", category: "Trajectoire", url: "profil.html" },
+    { title: "Axes de recherche", type: "Page", category: "Axes", url: "axes-recherche.html" },
+    { title: "Travaux & publications", type: "Page", category: "Travaux", url: "travaux-publications.html" },
+    { title: "Participations & interventions", type: "Page", category: "Événements", url: "interventions.html" },
+    { title: "Bibliothèque & ressources", type: "Page", category: "Ressources", url: "bibliotheque-ressources.html" },
+    { title: "Médiathèque", type: "Page", category: "Traces documentaires", url: "mediatheque.html" },
+    { title: "Cartographie intellectuelle", type: "Page", category: "Exploration", url: "cartographie.html" },
+    { title: "Contact qualifié", type: "Page", category: "Contact", url: "contact.html" },
+  ];
+
+  const textFor = (item) => normalize([item.title, item.type, item.category].join(" "));
+
+  const renderItem = (item) => `
+    <a class="search-result-card" href="${escapeHtml(item.url)}">
+      <span>${escapeHtml(item.type)}</span>
+      <h3>${escapeHtml(item.title)}</h3>
+      <p>${escapeHtml(item.category || "Site OBY")}</p>
+    </a>
+  `;
+
+  const render = (items) => {
+    const query = normalize(searchInput?.value || "");
+    const type = typeSelect?.value || "";
+    const filtered = query
+      ? items.filter((item) => {
+          const matchesQuery = textFor(item).includes(query);
+          const matchesType = !type || item.type === type;
+          return matchesQuery && matchesType;
+        })
+      : [];
+    const visible = filtered.slice(0, 36);
+
+    if (count) {
+      count.textContent = String(visible.length);
+    }
+
+    if (note) {
+      note.textContent = query
+        ? "Résultats issus des pages et données publiques du site."
+        : "Entrez un mot-clé pour lancer la recherche.";
+    }
+
+    if (results) {
+      results.innerHTML = visible.map(renderItem).join("");
+    }
+
+    if (empty) {
+      empty.hidden = query ? visible.length > 0 : true;
+    }
+  };
+
+  Promise.all([
+    fetch("assets/data/sujets-recherche-oby.json").then((response) => response.json()),
+    fetch("assets/data/bibliotheque-oby.json").then((response) => response.json()),
+    fetch("assets/data/mediatheque-oby.json").then((response) => response.json()),
+  ])
+    .then(([subjects, references, media]) => {
+      const subjectItems = subjects.map((item) => ({
+        title: item.titre || item.titreOriginal || "Sujet",
+        type: "Sujet",
+        category: item.axe || item.dossier || "Sujet de recherche",
+        url: "cartographie.html",
+      }));
+      const referenceItems = references.map((item) => ({
+        title: item.titre || "Référence",
+        type: "Référence",
+        category: item.categorie || item.sousCategorie || "Bibliothèque",
+        url: "bibliotheque-ressources.html",
+      }));
+      const mediaItems = media.map((item) => ({
+        title: item.titre || "Média documentaire",
+        type: "Média",
+        category: item.axe_associe || item.categorie || item.typeMedia || "Médiathèque",
+        url: item.pageLiee || "mediatheque.html",
+      }));
+      const items = [...pages, ...subjectItems, ...referenceItems, ...mediaItems];
+
+      render(items);
+      controls?.addEventListener("input", () => render(items));
+      controls?.addEventListener("reset", () => window.setTimeout(() => render(items), 0));
+    })
+    .catch(() => {
+      if (note) {
+        note.textContent = "Les données de recherche ne sont pas accessibles dans ce contexte local.";
+      }
+    });
+})();
+
+(() => {
+  const filterPanel = document.querySelector("[data-media-filters]");
+
+  if (!filterPanel) {
+    return;
+  }
+
+  const count = document.querySelector("[data-media-filter-count]");
+  const cards = [...document.querySelectorAll(".media-card[id]")];
+  const normalize = (value) =>
+    String(value ?? "")
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase();
+
+  const bucketFor = (item) => {
+    const text = normalize(
+      [
+        item.titre,
+        item.lieu,
+        item.categorie,
+        item.typeMedia,
+        item.evenementLie,
+        item.description,
+        item.axe_associe,
+      ].join(" ")
+    );
+    const buckets = new Set(["all"]);
+
+    if (/maritime|mer|ocean|littoral|golfe|mouillage|navire|peche|bleue/.test(text)) {
+      buckets.add("maritime");
+    }
+    if (/environnement|pollution|proteus|mediterranee|climat|aires marines|waca/.test(text)) {
+      buckets.add("environnement");
+    }
+    if (/mediation|ohada|arbitrage|differend/.test(text)) {
+      buckets.add("mediation");
+    }
+    if (/innovation|propriete intellectuelle|pepite|emerging|entreprendre|innov/.test(text)) {
+      buckets.add("innovation");
+    }
+    if (/entrepreneur|pepite|snee|booster|pitch|emerging|entreprendre/.test(text)) {
+      buckets.add("entrepreneuriat");
+    }
+    if (/afrique|europe|mediterranee|abidjan|lome|paris|monaco|marseille|aix|golfe/.test(text)) {
+      buckets.add("circulations");
+    }
+
+    return buckets;
+  };
+
+  fetch("assets/data/mediatheque-oby.json")
+    .then((response) => response.json())
+    .then((media) => {
+      const byId = new Map(media.map((item) => [item.id, bucketFor(item)]));
+
+      const applyFilter = (filter) => {
+        let visible = 0;
+        cards.forEach((card) => {
+          const buckets = byId.get(card.id) || new Set(["all"]);
+          const show = filter === "all" || buckets.has(filter);
+          card.hidden = !show;
+          if (show) {
+            visible += 1;
+          }
+        });
+
+        if (count) {
+          count.textContent = `${visible} entrée${visible > 1 ? "s" : ""} documentaire${visible > 1 ? "s" : ""}`;
+        }
+      };
+
+      filterPanel.addEventListener("click", (event) => {
+        const button = event.target.closest("[data-media-filter]");
+        if (!button) {
+          return;
+        }
+
+        filterPanel.querySelectorAll("[data-media-filter]").forEach((item) => {
+          item.classList.toggle("is-active", item === button);
+        });
+        applyFilter(button.dataset.mediaFilter || "all");
+      });
+
+      applyFilter("all");
+    });
+})();
