@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sweet-hummingbird-fbab70.netlify.app/sitemap.xml
+Sitemap: https://ouagabokouayao.github.io/oby-site-academique/sitemap.xml

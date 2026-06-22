@@ -2,9 +2,9 @@
 
 Site personnel académique et intellectuel de **OUAGA Bokoua Yao**.
 
-Statut courant : **V1.5.4 — stabilisation gratuite avant domaine personnalisé**.
+Statut courant : **V1.7 — version publique académique enrichie**.
 
-URL publique Netlify : <https://sweet-hummingbird-fbab70.netlify.app/>
+URL publique GitHub Pages : <https://ouagabokouayao.github.io/oby-site-academique/>
 
 ## Description
 
@@ -18,7 +18,7 @@ Le site est volontairement non commercial. Il ne constitue ni une agence, ni une
 - CSS
 - JavaScript statique
 - GitHub
-- Netlify
+- GitHub Pages
 
 ## Contenus publics
 
@@ -68,12 +68,12 @@ Le CV intégré est un CV académique public, trié et nettoyé. Le CV standard 
 - Ne pas ajouter de données personnelles sensibles ou d'informations privées.
 - Conserver la séparation entre OBY, AquaLab et les autres projets professionnels distincts.
 
-## Workflow GitHub / Netlify
+## Workflow GitHub / GitHub Pages
 
 1. Modifier localement dans le dossier du site.
 2. Vérifier les pages, les liens, les assets, les JSON et le responsive.
 3. Créer un commit Git local.
 4. Pousser vers GitHub après validation.
-5. Netlify déploie automatiquement depuis GitHub.
+5. GitHub Pages publie le site depuis `main/root` lorsque la configuration Pages est activée.
 
-Le glisser-déposer Netlify ne doit être utilisé qu'en urgence, afin de garder GitHub comme source de référence.
+GitHub reste la source de référence du site public. Netlify n'est plus l'hébergement public principal.
