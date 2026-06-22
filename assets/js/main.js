@@ -249,6 +249,170 @@ if ("IntersectionObserver" in window) {
 })();
 
 (() => {
+  const watchRoot = document.querySelector("[data-watch-agenda]");
+
+  if (!watchRoot) {
+    return;
+  }
+
+  const controls = watchRoot.querySelector("[data-watch-controls]");
+  const results = watchRoot.querySelector("[data-watch-results]");
+  const empty = watchRoot.querySelector("[data-watch-empty]");
+  const count = watchRoot.querySelector("[data-watch-count]");
+  const typeSelect = controls?.elements.type;
+  const statusSelect = controls?.elements.statut;
+
+  const escapeHtml = (value) =>
+    String(value ?? "")
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+
+  const uniqueValues = (items, key) =>
+    [...new Set(items.map((item) => item[key]).filter(Boolean))].sort((a, b) =>
+      a.localeCompare(b, "fr")
+    );
+
+  const fillSelect = (select, values) => {
+    if (!select) {
+      return;
+    }
+
+    values.forEach((value) => {
+      const option = document.createElement("option");
+      option.value = value;
+      option.textContent = value;
+      select.appendChild(option);
+    });
+  };
+
+  const renderAxes = (axes) =>
+    Array.isArray(axes)
+      ? axes.map((axis) => `<span class="map-pill">${escapeHtml(axis)}</span>`).join("")
+      : "";
+
+  const renderWatchCard = (item) => {
+    const title = escapeHtml(item.titre || "Repère de veille");
+    const type = escapeHtml(item.type || "Repère");
+    const status = escapeHtml(item.statut || "À suivre");
+    const zone = escapeHtml(item.zone || "");
+    const summary = escapeHtml(item.resume || "Repère documentaire.");
+    const interest = escapeHtml(item.interet_oby || "");
+    const source = item.lien_source
+      ? `<a class="watch-link" href="${escapeHtml(item.lien_source)}" rel="noopener">Source officielle</a>`
+      : "";
+
+    return `
+      <article class="watch-card">
+        <div class="watch-card-top">
+          <span class="watch-type">${type}</span>
+          <span class="watch-status">${status}</span>
+        </div>
+        <h3>${title}</h3>
+        <p>${summary}</p>
+        ${zone ? `<p class="watch-meta">${zone}</p>` : ""}
+        ${interest ? `<p class="watch-interest">${interest}</p>` : ""}
+        <div class="map-tags">${renderAxes(item.axes)}</div>
+        ${source}
+      </article>
+    `;
+  };
+
+  const render = (items) => {
+    const type = typeSelect?.value || "";
+    const status = statusSelect?.value || "";
+    const filtered = items.filter((item) => {
+      const matchesType = !type || item.type === type;
+      const matchesStatus = !status || item.statut === status;
+      return matchesType && matchesStatus;
+    });
+
+    if (count) {
+      count.textContent = String(filtered.length);
+    }
+
+    if (results) {
+      results.innerHTML = filtered.map(renderWatchCard).join("");
+    }
+
+    if (empty) {
+      empty.hidden = filtered.length > 0;
+    }
+  };
+
+  fetch("assets/data/veille-agenda-oby.json")
+    .then((response) => response.json())
+    .then((items) => {
+      const sortedItems = [...items].sort((a, b) => (a.ordre || 999) - (b.ordre || 999));
+      fillSelect(typeSelect, uniqueValues(sortedItems, "type"));
+      fillSelect(statusSelect, uniqueValues(sortedItems, "statut"));
+      render(sortedItems);
+
+      controls?.addEventListener("input", () => render(sortedItems));
+      controls?.addEventListener("change", () => render(sortedItems));
+      controls?.addEventListener("reset", () => window.setTimeout(() => render(sortedItems), 0));
+    })
+    .catch(() => {
+      if (results) {
+        results.innerHTML = "";
+      }
+
+      if (count) {
+        count.textContent = "0";
+      }
+
+      if (empty) {
+        empty.hidden = false;
+        empty.textContent = "Les repères de veille ne sont pas accessibles dans ce contexte local.";
+      }
+    });
+})();
+
+(() => {
+  const featuredRoot = document.querySelector("[data-featured-watch]");
+
+  if (!featuredRoot) {
+    return;
+  }
+
+  const escapeHtml = (value) =>
+    String(value ?? "")
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+
+  const renderFeatured = (item) => `
+    <article class="watch-card featured">
+      <div class="watch-card-top">
+        <span class="watch-type">${escapeHtml(item.type || "Repère")}</span>
+        <span class="watch-status">${escapeHtml(item.statut || "À suivre")}</span>
+      </div>
+      <h3>${escapeHtml(item.titre || "Repère de veille")}</h3>
+      <p>${escapeHtml(item.resume || "Repère documentaire.")}</p>
+      <a class="watch-link" href="veille-agenda.html">Voir la veille & agenda</a>
+    </article>
+  `;
+
+  fetch("assets/data/veille-agenda-oby.json")
+    .then((response) => response.json())
+    .then((items) => {
+      const featuredItems = items
+        .filter((item) => item.affichage_accueil === true)
+        .sort((a, b) => (a.ordre || 999) - (b.ordre || 999))
+        .slice(0, 3);
+
+      featuredRoot.innerHTML = featuredItems.map(renderFeatured).join("");
+    })
+    .catch(() => {
+      featuredRoot.innerHTML = "";
+    });
+})();
+
+(() => {
   const searchRoot = document.querySelector("[data-global-search]");
 
   if (!searchRoot) {
@@ -286,10 +450,11 @@ if ("IntersectionObserver" in window) {
     { title: "Bibliothèque & ressources", type: "Page", category: "Ressources", url: "bibliotheque-ressources.html" },
     { title: "Médiathèque", type: "Page", category: "Traces documentaires", url: "mediatheque.html" },
     { title: "Cartographie intellectuelle", type: "Page", category: "Exploration", url: "cartographie.html" },
+    { title: "À la une · Veille & agenda", type: "Page", category: "Veille", url: "veille-agenda.html" },
     { title: "Contact qualifié", type: "Page", category: "Contact", url: "contact.html" },
   ];
 
-  const textFor = (item) => normalize([item.title, item.type, item.category].join(" "));
+  const textFor = (item) => normalize([item.title, item.type, item.category, item.searchText].join(" "));
 
   const renderItem = (item) => `
     <a class="search-result-card" href="${escapeHtml(item.url)}">
@@ -335,27 +500,44 @@ if ("IntersectionObserver" in window) {
     fetch("assets/data/sujets-recherche-oby.json").then((response) => response.json()),
     fetch("assets/data/bibliotheque-oby.json").then((response) => response.json()),
     fetch("assets/data/mediatheque-oby.json").then((response) => response.json()),
+    fetch("assets/data/veille-agenda-oby.json").then((response) => response.json()),
   ])
-    .then(([subjects, references, media]) => {
+    .then(([subjects, references, media, watch]) => {
       const subjectItems = subjects.map((item) => ({
         title: item.titre || item.titreOriginal || "Sujet",
         type: "Sujet",
         category: item.axe || item.dossier || "Sujet de recherche",
+        searchText: [item.titreOriginal, item.dossier, item.statut, item.publication, item.resume].join(" "),
         url: "cartographie.html",
       }));
       const referenceItems = references.map((item) => ({
         title: item.titre || "Référence",
         type: "Référence",
         category: item.categorie || item.sousCategorie || "Bibliothèque",
+        searchText: [
+          ...(item.auteurs || []),
+          ...(item.direction || []),
+          item.editeur,
+          item.collection,
+          item.note,
+        ].join(" "),
         url: "bibliotheque-ressources.html",
       }));
       const mediaItems = media.map((item) => ({
         title: item.titre || "Média documentaire",
         type: "Média",
         category: item.axe_associe || item.categorie || item.typeMedia || "Médiathèque",
+        searchText: [item.lieu, item.annee, item.evenementLie, item.description, item.statut].join(" "),
         url: item.pageLiee || "mediatheque.html",
       }));
-      const items = [...pages, ...subjectItems, ...referenceItems, ...mediaItems];
+      const watchItems = watch.map((item) => ({
+        title: item.titre || "Repère de veille",
+        type: "Veille",
+        category: Array.isArray(item.axes) && item.axes.length ? item.axes.join(" · ") : item.type || "Veille & agenda",
+        searchText: [item.type, item.statut, item.zone, item.resume, item.interet_oby, ...(item.axes || [])].join(" "),
+        url: "veille-agenda.html",
+      }));
+      const items = [...pages, ...subjectItems, ...referenceItems, ...mediaItems, ...watchItems];
 
       render(items);
       controls?.addEventListener("input", () => render(items));
