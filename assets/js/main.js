@@ -55,6 +55,110 @@ if ("IntersectionObserver" in window) {
   revealTargets.forEach((target) => target.classList.add("is-visible"));
 }
 
+const WATCH_AGENDA_FALLBACK_ITEMS = [
+  {
+    id: "appels-contributions-droit-mer-gouvernance",
+    titre: "Appels à contributions en droit de la mer et gouvernance maritime",
+    type: "Appel à contributions",
+    date_publication_interne: "2026-06-22",
+    date_evenement: "",
+    organisateur: "",
+    zone: "Afrique · Europe · Méditerranée · Golfe de Guinée",
+    axes: ["droit de la mer", "gouvernance maritime", "sécurité maritime"],
+    statut: "À suivre",
+    resume:
+      "Repère de veille consacré aux appels académiques susceptibles de croiser droit de la mer, gouvernance maritime et sécurité des espaces maritimes.",
+    interet_oby: "Identifier des cadres de contribution en lien avec les axes structurants du site OBY.",
+    lien_source: "",
+    affichage_accueil: true,
+    ordre: 1,
+  },
+  {
+    id: "evenements-ocean-economie-bleue",
+    titre: "Événements internationaux autour de l'océan et de l'économie bleue",
+    type: "Événement",
+    date_publication_interne: "2026-06-22",
+    date_evenement: "",
+    organisateur: "",
+    zone: "Afrique · Europe · Méditerranée",
+    axes: ["économie bleue", "gouvernance maritime", "environnement marin"],
+    statut: "À suivre",
+    resume:
+      "Repère de suivi des événements académiques, institutionnels ou scientifiques liés à l'océan, aux littoraux et à l'économie bleue.",
+    interet_oby: "Suivre les espaces de dialogue reliés aux transitions maritimes et littorales.",
+    lien_source: "",
+    affichage_accueil: true,
+    ordre: 2,
+  },
+  {
+    id: "reperes-institutionnels-gouvernance-maritime",
+    titre: "Repères institutionnels sur la gouvernance des espaces maritimes",
+    type: "Ressource institutionnelle",
+    date_publication_interne: "2026-06-22",
+    date_evenement: "",
+    organisateur: "",
+    zone: "Golfe de Guinée · Méditerranée · Afrique",
+    axes: ["gouvernance maritime", "sécurité maritime", "prospective"],
+    statut: "Repère",
+    resume:
+      "Repère documentaire destiné à suivre les cadres institutionnels liés à la gouvernance, à la sécurité maritime et aux coopérations régionales.",
+    interet_oby: "Relier les axes juridiques et institutionnels aux dynamiques territoriales suivies par le site.",
+    lien_source: "",
+    affichage_accueil: true,
+    ordre: 3,
+  },
+  {
+    id: "initiatives-littoral-mediterranee-golfe-guinee",
+    titre: "Initiatives suivies autour du littoral, de la Méditerranée et du Golfe de Guinée",
+    type: "Repère d'actualité",
+    date_publication_interne: "2026-06-22",
+    date_evenement: "",
+    organisateur: "",
+    zone: "Méditerranée · Golfe de Guinée",
+    axes: ["littoral", "environnement marin", "prospective"],
+    statut: "À analyser",
+    resume:
+      "Repère de veille sur les initiatives et cadres de réflexion liés aux littoraux, aux vulnérabilités côtières et aux transitions territoriales.",
+    interet_oby: "Alimenter une lecture croisée des risques littoraux, des institutions et de l'adaptation.",
+    lien_source: "",
+    affichage_accueil: false,
+    ordre: 4,
+  },
+  {
+    id: "formats-mediation-innovation-gouvernance",
+    titre: "Formats suivis autour de la médiation, de l'innovation et de la gouvernance",
+    type: "Programme",
+    date_publication_interne: "2026-06-22",
+    date_evenement: "",
+    organisateur: "",
+    zone: "Afrique · Europe",
+    axes: ["médiation", "innovation", "prospective"],
+    statut: "À suivre",
+    resume:
+      "Repère de suivi des formats académiques ou institutionnels croisant médiation, innovation, gouvernance des projets et transformations publiques.",
+    interet_oby: "Repérer les passerelles entre droit, dialogue, innovation responsable et action institutionnelle.",
+    lien_source: "",
+    affichage_accueil: false,
+    ordre: 5,
+  },
+];
+
+const loadWatchAgendaItems = () =>
+  fetch("assets/data/veille-agenda-oby.json")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Veille agenda data unavailable");
+      }
+      return response.json();
+    })
+    .then((items) => {
+      if (!Array.isArray(items) || items.length === 0) {
+        throw new Error("Veille agenda data empty");
+      }
+      return { items, source: "json" };
+    })
+    .catch(() => ({ items: WATCH_AGENDA_FALLBACK_ITEMS, source: "fallback" }));
+
 (() => {
   const mapRoot = document.querySelector("[data-cartographie]");
 
@@ -342,9 +446,8 @@ if ("IntersectionObserver" in window) {
     }
   };
 
-  fetch("assets/data/veille-agenda-oby.json")
-    .then((response) => response.json())
-    .then((items) => {
+  loadWatchAgendaItems()
+    .then(({ items }) => {
       const sortedItems = [...items].sort((a, b) => (a.ordre || 999) - (b.ordre || 999));
       fillSelect(typeSelect, uniqueValues(sortedItems, "type"));
       fillSelect(statusSelect, uniqueValues(sortedItems, "statut"));
@@ -360,12 +463,12 @@ if ("IntersectionObserver" in window) {
       }
 
       if (count) {
-        count.textContent = "0";
+        count.textContent = "—";
       }
 
       if (empty) {
         empty.hidden = false;
-        empty.textContent = "Les repères de veille ne sont pas accessibles dans ce contexte local.";
+        empty.textContent = "La sélection de veille est en cours de chargement ou sera enrichie progressivement.";
       }
     });
 })();
@@ -397,9 +500,8 @@ if ("IntersectionObserver" in window) {
     </article>
   `;
 
-  fetch("assets/data/veille-agenda-oby.json")
-    .then((response) => response.json())
-    .then((items) => {
+  loadWatchAgendaItems()
+    .then(({ items }) => {
       const featuredItems = items
         .filter((item) => item.affichage_accueil === true)
         .sort((a, b) => (a.ordre || 999) - (b.ordre || 999))
@@ -408,7 +510,17 @@ if ("IntersectionObserver" in window) {
       featuredRoot.innerHTML = featuredItems.map(renderFeatured).join("");
     })
     .catch(() => {
-      featuredRoot.innerHTML = "";
+      featuredRoot.innerHTML = `
+        <article class="watch-card featured">
+          <div class="watch-card-top">
+            <span class="watch-type">Veille</span>
+            <span class="watch-status">Repère</span>
+          </div>
+          <h3>Veille & agenda</h3>
+          <p>La sélection de veille sera affichée en environnement web. Les repères sont conservés dans le fichier de données du site.</p>
+          <a class="watch-link" href="veille-agenda.html">Voir la veille & agenda</a>
+        </article>
+      `;
     });
 })();
 
@@ -500,7 +612,7 @@ if ("IntersectionObserver" in window) {
     fetch("assets/data/sujets-recherche-oby.json").then((response) => response.json()),
     fetch("assets/data/bibliotheque-oby.json").then((response) => response.json()),
     fetch("assets/data/mediatheque-oby.json").then((response) => response.json()),
-    fetch("assets/data/veille-agenda-oby.json").then((response) => response.json()),
+    loadWatchAgendaItems().then(({ items }) => items),
   ])
     .then(([subjects, references, media, watch]) => {
       const subjectItems = subjects.map((item) => ({
