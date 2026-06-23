@@ -44,7 +44,7 @@ if ("IntersectionObserver" in window) {
         }
       });
     },
-    { threshold: 0.12 }
+    { threshold: 0.01 }
   );
 
   revealTargets.forEach((target) => {
