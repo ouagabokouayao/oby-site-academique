@@ -1902,6 +1902,17 @@ body[data-page="ressources"] .media-frame img {
     max-width: 100%;
   }
 
+  .resource-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+
+  .resource-row span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
   .library-grid,
   .library-summary,
   .map-summary,
