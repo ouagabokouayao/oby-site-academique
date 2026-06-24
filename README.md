@@ -66,7 +66,7 @@ Le CV académique n’est pas publié comme fichier de référence tant qu’une
 - Ne pas publier le CV standard brut.
 - Ne pas publier `docs/sources/`, `backups/`, anciens ZIP, rapports privés ou fichiers de travail non publics.
 - Ne pas ajouter de données personnelles sensibles ou d'informations privées.
-- Conserver la séparation entre OBY, AquaLab et les autres projets professionnels distincts.
+- Conserver la séparation entre OBY et les autres projets professionnels distincts.
 
 ## Workflow GitHub / GitHub Pages
 
