@@ -10,7 +10,7 @@ URL publique GitHub Pages : <https://ouagabokouayao.github.io/oby-site-academiqu
 
 OBY est un site statique personnel, académique et intellectuel. Il présente un parcours interdisciplinaire autour du droit public, du droit de la mer, de la gouvernance maritime, du littoral, de la médiation, du droit international des affaires, de l'innovation et de la prospective.
 
-Le site est volontairement non commercial. Il ne constitue ni une agence, ni une boutique, ni une landing page de vente.
+Le site sert de point d'entrée public pour présenter une trajectoire, des travaux, des ressources et des espaces de dialogue.
 
 ## Technologies
 
@@ -29,7 +29,7 @@ Le site est volontairement non commercial. Il ne constitue ni une agence, ni une
 - Participations & interventions
 - Bibliothèque & ressources
 - Médiathèque
-- CV académique transmis sur demande
+- Parcours détaillé sur demande
 - Contact
 
 Le CV académique n’est pas publié comme fichier de référence tant qu’une version pleinement publiable n’est pas validée. Le CV standard brut et les sources privées ne doivent pas être ajoutés à ce dépôt.
@@ -60,13 +60,13 @@ Le CV académique n’est pas publié comme fichier de référence tant qu’une
 
 ## Règles de publication
 
-- Conserver un site personnel académique, sobre et non commercial.
+- Conserver un site personnel académique et sobre.
 - Ne pas publier de sources privées.
 - Ne pas publier de badges sensibles, QR codes, codes-barres, accréditations privées ou médias non validés.
 - Ne pas publier le CV standard brut.
 - Ne pas publier `docs/sources/`, `backups/`, anciens ZIP, rapports privés ou fichiers de travail non publics.
 - Ne pas ajouter de données personnelles sensibles ou d'informations privées.
-- Conserver la séparation entre OBY et les autres projets professionnels distincts.
+- Conserver une séparation claire entre OBY et les projets professionnels distincts.
 
 ## Workflow GitHub / GitHub Pages
 
