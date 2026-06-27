@@ -180,13 +180,12 @@ const loadWatchAgendaItems = () =>
   const mediaCount = mapRoot.querySelector("[data-media-count]");
   const totalInline = mapRoot.querySelector("[data-map-total-inline]");
   const mapNote = mapRoot.querySelector("[data-map-note]");
-  const showAllButton = mapRoot.querySelector("[data-map-show-all]");
+  const showMoreButton = mapRoot.querySelector("[data-map-show-all]");
   const axisSelect = controls?.elements.axe;
   const typeSelect = controls?.elements.type;
   const searchInput = controls?.elements.q;
-  const maxInitialCards = 18;
-  const maxFilteredCards = 24;
-  let showAll = false;
+  const cardsIncrement = 12;
+  let visibleLimit = cardsIncrement;
 
   const escapeHtml = (value) =>
     String(value ?? "")
@@ -237,8 +236,7 @@ const loadWatchAgendaItems = () =>
     const axis = escapeHtml(subject.axe || "Axe non renseigné");
     const status = escapeHtml(subject.statut || "Sujet de recherche");
     const dossier = escapeHtml(subject.dossier || "");
-    const publication = subject.publication || "Texte complet non publié";
-    const summary = subject.resume || subject.description || "Résumé à venir.";
+    const summary = subject.resume || subject.description || "Repère en cours de structuration.";
 
     return `
       <article class="map-card">
@@ -250,7 +248,6 @@ const loadWatchAgendaItems = () =>
         <p>${escapeHtml(summary)}</p>
         <div class="map-tags">
           ${dossier ? `<span class="map-pill">${dossier}</span>` : ""}
-          <span class="map-pill status">${escapeHtml(publication)}</span>
         </div>
         <div class="map-card-links">
           <a href="axes-recherche.html">Axes</a>
@@ -271,26 +268,21 @@ const loadWatchAgendaItems = () =>
       const matchesType = !type || subject.statut === type;
       return matchesQuery && matchesAxis && matchesType;
     });
-    const limit = showAll ? filtered.length : hasFilter ? maxFilteredCards : maxInitialCards;
-    const visible = filtered.slice(0, limit);
+    const visible = filtered.slice(0, visibleLimit);
 
     if (count) {
       count.textContent = String(visible.length);
     }
 
     if (mapNote) {
-      if (showAll) {
-        mapNote.textContent = "ensemble des sujets correspondant aux filtres actifs.";
-      } else if (hasFilter) {
-        mapNote.textContent = "résultat filtré. Ajustez la recherche ou les filtres pour élargir l'exploration.";
-      } else {
-        mapNote.textContent =
-          "sélection initiale. Utilisez les filtres ou la recherche pour explorer l'ensemble de la cartographie.";
-      }
+      mapNote.textContent = hasFilter
+        ? "résultat filtré. Ajustez la recherche, utilisez les filtres ou affichez davantage de sujets."
+        : "sélection initiale. Utilisez les filtres, la recherche ou le bouton d'affichage progressif pour explorer l'ensemble de la cartographie.";
     }
 
-    if (showAllButton) {
-      showAllButton.hidden = showAll || filtered.length <= visible.length;
+    if (showMoreButton) {
+      showMoreButton.hidden = filtered.length <= visible.length;
+      showMoreButton.textContent = "Afficher plus";
     }
 
     if (results) {
@@ -329,15 +321,15 @@ const loadWatchAgendaItems = () =>
       render(subjects);
 
       controls?.addEventListener("input", () => {
-        showAll = false;
+        visibleLimit = cardsIncrement;
         render(subjects);
       });
       controls?.addEventListener("reset", () => {
-        showAll = false;
+        visibleLimit = cardsIncrement;
         window.setTimeout(() => render(subjects), 0);
       });
-      showAllButton?.addEventListener("click", () => {
-        showAll = true;
+      showMoreButton?.addEventListener("click", () => {
+        visibleLimit += cardsIncrement;
         render(subjects);
       });
     })
