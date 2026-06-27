@@ -268,7 +268,8 @@ const loadWatchAgendaItems = () =>
       const matchesType = !type || subject.statut === type;
       return matchesQuery && matchesAxis && matchesType;
     });
-    const visible = filtered.slice(0, visibleLimit);
+    const currentLimit = Math.max(cardsIncrement, visibleLimit);
+    const visible = filtered.slice(0, currentLimit);
 
     if (count) {
       count.textContent = String(visible.length);
