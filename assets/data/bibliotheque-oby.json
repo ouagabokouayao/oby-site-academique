@@ -1503,11 +1503,9 @@
     "note": ""
   },
   {
-    "id": "quatre-evangiles-pierre-beaumont",
-    "titre": "Les quatre évangiles",
-    "auteurs": [
-      "Pierre de Beaumont"
-    ],
+    "id": "lectures-spirituelles-personnelles",
+    "titre": "Lectures spirituelles personnelles",
+    "auteurs": [],
     "direction": [],
     "editeur": "",
     "collection": "",
@@ -1515,44 +1513,10 @@
     "edition": "",
     "isbn": "",
     "categorie": "Culture générale, littérature et lectures personnelles",
-    "sousCategorie": "spiritualité / lecture personnelle",
+    "sousCategorie": "spiritualité",
     "statutMetadata": "partiel",
     "sourceVerification": "",
-    "note": ""
-  },
-  {
-    "id": "que-nous-enseigne-la-bible",
-    "titre": "Que nous enseigne la Bible ?",
-    "auteurs": [],
-    "direction": [
-      "Watch Tower Bible and Tract Society of Pennsylvania"
-    ],
-    "editeur": "",
-    "collection": "",
-    "annee": "2016",
-    "edition": "",
-    "isbn": "",
-    "categorie": "Culture générale, littérature et lectures personnelles",
-    "sousCategorie": "spiritualité / lecture personnelle",
-    "statutMetadata": "partiel",
-    "sourceVerification": "",
-    "note": ""
-  },
-  {
-    "id": "ligue-lecture-bible-brochure",
-    "titre": "La Ligue pour la lecture de la Bible",
-    "auteurs": [],
-    "direction": [],
-    "editeur": "",
-    "collection": "",
-    "annee": "",
-    "edition": "",
-    "isbn": "9782940565825",
-    "categorie": "Culture générale, littérature et lectures personnelles",
-    "sousCategorie": "spiritualité / brochure",
-    "statutMetadata": "partiel",
-    "sourceVerification": "",
-    "note": ""
+    "note": "Quelques lectures personnelles à caractère spirituel, conservées dans la bibliothèque de travail sans visée académique ou démonstrative."
   },
   {
     "id": "cinquieme-vague",
