@@ -2033,6 +2033,69 @@ body[data-page="ressources"] .media-frame img {
     max-width: 100%;
     overflow-wrap: anywhere;
   }
+
+  body[data-page="interventions"] .header-inner,
+  body[data-page="interventions"] .section-inner,
+  body[data-page="interventions"] .footer-inner,
+  body[data-page="mediatheque"] .header-inner,
+  body[data-page="mediatheque"] .section-inner,
+  body[data-page="mediatheque"] .footer-inner {
+    width: min(calc(100% - 36px), 354px);
+    margin-left: 18px;
+    margin-right: auto;
+  }
+
+  body[data-page="interventions"] .page-hero h1,
+  body[data-page="interventions"] .section-title,
+  body[data-page="interventions"] .card h2,
+  body[data-page="interventions"] .card h3,
+  body[data-page="interventions"] .media-card h3,
+  body[data-page="mediatheque"] .page-hero h1,
+  body[data-page="mediatheque"] .section-title,
+  body[data-page="mediatheque"] .card h2,
+  body[data-page="mediatheque"] .card h3,
+  body[data-page="mediatheque"] .media-card h3 {
+    max-width: 100%;
+    text-wrap: wrap;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  body[data-page="interventions"] .page-hero h1,
+  body[data-page="mediatheque"] .page-hero h1 {
+    font-size: clamp(1.82rem, 8.6vw, 2.28rem);
+    line-height: 1.1;
+  }
+
+  body[data-page="interventions"] .section-title,
+  body[data-page="mediatheque"] .section-title {
+    font-size: clamp(1.7rem, 8.1vw, 2.15rem);
+    line-height: 1.12;
+  }
+
+  body[data-page="interventions"] .card h2,
+  body[data-page="interventions"] .card h3,
+  body[data-page="interventions"] .media-card h3,
+  body[data-page="mediatheque"] .card h2,
+  body[data-page="mediatheque"] .card h3,
+  body[data-page="mediatheque"] .media-card h3 {
+    font-size: clamp(1.28rem, 6.4vw, 1.7rem);
+    line-height: 1.12;
+  }
+
+  body[data-page="interventions"] .card p,
+  body[data-page="interventions"] .card li,
+  body[data-page="interventions"] .notice,
+  body[data-page="interventions"] .lead,
+  body[data-page="interventions"] .media-card p,
+  body[data-page="mediatheque"] .card p,
+  body[data-page="mediatheque"] .card li,
+  body[data-page="mediatheque"] .notice,
+  body[data-page="mediatheque"] .lead,
+  body[data-page="mediatheque"] .media-card p {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
 }
 
 @media (max-width: 390px) {
@@ -2061,6 +2124,11 @@ body[data-page="ressources"] .media-frame img {
   }
 
   body[data-page="ecosysteme"] .page-hero h1 {
+    font-size: clamp(1.72rem, 8vw, 2.06rem);
+  }
+
+  body[data-page="interventions"] .page-hero h1,
+  body[data-page="mediatheque"] .page-hero h1 {
     font-size: clamp(1.72rem, 8vw, 2.06rem);
   }
 }
