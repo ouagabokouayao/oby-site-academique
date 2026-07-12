@@ -1123,6 +1123,10 @@ body[data-page="ressources"] .media-frame img {
   background: var(--ivory);
 }
 
+.media-card-photo > img {
+  object-fit: contain;
+}
+
 .media-card-body {
   display: flex;
   flex: 1;
