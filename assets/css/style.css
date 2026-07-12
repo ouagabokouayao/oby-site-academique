@@ -283,6 +283,15 @@ select:focus-visible {
   overflow-wrap: break-word;
 }
 
+.hero-subposition {
+  max-width: 760px;
+  margin: -6px 0 0;
+  color: rgba(246, 243, 234, 0.76);
+  font-size: clamp(0.95rem, 1.7vw, 1.08rem);
+  font-weight: 560;
+  overflow-wrap: break-word;
+}
+
 .hero-signature {
   display: inline-block;
   margin-top: 24px;
@@ -602,6 +611,86 @@ select:focus-visible {
   width: 100%;
   height: auto;
   border-radius: 4px;
+}
+
+.capability-accordion {
+  display: grid;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.capability-item {
+  border: 1px solid rgba(8, 26, 47, 0.12);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: 0 10px 26px rgba(8, 26, 47, 0.055);
+  overflow: hidden;
+}
+
+.capability-item summary {
+  display: grid;
+  grid-template-columns: minmax(110px, 0.28fr) minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+  cursor: pointer;
+  padding: 20px 22px;
+  color: var(--navy);
+  font-weight: 850;
+  list-style: none;
+}
+
+.capability-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.capability-item summary::after {
+  content: "+";
+  color: var(--gold);
+  font-size: 1.4rem;
+  font-weight: 850;
+  line-height: 1;
+}
+
+.capability-item[open] summary::after {
+  content: "–";
+}
+
+.capability-item summary span {
+  color: var(--blue);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.capability-item summary strong {
+  color: var(--navy);
+  overflow-wrap: anywhere;
+}
+
+.capability-item summary:focus-visible {
+  outline: 3px solid rgba(200, 169, 107, 0.55);
+  outline-offset: -3px;
+}
+
+.capability-item p {
+  margin: 0;
+  border-top: 1px solid rgba(8, 26, 47, 0.08);
+  padding: 0 22px 22px;
+  color: var(--muted);
+}
+
+.selected-work-grid {
+  align-items: stretch;
+}
+
+.selected-work-card img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 18px;
+  border: 1px solid rgba(8, 26, 47, 0.12);
+  border-radius: 6px;
+  background: var(--white);
+  padding: 8px;
 }
 
 .card ul,
@@ -2003,6 +2092,15 @@ body[data-page="ressources"] .media-frame img {
   .form select {
     min-width: 0;
     max-width: 100%;
+  }
+
+  .capability-item summary {
+    grid-template-columns: 1fr auto;
+    gap: 8px 12px;
+  }
+
+  .capability-item summary span {
+    grid-column: 1 / -1;
   }
 
   .resource-row {

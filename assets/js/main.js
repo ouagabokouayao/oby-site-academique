@@ -278,7 +278,7 @@ const loadWatchAgendaItems = () =>
     if (mapNote) {
       mapNote.textContent = hasFilter
         ? "résultat filtré. Ajustez la recherche, utilisez les filtres ou affichez davantage de sujets."
-        : "sélection initiale. Utilisez les filtres, la recherche ou le bouton d'affichage progressif pour explorer l'ensemble de la cartographie.";
+        : "Sélection initiale — explorez les sujets à l'aide de la recherche, des filtres ou du bouton d'affichage progressif.";
     }
 
     if (showMoreButton) {
