@@ -589,6 +589,21 @@ select:focus-visible {
   overflow-wrap: break-word;
 }
 
+.page-garde-figure {
+  margin: 18px 0 16px;
+  border: 1px solid rgba(8, 26, 47, 0.12);
+  border-radius: 6px;
+  background: var(--white);
+  padding: 10px;
+  box-shadow: 0 14px 36px rgba(8, 26, 47, 0.08);
+}
+
+.page-garde-figure img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
 .card ul,
 .content-list {
   padding-left: 18px;
