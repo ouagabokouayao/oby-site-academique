@@ -1,10 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Monogramme OBY">
-  <defs>
-    <style>
-      .serif { font-family: "Cormorant Garamond", "Libre Baskerville", Georgia, serif; font-weight: 600; }
-    </style>
-  </defs>
-  <rect width="512" height="512" rx="96" fill="#081A2F"/>
-  <text x="256" y="280" text-anchor="middle" class="serif" font-size="184" fill="#C8A96B" letter-spacing="-8">OBY</text>
-  <path d="M153 306 C205 336, 294 336, 359 304" fill="none" stroke="#C8A96B" stroke-width="6" stroke-linecap="round"/>
+<rect width="512" height="512" rx="96" fill="#081A2F"/>
+<text x="256" y="286" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="164" font-weight="600" fill="#C8A96B">OBY</text>
+<path d="M150 315 C205 340, 298 340, 362 310" fill="none" stroke="#C8A96B" stroke-width="6" stroke-linecap="round"/>
 </svg>
