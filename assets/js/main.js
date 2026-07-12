@@ -1,23 +1,64 @@
 const navToggle = document.querySelector("[data-nav-toggle]");
 const navMenu = document.querySelector("[data-nav-menu]");
+const navGroups = document.querySelectorAll("[data-nav-group]");
 
 if (navToggle && navMenu) {
+  const closeSubmenus = (exceptGroup = null) => {
+    navGroups.forEach((group) => {
+      if (group === exceptGroup) {
+        return;
+      }
+
+      group.classList.remove("is-open");
+      group.querySelector("[data-submenu-toggle]")?.setAttribute("aria-expanded", "false");
+    });
+  };
+
+  const closeMainMenu = () => {
+    navMenu.classList.remove("is-open");
+    navToggle.setAttribute("aria-expanded", "false");
+    closeSubmenus();
+  };
+
   navToggle.addEventListener("click", () => {
     const isOpen = navMenu.classList.toggle("is-open");
     navToggle.setAttribute("aria-expanded", String(isOpen));
+    if (!isOpen) {
+      closeSubmenus();
+    }
+  });
+
+  navGroups.forEach((group) => {
+    const toggle = group.querySelector("[data-submenu-toggle]");
+
+    if (!toggle) {
+      return;
+    }
+
+    toggle.addEventListener("click", (event) => {
+      event.stopPropagation();
+      const isOpen = group.classList.toggle("is-open");
+      toggle.setAttribute("aria-expanded", String(isOpen));
+      closeSubmenus(isOpen ? group : null);
+    });
   });
 
   navMenu.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
-      navMenu.classList.remove("is-open");
-      navToggle.setAttribute("aria-expanded", "false");
+      closeMainMenu();
     });
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!navMenu.contains(event.target) && !navToggle.contains(event.target)) {
+      closeSubmenus();
+    }
   });
 
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
-      navMenu.classList.remove("is-open");
-      navToggle.setAttribute("aria-expanded", "false");
+      closeMainMenu();
+      navToggle.focus();
     }
   });
 }
@@ -28,6 +69,14 @@ if (currentPage) {
   document.querySelectorAll("[data-page-link]").forEach((link) => {
     if (link.dataset.pageLink === currentPage) {
       link.setAttribute("aria-current", "page");
+    }
+  });
+
+  navGroups.forEach((group) => {
+    const pages = (group.dataset.navPages || "").split(/\s+/);
+
+    if (pages.includes(currentPage)) {
+      group.classList.add("is-current");
     }
   });
 }

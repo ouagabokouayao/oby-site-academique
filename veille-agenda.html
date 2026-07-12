@@ -27,9 +27,56 @@
 <body data-page="veille">
   <header class="site-header">
     <div class="header-inner">
-      <a class="brand" href="index.html" aria-label="Accueil OUAGA Bokoua Yao"><img src="assets/img/identity/oby-monogramme.svg" alt="OBY"></a>
+      <a class="brand" href="index.html" aria-label="OUAGA Bokoua Yao — Accueil"><img src="assets/img/identity/oby-monogramme.svg" alt="OBY"></a>
       <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="navigation">☰</button>
-      <nav class="nav-menu" id="navigation" data-nav-menu aria-label="Navigation principale"><a href="index.html" data-page-link="accueil">Accueil</a><a href="profil.html" data-page-link="profil">Profil</a><a href="axes-recherche.html" data-page-link="axes">Axes</a><a href="travaux-publications.html" data-page-link="travaux">Travaux</a><a href="interventions.html" data-page-link="interventions">Participations</a><a href="bibliotheque-ressources.html" data-page-link="bibliotheque">Ressources</a><a class="nav-cta" href="contact.html" data-page-link="contact">Contact</a></nav>
+      <nav class="nav-menu" id="navigation" data-nav-menu aria-label="Navigation principale">
+        <a class="nav-link nav-direct" href="index.html" data-page-link="accueil">Accueil</a>
+        <div class="nav-group" data-nav-group data-nav-pages="profil distinctions ecosysteme">
+          <div class="nav-parent-row">
+            <a class="nav-link nav-parent" href="profil.html" data-page-link="profil">À propos</a>
+            <button class="nav-chevron" type="button" aria-expanded="false" aria-controls="submenu-apropos" aria-label="Ouvrir le sous-menu À propos" data-submenu-toggle><span aria-hidden="true"></span></button>
+          </div>
+          <div class="nav-submenu" id="submenu-apropos" data-nav-submenu>
+            <a href="profil.html" data-page-link="profil">Profil</a>
+            <a href="distinctions-bourses.html" data-page-link="distinctions">Distinctions &amp; bourses</a>
+            <a href="ecosysteme.html" data-page-link="ecosysteme">Écosystème</a>
+          </div>
+        </div>
+        <div class="nav-group" data-nav-group data-nav-pages="axes cartographie">
+          <div class="nav-parent-row">
+            <a class="nav-link nav-parent" href="axes-recherche.html" data-page-link="axes">Expertise</a>
+            <button class="nav-chevron" type="button" aria-expanded="false" aria-controls="submenu-expertise" aria-label="Ouvrir le sous-menu Expertise" data-submenu-toggle><span aria-hidden="true"></span></button>
+          </div>
+          <div class="nav-submenu" id="submenu-expertise" data-nav-submenu>
+            <a href="axes-recherche.html" data-page-link="axes">Axes de recherche</a>
+            <a href="cartographie.html" data-page-link="cartographie">Cartographie intellectuelle</a>
+          </div>
+        </div>
+        <div class="nav-group" data-nav-group data-nav-pages="travaux interventions mediatheque">
+          <div class="nav-parent-row">
+            <a class="nav-link nav-parent" href="travaux-publications.html" data-page-link="travaux">Productions</a>
+            <button class="nav-chevron" type="button" aria-expanded="false" aria-controls="submenu-productions" aria-label="Ouvrir le sous-menu Productions" data-submenu-toggle><span aria-hidden="true"></span></button>
+          </div>
+          <div class="nav-submenu" id="submenu-productions" data-nav-submenu>
+            <a href="travaux-publications.html" data-page-link="travaux">Travaux &amp; publications</a>
+            <a href="interventions.html" data-page-link="interventions">Participations</a>
+            <a href="mediatheque.html" data-page-link="mediatheque">Médiathèque</a>
+          </div>
+        </div>
+        <div class="nav-group" data-nav-group data-nav-pages="ressources carnet veille recherche">
+          <div class="nav-parent-row">
+            <a class="nav-link nav-parent" href="bibliotheque-ressources.html" data-page-link="ressources">Ressources</a>
+            <button class="nav-chevron" type="button" aria-expanded="false" aria-controls="submenu-ressources" aria-label="Ouvrir le sous-menu Ressources" data-submenu-toggle><span aria-hidden="true"></span></button>
+          </div>
+          <div class="nav-submenu" id="submenu-ressources" data-nav-submenu>
+            <a href="bibliotheque-ressources.html" data-page-link="ressources">Bibliothèque</a>
+            <a href="carnet-idees.html" data-page-link="carnet">Carnet d’idées</a>
+            <a href="veille-agenda.html" data-page-link="veille">Veille &amp; agenda</a>
+            <a href="recherche.html" data-page-link="recherche">Recherche locale</a>
+          </div>
+        </div>
+        <a class="nav-link nav-direct nav-cta" href="contact.html" data-page-link="contact">Contact</a>
+      </nav>
     </div>
   </header>
   <main data-watch-agenda>
