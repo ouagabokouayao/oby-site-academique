@@ -1,46 +1,15 @@
 const navToggle = document.querySelector("[data-nav-toggle]");
 const navMenu = document.querySelector("[data-nav-menu]");
-const navGroups = document.querySelectorAll("[data-nav-group]");
 
 if (navToggle && navMenu) {
-  const closeSubmenus = (exceptGroup = null) => {
-    navGroups.forEach((group) => {
-      if (group === exceptGroup) {
-        return;
-      }
-
-      group.classList.remove("is-open");
-      group.querySelector("[data-submenu-toggle]")?.setAttribute("aria-expanded", "false");
-    });
-  };
-
   const closeMainMenu = () => {
     navMenu.classList.remove("is-open");
     navToggle.setAttribute("aria-expanded", "false");
-    closeSubmenus();
   };
 
   navToggle.addEventListener("click", () => {
     const isOpen = navMenu.classList.toggle("is-open");
     navToggle.setAttribute("aria-expanded", String(isOpen));
-    if (!isOpen) {
-      closeSubmenus();
-    }
-  });
-
-  navGroups.forEach((group) => {
-    const toggle = group.querySelector("[data-submenu-toggle]");
-
-    if (!toggle) {
-      return;
-    }
-
-    toggle.addEventListener("click", (event) => {
-      event.stopPropagation();
-      const isOpen = group.classList.toggle("is-open");
-      toggle.setAttribute("aria-expanded", String(isOpen));
-      closeSubmenus(isOpen ? group : null);
-    });
   });
 
   navMenu.querySelectorAll("a").forEach((link) => {
@@ -51,7 +20,7 @@ if (navToggle && navMenu) {
 
   document.addEventListener("click", (event) => {
     if (!navMenu.contains(event.target) && !navToggle.contains(event.target)) {
-      closeSubmenus();
+      closeMainMenu();
     }
   });
 
@@ -66,22 +35,25 @@ if (navToggle && navMenu) {
 const currentPage = document.body.dataset.page;
 
 if (currentPage) {
+  const primaryPage = {
+    cartographie: "axes",
+    interventions: "travaux",
+    mediatheque: "ressources",
+    recherche: "ressources",
+    veille: "ressources",
+    carnet: "ressources",
+  }[currentPage] || currentPage;
+
   document.querySelectorAll("[data-page-link]").forEach((link) => {
-    if (link.dataset.pageLink === currentPage) {
+    if (link.dataset.pageLink === primaryPage) {
       link.setAttribute("aria-current", "page");
-    }
-  });
-
-  navGroups.forEach((group) => {
-    const pages = (group.dataset.navPages || "").split(/\s+/);
-
-    if (pages.includes(currentPage)) {
-      group.classList.add("is-current");
     }
   });
 }
 
-const revealTargets = document.querySelectorAll(".section, .card, .media-placeholder, .notice");
+const revealTargets = document.querySelectorAll(
+  ".section, .card, .feature, .proof, .pillar, .path, .contact-path, .media-placeholder, .notice"
+);
 
 if ("IntersectionObserver" in window) {
   const observer = new IntersectionObserver(
@@ -230,11 +202,21 @@ const loadWatchAgendaItems = () =>
   const totalInline = mapRoot.querySelector("[data-map-total-inline]");
   const mapNote = mapRoot.querySelector("[data-map-note]");
   const showMoreButton = mapRoot.querySelector("[data-map-show-all]");
+  const resetButton = mapRoot.querySelector("[data-map-reset]");
   const axisSelect = controls?.elements.axe;
   const typeSelect = controls?.elements.type;
   const searchInput = controls?.elements.q;
-  const cardsIncrement = 12;
+  const cardsIncrement = 6;
+  const featuredSubjectIds = [
+    "onu-obligations-maritimes-etats",
+    "securite-surete-maritime-notions",
+    "peche-inn-droit-international",
+    "diplomatie-privee",
+    "blockchain-intermediation",
+    "recompositions-politiques-ivoiriennes",
+  ];
   let visibleLimit = cardsIncrement;
+  let hasInteracted = false;
 
   const escapeHtml = (value) =>
     String(value ?? "")
@@ -317,8 +299,16 @@ const loadWatchAgendaItems = () =>
       const matchesType = !type || subject.statut === type;
       return matchesQuery && matchesAxis && matchesType;
     });
+    const ordered = hasFilter
+      ? filtered
+      : [
+          ...featuredSubjectIds
+            .map((id) => subjects.find((subject) => subject.id === id))
+            .filter(Boolean),
+          ...filtered.filter((subject) => !featuredSubjectIds.includes(subject.id)),
+        ];
     const currentLimit = Math.max(cardsIncrement, visibleLimit);
-    const visible = filtered.slice(0, currentLimit);
+    const visible = ordered.slice(0, currentLimit);
 
     if (count) {
       count.textContent = String(visible.length);
@@ -326,13 +316,17 @@ const loadWatchAgendaItems = () =>
 
     if (mapNote) {
       mapNote.textContent = hasFilter
-        ? "résultat filtré. Ajustez la recherche, utilisez les filtres ou affichez davantage de sujets."
-        : "Sélection initiale — explorez les sujets à l'aide de la recherche, des filtres ou du bouton d'affichage progressif.";
+        ? `${filtered.length} sujet${filtered.length > 1 ? "s" : ""} correspond${filtered.length > 1 ? "ent" : ""} aux critères actifs.`
+        : "Sélection initiale — utilisez les filtres, la recherche ou Afficher plus pour poursuivre l'exploration.";
     }
 
     if (showMoreButton) {
-      showMoreButton.hidden = filtered.length <= visible.length;
+      showMoreButton.hidden = ordered.length <= visible.length;
       showMoreButton.textContent = "Afficher plus";
+    }
+
+    if (resetButton) {
+      resetButton.hidden = !hasFilter && !hasInteracted;
     }
 
     if (results) {
@@ -340,7 +334,7 @@ const loadWatchAgendaItems = () =>
     }
 
     if (empty) {
-      empty.hidden = visible.length > 0;
+      empty.hidden = !hasFilter || visible.length > 0;
     }
   };
 
@@ -371,14 +365,17 @@ const loadWatchAgendaItems = () =>
       render(subjects);
 
       controls?.addEventListener("input", () => {
+        hasInteracted = true;
         visibleLimit = cardsIncrement;
         render(subjects);
       });
       controls?.addEventListener("reset", () => {
+        hasInteracted = false;
         visibleLimit = cardsIncrement;
         window.setTimeout(() => render(subjects), 0);
       });
       showMoreButton?.addEventListener("click", () => {
+        hasInteracted = true;
         visibleLimit += cardsIncrement;
         render(subjects);
       });
@@ -603,10 +600,10 @@ const loadWatchAgendaItems = () =>
   const pages = [
     { title: "Accueil", type: "Page", category: "Présentation", url: "index.html" },
     { title: "Profil", type: "Page", category: "Trajectoire", url: "profil.html" },
-    { title: "Axes de recherche", type: "Page", category: "Axes", url: "axes-recherche.html" },
-    { title: "Travaux & publications", type: "Page", category: "Travaux", url: "travaux-publications.html" },
-    { title: "Participations & interventions", type: "Page", category: "Événements", url: "interventions.html" },
-    { title: "Bibliothèque & ressources", type: "Page", category: "Ressources", url: "bibliotheque-ressources.html" },
+    { title: "Expertise & axes", type: "Page", category: "Axes", url: "axes-recherche.html" },
+    { title: "Travaux & recherches", type: "Page", category: "Travaux", url: "travaux-publications.html" },
+    { title: "Participations & réseaux", type: "Page", category: "Événements", url: "interventions.html" },
+    { title: "Bibliothèque de travail & ressources", type: "Page", category: "Ressources", url: "bibliotheque-ressources.html" },
     { title: "Médiathèque", type: "Page", category: "Traces documentaires", url: "mediatheque.html" },
     { title: "Cartographie intellectuelle", type: "Page", category: "Exploration", url: "cartographie.html" },
     { title: "À la une · Veille & agenda", type: "Page", category: "Veille", url: "veille-agenda.html" },
@@ -637,13 +634,15 @@ const loadWatchAgendaItems = () =>
     const visible = filtered.slice(0, 36);
 
     if (status) {
-      status.textContent = hasSearch ? `${visible.length} résultat${visible.length > 1 ? "s" : ""}` : "Recherche prête";
+      status.textContent = hasSearch
+        ? `${visible.length} résultat${visible.length > 1 ? "s" : ""}`
+        : "Recherche prête — saisissez un mot-clé pour explorer les pages, travaux, sujets, ressources et médias.";
     }
 
     if (note) {
       note.textContent = hasSearch
         ? "Résultats issus des pages et données publiques du site."
-        : "Entrez un mot-clé ou choisissez un type pour explorer le site.";
+        : "";
     }
 
     if (results) {
@@ -682,7 +681,7 @@ const loadWatchAgendaItems = () =>
         ].join(" "),
         url: "bibliotheque-ressources.html",
       }));
-      const mediaItems = media.map((item) => ({
+      const mediaItems = media.filter((item) => item.statut === "public-valide").map((item) => ({
         title: item.titre || "Média documentaire",
         type: "Média",
         category: item.axe_associe || item.categorie || item.typeMedia || "Médiathèque",
@@ -698,6 +697,14 @@ const loadWatchAgendaItems = () =>
       }));
       const items = [...pages, ...subjectItems, ...referenceItems, ...mediaItems, ...watchItems];
 
+      const params = new URLSearchParams(window.location.search);
+      if (searchInput && params.get("q")) {
+        searchInput.value = params.get("q");
+      }
+      if (typeSelect && params.get("type")) {
+        typeSelect.value = params.get("type");
+      }
+
       render(items);
       controls?.addEventListener("input", () => render(items));
       controls?.addEventListener("change", () => render(items));
@@ -711,89 +718,282 @@ const loadWatchAgendaItems = () =>
 })();
 
 (() => {
-  const filterPanel = document.querySelector("[data-media-filters]");
+  const libraryRoot = document.querySelector("[data-library]");
 
-  if (!filterPanel) {
+  if (!libraryRoot) {
     return;
   }
 
-  const count = document.querySelector("[data-media-filter-count]");
-  const cards = [...document.querySelectorAll(".media-card[id]")];
+  const controls = libraryRoot.querySelector("[data-library-controls]");
+  const results = libraryRoot.querySelector("[data-library-results]");
+  const count = libraryRoot.querySelector("[data-library-count]");
+  const note = libraryRoot.querySelector("[data-library-note]");
+  const empty = libraryRoot.querySelector("[data-library-empty]");
+  const searchInput = controls?.elements.q;
+  const categorySelect = controls?.elements.categorie;
+  const statusSelect = controls?.elements.statut;
+
+  const escapeHtml = (value) =>
+    String(value ?? "")
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+
   const normalize = (value) =>
     String(value ?? "")
       .normalize("NFD")
       .replace(/[\u0300-\u036f]/g, "")
       .toLowerCase();
 
-  const bucketFor = (item) => {
-    const text = normalize(
-      [
-        item.titre,
-        item.lieu,
-        item.categorie,
-        item.typeMedia,
-        item.evenementLie,
-        item.description,
-        item.axe_associe,
-      ].join(" ")
-    );
-    const buckets = new Set(["all"]);
-
-    if (/maritime|mer|ocean|littoral|golfe|mouillage|navire|peche|bleue/.test(text)) {
-      buckets.add("maritime");
+  const statusClass = (status) => {
+    if (status === "confirmé") {
+      return "confirmed";
     }
-    if (/environnement|pollution|proteus|mediterranee|climat|aires marines|waca/.test(text)) {
-      buckets.add("environnement");
+    if (status === "partiel") {
+      return "partial";
     }
-    if (/mediation|ohada|arbitrage|differend/.test(text)) {
-      buckets.add("mediation");
-    }
-    if (/innovation|propriete intellectuelle|pepite|emerging|entreprendre|innov/.test(text)) {
-      buckets.add("innovation");
-    }
-    if (/entrepreneur|pepite|snee|booster|pitch|emerging|entreprendre/.test(text)) {
-      buckets.add("entrepreneuriat");
-    }
-    if (/afrique|europe|mediterranee|abidjan|lome|paris|monaco|marseille|aix|golfe/.test(text)) {
-      buckets.add("circulations");
-    }
-
-    return buckets;
+    return "verify";
   };
 
-  fetch("assets/data/mediatheque-oby.json")
-    .then((response) => response.json())
-    .then((media) => {
-      const byId = new Map(media.map((item) => [item.id, bucketFor(item)]));
+  const renderReference = (item) => {
+    const contributors = [...(item.auteurs || []), ...(item.direction || [])].join(" · ");
+    const metadata = [item.editeur, item.collection, item.annee, item.edition].filter(Boolean).join(" · ");
+    const sourceLink = /^https?:\/\//i.test(item.sourceVerification || "")
+      ? `<p class="card-link"><a href="${escapeHtml(item.sourceVerification)}" target="_blank" rel="noopener">Notice ou source de vérification</a></p>`
+      : "";
 
-      const applyFilter = (filter) => {
-        let visible = 0;
-        cards.forEach((card) => {
-          const buckets = byId.get(card.id) || new Set(["all"]);
-          const show = filter === "all" || buckets.has(filter);
-          card.hidden = !show;
-          if (show) {
-            visible += 1;
-          }
+    return `
+      <article class="library-card">
+        <div class="library-card-top">
+          <span class="library-domain">${escapeHtml(item.sousCategorie || item.categorie || "Ressource")}</span>
+          <span class="library-status ${statusClass(item.statutMetadata)}">${escapeHtml(item.statutMetadata || "à vérifier")}</span>
+        </div>
+        <h3>${escapeHtml(item.titre || "Référence de travail")}</h3>
+        ${contributors ? `<p class="library-authors">${escapeHtml(contributors)}</p>` : ""}
+        ${metadata ? `<p class="library-meta">${escapeHtml(metadata)}</p>` : ""}
+        ${item.isbn ? `<p class="library-isbn">ISBN ${escapeHtml(item.isbn)}</p>` : ""}
+        ${item.note ? `<p class="library-note">${escapeHtml(item.note)}</p>` : ""}
+        ${sourceLink}
+      </article>
+    `;
+  };
+
+  fetch("assets/data/bibliotheque-oby.json")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Library data unavailable");
+      }
+      return response.json();
+    })
+    .then((references) => {
+      [...new Set(references.map((item) => item.categorie).filter(Boolean))]
+        .sort((a, b) => a.localeCompare(b, "fr"))
+        .forEach((category) => {
+          const option = document.createElement("option");
+          option.value = category;
+          option.textContent = category;
+          categorySelect?.appendChild(option);
+        });
+
+      const params = new URLSearchParams(window.location.search);
+      if (searchInput && params.get("q")) {
+        searchInput.value = params.get("q");
+      }
+      if (categorySelect && params.get("categorie")) {
+        categorySelect.value = params.get("categorie");
+      }
+      if (statusSelect && params.has("statut")) {
+        statusSelect.value = params.get("statut");
+      }
+
+      const render = () => {
+        const query = normalize(searchInput?.value || "");
+        const category = categorySelect?.value || "";
+        const status = statusSelect?.value ?? "confirmé";
+        const filtered = references.filter((item) => {
+          const searchable = normalize(
+            [
+              item.titre,
+              ...(item.auteurs || []),
+              ...(item.direction || []),
+              item.editeur,
+              item.collection,
+              item.categorie,
+              item.sousCategorie,
+              item.annee,
+              item.isbn,
+              item.note,
+            ].join(" ")
+          );
+
+          return (
+            (!query || searchable.includes(query)) &&
+            (!category || item.categorie === category) &&
+            (!status || item.statutMetadata === status)
+          );
         });
 
         if (count) {
-          count.textContent = `${visible} entrée${visible > 1 ? "s" : ""} documentaire${visible > 1 ? "s" : ""}`;
+          count.textContent = `${filtered.length} référence${filtered.length > 1 ? "s" : ""} affichée${filtered.length > 1 ? "s" : ""} sur ${references.length}`;
+        }
+        if (note) {
+          note.textContent = status ? `Statut documentaire : ${status}.` : "Tous les statuts documentaires.";
+        }
+        if (results) {
+          results.innerHTML = filtered.map(renderReference).join("");
+        }
+        if (empty) {
+          empty.hidden = filtered.length > 0;
         }
       };
 
-      filterPanel.addEventListener("click", (event) => {
-        const button = event.target.closest("[data-media-filter]");
-        if (!button) {
-          return;
-        }
-
-        filterPanel.querySelectorAll("[data-media-filter]").forEach((item) => {
-          item.classList.toggle("is-active", item === button);
-        });
-        applyFilter(button.dataset.mediaFilter || "all");
-      });
-
-      applyFilter("all");
+      render();
+      controls?.addEventListener("input", render);
+      controls?.addEventListener("change", render);
+      controls?.addEventListener("reset", () => window.setTimeout(render, 0));
+    })
+    .catch(() => {
+      if (count) {
+        count.textContent = "Bibliothèque indisponible";
+      }
+      if (note) {
+        note.textContent = "Le fichier de données ne peut pas être chargé dans ce contexte.";
+      }
     });
 })();
+
+(() => {
+  const mediaRoot = document.querySelector("[data-media-library]");
+
+  if (!mediaRoot) {
+    return;
+  }
+
+  const controls = mediaRoot.querySelector("[data-public-media-controls]");
+  const results = mediaRoot.querySelector("[data-public-media-results]");
+  const count = mediaRoot.querySelector("[data-public-media-count]");
+  const empty = mediaRoot.querySelector("[data-public-media-empty]");
+  const searchInput = controls?.elements.q;
+  const typeSelect = controls?.elements.type;
+
+  const escapeHtml = (value) =>
+    String(value ?? "")
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+
+  const normalize = (value) =>
+    String(value ?? "")
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase();
+
+  const renderMedia = (item) => {
+    const type = item.typeMedia || item.categorie || "Trace documentaire";
+    const metadata = [item.annee, item.lieu].filter(Boolean).join(" · ");
+    const imageClass = /\.(?:jpe?g|png|webp|avif)$/i.test(item.fichier || "") ? " media-card-photo" : "";
+    const contextLink = item.pageLiee
+      ? `<a class="media-link" href="${escapeHtml(item.pageLiee)}">Voir le contexte associé</a>`
+      : "";
+
+    return `
+      <article class="media-card${imageClass}" id="${escapeHtml(item.id || "")}">
+        <img src="${escapeHtml(item.fichier || "assets/img/media/placeholder-document-oby.svg")}" alt="${escapeHtml(item.titre || "Trace documentaire OBY")}" loading="lazy">
+        <div class="media-card-body">
+          <div class="media-card-top">
+            <span class="media-type">${escapeHtml(type)}</span>
+            <span class="media-status published">Public validé</span>
+          </div>
+          <h3>${escapeHtml(item.titre || "Trace documentaire")}</h3>
+          ${metadata ? `<p class="media-meta">${escapeHtml(metadata)}</p>` : ""}
+          <p>${escapeHtml(item.description || item.evenementLie || "Trace documentaire publique associée au parcours OBY.")}</p>
+          ${contextLink}
+        </div>
+      </article>
+    `;
+  };
+
+  fetch("assets/data/mediatheque-oby.json")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Media data unavailable");
+      }
+      return response.json();
+    })
+    .then((items) => {
+      const publicItems = items.filter((item) => item.statut === "public-valide");
+
+      [...new Set(publicItems.map((item) => item.typeMedia || item.categorie).filter(Boolean))]
+        .sort((a, b) => a.localeCompare(b, "fr"))
+        .forEach((type) => {
+          const option = document.createElement("option");
+          option.value = type;
+          option.textContent = type;
+          typeSelect?.appendChild(option);
+        });
+
+      const render = () => {
+        const query = normalize(searchInput?.value || "");
+        const type = typeSelect?.value || "";
+        const filtered = publicItems.filter((item) => {
+          const itemType = item.typeMedia || item.categorie || "";
+          const searchable = normalize(
+            [
+              item.titre,
+              item.annee,
+              item.lieu,
+              item.categorie,
+              item.typeMedia,
+              item.evenementLie,
+              item.description,
+              item.axe_associe,
+            ].join(" ")
+          );
+          return (!query || searchable.includes(query)) && (!type || itemType === type);
+        });
+
+        if (count) {
+          count.textContent = `${filtered.length} trace${filtered.length > 1 ? "s" : ""} publique${filtered.length > 1 ? "s" : ""} sur ${publicItems.length}`;
+        }
+        if (results) {
+          results.innerHTML = filtered.map(renderMedia).join("");
+        }
+        if (empty) {
+          empty.hidden = filtered.length > 0;
+        }
+      };
+
+      render();
+      controls?.addEventListener("input", render);
+      controls?.addEventListener("change", render);
+      controls?.addEventListener("reset", () => window.setTimeout(render, 0));
+    })
+    .catch(() => {
+      if (count) {
+        count.textContent = "Médiathèque indisponible";
+      }
+    });
+})();
+
+const revealHashTarget = () => {
+  if (!window.location.hash) {
+    return;
+  }
+
+  const target = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
+  const disclosure =
+    target?.matches("details")
+      ? target
+      : target?.closest("details") || target?.querySelector("details");
+
+  if (disclosure) {
+    disclosure.open = true;
+  }
+};
+
+revealHashTarget();
+window.addEventListener("hashchange", revealHashTarget);
