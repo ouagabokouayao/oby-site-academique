@@ -133,6 +133,25 @@ select:focus-visible {
   height: auto;
 }
 
+.brand-official {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  min-width: 0;
+}
+
+.brand-official picture {
+  display: block;
+  line-height: 0;
+}
+
+.brand-official img {
+  width: clamp(170px, 17vw, 230px);
+  height: auto;
+  max-height: 62px;
+  object-fit: contain;
+}
+
 .nav-toggle {
   display: none;
   width: 44px;
@@ -2339,7 +2358,9 @@ body[data-page="ressources"] .media-frame img {
 }
 
 .footer-brand img {
-  width: 68px;
+  width: min(220px, 100%);
+  height: auto;
+  object-fit: contain;
   margin-bottom: 18px;
 }
 
@@ -2611,6 +2632,14 @@ body[data-page="ressources"] .media-frame img {
 }
 
 @media (max-width: 640px) {
+  .brand.brand-official img {
+    width: 44px;
+    height: 44px;
+    max-width: 44px;
+    max-height: 44px;
+    border-radius: 50%;
+  }
+
   .page-hero-visual {
     aspect-ratio: 4 / 5;
   }
