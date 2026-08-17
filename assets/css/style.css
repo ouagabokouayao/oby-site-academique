@@ -2112,6 +2112,8 @@ body[data-page="ressources"] .media-frame img {
   padding: 20px 24px;
   cursor: pointer;
   list-style: none;
+  /* le panneau est clair : ne pas hériter du blanc des sections sombres */
+  color: var(--navy);
 }
 
 .disclosure summary::-webkit-details-marker,
@@ -2158,6 +2160,8 @@ body[data-page="ressources"] .media-frame img {
 .disclosure-body {
   border-top: 1px solid var(--line);
   padding: clamp(24px, 4vw, 42px);
+  /* idem : le corps reste lisible même dans une section sombre */
+  color: var(--ink);
 }
 
 .secondary-collection {
