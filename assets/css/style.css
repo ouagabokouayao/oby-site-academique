@@ -560,7 +560,12 @@ select:focus-visible {
   background: transparent;
 }
 
-.hero .button.secondary {
+/* .page-hero partage le fond bleu nuit de .hero : même traitement du bouton
+   secondaire, qui serait sinon en bleu nuit sur bleu nuit (cas de 404.html).
+   Volontairement non étendu à .section.navy : les boutons y reposent sur des
+   panneaux clairs et doivent rester sombres. */
+.hero .button.secondary,
+.page-hero .button.secondary {
   color: var(--ivory);
 }
 
@@ -1989,6 +1994,7 @@ body[data-page="ressources"] .media-frame img {
 
 .editorial-list > a,
 .editorial-list > article,
+.editorial-list > li,
 .timeline-list > article,
 .topic-list > article {
   display: grid;
@@ -2020,6 +2026,12 @@ body[data-page="ressources"] .media-frame img {
   text-transform: uppercase;
 }
 
+/* sur fond sombre, le repère reprend l'or OBY, comme .eyebrow */
+.navy .editorial-list span,
+.navy .topic-list > article > span {
+  color: var(--gold);
+}
+
 .editorial-list strong,
 .topic-list h3 {
   color: var(--navy);
@@ -2027,6 +2039,21 @@ body[data-page="ressources"] .media-frame img {
   font-size: clamp(1.35rem, 2.2vw, 1.9rem);
   line-height: 1.15;
   overflow-wrap: anywhere;
+}
+
+/* variante à <li> : le titre est un <h3>, pas un <strong>.
+   Même typographie, mais aucune couleur imposée : elle s'hérite du contexte,
+   ce qui garde le titre lisible sur fond clair comme sur fond sombre. */
+.editorial-list h3 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(1.35rem, 2.2vw, 1.9rem);
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+
+.editorial-list li p {
+  margin: 10px 0 0;
 }
 
 .topic-list h3,
@@ -3063,6 +3090,7 @@ body[data-page="ressources"] .media-frame img {
 
   .editorial-list > a,
   .editorial-list > article,
+  .editorial-list > li,
   .timeline-list > article,
   .topic-list > article,
   .request-list li {
