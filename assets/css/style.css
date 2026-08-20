@@ -55,6 +55,9 @@ textarea {
 
 img {
   max-width: 100%;
+  /* indispensable dès lors que les images portent leurs dimensions intrinsèques :
+     la largeur reste fluide, la hauteur suit le ratio au lieu de l'attribut */
+  height: auto;
   display: block;
 }
 
@@ -771,6 +774,14 @@ select:focus-visible {
   max-width: 100%;
 }
 
+/* La carte est un panneau clair : son dégradé se termine à 38 % d'opacité, ce qui
+   laisse remonter le bleu nuit et rend le texte gris illisible en bas de carte.
+   Sur fond sombre, mêmes teintes mais opaques — le panneau reste identique. */
+.navy .card {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(246, 243, 234, 1));
+}
+
 .card::before {
   content: "";
   position: absolute;
@@ -1101,11 +1112,45 @@ body[data-page="ressources"] .media-frame img {
   overflow-wrap: break-word;
 }
 
+/* Lien d'évitement : hors écran mais dans l'arbre d'accessibilité,
+   révélé dès qu'il reçoit le focus clavier. */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  z-index: 200;
+  padding: 12px 20px;
+  border-radius: 0 0 6px 6px;
+  background: var(--navy);
+  color: var(--white);
+  font-family: var(--ui);
+  font-size: 0.95rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: top var(--transition);
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  top: 0;
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+main:focus {
+  outline: none;
+}
+
 .meta {
   color: var(--muted);
   font-size: 0.93rem;
   font-weight: 700;
   overflow-wrap: break-word;
+}
+
+/* sur fond sombre, le gris de --muted devient illisible : teinte claire du système */
+.navy .meta {
+  color: var(--ivory);
 }
 
 .resource-list {
@@ -2173,6 +2218,13 @@ body[data-page="ressources"] .media-frame img {
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+/* Summary sans sur-titre : le <strong> occupe les deux colonnes de texte
+   au lieu d'être tassé dans la première, large de 130 px. */
+.disclosure summary > strong:first-child,
+.collection-disclosure summary > strong:first-child {
+  grid-column: 1 / 3;
 }
 
 .disclosure summary strong,
