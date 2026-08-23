@@ -984,13 +984,29 @@ const loadWatchAgendaItems = () =>
     const type = item.typeMedia || item.categorie || "Trace documentaire";
     const metadata = [item.annee, item.lieu].filter(Boolean).join(" · ");
     const imageClass = /\.(?:jpe?g|png|webp|avif)$/i.test(item.fichier || "") ? " media-card-photo" : "";
+    const galleryItems = Array.isArray(item.galerie)
+      ? item.galerie.filter((entry) => entry && entry.fichier)
+      : [];
+    const gallery = galleryItems.length
+      ? `<div class="media-card-gallery" aria-label="Photographies complémentaires">
+          ${galleryItems
+            .map(
+              (entry) => `
+                <figure>
+                  <img src="${escapeHtml(entry.fichier)}" alt="${escapeHtml(entry.alt || "")}" loading="lazy">
+                  ${entry.legende ? `<figcaption>${escapeHtml(entry.legende)}</figcaption>` : ""}
+                </figure>`
+            )
+            .join("")}
+        </div>`
+      : "";
     const contextLink = item.pageLiee
       ? `<a class="media-link" href="${escapeHtml(item.pageLiee)}">Voir le contexte associé</a>`
       : "";
 
     return `
       <article class="media-card${imageClass}" id="${escapeHtml(item.id || "")}">
-        <img src="${escapeHtml(item.fichier || "assets/img/media/placeholder-document-oby.svg")}" alt="${escapeHtml(item.titre || "Trace documentaire OBY")}" loading="lazy">
+        <img src="${escapeHtml(item.fichier || "assets/img/media/placeholder-document-oby.svg")}" alt="${escapeHtml(item.alt || item.titre || "Trace documentaire OBY")}" loading="lazy">
         <div class="media-card-body">
           <div class="media-card-top">
             <span class="media-type">${escapeHtml(type)}</span>
@@ -999,13 +1015,14 @@ const loadWatchAgendaItems = () =>
           <h3>${escapeHtml(item.titre || "Trace documentaire")}</h3>
           ${metadata ? `<p class="media-meta">${escapeHtml(metadata)}</p>` : ""}
           <p>${escapeHtml(item.description || item.evenementLie || "Trace documentaire publique associée au parcours OBY.")}</p>
+          ${gallery}
           ${contextLink}
         </div>
       </article>
     `;
   };
 
-  fetch("assets/data/mediatheque-oby.json")
+  fetch("assets/data/mediatheque-oby.json?v=oby-v3-5")
     .then((response) => {
       if (!response.ok) {
         throw new Error("Media data unavailable");

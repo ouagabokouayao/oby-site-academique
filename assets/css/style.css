@@ -1464,6 +1464,49 @@ main:focus {
   margin-top: auto;
 }
 
+.event-media-gallery,
+.media-card-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  min-width: 0;
+  margin-top: 18px;
+}
+
+.event-media-gallery figure,
+.media-card-gallery figure {
+  min-width: 0;
+  margin: 0;
+}
+
+.event-media-gallery .event-media-primary {
+  grid-column: 1 / -1;
+}
+
+.event-media-gallery img,
+.media-card-gallery img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border: 1px solid rgba(8, 26, 47, 0.1);
+  border-radius: 4px;
+  background: var(--ivory);
+  object-fit: contain;
+}
+
+.event-media-gallery figcaption,
+.media-card-gallery figcaption {
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 0.76rem;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.media-card-gallery {
+  margin: 6px 0 18px;
+}
+
 .map-summary {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

@@ -22,10 +22,23 @@
     "typeMedia": "visuel-documentaire",
     "evenementLie": "Sommet de Lomé sur la sécurité et sûreté maritimes en Afrique",
     "pageLiee": "interventions.html#sommet-lome-securite-maritime-2016",
-    "fichier": "assets/img/media/placeholder-evenement-oby.svg",
-    "statut": "media-non-publie",
-    "description": "Trace documentaire conservée en interne.",
-    "notePrudence": "Aucun média privé n'est publié sans validation préalable."
+    "fichier": "assets/img/media/events/sommet-lome-2016/oby_sommet_lome_2016_01.webp",
+    "alt": "Portrait contextualisé devant la signalétique du Sommet de Lomé consacré à la sécurité et à la sûreté maritimes en Afrique, 2016.",
+    "galerie": [
+      {
+        "fichier": "assets/img/media/events/sommet-lome-2016/oby_sommet_lome_2016_02.webp",
+        "alt": "Vue du site du Sommet de Lomé consacré à la sécurité et à la sûreté maritimes en Afrique, 2016.",
+        "legende": "Site du Sommet de Lomé, 2016."
+      },
+      {
+        "fichier": "assets/img/media/events/sommet-lome-2016/oby_sommet_lome_2016_03.webp",
+        "alt": "Salle d'un événement parallèle du Sommet de Lomé sur la sécurité et la sûreté maritimes en Afrique, 2016.",
+        "legende": "Espace d'un événement parallèle du Sommet de Lomé, 2016."
+      }
+    ],
+    "statut": "public-valide",
+    "description": "Sélection photographique documentant le site et un espace parallèle du Sommet de Lomé en 2016.",
+    "notePrudence": "Les images documentent le contexte de l'événement sans attribuer de fonction institutionnelle."
   },
   {
     "id": "accord-cap-abidjan-2016",
@@ -76,12 +89,25 @@
     "lieu": "Katowice",
     "categorie": "evenement-academique",
     "typeMedia": "visuel-documentaire",
-    "evenementLie": "COP24 / COY24",
+    "evenementLie": "COP24 / COY14",
     "pageLiee": "interventions.html#cop24-coy24-katowice-2018",
-    "fichier": "assets/img/media/placeholder-evenement-oby.svg",
-    "statut": "media-non-publie",
-    "description": "Trace documentaire conservée en interne.",
-    "notePrudence": "Aucun média privé n'est publié sans validation préalable."
+    "fichier": "assets/img/media/events/cop24-katowice-2018/oby_cop24_katowice_2018_01.webp",
+    "alt": "Groupe de participants dans un espace consacré à l'action climatique à Katowice en 2018.",
+    "galerie": [
+      {
+        "fichier": "assets/img/media/events/cop24-katowice-2018/oby_cop24_katowice_2018_02.webp",
+        "alt": "Signalétique lumineuse de Katowice en marge de la COP24 en 2018.",
+        "legende": "Katowice dans le contexte de la COP24, 2018."
+      },
+      {
+        "fichier": "assets/img/media/events/cop24-katowice-2018/oby_cop24_katowice_2018_03.webp",
+        "alt": "Espace d'accueil de la COY14 à Katowice en 2018.",
+        "legende": "Espace d'accueil de la COY14 à Katowice, 2018."
+      }
+    ],
+    "statut": "public-valide",
+    "description": "Sélection photographique associée à la COP24 et à la COY14 à Katowice en 2018.",
+    "notePrudence": "Les images documentent le contexte climatique international sans attribuer de rôle institutionnel."
   },
   {
     "id": "forum-mouillage-mediterranee-2024",
