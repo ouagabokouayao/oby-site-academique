@@ -1,0 +1,36 @@
+name: QA site
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 6 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  site:
+    name: HTML, noindex, links, assets and JSON
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run the site QA gate
+        run: python3 scripts/qa_site.py --root . --json-report /tmp/oby-qa-site.json
+
+  external-links:
+    name: External links (informational)
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    continue-on-error: true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Classify external links
+        run: python3 scripts/check_external_links.py --root . --json-report /tmp/oby-external-links.json
