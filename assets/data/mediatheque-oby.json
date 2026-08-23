@@ -34,6 +34,11 @@
         "fichier": "assets/img/media/events/sommet-lome-2016/oby_sommet_lome_2016_03.webp",
         "alt": "Salle d'un événement parallèle du Sommet de Lomé sur la sécurité et la sûreté maritimes en Afrique, 2016.",
         "legende": "Espace d'un événement parallèle du Sommet de Lomé, 2016."
+      },
+      {
+        "fichier": "assets/img/media/events/sommet-lome-2016/oby_sommet_lome_2016_04.webp",
+        "alt": "Portrait contextualisé sur l'esplanade du site du Sommet de Lomé consacré à la sécurité et à la sûreté maritimes en Afrique, 2016.",
+        "legende": "Esplanade du site du Sommet de Lomé, 2016."
       }
     ],
     "statut": "public-valide",
@@ -103,6 +108,11 @@
         "fichier": "assets/img/media/events/cop24-katowice-2018/oby_cop24_katowice_2018_03.webp",
         "alt": "Espace d'accueil de la COY14 à Katowice en 2018.",
         "legende": "Espace d'accueil de la COY14 à Katowice, 2018."
+      },
+      {
+        "fichier": "assets/img/media/events/cop24-katowice-2018/oby_cop24_katowice_2018_04.webp",
+        "alt": "Temps collectif de participants réunis autour des objectifs de développement durable lors de la COY14 à Katowice en 2018.",
+        "legende": "Temps collectif de la COY14 à Katowice, 2018."
       }
     ],
     "statut": "public-valide",
@@ -202,10 +212,23 @@
     "typeMedia": "visuel-documentaire",
     "evenementLie": "Colloque des Académies de marine européennes",
     "pageLiee": "interventions.html#academies-marine-europeennes-ensm-2025",
-    "fichier": "assets/img/media/placeholder-evenement-oby.svg",
-    "statut": "media-non-publie",
-    "description": "Trace documentaire conservée en interne.",
-    "notePrudence": "Aucun média privé n'est publié sans validation préalable."
+    "fichier": "assets/img/media/events/academies-marine-ensm-2025/oby_academies_marine_ensm_2025_01.webp",
+    "alt": "Portrait contextualisé devant la signalétique du Colloque des Académies de marine européennes à Marseille, 2025.",
+    "galerie": [
+      {
+        "fichier": "assets/img/media/events/academies-marine-ensm-2025/oby_academies_marine_ensm_2025_02.webp",
+        "alt": "Écran d'ouverture du Colloque des Académies de marine européennes portant les emblèmes des académies participantes, 2025.",
+        "legende": "Ouverture du Colloque des Académies de marine européennes, 2025."
+      },
+      {
+        "fichier": "assets/img/media/events/academies-marine-ensm-2025/oby_academies_marine_ensm_2025_03.webp",
+        "alt": "Projection consacrée aux obligations climatiques des États au regard du droit de la mer, lors du Colloque des Académies de marine européennes, 2025.",
+        "legende": "Séquence consacrée aux obligations climatiques des États, 2025."
+      }
+    ],
+    "statut": "public-valide",
+    "description": "Sélection photographique documentant la signalétique et deux séquences de travail du Colloque des Académies de marine européennes à Marseille en 2025.",
+    "notePrudence": "Les images documentent le contexte du colloque sans attribuer de fonction institutionnelle ni de rôle d'intervenant."
   },
   {
     "id": "ersuma-ohada-propriete-intellectuelle-2022",
