@@ -663,49 +663,7 @@
   },
   {
     "id": "ecole-ete-institut-ocean-2026",
-    "titre": "École d’été Océan 2026 — présentation scientifique",
-    "annee": "2026",
-    "lieu": "Institut des Sciences de l’Océan / Aix-Marseille Université",
-    "categorie": "evenement-academique",
-    "typeMedia": "photographie-evenement",
-    "evenementLie": "École d’été Océan 2026 — pollutions plastiques dans l’environnement marin",
-    "pageLiee": "interventions.html#ecole-ete-institut-ocean-2026",
-    "fichier": "assets/img/media/ecole-ete-2026/oby_v5b_ecole_ete_ocean_amu_2026_presentation_richard_sempere.webp",
-    "statut": "public-valide",
-    "description": "Présentation scientifique dans le cadre de l’École d’été Océan 2026.",
-    "notePrudence": "Image intégrée comme trace visuelle d’un événement officiellement documenté."
-  },
-  {
-    "id": "ecole-ete-ocean-2026-cours-sylvain-rigaud",
-    "titre": "École d’été Océan 2026 — séquence de cours",
-    "annee": "2026",
-    "lieu": "Institut des Sciences de l’Océan / Aix-Marseille Université",
-    "categorie": "evenement-academique",
-    "typeMedia": "photographie-evenement",
-    "evenementLie": "École d’été Océan 2026 — pollutions plastiques dans l’environnement marin",
-    "pageLiee": "interventions.html#ecole-ete-institut-ocean-2026",
-    "fichier": "assets/img/media/ecole-ete-2026/oby_v5b_ecole_ete_ocean_amu_2026_presentation_sylvain_rigaud.webp",
-    "statut": "public-valide",
-    "description": "Séquence de cours dans le cadre de l’École d’été Océan 2026.",
-    "notePrudence": "Image intégrée comme trace visuelle d’un événement officiellement documenté."
-  },
-  {
-    "id": "ecole-ete-ocean-2026-atelier-debat",
-    "titre": "École d’été Océan 2026 — atelier-débat",
-    "annee": "2026",
-    "lieu": "Institut des Sciences de l’Océan / Aix-Marseille Université",
-    "categorie": "evenement-academique",
-    "typeMedia": "photographie-evenement",
-    "evenementLie": "École d’été Océan 2026 — pollutions plastiques dans l’environnement marin",
-    "pageLiee": "interventions.html#ecole-ete-institut-ocean-2026",
-    "fichier": "assets/img/media/ecole-ete-2026/oby_v5b_ecole_ete_ocean_amu_2026_atelier_debat_alessandra_quadrelli.webp",
-    "statut": "public-valide",
-    "description": "Atelier-débat dans le cadre de l’École d’été Océan 2026.",
-    "notePrudence": "Image intégrée comme trace visuelle d’un événement officiellement documenté."
-  },
-  {
-    "id": "ecole-ete-ocean-2026-photo-groupe",
-    "titre": "École d’été Océan 2026 — photo de groupe",
+    "titre": "École d’été Océan 2026 — pollutions plastiques dans l’environnement marin",
     "annee": "2026",
     "lieu": "Institut des Sciences de l’Océan / Aix-Marseille Université",
     "categorie": "evenement-academique",
@@ -713,8 +671,26 @@
     "evenementLie": "École d’été Océan 2026 — pollutions plastiques dans l’environnement marin",
     "pageLiee": "interventions.html#ecole-ete-institut-ocean-2026",
     "fichier": "assets/img/media/ecole-ete-2026/oby_v5b_ecole_ete_ocean_amu_2026_photo_groupe.webp",
+    "alt": "Photo de groupe des participants à l’École d’été Océan 2026 consacrée aux pollutions plastiques dans l’environnement marin, Institut des Sciences de l’Océan / Aix-Marseille Université.",
+    "galerie": [
+      {
+        "fichier": "assets/img/media/ecole-ete-2026/oby_v5b_ecole_ete_ocean_amu_2026_presentation_richard_sempere.webp",
+        "alt": "Présentation scientifique lors de l’École d’été Océan 2026 consacrée aux pollutions plastiques dans l’environnement marin.",
+        "legende": "Présentation scientifique, École d’été Océan 2026."
+      },
+      {
+        "fichier": "assets/img/media/ecole-ete-2026/oby_v5b_ecole_ete_ocean_amu_2026_presentation_sylvain_rigaud.webp",
+        "alt": "Séquence de cours lors de l’École d’été Océan 2026 consacrée aux pollutions plastiques dans l’environnement marin.",
+        "legende": "Séquence de cours, École d’été Océan 2026."
+      },
+      {
+        "fichier": "assets/img/media/ecole-ete-2026/oby_v5b_ecole_ete_ocean_amu_2026_atelier_debat_alessandra_quadrelli.webp",
+        "alt": "Atelier-débat lors de l’École d’été Océan 2026 consacrée aux pollutions plastiques dans l’environnement marin.",
+        "legende": "Atelier-débat, École d’été Océan 2026."
+      }
+    ],
     "statut": "public-valide",
-    "description": "Photo de groupe publiée sur la page officielle de l’École d’été Océan 2026.",
-    "notePrudence": "Image intégrée comme trace visuelle d’un événement officiellement documenté."
+    "description": "Sélection photographique documentant l’École d’été Océan 2026 : photo de groupe, présentation scientifique, séquence de cours et atelier-débat.",
+    "notePrudence": "Images intégrées comme traces visuelles d’un événement officiellement documenté, sans attribuer de fonction institutionnelle."
   }
 ]
