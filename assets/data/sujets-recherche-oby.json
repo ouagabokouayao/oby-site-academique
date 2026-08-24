@@ -10,46 +10,6 @@
     "prudence": ""
   },
   {
-    "id": "securite-surete-maritime-notions",
-    "titre": "Sécurité et sûreté maritime : étude de notions à théoriser",
-    "titreOriginal": "La sécurité et la sûreté maritime : étude de notions à théoriser",
-    "axe": "Droit de la mer, sécurité maritime & Golfe de Guinée",
-    "dossier": "Sécurisation maritime & Golfe de Guinée",
-    "statut": "Projet d'article",
-    "publication": "Texte complet non publié",
-    "prudence": ""
-  },
-  {
-    "id": "securisation-maritime-notion-unificatrice",
-    "titre": "La sécurisation maritime comme notion unificatrice",
-    "titreOriginal": "La sécurisation maritime comme notion unificatrice",
-    "axe": "Droit de la mer, sécurité maritime & Golfe de Guinée",
-    "dossier": "Sécurisation maritime & Golfe de Guinée",
-    "statut": "Projet d'article",
-    "publication": "Résumé disponible prochainement",
-    "prudence": ""
-  },
-  {
-    "id": "nationalisme-maritime-etat-cotier-africain",
-    "titre": "Le nationalisme maritime de l'État côtier africain",
-    "titreOriginal": "Le nationalisme maritime de l'État côtier africain",
-    "axe": "Droit de la mer, sécurité maritime & Golfe de Guinée",
-    "dossier": "Sécurisation maritime & Golfe de Guinée",
-    "statut": "Sujet de recherche",
-    "publication": "Texte complet non publié",
-    "prudence": ""
-  },
-  {
-    "id": "politique-maritime-ivoirienne",
-    "titre": "La politique maritime ivoirienne : entre constance et évolution",
-    "titreOriginal": "La politique maritime ivoirienne : entre constance et évolution",
-    "axe": "Droit de la mer, sécurité maritime & Golfe de Guinée",
-    "dossier": "Sécurisation maritime & Golfe de Guinée",
-    "statut": "Sujet de recherche",
-    "publication": "Texte complet non publié",
-    "prudence": ""
-  },
-  {
     "id": "controle-organisations-internationales-obligations-etats",
     "titre": "Le contrôle par les organisations internationales de l'exécution des obligations des États",
     "titreOriginal": "Le contrôle par les organisations internationales de l'exécution des obligations des États",
@@ -65,7 +25,7 @@
     "titreOriginal": "L'impossible consécration des principes de délimitation équitable",
     "axe": "Droit de la mer, sécurité maritime & Golfe de Guinée",
     "dossier": "Sécurisation maritime & Golfe de Guinée",
-    "statut": "Projet d'article",
+    "statut": "Sujet de recherche",
     "publication": "Texte complet non publié",
     "prudence": ""
   },
@@ -76,7 +36,7 @@
     "axe": "Droit de la mer, sécurité maritime & Golfe de Guinée",
     "dossier": "Sécurisation maritime & Golfe de Guinée",
     "statut": "Sujet de recherche",
-    "publication": "Résumé disponible prochainement",
+    "publication": "Texte complet non publié",
     "prudence": ""
   },
   {
@@ -86,7 +46,7 @@
     "axe": "Droit de la mer, sécurité maritime & Golfe de Guinée",
     "dossier": "Sécurisation maritime & Golfe de Guinée",
     "statut": "Sujet de recherche",
-    "publication": "Résumé disponible prochainement",
+    "publication": "Texte complet non publié",
     "prudence": ""
   },
   {
@@ -100,23 +60,13 @@
     "prudence": ""
   },
   {
-    "id": "afrique-ouest-trafics-illicites-routes-maritimes",
-    "titre": "Afrique de l'Ouest, trafics illicites et routes maritimes",
-    "titreOriginal": "L'Afrique de l'Ouest comme base arrière du trafic de cocaïne",
-    "axe": "Droit de la mer, sécurité maritime & Golfe de Guinée",
-    "dossier": "Sécurisation maritime & Golfe de Guinée",
-    "statut": "Note en préparation",
-    "publication": "Texte complet non publié",
-    "prudence": "Titre reformulé pour un traitement académique et prudent."
-  },
-  {
     "id": "securite-maritime-souverainete-africaine",
     "titre": "Sécurité maritime et souveraineté africaine",
     "titreOriginal": "Sécurité maritime et souveraineté africaine",
     "axe": "Droit de la mer, sécurité maritime & Golfe de Guinée",
     "dossier": "Sécurisation maritime & Golfe de Guinée",
     "statut": "Sujet de recherche",
-    "publication": "Résumé disponible prochainement",
+    "publication": "Texte complet non publié",
     "prudence": ""
   },
   {
@@ -136,16 +86,6 @@
     "axe": "Littoral, pêche, ressources marines & économie bleue",
     "dossier": "Pêche INN, ressources marines & économie bleue",
     "statut": "Sujet de recherche",
-    "publication": "Résumé disponible prochainement",
-    "prudence": ""
-  },
-  {
-    "id": "peche-illegale-criminalite-organisee",
-    "titre": "Pêche illégale et criminalité organisée",
-    "titreOriginal": "Pêche illégale et criminalité organisée",
-    "axe": "Littoral, pêche, ressources marines & économie bleue",
-    "dossier": "Pêche INN, ressources marines & économie bleue",
-    "statut": "Projet d'article",
     "publication": "Texte complet non publié",
     "prudence": ""
   },
@@ -156,7 +96,7 @@
     "axe": "Littoral, pêche, ressources marines & économie bleue",
     "dossier": "Pêche INN, ressources marines & économie bleue",
     "statut": "Sujet de recherche",
-    "publication": "Résumé disponible prochainement",
+    "publication": "Texte complet non publié",
     "prudence": ""
   },
   {
@@ -165,7 +105,7 @@
     "titreOriginal": "La fiscalité bleue en Côte d’Ivoire",
     "axe": "Littoral, pêche, ressources marines & économie bleue",
     "dossier": "Pêche INN, ressources marines & économie bleue",
-    "statut": "Note en préparation",
+    "statut": "Sujet de recherche",
     "publication": "Texte complet non publié",
     "prudence": ""
   },
@@ -176,7 +116,7 @@
     "axe": "Littoral, pêche, ressources marines & économie bleue",
     "dossier": "Pêche INN, ressources marines & économie bleue",
     "statut": "Sujet de recherche",
-    "publication": "Résumé disponible prochainement",
+    "publication": "Texte complet non publié",
     "prudence": ""
   },
   {
@@ -186,7 +126,7 @@
     "axe": "Littoral, pêche, ressources marines & économie bleue",
     "dossier": "Pêche INN, ressources marines & économie bleue",
     "statut": "Sujet de recherche",
-    "publication": "Résumé disponible prochainement",
+    "publication": "Texte complet non publié",
     "prudence": ""
   },
   {
@@ -206,16 +146,6 @@
     "axe": "Médiation, MARD & gouvernance des conflits",
     "dossier": "Médiation, sinistres maritimes & diplomatie privée",
     "statut": "Projet d'article",
-    "publication": "Résumé disponible prochainement",
-    "prudence": ""
-  },
-  {
-    "id": "gestion-contentieuse-sinistres",
-    "titre": "Gestion contentieuse des sinistres",
-    "titreOriginal": "Gestion contentieuse des sinistres",
-    "axe": "Médiation, MARD & gouvernance des conflits",
-    "dossier": "Médiation, sinistres maritimes & diplomatie privée",
-    "statut": "Projet d'article",
     "publication": "Texte complet non publié",
     "prudence": ""
   },
@@ -226,36 +156,6 @@
     "axe": "Médiation, MARD & gouvernance des conflits",
     "dossier": "Médiation, sinistres maritimes & diplomatie privée",
     "statut": "Sujet de recherche",
-    "publication": "Résumé disponible prochainement",
-    "prudence": ""
-  },
-  {
-    "id": "mediation-blockchain",
-    "titre": "Médiation et blockchain",
-    "titreOriginal": "La médiation et la blockchain",
-    "axe": "Médiation, MARD & gouvernance des conflits",
-    "dossier": "Blockchain, confiance & intermédiation",
-    "statut": "Projet d'article",
-    "publication": "Texte complet non publié",
-    "prudence": ""
-  },
-  {
-    "id": "arbitrage-repression-cybercriminalite",
-    "titre": "L'arbitrage dans la répression de la cybercriminalité",
-    "titreOriginal": "L'arbitrage dans la répression de la cybercriminalité",
-    "axe": "Médiation, MARD & gouvernance des conflits",
-    "dossier": "Médiation, sinistres maritimes & diplomatie privée",
-    "statut": "Sujet de recherche",
-    "publication": "Texte complet non publié",
-    "prudence": ""
-  },
-  {
-    "id": "arbitrage-numerique-souverainete",
-    "titre": "Arbitrage numérique et souveraineté",
-    "titreOriginal": "Arbitrage numérique et souveraineté",
-    "axe": "Médiation, MARD & gouvernance des conflits",
-    "dossier": "Blockchain, confiance & intermédiation",
-    "statut": "Note en préparation",
     "publication": "Texte complet non publié",
     "prudence": ""
   },
@@ -266,7 +166,7 @@
     "axe": "Médiation, MARD & gouvernance des conflits",
     "dossier": "Innovation, propriété intellectuelle & responsabilité",
     "statut": "Sujet de recherche",
-    "publication": "Résumé disponible prochainement",
+    "publication": "Texte complet non publié",
     "prudence": ""
   },
   {
@@ -276,58 +176,8 @@
     "axe": "Innovation, propriété intellectuelle & technologies émergentes",
     "dossier": "Blockchain, confiance & intermédiation",
     "statut": "Sujet de recherche",
-    "publication": "Résumé disponible prochainement",
-    "prudence": ""
-  },
-  {
-    "id": "management-blockchain",
-    "titre": "Le management de la blockchain",
-    "titreOriginal": "Le management de la blockchain",
-    "axe": "Innovation, propriété intellectuelle & technologies émergentes",
-    "dossier": "Blockchain, confiance & intermédiation",
-    "statut": "Note en préparation",
     "publication": "Texte complet non publié",
     "prudence": ""
-  },
-  {
-    "id": "mineur-homme-metier",
-    "titre": "Le mineur et l'homme de métier",
-    "titreOriginal": "Le mineur et l'homme de métier",
-    "axe": "Innovation, propriété intellectuelle & technologies émergentes",
-    "dossier": "Blockchain, confiance & intermédiation",
-    "statut": "Note en préparation",
-    "publication": "Texte complet non publié",
-    "prudence": ""
-  },
-  {
-    "id": "blockchain-tiers-confiance",
-    "titre": "La blockchain comme nouveau tiers de confiance",
-    "titreOriginal": "La blockchain comme nouveau tiers de confiance",
-    "axe": "Innovation, propriété intellectuelle & technologies émergentes",
-    "dossier": "Blockchain, confiance & intermédiation",
-    "statut": "Projet d'article",
-    "publication": "Résumé disponible prochainement",
-    "prudence": ""
-  },
-  {
-    "id": "minage-cout-valeur-soutenabilite",
-    "titre": "Coût, valeur et soutenabilité du minage numérique",
-    "titreOriginal": "Le minage est-il un luxe ?",
-    "axe": "Innovation, propriété intellectuelle & technologies émergentes",
-    "dossier": "Blockchain, confiance & intermédiation",
-    "statut": "Note en préparation",
-    "publication": "Texte complet non publié",
-    "prudence": "Titre reformulé pour un traitement académique."
-  },
-  {
-    "id": "nakamoto-mythes-confiance-numerique",
-    "titre": "Figures fondatrices, mythes techniques et confiance numérique",
-    "titreOriginal": "Nakamoto serait-il un messie ?",
-    "axe": "Innovation, propriété intellectuelle & technologies émergentes",
-    "dossier": "Blockchain, confiance & intermédiation",
-    "statut": "Note en préparation",
-    "publication": "Texte complet non publié",
-    "prudence": "Titre reformulé pour éviter une tonalité sensationnaliste."
   },
   {
     "id": "anonymat-protection-danger",
@@ -336,7 +186,7 @@
     "axe": "Innovation, propriété intellectuelle & technologies émergentes",
     "dossier": "Blockchain, confiance & intermédiation",
     "statut": "Sujet de recherche",
-    "publication": "Résumé disponible prochainement",
+    "publication": "Texte complet non publié",
     "prudence": ""
   },
   {
@@ -346,57 +196,7 @@
     "axe": "Innovation, propriété intellectuelle & technologies émergentes",
     "dossier": "Innovation, propriété intellectuelle & responsabilité",
     "statut": "Projet d'article",
-    "publication": "Résumé disponible prochainement",
-    "prudence": ""
-  },
-  {
-    "id": "secrets-commerciaux-innovation",
-    "titre": "Secrets commerciaux et innovation",
-    "titreOriginal": "Secrets commerciaux et innovation",
-    "axe": "Innovation, propriété intellectuelle & technologies émergentes",
-    "dossier": "Innovation, propriété intellectuelle & responsabilité",
-    "statut": "Sujet de recherche",
     "publication": "Texte complet non publié",
-    "prudence": ""
-  },
-  {
-    "id": "juridiction-unifiee-brevets",
-    "titre": "Juridiction unifiée des brevets",
-    "titreOriginal": "Juridiction unifiée des brevets",
-    "axe": "Innovation, propriété intellectuelle & technologies émergentes",
-    "dossier": "Innovation, propriété intellectuelle & responsabilité",
-    "statut": "Sujet de recherche",
-    "publication": "Texte complet non publié",
-    "prudence": ""
-  },
-  {
-    "id": "reglement-conflits-propriete-intellectuelle",
-    "titre": "Modes de règlement des conflits de propriété intellectuelle",
-    "titreOriginal": "Modes de règlement des conflits de propriété intellectuelle",
-    "axe": "Innovation, propriété intellectuelle & technologies émergentes",
-    "dossier": "Innovation, propriété intellectuelle & responsabilité",
-    "statut": "Projet d'article",
-    "publication": "Résumé disponible prochainement",
-    "prudence": ""
-  },
-  {
-    "id": "administration-contentieux-contrefacon-criminelle",
-    "titre": "L'administration et le contentieux de la contrefaçon criminelle",
-    "titreOriginal": "L'administration et le contentieux de la contrefaçon criminelle",
-    "axe": "Innovation, propriété intellectuelle & technologies émergentes",
-    "dossier": "Innovation, propriété intellectuelle & responsabilité",
-    "statut": "Sujet de recherche",
-    "publication": "Texte complet non publié",
-    "prudence": ""
-  },
-  {
-    "id": "blockchain-propriete-intellectuelle",
-    "titre": "Blockchain et propriété intellectuelle",
-    "titreOriginal": "Blockchain et propriété intellectuelle",
-    "axe": "Innovation, propriété intellectuelle & technologies émergentes",
-    "dossier": "Blockchain, confiance & intermédiation",
-    "statut": "Projet d'article",
-    "publication": "Résumé disponible prochainement",
     "prudence": ""
   },
   {
@@ -410,43 +210,13 @@
     "prudence": ""
   },
   {
-    "id": "homme-metier",
-    "titre": "Homme de métier",
-    "titreOriginal": "Homme de métier",
-    "axe": "Innovation, propriété intellectuelle & technologies émergentes",
-    "dossier": "Innovation, propriété intellectuelle & responsabilité",
-    "statut": "Note en préparation",
-    "publication": "Texte complet non publié",
-    "prudence": ""
-  },
-  {
-    "id": "crypto-contrefacon-monde-art",
-    "titre": "Crypto-contrefaçon et monde de l'art",
-    "titreOriginal": "Crypto-contrefaçon et monde de l'art",
-    "axe": "Innovation, propriété intellectuelle & technologies émergentes",
-    "dossier": "Blockchain, confiance & intermédiation",
-    "statut": "Projet d'article",
-    "publication": "Texte complet non publié",
-    "prudence": ""
-  },
-  {
     "id": "ethique-nouvelles-technologies",
     "titre": "L'éthique et les nouvelles technologies",
     "titreOriginal": "L'éthique et les nouvelles technologies",
     "axe": "Innovation, propriété intellectuelle & technologies émergentes",
     "dossier": "Innovation, propriété intellectuelle & responsabilité",
     "statut": "Sujet de recherche",
-    "publication": "Résumé disponible prochainement",
-    "prudence": ""
-  },
-  {
-    "id": "innovation-responsable",
-    "titre": "Innovation responsable",
-    "titreOriginal": "Innovation responsable",
-    "axe": "Innovation, propriété intellectuelle & technologies émergentes",
-    "dossier": "Innovation, propriété intellectuelle & responsabilité",
-    "statut": "Sujet de recherche",
-    "publication": "Résumé disponible prochainement",
+    "publication": "Texte complet non publié",
     "prudence": ""
   },
   {
@@ -466,7 +236,7 @@
     "axe": "Innovation, propriété intellectuelle & technologies émergentes",
     "dossier": "Innovation, propriété intellectuelle & responsabilité",
     "statut": "Sujet de recherche",
-    "publication": "Résumé disponible prochainement",
+    "publication": "Texte complet non publié",
     "prudence": ""
   },
   {
@@ -476,18 +246,8 @@
     "axe": "Innovation, propriété intellectuelle & technologies émergentes",
     "dossier": "Innovation, propriété intellectuelle & responsabilité",
     "statut": "Sujet de recherche",
-    "publication": "Résumé disponible prochainement",
-    "prudence": ""
-  },
-  {
-    "id": "systemes-letaux-autonomes-responsabilite-humaine",
-    "titre": "Systèmes létaux autonomes et responsabilité humaine",
-    "titreOriginal": "Robots tueurs et humanité",
-    "axe": "Innovation, propriété intellectuelle & technologies émergentes",
-    "dossier": "Innovation, propriété intellectuelle & responsabilité",
-    "statut": "Note en préparation",
     "publication": "Texte complet non publié",
-    "prudence": "Titre reformulé pour un traitement juridique et éthique prudent."
+    "prudence": ""
   },
   {
     "id": "ia-autonomie-responsabilite",
@@ -496,127 +256,7 @@
     "axe": "Innovation, propriété intellectuelle & technologies émergentes",
     "dossier": "Innovation, propriété intellectuelle & responsabilité",
     "statut": "Sujet de recherche",
-    "publication": "Résumé disponible prochainement",
-    "prudence": ""
-  },
-  {
-    "id": "recompositions-politiques-ivoiriennes",
-    "titre": "Recompositions politiques ivoiriennes : lectures stratégiques",
-    "titreOriginal": "Le retour de Gbagbo : lecture stratégique",
-    "axe": "Géopolitique, société & pensée interdisciplinaire",
-    "dossier": "Géopolitique, société & pensée interdisciplinaire",
-    "statut": "Sujet de recherche",
     "publication": "Texte complet non publié",
-    "prudence": "Sujet politique sensible, conservé en réserve avec titre reformulé."
-  },
-  {
-    "id": "politique-ivoirienne-generations",
-    "titre": "Acteurs de la politique ivoirienne : vétérans et nouvelles générations",
-    "titreOriginal": "Les acteurs de la politique ivoirienne : vétérans et nouvelles générations",
-    "axe": "Géopolitique, société & pensée interdisciplinaire",
-    "dossier": "Géopolitique, société & pensée interdisciplinaire",
-    "statut": "Sujet de recherche",
-    "publication": "Texte complet non publié",
-    "prudence": "Sujet politique sensible."
-  },
-  {
-    "id": "diplomatie-politique-repositionnements",
-    "titre": "Diplomatie politique et repositionnements",
-    "titreOriginal": "Diplomatie politique et repositionnements",
-    "axe": "Géopolitique, société & pensée interdisciplinaire",
-    "dossier": "Géopolitique, société & pensée interdisciplinaire",
-    "statut": "Note en préparation",
-    "publication": "Texte complet non publié",
-    "prudence": "Sujet politique à cadrer avant publication."
-  },
-  {
-    "id": "religion-strategie-politique",
-    "titre": "Religion et stratégie politique",
-    "titreOriginal": "Religion et stratégie politique",
-    "axe": "Géopolitique, société & pensée interdisciplinaire",
-    "dossier": "Géopolitique, société & pensée interdisciplinaire",
-    "statut": "Sujet de recherche",
-    "publication": "Texte complet non publié",
-    "prudence": "Sujet sensible à publier uniquement avec cadrage scientifique."
-  },
-  {
-    "id": "diplomatie-connivence",
-    "titre": "Diplomatie de connivence",
-    "titreOriginal": "Diplomatie de connivence",
-    "axe": "Géopolitique, société & pensée interdisciplinaire",
-    "dossier": "Géopolitique, société & pensée interdisciplinaire",
-    "statut": "Note en préparation",
-    "publication": "Texte complet non publié",
-    "prudence": ""
-  },
-  {
-    "id": "gouvernance-oligarchique-internationale",
-    "titre": "Gouvernance oligarchique internationale",
-    "titreOriginal": "Gouvernance oligarchique internationale",
-    "axe": "Géopolitique, société & pensée interdisciplinaire",
-    "dossier": "Géopolitique, société & pensée interdisciplinaire",
-    "statut": "Sujet de recherche",
-    "publication": "Texte complet non publié",
-    "prudence": "Sujet à cadrer avant publication publique."
-  },
-  {
-    "id": "diplomatie-parallele",
-    "titre": "Diplomatie parallèle",
-    "titreOriginal": "Diplomatie parallèle",
-    "axe": "Géopolitique, société & pensée interdisciplinaire",
-    "dossier": "Géopolitique, société & pensée interdisciplinaire",
-    "statut": "Note en préparation",
-    "publication": "Texte complet non publié",
-    "prudence": ""
-  },
-  {
-    "id": "diplomatie-privee-entreprises",
-    "titre": "Diplomatie privée des entreprises",
-    "titreOriginal": "Diplomatie privée des entreprises",
-    "axe": "Géopolitique, société & pensée interdisciplinaire",
-    "dossier": "Géopolitique, société & pensée interdisciplinaire",
-    "statut": "Sujet de recherche",
-    "publication": "Résumé disponible prochainement",
-    "prudence": ""
-  },
-  {
-    "id": "textes-sacres-propriete-intellectuelle",
-    "titre": "Textes sacrés, œuvres de l'esprit et propriété intellectuelle",
-    "titreOriginal": "Les livres saints sont-ils des œuvres de l'esprit ?",
-    "axe": "Géopolitique, société & pensée interdisciplinaire",
-    "dossier": "Innovation, propriété intellectuelle & responsabilité",
-    "statut": "Note en préparation",
-    "publication": "Texte complet non publié",
-    "prudence": "Titre reformulé pour un traitement académique et non confessionnel."
-  },
-  {
-    "id": "spiritualite-propriete-intellectuelle",
-    "titre": "Spiritualité et propriété intellectuelle",
-    "titreOriginal": "Spiritualité et propriété intellectuelle",
-    "axe": "Géopolitique, société & pensée interdisciplinaire",
-    "dossier": "Innovation, propriété intellectuelle & responsabilité",
-    "statut": "Note en préparation",
-    "publication": "Texte complet non publié",
-    "prudence": "Sujet sensible à cadrer de manière académique."
-  },
-  {
-    "id": "tourisme-catastrophe-responsabilite",
-    "titre": "Tourisme de catastrophe : licéité, morale et responsabilité",
-    "titreOriginal": "Tourisme de catastrophe : licite ou immoral ?",
-    "axe": "Géopolitique, société & pensée interdisciplinaire",
-    "dossier": "Géopolitique, société & pensée interdisciplinaire",
-    "statut": "Note en préparation",
-    "publication": "Texte complet non publié",
-    "prudence": "Titre légèrement reformulé."
-  },
-  {
-    "id": "anonymat-liberte-danger",
-    "titre": "L'anonymat comme liberté et danger",
-    "titreOriginal": "L'anonymat comme liberté et danger",
-    "axe": "Géopolitique, société & pensée interdisciplinaire",
-    "dossier": "Blockchain, confiance & intermédiation",
-    "statut": "Sujet de recherche",
-    "publication": "Résumé disponible prochainement",
     "prudence": ""
   }
 ]

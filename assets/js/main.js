@@ -297,11 +297,11 @@ const loadWatchAgendaItems = () =>
   const cardsIncrement = 6;
   const featuredSubjectIds = [
     "onu-obligations-maritimes-etats",
-    "securite-surete-maritime-notions",
+    "gouvernance-maritime-action-etat-mer",
     "peche-inn-droit-international",
-    "diplomatie-privee",
+    "gouvernance-economique-espaces-maritimes",
+    "mediation-gouvernance-internationale",
     "blockchain-intermediation",
-    "recompositions-politiques-ivoiriennes",
   ];
   let visibleLimit = cardsIncrement;
   let hasInteracted = false;
@@ -355,7 +355,7 @@ const loadWatchAgendaItems = () =>
     const axis = escapeHtml(subject.axe || "Axe non renseigné");
     const status = escapeHtml(subject.statut || "Sujet de recherche");
     const dossier = escapeHtml(subject.dossier || "");
-    const summary = subject.resume || subject.description || "Repère en cours de structuration.";
+    const summary = subject.resume || subject.description || "";
 
     return `
       <article class="map-card">
@@ -364,7 +364,7 @@ const loadWatchAgendaItems = () =>
           <span class="map-pill status">${status}</span>
         </div>
         <h3>${title}</h3>
-        <p>${escapeHtml(summary)}</p>
+        ${summary ? `<p>${escapeHtml(summary)}</p>` : ""}
         <div class="map-tags">
           ${dossier ? `<span class="map-pill">${dossier}</span>` : ""}
         </div>
