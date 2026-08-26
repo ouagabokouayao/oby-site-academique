@@ -707,18 +707,103 @@
     "annee": "2017",
     "lieu": "Abidjan",
     "categorie": "evenement-academique",
-    "typeMedia": "visuel-documentaire",
+    "typeMedia": "photographie-evenement",
     "evenementLie": "COP12 de la Convention d'Abidjan",
     "pageLiee": "interventions.html#convention-abidjan-cop12-2017",
-    "fichier": "assets/img/media/placeholder-evenement-oby.svg",
-    "statut": "media-non-publie",
-    "description": "Trace documentaire conservée en interne.",
-    "notePrudence": "La source recensée est un badge ou un document d’identification, et non une photographie d’événement destinée à la galerie.",
-    "type_evenement": "visuel-documentaire",
-    "statut_publication": "non publie",
+    "fichier": "assets/img/media/events/convention-abidjan-cop12-2017/oby_convention_abidjan_cop12_2017_18.webp",
+    "statut": "public-valide",
+    "description": "Dix-huit photographies documentent la participation à la douzième Conférence des Parties à la Convention d'Abidjan, consacrée à la gestion intégrée des océans en Afrique et tenue à Abidjan du 27 au 31 mars 2017 : séances plénières, espaces d'information, posters scientifiques et rencontres entre participants.",
+    "notePrudence": "Les légendes situent les scènes sans attribuer de fonction, de collaboration ou de relation non établie. Aucun badge ni document d'identification n'est publié.",
     "axe_associe": "Mer, droit de la mer et gouvernance maritime",
-    "sensibilite": "a verifier avant publication",
-    "action_recommandee": "valider, recadrer ou anonymiser avant toute publication de média réel"
+    "alt": "Joseph OUAGA et deux participants devant la signalétique officielle de la douzième Conférence des Parties à la Convention d'Abidjan, consacrée à la gestion intégrée des océans en Afrique, Abidjan, 27-31 mars 2017.",
+    "legende": "Devant la signalétique officielle de la COP12 de la Convention d'Abidjan, 27-31 mars 2017.",
+    "galerie": [
+      {
+        "fichier": "assets/img/media/events/convention-abidjan-cop12-2017/oby_convention_abidjan_cop12_2017_01.webp",
+        "alt": "Séance plénière de la douzième Conférence des Parties à la Convention d'Abidjan, délégations équipées de casques d'interprétation, Abidjan, mars 2017.",
+        "legende": "Séance plénière de la COP12 de la Convention d'Abidjan, 2017."
+      },
+      {
+        "fichier": "assets/img/media/events/convention-abidjan-cop12-2017/oby_convention_abidjan_cop12_2017_02.webp",
+        "alt": "Joseph OUAGA et deux participants devant le poster scientifique consacré aux stratégies de gestion durable des macroalgues sargasses envahissant les eaux marines ivoiriennes, COP12 de la Convention d'Abidjan, 27 mars 2017.",
+        "legende": "Devant le poster scientifique sur les sargasses, COP12, Abidjan, 2017."
+      },
+      {
+        "fichier": "assets/img/media/events/convention-abidjan-cop12-2017/oby_convention_abidjan_cop12_2017_03.webp",
+        "alt": "Échange entre participants dans les espaces de la douzième Conférence des Parties à la Convention d'Abidjan, 27 mars 2017.",
+        "legende": "Échange entre participants, COP12, Abidjan, 2017."
+      },
+      {
+        "fichier": "assets/img/media/events/convention-abidjan-cop12-2017/oby_convention_abidjan_cop12_2017_04.webp",
+        "alt": "Joseph OUAGA et cinq participants dans les espaces de la douzième Conférence des Parties à la Convention d'Abidjan, 27 mars 2017.",
+        "legende": "Participants à la COP12 de la Convention d'Abidjan, 2017."
+      },
+      {
+        "fichier": "assets/img/media/events/convention-abidjan-cop12-2017/oby_convention_abidjan_cop12_2017_05.webp",
+        "alt": "Joseph OUAGA devant les pavillons des États parties à la Convention d'Abidjan, sur le site de la COP12, 27 mars 2017.",
+        "legende": "Devant les pavillons des États parties, COP12, Abidjan, 2017."
+      },
+      {
+        "fichier": "assets/img/media/events/convention-abidjan-cop12-2017/oby_convention_abidjan_cop12_2017_06.webp",
+        "alt": "Joseph OUAGA et une participante sur l'espace d'information consacré à la décision PC 12/11 relative à la lutte contre le trafic et les usages des espèces côtières et marines menacées, COP12 de la Convention d'Abidjan, 27 mars 2017.",
+        "legende": "Espace d'information sur la décision PC 12/11, COP12, Abidjan, 2017."
+      },
+      {
+        "fichier": "assets/img/media/events/convention-abidjan-cop12-2017/oby_convention_abidjan_cop12_2017_07.webp",
+        "alt": "Joseph OUAGA et deux participants devant le poster scientifique « Quelles stratégies mettre en œuvre pour gérer durablement les macroalgues sargasses envahissant les eaux marines ivoiriennes ? », COP12 de la Convention d'Abidjan, 28 mars 2017.",
+        "legende": "Poster scientifique sur les sargasses, COP12, Abidjan, 2017."
+      },
+      {
+        "fichier": "assets/img/media/events/convention-abidjan-cop12-2017/oby_convention_abidjan_cop12_2017_08.webp",
+        "alt": "Joseph OUAGA et deux participants près de l'espace d'information de la COP12 de la Convention d'Abidjan, 30 mars 2017.",
+        "legende": "Participants à la COP12 de la Convention d'Abidjan, 2017."
+      },
+      {
+        "fichier": "assets/img/media/events/convention-abidjan-cop12-2017/oby_convention_abidjan_cop12_2017_09.webp",
+        "alt": "Joseph OUAGA et une participante dans la salle de conférence de la COP12 de la Convention d'Abidjan, 30 mars 2017.",
+        "legende": "Participants à la COP12 de la Convention d'Abidjan, 2017."
+      },
+      {
+        "fichier": "assets/img/media/events/convention-abidjan-cop12-2017/oby_convention_abidjan_cop12_2017_10.webp",
+        "alt": "Joseph OUAGA et trois participants en marge d'une séance de la COP12 de la Convention d'Abidjan, 30 mars 2017.",
+        "legende": "En marge d'une séance de la COP12, Abidjan, 2017."
+      },
+      {
+        "fichier": "assets/img/media/events/convention-abidjan-cop12-2017/oby_convention_abidjan_cop12_2017_11.webp",
+        "alt": "Joseph OUAGA et deux participants lors de la COP12 de la Convention d'Abidjan, 30 mars 2017.",
+        "legende": "Participants à la COP12 de la Convention d'Abidjan, 2017."
+      },
+      {
+        "fichier": "assets/img/media/events/convention-abidjan-cop12-2017/oby_convention_abidjan_cop12_2017_12.webp",
+        "alt": "Joseph OUAGA et deux participants lors de la COP12 de la Convention d'Abidjan, 30 mars 2017.",
+        "legende": "Participants à la COP12 de la Convention d'Abidjan, 2017."
+      },
+      {
+        "fichier": "assets/img/media/events/convention-abidjan-cop12-2017/oby_convention_abidjan_cop12_2017_13.webp",
+        "alt": "Joseph OUAGA et un participant devant la tribune de la douzième Conférence des Parties à la Convention d'Abidjan, 30 mars 2017.",
+        "legende": "Devant la tribune de la COP12, Abidjan, 2017."
+      },
+      {
+        "fichier": "assets/img/media/events/convention-abidjan-cop12-2017/oby_convention_abidjan_cop12_2017_14.webp",
+        "alt": "Joseph OUAGA et un participant lors de la COP12 de la Convention d'Abidjan, 30 mars 2017.",
+        "legende": "Participants à la COP12 de la Convention d'Abidjan, 2017."
+      },
+      {
+        "fichier": "assets/img/media/events/convention-abidjan-cop12-2017/oby_convention_abidjan_cop12_2017_15.webp",
+        "alt": "Joseph OUAGA et une participante dans la salle plénière de la douzième Conférence des Parties à la Convention d'Abidjan, mars 2017.",
+        "legende": "En salle plénière de la COP12, Abidjan, 2017."
+      },
+      {
+        "fichier": "assets/img/media/events/convention-abidjan-cop12-2017/oby_convention_abidjan_cop12_2017_16.webp",
+        "alt": "Joseph OUAGA et un participant devant la signalétique officielle de la douzième Conférence des Parties à la Convention d'Abidjan, mars 2017.",
+        "legende": "Devant la signalétique officielle de la COP12, Abidjan, 2017."
+      },
+      {
+        "fichier": "assets/img/media/events/convention-abidjan-cop12-2017/oby_convention_abidjan_cop12_2017_17.webp",
+        "alt": "Joseph OUAGA et un participant devant la signalétique officielle de la COP12 de la Convention d'Abidjan, portant les dates du 27 au 31 mars 2017.",
+        "legende": "Devant la signalétique officielle de la COP12, Abidjan, 2017."
+      }
+    ]
   },
   {
     "id": "contribution-volontaire-oceans-pnud-2017",
