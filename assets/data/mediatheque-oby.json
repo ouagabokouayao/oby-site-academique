@@ -5,13 +5,62 @@
     "annee": "2017",
     "lieu": "Abidjan, Côte d’Ivoire",
     "categorie": "evenement-academique",
-    "typeMedia": "visuel-documentaire",
+    "typeMedia": "photographie-evenement",
     "evenementLie": "Dialogue des politiques : gouvernance des ressources et des activités maritimes pour le développement durable en Afrique",
     "pageLiee": "interventions.html#dialogue-politiques-abidjan-2017",
-    "fichier": "assets/img/media/placeholder-evenement-oby.svg",
-    "statut": "media-non-publie",
-    "description": "Trace documentaire conservée en interne.",
-    "notePrudence": "Aucune photographie source exploitable n’est actuellement accessible pour cette entrée."
+    "fichier": "assets/img/media/events/dialogue-politiques-abidjan-2017/oby_dialogue_politiques_abidjan_2017_03.webp",
+    "statut": "public-valide",
+    "description": "Dix photographies documentent la participation au Dialogue des politiques sur la gouvernance des ressources et des activités maritimes pour le développement durable en Afrique, organisé à Abidjan du 21 au 23 juin 2017 par la Division du renforcement des capacités de la Commission économique pour l'Afrique.",
+    "notePrudence": "Les légendes situent les scènes sans attribuer de fonction, de collaboration ou de relation non établie. Seule une identité lisible sur un badge de conférence est nommée.",
+    "alt": "Quatre participants devant la signalétique officielle du Dialogue des politiques sur la gouvernance des ressources et des activités maritimes pour le développement durable en Afrique, Abidjan, 21-23 juin 2017 ; Joseph OUAGA à droite.",
+    "legende": "Devant la signalétique officielle du Dialogue des politiques, Abidjan, 21-23 juin 2017.",
+    "galerie": [
+      {
+        "fichier": "assets/img/media/events/dialogue-politiques-abidjan-2017/oby_dialogue_politiques_abidjan_2017_01.webp",
+        "alt": "Joseph OUAGA et deux participants en marge du Dialogue des politiques sur la gouvernance des ressources et des activités maritimes, Abidjan, juin 2017.",
+        "legende": "En marge du Dialogue des politiques, Abidjan, 2017."
+      },
+      {
+        "fichier": "assets/img/media/events/dialogue-politiques-abidjan-2017/oby_dialogue_politiques_abidjan_2017_02.webp",
+        "alt": "Joseph OUAGA et deux participants lors du Dialogue des politiques sur la gouvernance des ressources et des activités maritimes, Abidjan, juin 2017.",
+        "legende": "Participants au Dialogue des politiques, Abidjan, 2017."
+      },
+      {
+        "fichier": "assets/img/media/events/dialogue-politiques-abidjan-2017/oby_dialogue_politiques_abidjan_2017_04.webp",
+        "alt": "Photographie de groupe des participants au Dialogue des politiques sur la gouvernance des ressources et des activités maritimes, Abidjan, juin 2017.",
+        "legende": "Photographie de groupe des participants, Abidjan, 2017."
+      },
+      {
+        "fichier": "assets/img/media/events/dialogue-politiques-abidjan-2017/oby_dialogue_politiques_abidjan_2017_05.webp",
+        "alt": "Intervention à la tribune lors du Dialogue des politiques sur la gouvernance des ressources et des activités maritimes, Abidjan, juin 2017.",
+        "legende": "Intervention à la tribune, Abidjan, 2017."
+      },
+      {
+        "fichier": "assets/img/media/events/dialogue-politiques-abidjan-2017/oby_dialogue_politiques_abidjan_2017_06.webp",
+        "alt": "Joseph OUAGA et Jean-Pierre Beurier, participant au Dialogue des politiques sur la gouvernance des ressources et des activités maritimes, Abidjan, juin 2017.",
+        "legende": "Avec Jean-Pierre Beurier, participant au Dialogue des politiques, Abidjan, 2017."
+      },
+      {
+        "fichier": "assets/img/media/events/dialogue-politiques-abidjan-2017/oby_dialogue_politiques_abidjan_2017_07.webp",
+        "alt": "Joseph OUAGA et une participante lors du Dialogue des politiques sur la gouvernance des ressources et des activités maritimes, Abidjan, juin 2017.",
+        "legende": "Participants au Dialogue des politiques, Abidjan, 2017."
+      },
+      {
+        "fichier": "assets/img/media/events/dialogue-politiques-abidjan-2017/oby_dialogue_politiques_abidjan_2017_08.webp",
+        "alt": "Échange entre participants, dont Jean-Pierre Beurier, en marge d'une séance du Dialogue des politiques sur la gouvernance des ressources et des activités maritimes, Abidjan, juin 2017.",
+        "legende": "Échange entre participants en séance, Abidjan, 2017."
+      },
+      {
+        "fichier": "assets/img/media/events/dialogue-politiques-abidjan-2017/oby_dialogue_politiques_abidjan_2017_09.webp",
+        "alt": "Joseph OUAGA et deux participants lors du Dialogue des politiques sur la gouvernance des ressources et des activités maritimes, Abidjan, juin 2017.",
+        "legende": "Participants au Dialogue des politiques, Abidjan, 2017."
+      },
+      {
+        "fichier": "assets/img/media/events/dialogue-politiques-abidjan-2017/oby_dialogue_politiques_abidjan_2017_10.webp",
+        "alt": "Joseph OUAGA et un participant lors du Dialogue des politiques sur la gouvernance des ressources et des activités maritimes, Abidjan, juin 2017.",
+        "legende": "Participants au Dialogue des politiques, Abidjan, 2017."
+      }
+    ]
   },
   {
     "id": "sommet-lome-securite-maritime-2016",
