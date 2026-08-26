@@ -11,7 +11,7 @@
     "fichier": "assets/img/media/placeholder-evenement-oby.svg",
     "statut": "media-non-publie",
     "description": "Trace documentaire conservée en interne.",
-    "notePrudence": "Aucun média privé n'est publié sans validation préalable."
+    "notePrudence": "Aucune photographie source exploitable n’est actuellement accessible pour cette entrée."
   },
   {
     "id": "sommet-lome-securite-maritime-2016",
@@ -19,31 +19,77 @@
     "annee": "2016",
     "lieu": "Lomé",
     "categorie": "evenement-academique",
-    "typeMedia": "visuel-documentaire",
+    "typeMedia": "photographie-evenement",
     "evenementLie": "Sommet de Lomé sur la sécurité et sûreté maritimes en Afrique",
     "pageLiee": "interventions.html#sommet-lome-securite-maritime-2016",
     "fichier": "assets/img/media/events/sommet-lome-2016/oby_sommet_lome_2016_01.webp",
-    "alt": "Portrait contextualisé devant la signalétique du Sommet de Lomé consacré à la sécurité et à la sûreté maritimes en Afrique, 2016.",
+    "alt": "OUAGA Bokoua Yao devant la signalétique du Sommet de Lomé sur la sécurité et la sûreté maritimes en Afrique, en 2016.",
     "galerie": [
       {
         "fichier": "assets/img/media/events/sommet-lome-2016/oby_sommet_lome_2016_02.webp",
-        "alt": "Vue du site du Sommet de Lomé consacré à la sécurité et à la sûreté maritimes en Afrique, 2016.",
+        "alt": "Vue extérieure du site du Sommet de Lomé sur la sécurité et la sûreté maritimes en Afrique, en 2016.",
         "legende": "Site du Sommet de Lomé, 2016."
       },
       {
         "fichier": "assets/img/media/events/sommet-lome-2016/oby_sommet_lome_2016_03.webp",
-        "alt": "Salle d'un événement parallèle du Sommet de Lomé sur la sécurité et la sûreté maritimes en Afrique, 2016.",
-        "legende": "Espace d'un événement parallèle du Sommet de Lomé, 2016."
+        "alt": "Salle réunissant des participants lors d’un événement parallèle du Sommet de Lomé en 2016.",
+        "legende": "Événement parallèle du Sommet de Lomé, 2016."
       },
       {
         "fichier": "assets/img/media/events/sommet-lome-2016/oby_sommet_lome_2016_04.webp",
-        "alt": "Portrait contextualisé sur l'esplanade du site du Sommet de Lomé consacré à la sécurité et à la sûreté maritimes en Afrique, 2016.",
-        "legende": "Esplanade du site du Sommet de Lomé, 2016."
+        "alt": "OUAGA Bokoua Yao sur l’esplanade du site du Sommet de Lomé en 2016.",
+        "legende": "Esplanade du Sommet de Lomé, 2016."
+      },
+      {
+        "fichier": "assets/img/media/events/sommet-lome-2016/oby_sommet_lome_2016_05.webp",
+        "alt": "OUAGA Bokoua Yao avec deux participants sur le site du Sommet de Lomé en 2016.",
+        "legende": "Rencontre de participants sur le site du Sommet de Lomé, 2016."
+      },
+      {
+        "fichier": "assets/img/media/events/sommet-lome-2016/oby_sommet_lome_2016_06.webp",
+        "alt": "OUAGA Bokoua Yao avec deux participants en tenue de service dans l’espace d’exposition du Sommet de Lomé en 2016.",
+        "legende": "Espace d’exposition du Sommet de Lomé, 2016."
+      },
+      {
+        "fichier": "assets/img/media/events/sommet-lome-2016/oby_sommet_lome_2016_07.webp",
+        "alt": "OUAGA Bokoua Yao et plusieurs participants dans l’espace d’exposition du Sommet de Lomé en 2016.",
+        "legende": "Participants dans l’espace d’exposition, Sommet de Lomé, 2016."
+      },
+      {
+        "fichier": "assets/img/media/events/sommet-lome-2016/oby_sommet_lome_2016_08.webp",
+        "alt": "OUAGA Bokoua Yao avec un participant devant des supports consacrés aux océans au Sommet de Lomé en 2016.",
+        "legende": "Échange dans l’espace consacré aux océans, Sommet de Lomé, 2016."
+      },
+      {
+        "fichier": "assets/img/media/events/sommet-lome-2016/oby_sommet_lome_2016_09.webp",
+        "alt": "OUAGA Bokoua Yao avec un participant dans l’espace d’exposition du Sommet de Lomé en 2016.",
+        "legende": "Rencontre dans l’espace d’exposition, Sommet de Lomé, 2016."
+      },
+      {
+        "fichier": "assets/img/media/events/sommet-lome-2016/oby_sommet_lome_2016_10.webp",
+        "alt": "OUAGA Bokoua Yao avec plusieurs participants sur l’esplanade du Sommet de Lomé en 2016.",
+        "legende": "Échanges sur l’esplanade du Sommet de Lomé, 2016."
+      },
+      {
+        "fichier": "assets/img/media/events/sommet-lome-2016/oby_sommet_lome_2016_11.webp",
+        "alt": "OUAGA Bokoua Yao au cours d’un échange entre participants sur le site du Sommet de Lomé en 2016.",
+        "legende": "Échange entre participants, Sommet de Lomé, 2016."
+      },
+      {
+        "fichier": "assets/img/media/events/sommet-lome-2016/oby_sommet_lome_2016_12.webp",
+        "alt": "OUAGA Bokoua Yao avec deux participants en marge du Sommet de Lomé en 2016.",
+        "legende": "Rencontre en marge du Sommet de Lomé, 2016."
+      },
+      {
+        "fichier": "assets/img/media/events/sommet-lome-2016/oby_sommet_lome_2016_13.webp",
+        "alt": "OUAGA Bokoua Yao avec des participants en tenue de service devant un aéronef, dans le contexte du Sommet de Lomé en 2016.",
+        "legende": "Séquence sur le site du Sommet de Lomé, 2016."
       }
     ],
     "statut": "public-valide",
-    "description": "Sélection photographique documentant le site et un espace parallèle du Sommet de Lomé en 2016.",
-    "notePrudence": "Les images documentent le contexte de l'événement sans attribuer de fonction institutionnelle."
+    "description": "Treize photographies documentent le site, les espaces d’exposition, les séquences collectives et les rencontres tenues dans le contexte du Sommet de Lomé en 2016.",
+    "notePrudence": "Les légendes situent les scènes sans attribuer de fonction, de délégation ou de relation non établie.",
+    "legende": "Sommet de Lomé sur la sécurité et la sûreté maritimes en Afrique, 2016."
   },
   {
     "id": "accord-cap-abidjan-2016",
@@ -57,7 +103,7 @@
     "fichier": "assets/img/media/placeholder-evenement-oby.svg",
     "statut": "media-non-publie",
     "description": "Trace documentaire conservée en interne.",
-    "notePrudence": "Aucun média privé n'est publié sans validation préalable."
+    "notePrudence": "Aucune photographie source exploitable n’est actuellement accessible pour cette entrée."
   },
   {
     "id": "delimitation-maritime-africaine-paris-2019",
@@ -71,7 +117,7 @@
     "fichier": "assets/img/media/placeholder-evenement-oby.svg",
     "statut": "media-non-publie",
     "description": "Trace documentaire conservée en interne.",
-    "notePrudence": "Aucun média privé n'est publié sans validation préalable."
+    "notePrudence": "Aucune photographie source exploitable n’est actuellement accessible pour cette entrée."
   },
   {
     "id": "economie-bleue-golfe-guinee-paris-2019",
@@ -85,7 +131,7 @@
     "fichier": "assets/img/media/placeholder-evenement-oby.svg",
     "statut": "media-non-publie",
     "description": "Trace documentaire conservée en interne.",
-    "notePrudence": "Aucun média privé n'est publié sans validation préalable."
+    "notePrudence": "Aucune photographie source exploitable n’est actuellement accessible pour cette entrée."
   },
   {
     "id": "cop24-coy24-katowice-2018",
@@ -93,31 +139,77 @@
     "annee": "2018",
     "lieu": "Katowice",
     "categorie": "evenement-academique",
-    "typeMedia": "visuel-documentaire",
+    "typeMedia": "photographie-evenement",
     "evenementLie": "COP24 / COY14",
     "pageLiee": "interventions.html#cop24-coy24-katowice-2018",
     "fichier": "assets/img/media/events/cop24-katowice-2018/oby_cop24_katowice_2018_01.webp",
-    "alt": "Groupe de participants dans un espace consacré à l'action climatique à Katowice en 2018.",
+    "alt": "OUAGA Bokoua Yao avec un groupe de participants dans un espace consacré à l’action climatique à Katowice en 2018.",
     "galerie": [
       {
         "fichier": "assets/img/media/events/cop24-katowice-2018/oby_cop24_katowice_2018_02.webp",
-        "alt": "Signalétique lumineuse de Katowice en marge de la COP24 en 2018.",
+        "alt": "Signalétique lumineuse de Katowice dans le contexte de la COP24 en 2018.",
         "legende": "Katowice dans le contexte de la COP24, 2018."
       },
       {
         "fichier": "assets/img/media/events/cop24-katowice-2018/oby_cop24_katowice_2018_03.webp",
-        "alt": "Espace d'accueil de la COY14 à Katowice en 2018.",
-        "legende": "Espace d'accueil de la COY14 à Katowice, 2018."
+        "alt": "Équipe d’accueil de la COY14 à Katowice en 2018.",
+        "legende": "Espace d’accueil de la COY14 à Katowice, 2018."
       },
       {
         "fichier": "assets/img/media/events/cop24-katowice-2018/oby_cop24_katowice_2018_04.webp",
-        "alt": "Temps collectif de participants réunis autour des objectifs de développement durable lors de la COY14 à Katowice en 2018.",
+        "alt": "Groupe de participants réunis lors de la COY14 à Katowice en 2018.",
         "legende": "Temps collectif de la COY14 à Katowice, 2018."
+      },
+      {
+        "fichier": "assets/img/media/events/cop24-katowice-2018/oby_cop24_katowice_2018_05.webp",
+        "alt": "Vue d’un groupe réuni autour d’une table de travail lors de la COY14 à Katowice en 2018.",
+        "legende": "Groupe de travail de la COY14, Katowice, 2018."
+      },
+      {
+        "fichier": "assets/img/media/events/cop24-katowice-2018/oby_cop24_katowice_2018_06.webp",
+        "alt": "OUAGA Bokoua Yao avec un participant dans un espace de la COY14 à Katowice en 2018.",
+        "legende": "Rencontre entre participants, COY14, 2018."
+      },
+      {
+        "fichier": "assets/img/media/events/cop24-katowice-2018/oby_cop24_katowice_2018_07.webp",
+        "alt": "OUAGA Bokoua Yao avec plusieurs participants lors de la COY14 à Katowice en 2018.",
+        "legende": "Temps collectif entre participants, COY14, 2018."
+      },
+      {
+        "fichier": "assets/img/media/events/cop24-katowice-2018/oby_cop24_katowice_2018_08.webp",
+        "alt": "OUAGA Bokoua Yao dans un espace d’animation de la COY14 à Katowice en 2018.",
+        "legende": "Espace d’animation de la COY14, Katowice, 2018."
+      },
+      {
+        "fichier": "assets/img/media/events/cop24-katowice-2018/oby_cop24_katowice_2018_09.webp",
+        "alt": "Participants réunis autour d’une table en marge de la COY14 à Katowice en 2018.",
+        "legende": "Rencontre informelle de participants, Katowice, 2018."
+      },
+      {
+        "fichier": "assets/img/media/events/cop24-katowice-2018/oby_cop24_katowice_2018_10.webp",
+        "alt": "OUAGA Bokoua Yao au cours d’un échange informel avec un participant à Katowice en 2018.",
+        "legende": "Échange informel entre participants, Katowice, 2018."
+      },
+      {
+        "fichier": "assets/img/media/events/cop24-katowice-2018/oby_cop24_katowice_2018_11.webp",
+        "alt": "OUAGA Bokoua Yao avec plusieurs participants dans le contexte hivernal de Katowice en 2018.",
+        "legende": "Participants à Katowice pendant la COP24, 2018."
+      },
+      {
+        "fichier": "assets/img/media/events/cop24-katowice-2018/oby_cop24_katowice_2018_12.webp",
+        "alt": "OUAGA Bokoua Yao avec un participant dans un espace d’exposition de la COP24 à Katowice en 2018.",
+        "legende": "Espace d’exposition de la COP24, Katowice, 2018."
+      },
+      {
+        "fichier": "assets/img/media/events/cop24-katowice-2018/oby_cop24_katowice_2018_13.webp",
+        "alt": "Groupe de participants dans un espace d’exposition de la COP24 à Katowice en 2018.",
+        "legende": "Groupe de participants à la COP24, Katowice, 2018."
       }
     ],
     "statut": "public-valide",
-    "description": "Sélection photographique associée à la COP24 et à la COY14 à Katowice en 2018.",
-    "notePrudence": "Les images documentent le contexte climatique international sans attribuer de rôle institutionnel."
+    "description": "Treize photographies documentent les espaces de la COP24 et de la COY14, les temps collectifs et les rencontres de participants à Katowice en 2018.",
+    "notePrudence": "Les légendes décrivent le contexte de participation sans attribuer de fonction institutionnelle ou de relation non établie.",
+    "legende": "Cadre d’échanges autour de l’action climatique à Katowice, 2018."
   },
   {
     "id": "forum-mouillage-mediterranee-2024",
@@ -131,7 +223,7 @@
     "fichier": "assets/img/media/placeholder-evenement-oby.svg",
     "statut": "media-non-publie",
     "description": "Trace documentaire conservée en interne.",
-    "notePrudence": "Aucun média privé n'est publié sans validation préalable."
+    "notePrudence": "Aucune photographie source exploitable n’est actuellement accessible pour cette entrée."
   },
   {
     "id": "proteus-mediterranee-2024",
@@ -145,7 +237,7 @@
     "fichier": "assets/img/media/placeholder-evenement-oby.svg",
     "statut": "media-non-publie",
     "description": "Trace documentaire conservée en interne.",
-    "notePrudence": "Aucun média privé n'est publié sans validation préalable."
+    "notePrudence": "Aucune photographie source exploitable n’est actuellement accessible pour cette entrée."
   },
   {
     "id": "medpan-port-cros-2024",
@@ -159,7 +251,7 @@
     "fichier": "assets/img/media/placeholder-terrain-oby.svg",
     "statut": "media-non-publie",
     "description": "Trace documentaire de terrain conservée en interne.",
-    "notePrudence": "Aucun média privé n'est publié sans validation préalable."
+    "notePrudence": "Aucune photographie source exploitable n’est actuellement accessible pour cette entrée."
   },
   {
     "id": "vive-mer-mediterranee-amu-2024",
@@ -173,7 +265,7 @@
     "fichier": "assets/img/media/placeholder-evenement-oby.svg",
     "statut": "media-non-publie",
     "description": "Trace documentaire conservée en interne.",
-    "notePrudence": "Aucun média privé n'est publié sans validation préalable."
+    "notePrudence": "Aucune photographie source exploitable n’est actuellement accessible pour cette entrée."
   },
   {
     "id": "protection-environnement-mediterranee-2025",
@@ -181,13 +273,47 @@
     "annee": "2025",
     "lieu": "Marseille / Luminy-Océanomed",
     "categorie": "evenement-academique",
-    "typeMedia": "visuel-documentaire",
+    "typeMedia": "photographie-evenement",
     "evenementLie": "Nouveaux enjeux de protection de l'environnement en Méditerranée",
     "pageLiee": "interventions.html#protection-environnement-mediterranee-2025",
-    "fichier": "assets/img/media/placeholder-evenement-oby.svg",
-    "statut": "media-non-publie",
-    "description": "Trace documentaire conservée en interne.",
-    "notePrudence": "Aucun média privé n'est publié sans validation préalable."
+    "fichier": "assets/img/media/events/protection-environnement-mediterranee-2025/oby_protection_mediterranee_2025_01.webp",
+    "statut": "public-valide",
+    "description": "Sept photographies documentent le campus Océanomed, les supports et les tables rondes du colloque consacré aux nouveaux enjeux de protection de l’environnement en Méditerranée en 2025.",
+    "notePrudence": "Une prise quasi identique de qualité inférieure n’est pas reprise ; les autres scènes utiles sont publiées.",
+    "alt": "Signalétique du campus Océanomed à Luminy dans le contexte du colloque sur les nouveaux enjeux de protection de l’environnement en Méditerranée en 2025.",
+    "legende": "Signalétique Océanomed, Luminy, 2025.",
+    "galerie": [
+      {
+        "fichier": "assets/img/media/events/protection-environnement-mediterranee-2025/oby_protection_mediterranee_2025_02.webp",
+        "alt": "OUAGA Bokoua Yao devant la signalétique Océanomed à Luminy en 2025.",
+        "legende": "Présence sur le campus Océanomed, Luminy, 2025."
+      },
+      {
+        "fichier": "assets/img/media/events/protection-environnement-mediterranee-2025/oby_protection_mediterranee_2025_03.webp",
+        "alt": "OUAGA Bokoua Yao devant un support du Mediterranean Institute of Oceanography à Luminy en 2025.",
+        "legende": "Support du Mediterranean Institute of Oceanography, Luminy, 2025."
+      },
+      {
+        "fichier": "assets/img/media/events/protection-environnement-mediterranee-2025/oby_protection_mediterranee_2025_04.webp",
+        "alt": "Séance du colloque sur les nouveaux enjeux de protection de l’environnement en Méditerranée à Luminy en 2025.",
+        "legende": "Séance du colloque, Luminy-Océanomed, 2025."
+      },
+      {
+        "fichier": "assets/img/media/events/protection-environnement-mediterranee-2025/oby_protection_mediterranee_2025_05.webp",
+        "alt": "Présentation d’ouverture du colloque sur les nouveaux enjeux de protection de l’environnement en Méditerranée en 2025.",
+        "legende": "Ouverture du colloque sur la protection de l’environnement en Méditerranée, 2025."
+      },
+      {
+        "fichier": "assets/img/media/events/protection-environnement-mediterranee-2025/oby_protection_mediterranee_2025_06.webp",
+        "alt": "Table ronde du colloque sur les nouveaux enjeux de protection de l’environnement en Méditerranée en 2025.",
+        "legende": "Table ronde sur les enjeux méditerranéens, 2025."
+      },
+      {
+        "fichier": "assets/img/media/events/protection-environnement-mediterranee-2025/oby_protection_mediterranee_2025_07.webp",
+        "alt": "Table ronde consacrée aux enjeux de protection de l’environnement en Méditerranée en 2025.",
+        "legende": "Échanges du colloque à Luminy-Océanomed, 2025."
+      }
+    ]
   },
   {
     "id": "indemer-usages-mer-monaco-2025",
@@ -195,13 +321,112 @@
     "annee": "2025",
     "lieu": "Monaco",
     "categorie": "evenement-academique",
-    "typeMedia": "visuel-documentaire",
+    "typeMedia": "photographie-evenement",
     "evenementLie": "Colloque INDEMER sur les usages contemporains de la mer",
     "pageLiee": "interventions.html#indemer-usages-mer-monaco-2025",
-    "fichier": "assets/img/media/placeholder-evenement-oby.svg",
-    "statut": "media-non-publie",
-    "description": "Trace documentaire conservée en interne.",
-    "notePrudence": "Aucun média privé n'est publié sans validation préalable."
+    "fichier": "assets/img/media/events/indemer-monaco-2025/oby_indemer_monaco_2025_01.webp",
+    "statut": "public-valide",
+    "description": "Vingt photographies documentent les séances, les supports, l’environnement et les rencontres du Colloque INDEMER sur les usages contemporains de la mer à Monaco en 2025.",
+    "notePrudence": "Les légendes situent les scènes sans attribuer de fonction, de collaboration ou de relation non établie.",
+    "alt": "OUAGA Bokoua Yao avec deux participants au Colloque INDEMER sur les usages contemporains de la mer à Monaco en 2025.",
+    "legende": "Rencontre de participants au Colloque INDEMER, Monaco, 2025.",
+    "galerie": [
+      {
+        "fichier": "assets/img/media/events/indemer-monaco-2025/oby_indemer_monaco_2025_02.webp",
+        "alt": "Vue de la séance d’ouverture du Colloque INDEMER sur les usages contemporains de la mer à Monaco en 2025.",
+        "legende": "Séance d’ouverture du Colloque INDEMER, Monaco, 2025."
+      },
+      {
+        "fichier": "assets/img/media/events/indemer-monaco-2025/oby_indemer_monaco_2025_03.webp",
+        "alt": "Programme et publications présentés dans le contexte du Colloque INDEMER à Monaco en 2025.",
+        "legende": "Programme et supports du Colloque INDEMER, 2025."
+      },
+      {
+        "fichier": "assets/img/media/events/indemer-monaco-2025/oby_indemer_monaco_2025_04.webp",
+        "alt": "Table ronde du Colloque INDEMER sur les usages contemporains de la mer à Monaco en 2025.",
+        "legende": "Table ronde du Colloque INDEMER, Monaco, 2025."
+      },
+      {
+        "fichier": "assets/img/media/events/indemer-monaco-2025/oby_indemer_monaco_2025_05.webp",
+        "alt": "Projection consacrée aux usages contemporains de la mer lors du Colloque INDEMER à Monaco en 2025.",
+        "legende": "Séquence consacrée aux usages contemporains de la mer, 2025."
+      },
+      {
+        "fichier": "assets/img/media/events/indemer-monaco-2025/oby_indemer_monaco_2025_06.webp",
+        "alt": "Projection consacrée aux défis et enjeux juridiques de l’autonomie maritime au Colloque INDEMER en 2025.",
+        "legende": "Défis et enjeux juridiques de l’autonomie maritime, INDEMER, 2025."
+      },
+      {
+        "fichier": "assets/img/media/events/indemer-monaco-2025/oby_indemer_monaco_2025_07.webp",
+        "alt": "Projection consacrée à la dimension sociale de la maritimité au Colloque INDEMER en 2025.",
+        "legende": "Dimension sociale de la maritimité, INDEMER, 2025."
+      },
+      {
+        "fichier": "assets/img/media/events/indemer-monaco-2025/oby_indemer_monaco_2025_08.webp",
+        "alt": "OUAGA Bokoua Yao avec deux participants au Colloque INDEMER à Monaco en 2025.",
+        "legende": "Temps d’échange entre participants, INDEMER, 2025."
+      },
+      {
+        "fichier": "assets/img/media/events/indemer-monaco-2025/oby_indemer_monaco_2025_09.webp",
+        "alt": "Groupe de participants devant la signalétique du Colloque INDEMER à Monaco en 2025.",
+        "legende": "Participants devant la signalétique du colloque, 2025."
+      },
+      {
+        "fichier": "assets/img/media/events/indemer-monaco-2025/oby_indemer_monaco_2025_10.webp",
+        "alt": "Groupe de participants devant la signalétique du Colloque INDEMER à Monaco en 2025, dans un second cadrage.",
+        "legende": "Second cadrage du groupe de participants, INDEMER, 2025."
+      },
+      {
+        "fichier": "assets/img/media/events/indemer-monaco-2025/oby_indemer_monaco_2025_11.webp",
+        "alt": "Projection consacrée aux usages économiques de la mer au Colloque INDEMER en 2025.",
+        "legende": "Usages économiques de la mer, INDEMER, 2025."
+      },
+      {
+        "fichier": "assets/img/media/events/indemer-monaco-2025/oby_indemer_monaco_2025_12.webp",
+        "alt": "Vue extérieure du site du Colloque INDEMER à Monaco en 2025.",
+        "legende": "Environnement du Colloque INDEMER à Monaco, 2025."
+      },
+      {
+        "fichier": "assets/img/media/events/indemer-monaco-2025/oby_indemer_monaco_2025_13.webp",
+        "alt": "OUAGA Bokoua Yao sur le site du Colloque INDEMER à Monaco en 2025.",
+        "legende": "Sur le site du Colloque INDEMER, Monaco, 2025."
+      },
+      {
+        "fichier": "assets/img/media/events/indemer-monaco-2025/oby_indemer_monaco_2025_14.webp",
+        "alt": "Portrait de OUAGA Bokoua Yao sur le site du Colloque INDEMER à Monaco en 2025.",
+        "legende": "Portrait contextualisé, Colloque INDEMER, 2025."
+      },
+      {
+        "fichier": "assets/img/media/events/indemer-monaco-2025/oby_indemer_monaco_2025_15.webp",
+        "alt": "OUAGA Bokoua Yao dans l’environnement extérieur du Colloque INDEMER à Monaco en 2025.",
+        "legende": "Environnement extérieur du Colloque INDEMER, 2025."
+      },
+      {
+        "fichier": "assets/img/media/events/indemer-monaco-2025/oby_indemer_monaco_2025_16.webp",
+        "alt": "Table ronde consacrée à la gouvernance du milieu marin et de ses usages au Colloque INDEMER en 2025.",
+        "legende": "Gouvernance du milieu marin et de ses usages, INDEMER, 2025."
+      },
+      {
+        "fichier": "assets/img/media/events/indemer-monaco-2025/oby_indemer_monaco_2025_17.webp",
+        "alt": "Projection du programme consacré à la gouvernance du milieu marin et de ses usages au Colloque INDEMER en 2025.",
+        "legende": "Programme de la séquence sur la gouvernance du milieu marin, 2025."
+      },
+      {
+        "fichier": "assets/img/media/events/indemer-monaco-2025/oby_indemer_monaco_2025_18.webp",
+        "alt": "Séquence de conclusion et de clôture du Colloque INDEMER à Monaco en 2025.",
+        "legende": "Conclusion et clôture du Colloque INDEMER, 2025."
+      },
+      {
+        "fichier": "assets/img/media/events/indemer-monaco-2025/oby_indemer_monaco_2025_19.webp",
+        "alt": "Échange entre participants dans l’environnement du Colloque INDEMER à Monaco en 2025.",
+        "legende": "Échange entre participants, INDEMER, 2025."
+      },
+      {
+        "fichier": "assets/img/media/events/indemer-monaco-2025/oby_indemer_monaco_2025_20.webp",
+        "alt": "Vue de l’auditoire du Colloque INDEMER sur les usages contemporains de la mer à Monaco en 2025.",
+        "legende": "Auditoire du Colloque INDEMER, Monaco, 2025."
+      }
+    ]
   },
   {
     "id": "academies-marine-europeennes-ensm-2025",
@@ -209,26 +434,77 @@
     "annee": "2025",
     "lieu": "ENSM Marseille",
     "categorie": "evenement-academique",
-    "typeMedia": "visuel-documentaire",
+    "typeMedia": "photographie-evenement",
     "evenementLie": "Colloque des Académies de marine européennes",
     "pageLiee": "interventions.html#academies-marine-europeennes-ensm-2025",
     "fichier": "assets/img/media/events/academies-marine-ensm-2025/oby_academies_marine_ensm_2025_01.webp",
-    "alt": "Portrait contextualisé devant la signalétique du Colloque des Académies de marine européennes à Marseille, 2025.",
+    "alt": "OUAGA Bokoua Yao devant la signalétique du Colloque des Académies de marine européennes à Marseille en 2025.",
     "galerie": [
       {
         "fichier": "assets/img/media/events/academies-marine-ensm-2025/oby_academies_marine_ensm_2025_02.webp",
-        "alt": "Écran d'ouverture du Colloque des Académies de marine européennes portant les emblèmes des académies participantes, 2025.",
+        "alt": "Écran d’ouverture du Colloque des Académies de marine européennes portant les emblèmes des académies participantes en 2025.",
         "legende": "Ouverture du Colloque des Académies de marine européennes, 2025."
       },
       {
         "fichier": "assets/img/media/events/academies-marine-ensm-2025/oby_academies_marine_ensm_2025_03.webp",
-        "alt": "Projection consacrée aux obligations climatiques des États au regard du droit de la mer, lors du Colloque des Académies de marine européennes, 2025.",
-        "legende": "Séquence consacrée aux obligations climatiques des États, 2025."
+        "alt": "Projection consacrée aux obligations climatiques des États au regard du droit de la mer lors du Colloque des Académies de marine européennes en 2025.",
+        "legende": "Obligations climatiques des États, Colloque des Académies de marine, 2025."
+      },
+      {
+        "fichier": "assets/img/media/events/academies-marine-ensm-2025/oby_academies_marine_ensm_2025_04.webp",
+        "alt": "Projection consacrée à la pollution marine, à ses conséquences et à ses enjeux lors du Colloque des Académies de marine européennes en 2025.",
+        "legende": "Pollution marine : réalités, conséquences et enjeux, 2025."
+      },
+      {
+        "fichier": "assets/img/media/events/academies-marine-ensm-2025/oby_academies_marine_ensm_2025_05.webp",
+        "alt": "OUAGA Bokoua Yao devant la signalétique du Colloque des Académies de marine européennes dans un second cadrage en 2025.",
+        "legende": "Second cadrage devant la signalétique du colloque, 2025."
+      },
+      {
+        "fichier": "assets/img/media/events/academies-marine-ensm-2025/oby_academies_marine_ensm_2025_06.webp",
+        "alt": "Projection consacrée à l’économie bleue lors du Colloque des Académies de marine européennes en 2025.",
+        "legende": "Séquence consacrée à l’économie bleue, 2025."
+      },
+      {
+        "fichier": "assets/img/media/events/academies-marine-ensm-2025/oby_academies_marine_ensm_2025_07.webp",
+        "alt": "Projection consacrée à la dispersion et à l’accumulation des plastiques marins lors du colloque en 2025.",
+        "legende": "Dispersion et accumulation des plastiques marins, 2025."
+      },
+      {
+        "fichier": "assets/img/media/events/academies-marine-ensm-2025/oby_academies_marine_ensm_2025_08.webp",
+        "alt": "OUAGA Bokoua Yao dans l’espace d’exposition associé au Colloque des Académies de marine européennes en 2025.",
+        "legende": "Espace d’exposition associé au colloque, 2025."
+      },
+      {
+        "fichier": "assets/img/media/events/academies-marine-ensm-2025/oby_academies_marine_ensm_2025_09.webp",
+        "alt": "OUAGA Bokoua Yao dans l’espace d’exposition du colloque, dans un second cadrage, en 2025.",
+        "legende": "Second cadrage dans l’espace d’exposition, 2025."
+      },
+      {
+        "fichier": "assets/img/media/events/academies-marine-ensm-2025/oby_academies_marine_ensm_2025_10.webp",
+        "alt": "OUAGA Bokoua Yao dans l’espace d’exposition du colloque, dans un troisième cadrage, en 2025.",
+        "legende": "Troisième cadrage dans l’espace d’exposition, 2025."
+      },
+      {
+        "fichier": "assets/img/media/events/academies-marine-ensm-2025/oby_academies_marine_ensm_2025_11.webp",
+        "alt": "Séquence protocolaire du Colloque des Académies de marine européennes à Marseille en 2025.",
+        "legende": "Séquence du Colloque des Académies de marine européennes, 2025."
+      },
+      {
+        "fichier": "assets/img/media/events/academies-marine-ensm-2025/oby_academies_marine_ensm_2025_12.webp",
+        "alt": "Vue d’ensemble de l’auditorium lors du Colloque des Académies de marine européennes en 2025.",
+        "legende": "Auditorium du colloque à Marseille, 2025."
+      },
+      {
+        "fichier": "assets/img/media/events/academies-marine-ensm-2025/oby_academies_marine_ensm_2025_13.webp",
+        "alt": "Séquence officielle du Colloque des Académies de marine européennes à Marseille en 2025.",
+        "legende": "Séquence officielle du colloque à Marseille, 2025."
       }
     ],
     "statut": "public-valide",
-    "description": "Sélection photographique documentant la signalétique et deux séquences de travail du Colloque des Académies de marine européennes à Marseille en 2025.",
-    "notePrudence": "Les images documentent le contexte du colloque sans attribuer de fonction institutionnelle ni de rôle d'intervenant."
+    "description": "Treize photographies documentent la signalétique, les séquences scientifiques, l’auditorium et les espaces associés au Colloque des Académies de marine européennes à Marseille en 2025.",
+    "notePrudence": "Les légendes décrivent le contexte du colloque sans attribuer de rôle d’intervenant ou de relation institutionnelle non établie.",
+    "legende": "Signalétique du Colloque des Académies de marine européennes, 2025."
   },
   {
     "id": "ersuma-ohada-propriete-intellectuelle-2022",
@@ -242,7 +518,7 @@
     "fichier": "assets/img/media/placeholder-document-oby.svg",
     "statut": "media-non-publie",
     "description": "Support associé conservé en interne.",
-    "notePrudence": "Publication limitée aux documents autorisés."
+    "notePrudence": "Aucune photographie source exploitable n’est actuellement accessible pour cette entrée."
   },
   {
     "id": "arbitrage-investissements-afrique-2020",
@@ -256,7 +532,7 @@
     "fichier": "assets/img/media/placeholder-document-oby.svg",
     "statut": "media-non-publie",
     "description": "Support associé conservé en interne.",
-    "notePrudence": "Publication limitée aux documents autorisés."
+    "notePrudence": "Aucune photographie source exploitable n’est actuellement accessible pour cette entrée."
   },
   {
     "id": "portrait-academique-oby",
@@ -270,7 +546,7 @@
     "fichier": "assets/img/media/placeholder-portrait-oby.svg",
     "statut": "media-non-publie",
     "description": "Portrait public conservé hors ligne tant qu’il n’est pas autorisé.",
-    "notePrudence": "Aucun portrait privé n'est publié sans validation préalable."
+    "notePrudence": "Aucune photographie source exploitable n’est actuellement accessible pour cette entrée."
   },
   {
     "id": "identite-partage-oby",
@@ -284,7 +560,7 @@
     "fichier": "assets/img/social/oby-og-image.png",
     "statut": "public-valide",
     "description": "Image publique de partage et d'identité académique du site OBY.",
-    "notePrudence": "Support public du site."
+    "notePrudence": "La fiche décrit uniquement le contexte documenté, sans attribuer de fonction ou de relation non établie."
   },
   {
     "id": "obligation-proteger-milieu-marin-monaco-2023",
@@ -298,7 +574,7 @@
     "fichier": "assets/img/media/placeholder-evenement-oby.svg",
     "statut": "media-non-publie",
     "description": "Trace documentaire conservée en interne.",
-    "notePrudence": "Aucun badge brut, QR code ou média sensible n'est publié."
+    "notePrudence": "La source recensée est un badge ou un document d’identification, et non une photographie d’événement destinée à la galerie."
   },
   {
     "id": "euromaritime-blue-growth-2022",
@@ -306,13 +582,42 @@
     "annee": "2022",
     "lieu": "Marseille",
     "categorie": "evenement-academique",
-    "typeMedia": "visuel-documentaire",
+    "typeMedia": "photographie-evenement",
     "evenementLie": "Euromaritime / Blue Growth Exhibition",
     "pageLiee": "interventions.html#euromaritime-blue-growth-2022",
-    "fichier": "assets/img/media/placeholder-evenement-oby.svg",
-    "statut": "media-non-publie",
-    "description": "Trace documentaire identifiée, conservée hors ligne en raison d’éléments sensibles sur badge.",
-    "notePrudence": "Aucun badge brut, QR code ou média sensible n'est publié."
+    "fichier": "assets/img/media/events/euromaritime-2022/oby_euromaritime_2022_01.webp",
+    "statut": "public-valide",
+    "description": "Six photographies documentent l’espace d’exposition, les panels et des présentations d’Euromaritime à Marseille en 2022.",
+    "notePrudence": "Le badge nominatif avec QR code n’est pas une photographie d’événement et reste hors galerie.",
+    "alt": "OUAGA Bokoua Yao avec deux participants dans un espace d’exposition d’Euromaritime à Marseille en 2022.",
+    "legende": "Rencontre dans l’espace d’exposition d’Euromaritime, 2022.",
+    "galerie": [
+      {
+        "fichier": "assets/img/media/events/euromaritime-2022/oby_euromaritime_2022_02.webp",
+        "alt": "Vue d’un espace d’exposition d’Euromaritime à Marseille en 2022.",
+        "legende": "Espace d’exposition d’Euromaritime, Marseille, 2022."
+      },
+      {
+        "fichier": "assets/img/media/events/euromaritime-2022/oby_euromaritime_2022_03.webp",
+        "alt": "Table ronde consacrée aux enjeux maritimes lors d’Euromaritime à Marseille en 2022.",
+        "legende": "Table ronde d’Euromaritime, Marseille, 2022."
+      },
+      {
+        "fichier": "assets/img/media/events/euromaritime-2022/oby_euromaritime_2022_04.webp",
+        "alt": "Échanges d’un panel lors d’Euromaritime à Marseille en 2022.",
+        "legende": "Panel d’Euromaritime, Marseille, 2022."
+      },
+      {
+        "fichier": "assets/img/media/events/euromaritime-2022/oby_euromaritime_2022_05.webp",
+        "alt": "Présentation du projet HELENA sur l’hybridation et l’électrification des navires lors d’Euromaritime en 2022.",
+        "legende": "Projet HELENA présenté à Euromaritime, 2022."
+      },
+      {
+        "fichier": "assets/img/media/events/euromaritime-2022/oby_euromaritime_2022_06.webp",
+        "alt": "Présentation consacrée à la révolution numérique des industries maritimes lors d’Euromaritime en 2022.",
+        "legende": "Industries maritimes et transition numérique, Euromaritime, 2022."
+      }
+    ]
   },
   {
     "id": "emerging-valley-2024",
@@ -325,8 +630,8 @@
     "pageLiee": "interventions.html#emerging-valley-2024",
     "fichier": "assets/img/media/placeholder-evenement-oby.svg",
     "statut": "media-non-publie",
-    "description": "Trace documentaire identifiée, conservée hors ligne en raison d’éléments sensibles sur badge.",
-    "notePrudence": "Aucun badge brut, QR code ou média sensible n'est publié."
+    "description": "La source recensée pour cette entrée est un badge documentaire ; aucune photographie d’événement distincte n’est accessible.",
+    "notePrudence": "La source recensée est un badge ou un document d’identification, et non une photographie d’événement destinée à la galerie."
   },
   {
     "id": "colloque-surete-maritime-cesm-2023",
@@ -340,7 +645,7 @@
     "fichier": "assets/img/media/placeholder-evenement-oby.svg",
     "statut": "media-non-publie",
     "description": "Trace documentaire conservée en interne.",
-    "notePrudence": "Aucun badge brut, QR code, code-barres, numéro d'identification ou média sensible n'est publié.",
+    "notePrudence": "La source recensée est un badge ou un document d’identification, et non une photographie d’événement destinée à la galerie.",
     "type_evenement": "visuel-documentaire",
     "statut_publication": "non publie",
     "axe_associe": "Mer, droit de la mer et gouvernance maritime",
@@ -359,7 +664,7 @@
     "fichier": "assets/img/media/placeholder-evenement-oby.svg",
     "statut": "media-non-publie",
     "description": "Trace documentaire conservée en interne.",
-    "notePrudence": "Aucun badge brut, QR code, code-barres, numéro d'identification ou média sensible n'est publié.",
+    "notePrudence": "La source recensée est un badge ou un document d’identification, et non une photographie d’événement destinée à la galerie.",
     "type_evenement": "visuel-documentaire",
     "statut_publication": "non publie",
     "axe_associe": "Mer, droit de la mer et gouvernance maritime",
@@ -378,7 +683,7 @@
     "fichier": "assets/img/media/placeholder-evenement-oby.svg",
     "statut": "media-non-publie",
     "description": "Trace documentaire conservée en interne.",
-    "notePrudence": "Aucun badge brut, QR code, code-barres, numéro d'identification ou média sensible n'est publié.",
+    "notePrudence": "La source recensée est un badge ou un document d’identification, et non une photographie d’événement destinée à la galerie.",
     "type_evenement": "visuel-documentaire",
     "statut_publication": "non publie",
     "axe_associe": "Mer, droit de la mer et gouvernance maritime",
@@ -397,7 +702,7 @@
     "fichier": "assets/img/media/placeholder-evenement-oby.svg",
     "statut": "media-non-publie",
     "description": "Trace documentaire conservée en interne.",
-    "notePrudence": "Aucun badge brut, QR code, code-barres, numéro d'identification ou média sensible n'est publié.",
+    "notePrudence": "La source recensée est un badge ou un document d’identification, et non une photographie d’événement destinée à la galerie.",
     "type_evenement": "visuel-documentaire",
     "statut_publication": "non publie",
     "axe_associe": "Mer, droit de la mer et gouvernance maritime",
@@ -416,7 +721,7 @@
     "fichier": "assets/img/media/placeholder-evenement-oby.svg",
     "statut": "media-non-publie",
     "description": "Trace documentaire conservée en interne.",
-    "notePrudence": "Aucun badge brut, QR code, code-barres, numéro d'identification ou média sensible n'est publié.",
+    "notePrudence": "La source recensée est un badge ou un document d’identification, et non une photographie d’événement destinée à la galerie.",
     "type_evenement": "visuel-documentaire",
     "statut_publication": "non publie",
     "axe_associe": "Littoral, environnement et Méditerranée",
@@ -435,7 +740,7 @@
     "fichier": "assets/img/media/placeholder-evenement-oby.svg",
     "statut": "media-non-publie",
     "description": "Trace documentaire conservée en interne.",
-    "notePrudence": "Aucun badge brut, QR code, code-barres, numéro d'identification ou média sensible n'est publié.",
+    "notePrudence": "La source recensée est un badge ou un document d’identification, et non une photographie d’événement destinée à la galerie.",
     "type_evenement": "visuel-documentaire",
     "statut_publication": "non publie",
     "axe_associe": "Littoral, environnement et Méditerranée",
@@ -454,7 +759,7 @@
     "fichier": "assets/img/media/placeholder-evenement-oby.svg",
     "statut": "media-non-publie",
     "description": "Trace documentaire conservée en interne.",
-    "notePrudence": "Aucun badge brut, QR code, code-barres, numéro d'identification ou média sensible n'est publié.",
+    "notePrudence": "La source recensée est un badge ou un document d’identification, et non une photographie d’événement destinée à la galerie.",
     "type_evenement": "visuel-documentaire",
     "statut_publication": "non publie",
     "axe_associe": "Littoral, environnement et Méditerranée",
@@ -473,7 +778,7 @@
     "fichier": "assets/img/media/placeholder-evenement-oby.svg",
     "statut": "media-non-publie",
     "description": "Trace documentaire conservée en interne.",
-    "notePrudence": "Aucun badge brut, QR code, code-barres, numéro d'identification ou média sensible n'est publié.",
+    "notePrudence": "La source recensée est un badge ou un document d’identification, et non une photographie d’événement destinée à la galerie.",
     "type_evenement": "visuel-documentaire",
     "statut_publication": "non publie",
     "axe_associe": "Littoral, environnement et Méditerranée",
@@ -492,7 +797,7 @@
     "fichier": "assets/img/media/placeholder-evenement-oby.svg",
     "statut": "media-non-publie",
     "description": "Trace documentaire conservée en interne.",
-    "notePrudence": "Aucun badge brut, QR code, code-barres, numéro d'identification ou média sensible n'est publié.",
+    "notePrudence": "La source recensée est un badge ou un document d’identification, et non une photographie d’événement destinée à la galerie.",
     "type_evenement": "visuel-documentaire",
     "statut_publication": "non publie",
     "axe_associe": "Innovation, économie bleue et entrepreneuriat académique",
@@ -511,7 +816,7 @@
     "fichier": "assets/img/media/placeholder-evenement-oby.svg",
     "statut": "media-non-publie",
     "description": "Trace documentaire conservée en interne.",
-    "notePrudence": "Aucun badge brut, QR code, code-barres, numéro d'identification ou média sensible n'est publié.",
+    "notePrudence": "La source recensée est un badge ou un document d’identification, et non une photographie d’événement destinée à la galerie.",
     "type_evenement": "visuel-documentaire",
     "statut_publication": "non publie",
     "axe_associe": "Innovation, économie bleue et entrepreneuriat académique",
@@ -530,7 +835,7 @@
     "fichier": "assets/img/media/placeholder-evenement-oby.svg",
     "statut": "media-non-publie",
     "description": "Trace documentaire conservée en interne.",
-    "notePrudence": "Aucun badge brut, QR code, code-barres, numéro d'identification ou média sensible n'est publié.",
+    "notePrudence": "La source recensée est un badge ou un document d’identification, et non une photographie d’événement destinée à la galerie.",
     "type_evenement": "visuel-documentaire",
     "statut_publication": "non publie",
     "axe_associe": "Innovation, économie bleue et entrepreneuriat académique",
@@ -549,7 +854,7 @@
     "fichier": "assets/img/media/placeholder-evenement-oby.svg",
     "statut": "media-non-publie",
     "description": "Trace documentaire conservée en interne.",
-    "notePrudence": "Aucun badge brut, QR code, code-barres, numéro d'identification ou média sensible n'est publié.",
+    "notePrudence": "La source recensée est un badge ou un document d’identification, et non une photographie d’événement destinée à la galerie.",
     "type_evenement": "visuel-documentaire",
     "statut_publication": "non publie",
     "axe_associe": "Innovation, économie bleue et entrepreneuriat académique",
@@ -568,7 +873,7 @@
     "fichier": "assets/img/media/placeholder-evenement-oby.svg",
     "statut": "media-non-publie",
     "description": "Trace documentaire conservée en interne.",
-    "notePrudence": "Aucun badge brut, QR code, code-barres, numéro d'identification ou média sensible n'est publié.",
+    "notePrudence": "La source recensée est un badge ou un document d’identification, et non une photographie d’événement destinée à la galerie.",
     "type_evenement": "visuel-documentaire",
     "statut_publication": "non publie",
     "axe_associe": "Innovation, économie bleue et entrepreneuriat académique",
@@ -587,7 +892,7 @@
     "fichier": "assets/img/media/placeholder-evenement-oby.svg",
     "statut": "media-non-publie",
     "description": "Trace documentaire conservée en interne.",
-    "notePrudence": "Aucun badge brut, QR code, code-barres, numéro d'identification ou média sensible n'est publié.",
+    "notePrudence": "La source recensée est un badge ou un document d’identification, et non une photographie d’événement destinée à la galerie.",
     "type_evenement": "visuel-documentaire",
     "statut_publication": "non publie",
     "axe_associe": "Innovation, économie bleue et entrepreneuriat académique",
@@ -606,7 +911,7 @@
     "fichier": "assets/img/media/placeholder-document-oby.svg",
     "statut": "media-non-publie",
     "description": "Trace documentaire conservée en interne.",
-    "notePrudence": "Aucun badge brut, QR code, code-barres, numéro d'identification ou média sensible n'est publié.",
+    "notePrudence": "La source recensée est un badge ou un document d’identification, et non une photographie d’événement destinée à la galerie.",
     "type_evenement": "support",
     "statut_publication": "non publie",
     "axe_associe": "Médiation, droit et règlement des différends",
@@ -625,12 +930,12 @@
     "fichier": "assets/img/media/placeholder-document-oby.svg",
     "statut": "public-valide",
     "description": "Trace publique associée à une plateforme scientifique océanique.",
-    "notePrudence": "Repère présenté sans confusion avec un partenariat institutionnel.",
+    "notePrudence": "La fiche décrit uniquement le contexte documenté, sans attribuer de fonction ou de relation non établie.",
     "type_evenement": "réseau-plateforme",
     "statut_publication": "public valide",
     "axe_associe": "Science océanique · réseau · gouvernance maritime",
     "sensibilite": "publique",
-    "action_recommandee": "conserver comme trace officielle sans publier de média privé"
+    "action_recommandee": "conserver comme trace officielle ; aucune photographie source accessible pour cette entrée"
   },
   {
     "id": "ocean-decade-network-2024",
@@ -644,12 +949,12 @@
     "fichier": "assets/img/media/placeholder-document-oby.svg",
     "statut": "public-valide",
     "description": "Trace publique associée à la Décennie des sciences océaniques pour le développement durable.",
-    "notePrudence": "Repère présenté sans confusion avec un partenariat institutionnel.",
+    "notePrudence": "La fiche décrit uniquement le contexte documenté, sans attribuer de fonction ou de relation non établie.",
     "type_evenement": "réseau-international",
     "statut_publication": "public valide",
     "axe_associe": "Sciences océaniques · coopération internationale · prospective",
     "sensibilite": "publique",
-    "action_recommandee": "conserver comme trace officielle sans publier de média privé"
+    "action_recommandee": "conserver comme trace officielle ; aucune photographie source accessible pour cette entrée"
   },
   {
     "id": "proteus-entretien-joseph-ouaga-2024",
@@ -663,12 +968,12 @@
     "fichier": "assets/img/media/placeholder-document-oby.svg",
     "statut": "public-valide",
     "description": "Trace officielle publiée sur le carnet PROTEUS.",
-    "notePrudence": "Aucun média privé n'est ajouté ; seule la trace officielle est signalée.",
+    "notePrudence": "La fiche décrit uniquement le contexte documenté, sans attribuer de fonction ou de relation non établie.",
     "type_evenement": "trace-officielle",
     "statut_publication": "public valide",
     "axe_associe": "PROTEUS · prospective territoriale · littoral · Méditerranée",
     "sensibilite": "publique",
-    "action_recommandee": "conserver comme trace officielle sans publier de média privé"
+    "action_recommandee": "conserver comme trace officielle ; aucune photographie source accessible pour cette entrée"
   },
   {
     "id": "rencontres-economie-bleue-institut-ocean-2026",
@@ -682,7 +987,7 @@
     "fichier": "assets/img/media/placeholder-evenement-oby.svg",
     "statut": "media-non-publie",
     "description": "Participation confirmée à la première édition des Rencontres de l’Économie Bleue du 19 janvier 2026.",
-    "notePrudence": "Aucune photo personnelle n’est publiée sans validation préalable."
+    "notePrudence": "Aucune photographie source exploitable n’est actuellement accessible pour cette entrée."
   },
   {
     "id": "ecole-ete-institut-ocean-2026",
@@ -698,22 +1003,23 @@
     "galerie": [
       {
         "fichier": "assets/img/media/ecole-ete-2026/oby_v5b_ecole_ete_ocean_amu_2026_presentation_richard_sempere.webp",
-        "alt": "Présentation scientifique lors de l’École d’été Océan 2026 consacrée aux pollutions plastiques dans l’environnement marin.",
-        "legende": "Présentation scientifique, École d’été Océan 2026."
+        "alt": "Présentation de Richard Sempéré lors de l’École d’été Océan 2026 consacrée aux pollutions plastiques dans l’environnement marin.",
+        "legende": "Intervention de Richard Sempéré, École d’été Océan 2026."
       },
       {
         "fichier": "assets/img/media/ecole-ete-2026/oby_v5b_ecole_ete_ocean_amu_2026_presentation_sylvain_rigaud.webp",
-        "alt": "Séquence de cours lors de l’École d’été Océan 2026 consacrée aux pollutions plastiques dans l’environnement marin.",
-        "legende": "Séquence de cours, École d’été Océan 2026."
+        "alt": "Séquence animée par Sylvain Rigaud lors de l’École d’été Océan 2026 consacrée aux pollutions plastiques dans l’environnement marin.",
+        "legende": "Intervention de Sylvain Rigaud, École d’été Océan 2026."
       },
       {
         "fichier": "assets/img/media/ecole-ete-2026/oby_v5b_ecole_ete_ocean_amu_2026_atelier_debat_alessandra_quadrelli.webp",
-        "alt": "Atelier-débat lors de l’École d’été Océan 2026 consacrée aux pollutions plastiques dans l’environnement marin.",
-        "legende": "Atelier-débat, École d’été Océan 2026."
+        "alt": "Atelier animé par Alessandra Quadrelli lors de l’École d’été Océan 2026 consacrée aux pollutions plastiques dans l’environnement marin.",
+        "legende": "Atelier avec Alessandra Quadrelli, École d’été Océan 2026."
       }
     ],
     "statut": "public-valide",
-    "description": "Sélection photographique documentant l’École d’été Océan 2026 : photo de groupe, présentation scientifique, séquence de cours et atelier-débat.",
-    "notePrudence": "Images intégrées comme traces visuelles d’un événement officiellement documenté, sans attribuer de fonction institutionnelle."
+    "description": "Quatre photographies documentent l’École d’été Océan 2026 : photo de groupe, interventions de Richard Sempéré et Sylvain Rigaud, et atelier avec Alessandra Quadrelli.",
+    "notePrudence": "Les noms des intervenants sont rétablis sur les séquences identifiées ; aucune fonction supplémentaire n’est attribuée.",
+    "legende": "Photo de groupe de l’École d’été Océan 2026, Institut des Sciences de l’Océan / Aix-Marseille Université."
   }
 ]

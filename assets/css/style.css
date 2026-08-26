@@ -1379,15 +1379,32 @@ main:focus {
   box-shadow: var(--shadow-premium);
 }
 
-.media-card > img {
+.media-card-primary {
+  margin: 0;
+  background: var(--ivory);
+}
+
+.media-card-primary img {
+  display: block;
   width: 100%;
   aspect-ratio: 16 / 10;
   object-fit: cover;
   background: var(--ivory);
 }
 
-.media-card-photo > img {
+.media-card-photo .media-card-primary img {
   object-fit: contain;
+}
+
+.media-card-primary figcaption {
+  margin: 0;
+  padding: 9px 16px 10px;
+  border-top: 1px solid rgba(8, 26, 47, 0.08);
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.94);
+  font-size: 0.76rem;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
 }
 
 .media-card-body {
@@ -1505,6 +1522,30 @@ main:focus {
 
 .media-card-gallery {
   margin: 6px 0 18px;
+}
+
+.media-gallery-more {
+  min-width: 0;
+  margin: -4px 0 18px;
+  border-top: 1px solid rgba(8, 26, 47, 0.1);
+}
+
+.media-gallery-more summary {
+  width: fit-content;
+  margin-top: 10px;
+  color: var(--blue);
+  font-size: 0.82rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.media-gallery-more summary:hover,
+.media-gallery-more summary:focus-visible {
+  color: var(--navy);
+}
+
+.media-card-gallery-more {
+  margin-top: 14px;
 }
 
 .map-summary {

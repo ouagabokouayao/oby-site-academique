@@ -987,18 +987,30 @@ const loadWatchAgendaItems = () =>
     const galleryItems = Array.isArray(item.galerie)
       ? item.galerie.filter((entry) => entry && entry.fichier)
       : [];
+    const renderGalleryEntries = (entries) =>
+      entries
+        .map(
+          (entry) => `
+            <figure>
+              <img src="${escapeHtml(entry.fichier)}" alt="${escapeHtml(entry.alt || "")}" loading="lazy">
+              ${entry.legende ? `<figcaption>${escapeHtml(entry.legende)}</figcaption>` : ""}
+            </figure>`
+        )
+        .join("");
+    const visibleGalleryItems = galleryItems.slice(0, 4);
+    const additionalGalleryItems = galleryItems.slice(4);
     const gallery = galleryItems.length
       ? `<div class="media-card-gallery" aria-label="Photographies complémentaires">
-          ${galleryItems
-            .map(
-              (entry) => `
-                <figure>
-                  <img src="${escapeHtml(entry.fichier)}" alt="${escapeHtml(entry.alt || "")}" loading="lazy">
-                  ${entry.legende ? `<figcaption>${escapeHtml(entry.legende)}</figcaption>` : ""}
-                </figure>`
-            )
-            .join("")}
-        </div>`
+          ${renderGalleryEntries(visibleGalleryItems)}
+        </div>
+        ${additionalGalleryItems.length
+          ? `<details class="media-gallery-more">
+              <summary>Voir ${additionalGalleryItems.length} photo${additionalGalleryItems.length > 1 ? "s" : ""} supplémentaire${additionalGalleryItems.length > 1 ? "s" : ""}</summary>
+              <div class="media-card-gallery media-card-gallery-more" aria-label="Photographies supplémentaires">
+                ${renderGalleryEntries(additionalGalleryItems)}
+              </div>
+            </details>`
+          : ""}`
       : "";
     const contextLink = item.pageLiee
       ? `<a class="media-link" href="${escapeHtml(item.pageLiee)}">Voir le contexte associé</a>`
@@ -1006,7 +1018,10 @@ const loadWatchAgendaItems = () =>
 
     return `
       <article class="media-card${imageClass}" id="${escapeHtml(item.id || "")}">
-        <img src="${escapeHtml(item.fichier || "assets/img/media/placeholder-document-oby.svg")}" alt="${escapeHtml(item.alt || item.titre || "Trace documentaire OBY")}" loading="lazy">
+        <figure class="media-card-primary">
+          <img src="${escapeHtml(item.fichier || "assets/img/media/placeholder-document-oby.svg")}" alt="${escapeHtml(item.alt || item.titre || "Trace documentaire OBY")}" loading="lazy">
+          ${item.legende ? `<figcaption>${escapeHtml(item.legende)}</figcaption>` : ""}
+        </figure>
         <div class="media-card-body">
           <div class="media-card-top">
             <span class="media-type">${escapeHtml(type)}</span>
@@ -1022,7 +1037,7 @@ const loadWatchAgendaItems = () =>
     `;
   };
 
-  fetch("assets/data/mediatheque-oby.json?v=oby-v3-5")
+  fetch("assets/data/mediatheque-oby.json?v=oby-v3-6")
     .then((response) => {
       if (!response.ok) {
         throw new Error("Media data unavailable");
