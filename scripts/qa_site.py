@@ -12,6 +12,8 @@ from urllib.parse import unquote, urlsplit
 
 
 REQUIRED_ROBOTS = {"noindex", "nofollow", "noarchive", "nosnippet"}
+# 16 pages historiques + recherche-droit-mer-golfe-guinee.html
+EXPECTED_HTML_PAGES = 17
 RISK_TERMS = (
     "doctorant",
     "doctorat en cours",
@@ -151,8 +153,8 @@ def main():
             label = str(page)
         target.append({"code": code, "page": label, "detail": detail})
 
-    if len(pages) != 16:
-        add(errors, "HTML_PAGE_COUNT", root, f"Expected 16 root HTML pages, found {len(pages)}")
+    if len(pages) != EXPECTED_HTML_PAGES:
+        add(errors, "HTML_PAGE_COUNT", root, f"Expected {EXPECTED_HTML_PAGES} root HTML pages, found {len(pages)}")
 
     for page in pages:
         try:
