@@ -3680,3 +3680,13 @@ main:focus {
     transform: rotate(135deg);
   }
 }
+/* OBY P0 — Accueil : 4 travaux principaux en grille 2 × 2 */
+.proof-grid.home-proof-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 760px) {
+  .proof-grid.home-proof-grid {
+    grid-template-columns: 1fr;
+  }
+}
