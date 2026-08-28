@@ -294,13 +294,47 @@
     "annee": "2024",
     "lieu": "Port-Cros / La Londe-les-Maures",
     "categorie": "terrain-institution",
-    "typeMedia": "visuel-documentaire",
+    "typeMedia": "photographie-evenement",
     "evenementLie": "Atelier régional MedPAN sur le tourisme dans les aires marines protégées",
     "pageLiee": "interventions.html#medpan-port-cros-2024",
-    "fichier": "assets/img/media/placeholder-terrain-oby.svg",
-    "statut": "media-non-publie",
-    "description": "Trace documentaire de terrain conservée en interne.",
-    "notePrudence": "Aucune photographie source exploitable n’est actuellement accessible pour cette entrée."
+    "fichier": "assets/img/media/events/atelier-medpan-porquerolles-2024/oby_atelier_medpan_porquerolles_2024_01.webp",
+    "statut": "public-valide",
+    "description": "Sept photographies documentent la participation à l’atelier régional d’échange d’expériences du réseau MedPAN consacré au tourisme dans les aires marines protégées, les 15 et 16 avril 2024, entre La Londe-les-Maures, Porquerolles et le Parc national de Port-Cros.",
+    "notePrudence": "La participation relève de l’échange professionnel et de la veille : elle ne constitue ni un partenariat institutionnel, ni un mandat, ni une représentation officielle, ni une affiliation permanente. Le rattachement institutionnel figurant sur le badge est rendu illisible sur les copies publiques.",
+    "alt": "OUAGA Bokoua Yao à bord de la navette maritime, badge de l’atelier au cou, devant le littoral boisé de Porquerolles et des voiliers au mouillage, avril 2024.",
+    "legende": "Traversée vers Porquerolles pendant l’atelier régional MedPAN, avril 2024.",
+    "galerie": [
+      {
+        "fichier": "assets/img/media/events/atelier-medpan-porquerolles-2024/oby_atelier_medpan_porquerolles_2024_02.webp",
+        "alt": "Panneau d’entrée du Parc national de Port-Cros, avril 2024.",
+        "legende": "Panneau du Parc national de Port-Cros, 2024."
+      },
+      {
+        "fichier": "assets/img/media/events/atelier-medpan-porquerolles-2024/oby_atelier_medpan_porquerolles_2024_03.webp",
+        "alt": "OUAGA Bokoua Yao et les participants de l’atelier au débarquement sur le quai, Porquerolles, avril 2024.",
+        "legende": "Débarquement des participants de l’atelier, Porquerolles, 2024."
+      },
+      {
+        "fichier": "assets/img/media/events/atelier-medpan-porquerolles-2024/oby_atelier_medpan_porquerolles_2024_04.webp",
+        "alt": "OUAGA Bokoua Yao et un participant en marge de l’atelier régional MedPAN, avril 2024.",
+        "legende": "Échange en marge de l’atelier régional MedPAN, 2024."
+      },
+      {
+        "fichier": "assets/img/media/events/atelier-medpan-porquerolles-2024/oby_atelier_medpan_porquerolles_2024_05.webp",
+        "alt": "Sentier littoral et panorama sur la baie, île de Porquerolles, avril 2024.",
+        "legende": "Sentier littoral de Porquerolles, 2024."
+      },
+      {
+        "fichier": "assets/img/media/events/atelier-medpan-porquerolles-2024/oby_atelier_medpan_porquerolles_2024_06.webp",
+        "alt": "Panneaux directionnels de Porquerolles indiquant Notre-Dame, La Courtade et L’Oustaou, avril 2024.",
+        "legende": "Signalétique des sentiers de Porquerolles, 2024."
+      },
+      {
+        "fichier": "assets/img/media/events/atelier-medpan-porquerolles-2024/oby_atelier_medpan_porquerolles_2024_07.webp",
+        "alt": "Quai d’embarquement et signalétique des destinations Porquerolles, Port-Cros et Le Levant, La Londe-les-Maures, avril 2024.",
+        "legende": "Quai d’embarquement vers les îles d’Hyères, 2024."
+      }
+    ]
   },
   {
     "id": "vive-mer-mediterranee-amu-2024",
@@ -674,13 +708,37 @@
     "annee": "2024",
     "lieu": "The Camp, Aix-en-Provence",
     "categorie": "evenement-academique",
-    "typeMedia": "visuel-documentaire",
+    "typeMedia": "photographie-evenement",
     "evenementLie": "Emerging Valley",
     "pageLiee": "interventions.html#emerging-valley-2024",
-    "fichier": "assets/img/media/placeholder-evenement-oby.svg",
-    "statut": "media-non-publie",
-    "description": "La source recensée pour cette entrée est un badge documentaire ; aucune photographie d’événement distincte n’est accessible.",
-    "notePrudence": "La source recensée est un badge ou un document d’identification, et non une photographie d’événement destinée à la galerie."
+    "fichier": "assets/img/media/events/emerging-valley-2024/oby_emerging_valley_2024_01.webp",
+    "statut": "public-valide",
+    "description": "Cinq photographies documentent la participation à l’édition 2024 d’Emerging Valley, rendez-vous consacré à l’innovation, aux technologies et aux écosystèmes entrepreneuriaux entre l’Europe et l’Afrique, le 3 décembre 2024.",
+    "notePrudence": "La participation est celle d’un visiteur inscrit : aucune intervention, aucun panel et aucun rôle officiel ne sont revendiqués. Aucune personne tierce n’est nommée ; les badges de tiers sont rendus illisibles sur les copies publiques.",
+    "alt": "OUAGA Bokoua Yao et un participant devant le kakémono de l’Institut de recherche pour le développement — « Déployer la recherche, partager la science, transformer l’avenir » — lors d’Emerging Valley, 3 décembre 2024.",
+    "legende": "Devant le kakémono de l’IRD, Emerging Valley, 3 décembre 2024.",
+    "galerie": [
+      {
+        "fichier": "assets/img/media/events/emerging-valley-2024/oby_emerging_valley_2024_02.webp",
+        "alt": "Scène « Emerging Valley 2024 » et panélistes en fin de séance, édition du 3 décembre 2024.",
+        "legende": "La scène d’Emerging Valley, édition 2024."
+      },
+      {
+        "fichier": "assets/img/media/events/emerging-valley-2024/oby_emerging_valley_2024_03.webp",
+        "alt": "Table ronde d’Emerging Valley 2024 avec un intervenant en visioconférence, sous le logo de l’Agence universitaire de la Francophonie.",
+        "legende": "Table ronde et intervention à distance, Emerging Valley, 2024."
+      },
+      {
+        "fichier": "assets/img/media/events/emerging-valley-2024/oby_emerging_valley_2024_04.webp",
+        "alt": "OUAGA Bokoua Yao et trois participants devant le mur des partenaires d’Emerging Valley 2024, Aix-Marseille-Provence, 3 décembre 2024.",
+        "legende": "Devant le mur des partenaires, Emerging Valley, 2024."
+      },
+      {
+        "fichier": "assets/img/media/events/emerging-valley-2024/oby_emerging_valley_2024_05.webp",
+        "alt": "OUAGA Bokoua Yao et un participant en marge des séances d’Emerging Valley, 3 décembre 2024.",
+        "legende": "Échange en marge d’Emerging Valley, 2024."
+      }
+    ]
   },
   {
     "id": "colloque-surete-maritime-cesm-2023",
@@ -1155,5 +1213,313 @@
     "description": "Quatre photographies documentent l’École d’été Océan 2026 : photo de groupe, interventions de Richard Sempéré et Sylvain Rigaud, et atelier avec Alessandra Quadrelli.",
     "notePrudence": "Les noms des intervenants sont rétablis sur les séquences identifiées ; aucune fonction supplémentaire n’est attribuée.",
     "legende": "Photo de groupe de l’École d’été Océan 2026, Institut des Sciences de l’Océan / Aix-Marseille Université."
+  },
+  {
+    "id": "ceremonie-d2e-pepite-provence-2025",
+    "titre": "Remise des diplômes des étudiants-entrepreneurs D2E1 / D2E2, promotion 2024-2025",
+    "annee": "2025",
+    "lieu": "Archives départementales, Marseille",
+    "categorie": "evenement-academique",
+    "typeMedia": "photographie-evenement",
+    "evenementLie": "Remise des diplômes des étudiants-entrepreneurs D2E1 / D2E2 — Pépite Provence",
+    "pageLiee": "interventions.html#participations-selectionnees",
+    "fichier": "assets/img/media/events/ceremonie-d2e-pepite-provence-2025/oby_ceremonie_d2e_pepite_provence_2025_01.webp",
+    "statut": "public-valide",
+    "description": "Quatre photographies documentent la cérémonie de remise des diplômes des étudiants-entrepreneurs D2E1 et D2E2 de la promotion 2024-2025, organisée par Pépite Provence aux Archives départementales de Marseille le 15 décembre 2025. OUAGA Bokoua Yao y est diplômé au titre du statut national d’étudiant-entrepreneur.",
+    "notePrudence": "La cérémonie est une remise de diplômes de fin de dispositif : elle ne constitue ni un prix, ni une récompense, ni une distinction personnelle. Les légendes situent les scènes sans nommer de tiers ni attribuer de fonction.",
+    "alt": "OUAGA Bokoua Yao, écharpe de diplômé sur les épaules, devant le kakémono « pépite Provence — Étudier et entreprendre, c’est possible », cérémonie de remise des diplômes des étudiants-entrepreneurs, Marseille, 15 décembre 2025.",
+    "legende": "Devant la signalétique Pépite Provence, remise des diplômes des étudiants-entrepreneurs, 2025.",
+    "galerie": [
+      {
+        "fichier": "assets/img/media/events/ceremonie-d2e-pepite-provence-2025/oby_ceremonie_d2e_pepite_provence_2025_02.webp",
+        "alt": "Les diplômés du dispositif étudiant-entrepreneur sur scène, diplômes en main, sous l’écran « Remise des diplômes des étudiants entrepreneurs — 15 décembre 2025 », Marseille.",
+        "legende": "Remise des diplômes des étudiants-entrepreneurs, Marseille, 15 décembre 2025."
+      },
+      {
+        "fichier": "assets/img/media/events/ceremonie-d2e-pepite-provence-2025/oby_ceremonie_d2e_pepite_provence_2025_03.webp",
+        "alt": "Les diplômés du dispositif étudiant-entrepreneur sur scène, bras levés, à l’issue de la remise des diplômes, Marseille, 15 décembre 2025.",
+        "legende": "Sur scène à l’issue de la remise des diplômes, 2025."
+      },
+      {
+        "fichier": "assets/img/media/events/ceremonie-d2e-pepite-provence-2025/oby_ceremonie_d2e_pepite_provence_2025_04.webp",
+        "alt": "Vue de la salle et du public lors de la cérémonie de remise des diplômes des étudiants-entrepreneurs, Marseille, 15 décembre 2025.",
+        "legende": "La salle pendant la cérémonie, Marseille, 2025."
+      }
+    ]
+  },
+  {
+    "id": "colloque-loi-littoral-marseille-2026",
+    "titre": "Les espaces publics littoraux : 40 ans après la loi Littoral, regards croisés sur leur protection, leur accès et leurs usages",
+    "annee": "2026",
+    "lieu": "Cour administrative d’appel de Marseille",
+    "categorie": "evenement-academique",
+    "typeMedia": "photographie-evenement",
+    "evenementLie": "Les espaces publics littoraux : 40 ans après la loi Littoral, regards croisés sur leur protection, leur accès et leurs usages",
+    "pageLiee": "interventions.html#participations-selectionnees",
+    "fichier": "assets/img/media/events/colloque-loi-littoral-marseille-2026/oby_colloque_loi_littoral_marseille_2026_01.webp",
+    "statut": "public-valide",
+    "description": "Trois photographies documentent la participation à la rencontre « Les espaces publics littoraux : 40 ans après la loi Littoral, regards croisés sur leur protection, leur accès et leurs usages », tenue le 29 janvier 2026 à la Cour administrative d’appel de Marseille.",
+    "notePrudence": "Aucune signalétique de l’événement n’est lisible sur les photographies : le rattachement repose sur les métadonnées de prise de vue et sur la convocation reçue. La participation est celle d’un auditeur ; aucune intervention n’a eu lieu.",
+    "alt": "Salle en configuration table ronde, assistance nombreuse et estrade, lors de la rencontre consacrée aux espaces publics littoraux quarante ans après la loi Littoral, Cour administrative d’appel de Marseille, 29 janvier 2026.",
+    "legende": "Table ronde sur les espaces publics littoraux, Marseille, 29 janvier 2026.",
+    "galerie": [
+      {
+        "fichier": "assets/img/media/events/colloque-loi-littoral-marseille-2026/oby_colloque_loi_littoral_marseille_2026_02.webp",
+        "alt": "OUAGA Bokoua Yao et une participante lors de la rencontre consacrée aux espaces publics littoraux quarante ans après la loi Littoral, Marseille, 29 janvier 2026.",
+        "legende": "Participants à la rencontre sur la loi Littoral, Marseille, 2026."
+      },
+      {
+        "fichier": "assets/img/media/events/colloque-loi-littoral-marseille-2026/oby_colloque_loi_littoral_marseille_2026_03.webp",
+        "alt": "Vue large des tables et de l’assistance pendant la rencontre consacrée aux espaces publics littoraux quarante ans après la loi Littoral, Marseille, 29 janvier 2026.",
+        "legende": "L’assistance pendant la rencontre, Marseille, 2026."
+      }
+    ]
+  },
+  {
+    "id": "terrain-forcages-climatiques-estaque-2023",
+    "titre": "Terrain sur les forçages climatiques et l’évolution du rivage à l’Estaque",
+    "annee": "2023",
+    "lieu": "L’Estaque, Marseille",
+    "categorie": "terrain-institution",
+    "typeMedia": "photographie-evenement",
+    "evenementLie": "Master 2 COAST — sortie de terrain « Forçages climatiques »",
+    "pageLiee": "travaux-publications.html#terrains",
+    "fichier": "assets/img/media/events/terrain-forcages-climatiques-estaque-2023/oby_terrain_forcages_climatiques_estaque_2023_01.webp",
+    "statut": "public-valide",
+    "description": "Neuf photographies documentent une sortie de terrain du Master 2 COAST consacrée aux forçages climatiques et aux processus d’évolution du rivage, sur le littoral de l’Estaque à Marseille, le 22 novembre 2023 : encoche d’érosion, banquette de posidonie, enrochements, plage contrainte et signalétique du site.",
+    "notePrudence": "La date de prise de vue enregistrée par le boîtier est erronée ; la date retenue, le 22 novembre 2023, est établie par recoupement documentaire. Les légendes décrivent des objets d’observation, sans nommer les personnes présentes.",
+    "alt": "Groupe d’étudiants en observation sur un bloc rocheux du littoral de l’Estaque, viaduc ferroviaire en arrière-plan, sortie de terrain du Master 2 COAST, 22 novembre 2023.",
+    "legende": "Observation de terrain sur le littoral de l’Estaque, 22 novembre 2023.",
+    "galerie": [
+      {
+        "fichier": "assets/img/media/events/terrain-forcages-climatiques-estaque-2023/oby_terrain_forcages_climatiques_estaque_2023_02.webp",
+        "alt": "Panneau municipal « Plages de Corbière — nos plages sont fragiles, préservons-les », Marseille, novembre 2023.",
+        "legende": "Panneau d’information des plages de Corbière, Marseille, 2023."
+      },
+      {
+        "fichier": "assets/img/media/events/terrain-forcages-climatiques-estaque-2023/oby_terrain_forcages_climatiques_estaque_2023_03.webp",
+        "alt": "Encoche d’érosion creusée dans la paroi calcaire du littoral de l’Estaque, observée lors de la sortie de terrain du Master 2 COAST, novembre 2023.",
+        "legende": "Encoche d’érosion dans la paroi calcaire, Estaque, 2023."
+      },
+      {
+        "fichier": "assets/img/media/events/terrain-forcages-climatiques-estaque-2023/oby_terrain_forcages_climatiques_estaque_2023_04.webp",
+        "alt": "Banquette de posidonie accumulée en laisse de mer sur une plage de l’Estaque, novembre 2023.",
+        "legende": "Banquette de posidonie en laisse de mer, Estaque, 2023."
+      },
+      {
+        "fichier": "assets/img/media/events/terrain-forcages-climatiques-estaque-2023/oby_terrain_forcages_climatiques_estaque_2023_05.webp",
+        "alt": "Anse aménagée du littoral de l’Estaque : enrochements de protection, plage contrainte et viaduc ferroviaire, novembre 2023.",
+        "legende": "Morphologie d’ensemble de l’anse, Estaque, 2023."
+      },
+      {
+        "fichier": "assets/img/media/events/terrain-forcages-climatiques-estaque-2023/oby_terrain_forcages_climatiques_estaque_2023_06.webp",
+        "alt": "Plage aménagée contrainte entre une digue et une infrastructure bâtie sur le littoral de l’Estaque, novembre 2023.",
+        "legende": "Plage contrainte entre digue et infrastructure, Estaque, 2023."
+      },
+      {
+        "fichier": "assets/img/media/events/terrain-forcages-climatiques-estaque-2023/oby_terrain_forcages_climatiques_estaque_2023_07.webp",
+        "alt": "Front de taille calcaire portant la marque d’une exploitation ancienne, littoral de l’Estaque, novembre 2023.",
+        "legende": "Front de taille et trace d’exploitation ancienne, Estaque, 2023."
+      },
+      {
+        "fichier": "assets/img/media/events/terrain-forcages-climatiques-estaque-2023/oby_terrain_forcages_climatiques_estaque_2023_08.webp",
+        "alt": "Plan de la ligne de bus 35 « Joliette – Estaque – Riaux » affiché sur le parcours de la sortie de terrain, Marseille, novembre 2023.",
+        "legende": "Plan de la ligne 35, repère du parcours, Marseille, 2023."
+      },
+      {
+        "fichier": "assets/img/media/events/terrain-forcages-climatiques-estaque-2023/oby_terrain_forcages_climatiques_estaque_2023_09.webp",
+        "alt": "Panneau patrimonial consacré au peintre Adolphe Monticelli et au panorama sur la rade de Marseille, Corbières, novembre 2023.",
+        "legende": "Panneau patrimonial de Corbières, Marseille, 2023."
+      }
+    ]
+  },
+  {
+    "id": "terrain-gizc-marseille-calanques-2023",
+    "titre": "Terrain de gestion intégrée de la zone côtière : DIRM Méditerranée, France Nature Environnement et Parc national des Calanques",
+    "annee": "2023",
+    "lieu": "Marseille et Parc national des Calanques",
+    "categorie": "terrain-institution",
+    "typeMedia": "photographie-evenement",
+    "evenementLie": "Master 2 COAST — gestion intégrée de la zone côtière",
+    "pageLiee": "travaux-publications.html#terrains",
+    "fichier": "assets/img/media/events/terrain-gizc-marseille-calanques-2023/oby_terrain_gizc_marseille_calanques_2023_01.webp",
+    "statut": "public-valide",
+    "description": "Dix photographies documentent une séquence de terrain du Master 2 COAST sur la gestion intégrée de la zone côtière, les 8 et 15 novembre 2023 : visite de la Direction interrégionale de la mer Méditerranée, séance au siège de France Nature Environnement Provence-Alpes-Côte d’Azur, puis observations dans le Parc national des Calanques et sur le littoral sud de Marseille.",
+    "notePrudence": "La seule administration visitée est la Direction interrégionale de la mer Méditerranée. Aucune autre administration n’est représentée ni suggérée. Les personnes présentes ne sont pas nommées.",
+    "alt": "Plaques officielles de la République française apposées à l’entrée d’un bâtiment administratif : Direction interdépartementale des routes Méditerranée et Direction interrégionale de la mer Méditerranée, Marseille, 8 novembre 2023.",
+    "legende": "Plaque de la Direction interrégionale de la mer Méditerranée, Marseille, 2023.",
+    "galerie": [
+      {
+        "fichier": "assets/img/media/events/terrain-gizc-marseille-calanques-2023/oby_terrain_gizc_marseille_calanques_2023_02.webp",
+        "alt": "OUAGA Bokoua Yao en observation sur un sentier du Parc national des Calanques, carnet de notes à la main et appareil photo au cou, novembre 2023.",
+        "legende": "Observation de terrain dans le Parc national des Calanques, 2023."
+      },
+      {
+        "fichier": "assets/img/media/events/terrain-gizc-marseille-calanques-2023/oby_terrain_gizc_marseille_calanques_2023_03.webp",
+        "alt": "Séance de travail en salle devant des écrans de présentation, lors de la visite à la Direction interrégionale de la mer Méditerranée, Marseille, 8 novembre 2023.",
+        "legende": "Séance de travail à la DIRM Méditerranée, Marseille, 2023."
+      },
+      {
+        "fichier": "assets/img/media/events/terrain-gizc-marseille-calanques-2023/oby_terrain_gizc_marseille_calanques_2023_04.webp",
+        "alt": "Le groupe d’étudiants du Master 2 COAST devant l’entrée du bâtiment de la Direction interrégionale de la mer Méditerranée, Marseille, 8 novembre 2023.",
+        "legende": "Le groupe du Master 2 COAST à la DIRM Méditerranée, 2023."
+      },
+      {
+        "fichier": "assets/img/media/events/terrain-gizc-marseille-calanques-2023/oby_terrain_gizc_marseille_calanques_2023_05.webp",
+        "alt": "Séance de travail au siège de France Nature Environnement Provence-Alpes-Côte d’Azur, kakémono de l’association visible en fond, Marseille, novembre 2023.",
+        "legende": "Séance de travail à France Nature Environnement, Marseille, 2023."
+      },
+      {
+        "fichier": "assets/img/media/events/terrain-gizc-marseille-calanques-2023/oby_terrain_gizc_marseille_calanques_2023_06.webp",
+        "alt": "Ouvrage « Les Calanques industrielles de Marseille et leurs pollutions — une histoire au présent » présenté sur le terrain, novembre 2023.",
+        "legende": "Ouvrage sur les Calanques industrielles et leurs pollutions, 2023."
+      },
+      {
+        "fichier": "assets/img/media/events/terrain-gizc-marseille-calanques-2023/oby_terrain_gizc_marseille_calanques_2023_07.webp",
+        "alt": "Friche industrielle littorale et cheminée en brique dominant le tissu urbain de Marseille, observées lors de la sortie sur la gestion intégrée de la zone côtière, novembre 2023.",
+        "legende": "Friche industrielle littorale, Marseille, 2023."
+      },
+      {
+        "fichier": "assets/img/media/events/terrain-gizc-marseille-calanques-2023/oby_terrain_gizc_marseille_calanques_2023_08.webp",
+        "alt": "Panneau du Parc national des Calanques « Le Cap Croisette demain — vers une côte plus accueillante », novembre 2023.",
+        "legende": "Panneau du Parc national des Calanques au Cap Croisette, 2023."
+      },
+      {
+        "fichier": "assets/img/media/events/terrain-gizc-marseille-calanques-2023/oby_terrain_gizc_marseille_calanques_2023_09.webp",
+        "alt": "Groupe d’étudiants réuni en cercle autour d’un intervenant, sur site dans le Parc national des Calanques, novembre 2023.",
+        "legende": "Séquence de terrain dans le Parc national des Calanques, 2023."
+      },
+      {
+        "fichier": "assets/img/media/events/terrain-gizc-marseille-calanques-2023/oby_terrain_gizc_marseille_calanques_2023_10.webp",
+        "alt": "Panneau directionnel « Les Goudes · L’île Maïre » sur le littoral sud de Marseille, novembre 2023.",
+        "legende": "Signalétique des Goudes et de l’île Maïre, Marseille, 2023."
+      }
+    ]
+  },
+  {
+    "id": "terrain-pressions-urbaines-marseille-2023",
+    "titre": "Terrain sur les pressions urbaines et récréatives du littoral marseillais",
+    "annee": "2023",
+    "lieu": "Littoral sud de Marseille",
+    "categorie": "terrain-institution",
+    "typeMedia": "photographie-evenement",
+    "evenementLie": "Master 2 COAST — UE Pressions urbaines et récréatives",
+    "pageLiee": "travaux-publications.html#terrains",
+    "fichier": "assets/img/media/events/terrain-pressions-urbaines-marseille-2023/oby_terrain_pressions_urbaines_marseille_2023_01.webp",
+    "statut": "public-valide",
+    "description": "Dix photographies documentent la sortie de terrain du Master 2 COAST du 19 octobre 2023 consacrée aux pressions urbaines et récréatives sur le littoral sud de Marseille : parc balnéaire, port à sec, aires techniques, pression foncière, gestion des déchets, cabanons et pêche professionnelle.",
+    "notePrudence": "Les immatriculations de navires lisibles sur les originaux sont masquées sur les copies publiques. Les personnes présentes ne sont pas nommées.",
+    "alt": "Panneau d’information « Parc balnéaire du Prado » commenté sur place lors de la sortie du Master 2 COAST consacrée aux pressions urbaines et récréatives, Marseille, 19 octobre 2023.",
+    "legende": "Panneau du parc balnéaire du Prado, Marseille, 19 octobre 2023.",
+    "galerie": [
+      {
+        "fichier": "assets/img/media/events/terrain-pressions-urbaines-marseille-2023/oby_terrain_pressions_urbaines_marseille_2023_02.webp",
+        "alt": "Groupe d’étudiants en observation face au littoral aménagé, port de plaisance en arrière-plan, Marseille, 19 octobre 2023.",
+        "legende": "Observation collective face au littoral aménagé, Marseille, 2023."
+      },
+      {
+        "fichier": "assets/img/media/events/terrain-pressions-urbaines-marseille-2023/oby_terrain_pressions_urbaines_marseille_2023_03.webp",
+        "alt": "Port à sec et racks de bateaux de plaisance sur le littoral marseillais, octobre 2023.",
+        "legende": "Port à sec et stockage de bateaux, Marseille, 2023."
+      },
+      {
+        "fichier": "assets/img/media/events/terrain-pressions-urbaines-marseille-2023/oby_terrain_pressions_urbaines_marseille_2023_04.webp",
+        "alt": "Moteurs hors-bord stockés dans une aire technique portuaire, témoins de l’intensité de l’usage nautique du littoral marseillais, octobre 2023.",
+        "legende": "Aire technique portuaire, Marseille, 2023."
+      },
+      {
+        "fichier": "assets/img/media/events/terrain-pressions-urbaines-marseille-2023/oby_terrain_pressions_urbaines_marseille_2023_05.webp",
+        "alt": "Vitrine d’une agence immobilière du littoral marseillais présentant des biens à la vente, octobre 2023.",
+        "legende": "Vitrine immobilière du littoral marseillais, 2023."
+      },
+      {
+        "fichier": "assets/img/media/events/terrain-pressions-urbaines-marseille-2023/oby_terrain_pressions_urbaines_marseille_2023_06.webp",
+        "alt": "Panneau d’information sur la qualité des eaux de baignade de la plage de l’Anse des Phocéens, Marseille, octobre 2023.",
+        "legende": "Panneau d’information de la plage de l’Anse des Phocéens, 2023."
+      },
+      {
+        "fichier": "assets/img/media/events/terrain-pressions-urbaines-marseille-2023/oby_terrain_pressions_urbaines_marseille_2023_07.webp",
+        "alt": "Panneau « Dépôt sauvage interdit » apposé sur le littoral marseillais, octobre 2023.",
+        "legende": "Signalétique de lutte contre les dépôts sauvages, Marseille, 2023."
+      },
+      {
+        "fichier": "assets/img/media/events/terrain-pressions-urbaines-marseille-2023/oby_terrain_pressions_urbaines_marseille_2023_08.webp",
+        "alt": "Groupe d’étudiants devant un ensemble de cabanons du littoral marseillais, habitat traditionnel du bord de mer, octobre 2023.",
+        "legende": "Devant les cabanons du littoral marseillais, 2023."
+      },
+      {
+        "fichier": "assets/img/media/events/terrain-pressions-urbaines-marseille-2023/oby_terrain_pressions_urbaines_marseille_2023_09.webp",
+        "alt": "Anse et village de cabanons dans leur cadre naturel sur le littoral sud de Marseille, octobre 2023.",
+        "legende": "Anse et village de cabanons, Marseille, 2023."
+      },
+      {
+        "fichier": "assets/img/media/events/terrain-pressions-urbaines-marseille-2023/oby_terrain_pressions_urbaines_marseille_2023_10.webp",
+        "alt": "Filets de pêche remisés sur un quai du littoral marseillais, témoins d’un usage professionnel maintenu, 19 octobre 2023.",
+        "legende": "Filets de pêche sur le quai, Marseille, 19 octobre 2023."
+      }
+    ]
+  },
+  {
+    "id": "terrain-gestion-sedimentaire-var-2023",
+    "titre": "Terrain sur la gestion sédimentaire et le trait de côte : Malpasset, Fréjus et Saint-Aygulf",
+    "annee": "2023",
+    "lieu": "Malpasset, Fréjus et Saint-Aygulf, Var",
+    "categorie": "terrain-institution",
+    "typeMedia": "photographie-evenement",
+    "evenementLie": "Master 2 COAST — gestion sédimentaire du trait de côte",
+    "pageLiee": "travaux-publications.html#terrains",
+    "fichier": "assets/img/media/events/terrain-gestion-sedimentaire-var-2023/oby_terrain_gestion_sedimentaire_var_2023_01.webp",
+    "statut": "public-valide",
+    "description": "Dix photographies documentent la sortie de terrain du Master 2 COAST du 17 novembre 2023 sur la gestion sédimentaire et le trait de côte, en trois étapes : les vestiges du barrage de Malpasset, le port antique de Fréjus, puis l’embouchure de l’Argens et la plage de Saint-Aygulf, avec leurs dispositifs de protection.",
+    "notePrudence": "Les légendes décrivent des sites, des ouvrages et des dispositifs de gestion. Aucune personne tierce n’est nommée.",
+    "alt": "OUAGA Bokoua Yao au pied des vestiges du barrage de Malpasset, au bord du plan d’eau du Reyran, sortie de terrain du Master 2 COAST, 17 novembre 2023.",
+    "legende": "Au pied des vestiges du barrage de Malpasset, 17 novembre 2023.",
+    "galerie": [
+      {
+        "fichier": "assets/img/media/events/terrain-gestion-sedimentaire-var-2023/oby_terrain_gestion_sedimentaire_var_2023_02.webp",
+        "alt": "Panneau officiel du site du barrage de Malpasset rappelant que sa rupture, le 2 décembre 1959, a provoqué la plus grande catastrophe civile du XXᵉ siècle en France, Fréjus, novembre 2023.",
+        "legende": "Panneau du site du barrage de Malpasset, Fréjus, 2023."
+      },
+      {
+        "fichier": "assets/img/media/events/terrain-gestion-sedimentaire-var-2023/oby_terrain_gestion_sedimentaire_var_2023_03.webp",
+        "alt": "Groupe d’étudiants sous une culée du barrage de Malpasset, donnant l’échelle des vestiges, Fréjus, novembre 2023.",
+        "legende": "Sous la culée du barrage de Malpasset, Fréjus, 2023."
+      },
+      {
+        "fichier": "assets/img/media/events/terrain-gestion-sedimentaire-var-2023/oby_terrain_gestion_sedimentaire_var_2023_04.webp",
+        "alt": "Panneau d’interprétation « Ce que racontent les blocs échoués » : chronologie de la vague et cartographie de l’inondation consécutives à la rupture du barrage de Malpasset, Fréjus, novembre 2023.",
+        "legende": "Panneau « Ce que racontent les blocs échoués », Malpasset, 2023."
+      },
+      {
+        "fichier": "assets/img/media/events/terrain-gestion-sedimentaire-var-2023/oby_terrain_gestion_sedimentaire_var_2023_05.webp",
+        "alt": "Panneau d’interprétation « Thermes du port romain » sur le site du port antique de Fréjus, novembre 2023.",
+        "legende": "Panneau des thermes du port antique, Fréjus, 2023."
+      },
+      {
+        "fichier": "assets/img/media/events/terrain-gestion-sedimentaire-var-2023/oby_terrain_gestion_sedimentaire_var_2023_06.webp",
+        "alt": "Vestige romain conservé au milieu du tissu urbain actuel de Fréjus, novembre 2023.",
+        "legende": "Vestige antique dans le tissu urbain, Fréjus, 2023."
+      },
+      {
+        "fichier": "assets/img/media/events/terrain-gestion-sedimentaire-var-2023/oby_terrain_gestion_sedimentaire_var_2023_07.webp",
+        "alt": "OUAGA Bokoua Yao sur la plage de Saint-Aygulf, près de l’embouchure de l’Argens, 17 novembre 2023.",
+        "legende": "Sur la plage de Saint-Aygulf, 17 novembre 2023."
+      },
+      {
+        "fichier": "assets/img/media/events/terrain-gestion-sedimentaire-var-2023/oby_terrain_gestion_sedimentaire_var_2023_08.webp",
+        "alt": "Groupe d’étudiants sur la flèche sableuse de l’embouchure de l’Argens, Saint-Aygulf, novembre 2023.",
+        "legende": "Sur la flèche sableuse de l’embouchure de l’Argens, 2023."
+      },
+      {
+        "fichier": "assets/img/media/events/terrain-gestion-sedimentaire-var-2023/oby_terrain_gestion_sedimentaire_var_2023_09.webp",
+        "alt": "Ganivelles de fixation dunaire et panneau « Protection de la dune » sur le littoral de Saint-Aygulf, novembre 2023.",
+        "legende": "Ganivelles de fixation dunaire, Saint-Aygulf, 2023."
+      },
+      {
+        "fichier": "assets/img/media/events/terrain-gestion-sedimentaire-var-2023/oby_terrain_gestion_sedimentaire_var_2023_10.webp",
+        "alt": "Épi rocheux de protection implanté sur la plage de Saint-Aygulf, novembre 2023.",
+        "legende": "Épi rocheux de protection, Saint-Aygulf, 2023."
+      }
+    ]
   }
 ]

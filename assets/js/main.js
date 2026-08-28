@@ -649,7 +649,7 @@ const loadWatchAgendaItems = () =>
             <span class="watch-status">Repère</span>
           </div>
           <h3>Veille & agenda</h3>
-          <p>La sélection de veille sera affichée en environnement web. Les repères sont conservés dans le fichier de données du site.</p>
+          <p>Cette sélection s’affiche lorsque la page est consultée en ligne.</p>
           <a class="watch-link" href="veille-agenda.html">Voir la veille & agenda</a>
         </article>
       `;
@@ -692,10 +692,13 @@ const loadWatchAgendaItems = () =>
     { title: "Travaux & recherches", type: "Page", category: "Travaux", url: "travaux-publications.html" },
     { title: "Participations & réseaux", type: "Page", category: "Événements", url: "interventions.html" },
     { title: "Bibliothèque de travail & ressources", type: "Page", category: "Ressources", url: "bibliotheque-ressources.html" },
-    { title: "Médiathèque", type: "Page", category: "Traces documentaires", url: "mediatheque.html" },
+    { title: "Médiathèque", type: "Page", category: "Photographies et lieux", url: "mediatheque.html" },
     { title: "Cartographie intellectuelle", type: "Page", category: "Exploration", url: "cartographie.html" },
     { title: "À la une · Veille & agenda", type: "Page", category: "Veille", url: "veille-agenda.html" },
-    { title: "Contact qualifié", type: "Page", category: "Contact", url: "contact.html" },
+    { title: "Carnet d’idées", type: "Page", category: "Réflexions", url: "carnet-idees.html" },
+    { title: "Reconnaissances", type: "Page", category: "Appuis et engagements", url: "distinctions-bourses.html" },
+    { title: "Initiatives reliées", type: "Page", category: "Écosystème", url: "ecosysteme.html" },
+    { title: "Contact", type: "Page", category: "Contact", url: "contact.html" },
   ];
 
   const textFor = (item) => normalize([item.title, item.type, item.category, item.searchText].join(" "));
@@ -947,7 +950,7 @@ const loadWatchAgendaItems = () =>
         count.textContent = "Bibliothèque indisponible";
       }
       if (note) {
-        note.textContent = "Le fichier de données ne peut pas être chargé dans ce contexte.";
+        note.textContent = "Cette sélection ne peut pas être affichée dans ce contexte.";
       }
     });
 })();
@@ -965,6 +968,62 @@ const loadWatchAgendaItems = () =>
   const empty = mediaRoot.querySelector("[data-public-media-empty]");
   const searchInput = controls?.elements.q;
   const typeSelect = controls?.elements.type;
+  const environmentSelect = controls?.elements.environnement;
+
+  // Libellés lisibles pour les valeurs techniques du fichier éditorial : le
+  // visiteur voit une nature de document, pas un identifiant de champ.
+  const MEDIA_TYPE_LABELS = {
+    "photographie-evenement": "Photographies",
+    "visuel-documentaire": "Visuel documentaire",
+    "portrait-identite": "Portrait",
+    support: "Support",
+    "document-public": "Document public",
+    "evenement-academique": "Événement",
+    "terrain-institution": "Terrain et institution",
+    "trace-officielle": "Trace officielle",
+    "réseau-international": "Réseau international",
+    "réseau-plateforme": "Réseau et plateforme",
+  };
+
+  // Grands environnements de circulation. L'appartenance est déduite des champs
+  // déjà présents (lieu, événement, titre, axe) : une entrée ajoutée plus tard
+  // se range donc d'elle-même, sans champ supplémentaire à saisir.
+  // Chaque motif court est borné par \b : sans cela, « diplômes » — une fois les
+  // accents retirés — contient « lome », et une remise de diplômes se rangeait
+  // dans l'Afrique maritime. Les collisions de ce type sont silencieuses.
+  const MEDIA_ENVIRONMENTS = [
+    {
+      label: "Terrains et observation",
+      motifs: /\bterrains?\b|\bcoast\b|\bgizc\b|calanque|\bgoudes\b|\bestaque\b|aygulf|frejus|malpasset|sedimentaire|trait de cote|pressions urbaines|forcages?\b/,
+    },
+    {
+      label: "Afrique maritime",
+      motifs: /\blome\b|abidjan|afrique|golfe de guinee|\bwaca\b|\bivoir|\btogo\b|\bdakar\b|\bohada\b|\bersuma\b/,
+    },
+    {
+      label: "Innovation et transitions",
+      motifs: /emerging valley|euromaritime|pepite|entrepreneur|innovactions|crowdfunding|\bd2e/,
+    },
+    {
+      label: "Institutions et recherche",
+      motifs: /indemer|\bensm\b|academies de marine|ecole d ?ete|\bcop ?\d|\bcoy ?\d|\bpnud\b|\bunesco\b|proteus|oceanexpert|ocean decade|mesopolhis|\bcesm\b|\brfdi\b|cour administrative|loi littoral|delimitation|arbitrage/,
+    },
+    {
+      label: "Méditerranée et milieu marin",
+      motifs: /mediterran|marseille|monaco|port-cros|porquerolles|\blonde\b|hyeres|luminy|aire marine|medpan|mouillage|tethys|\bnice\b/,
+    },
+  ];
+
+  // Le classement s'appuie sur le titre, le lieu et l'événement rattaché, jamais
+  // sur la description : celle-ci est un texte long, où un mot incident suffirait
+  // à ranger une entrée dans le mauvais environnement.
+  const environmentOf = (item) => {
+    const champ = normalize(
+      [item.titre, item.lieu, item.evenementLie, item.axe_associe].join(" ")
+    ).replace(/['’]/g, " ");
+    const trouve = MEDIA_ENVIRONMENTS.find((env) => env.motifs.test(champ));
+    return trouve ? trouve.label : "Autres repères";
+  };
 
   const escapeHtml = (value) =>
     String(value ?? "")
@@ -981,7 +1040,8 @@ const loadWatchAgendaItems = () =>
       .toLowerCase();
 
   const renderMedia = (item) => {
-    const type = item.typeMedia || item.categorie || "Trace documentaire";
+    const brut = item.typeMedia || item.categorie || "";
+    const type = MEDIA_TYPE_LABELS[brut] || brut || "Trace documentaire";
     const metadata = [item.annee, item.lieu].filter(Boolean).join(" · ");
     const imageClass = /\.(?:jpe?g|png|webp|avif)$/i.test(item.fichier || "") ? " media-card-photo" : "";
     const galleryItems = Array.isArray(item.galerie)
@@ -1025,7 +1085,7 @@ const loadWatchAgendaItems = () =>
         <div class="media-card-body">
           <div class="media-card-top">
             <span class="media-type">${escapeHtml(type)}</span>
-            <span class="media-status published">Public validé</span>
+            <span class="media-environment">${escapeHtml(environmentOf(item))}</span>
           </div>
           <h3>${escapeHtml(item.titre || "Trace documentaire")}</h3>
           ${metadata ? `<p class="media-meta">${escapeHtml(metadata)}</p>` : ""}
@@ -1048,19 +1108,37 @@ const loadWatchAgendaItems = () =>
       const publicItems = items.filter((item) => item.statut === "public-valide");
 
       [...new Set(publicItems.map((item) => item.typeMedia || item.categorie).filter(Boolean))]
-        .sort((a, b) => a.localeCompare(b, "fr"))
-        .forEach((type) => {
+        .map((brut) => [brut, MEDIA_TYPE_LABELS[brut] || brut])
+        .sort((a, b) => a[1].localeCompare(b[1], "fr"))
+        .forEach(([brut, libelle]) => {
           const option = document.createElement("option");
-          option.value = type;
-          option.textContent = type;
+          option.value = brut;
+          option.textContent = libelle;
           typeSelect?.appendChild(option);
+        });
+
+      // L'ordre des environnements suit celui de la déclaration, pas l'alphabet :
+      // il va du terrain vécu vers les cadres institutionnels.
+      const presents = new Set(publicItems.map(environmentOf));
+      MEDIA_ENVIRONMENTS.map((env) => env.label)
+        .concat("Autres repères")
+        .filter((label) => presents.has(label))
+        .forEach((label) => {
+          const option = document.createElement("option");
+          option.value = label;
+          option.textContent = label;
+          environmentSelect?.appendChild(option);
         });
 
       const render = () => {
         const query = normalize(searchInput?.value || "");
         const type = typeSelect?.value || "";
+        const environment = environmentSelect?.value || "";
         const filtered = publicItems.filter((item) => {
           const itemType = item.typeMedia || item.categorie || "";
+          if (environment && environmentOf(item) !== environment) {
+            return false;
+          }
           const searchable = normalize(
             [
               item.titre,
@@ -1077,7 +1155,14 @@ const loadWatchAgendaItems = () =>
         });
 
         if (count) {
-          count.textContent = `${filtered.length} trace${filtered.length > 1 ? "s" : ""} publique${filtered.length > 1 ? "s" : ""} sur ${publicItems.length}`;
+          const photos = filtered.reduce(
+            (total, item) => total + 1 + (Array.isArray(item.galerie) ? item.galerie.length : 0),
+            0
+          );
+          count.textContent =
+            filtered.length === publicItems.length
+              ? `${publicItems.length} événements · ${photos} images`
+              : `${filtered.length} sur ${publicItems.length} · ${photos} images`;
         }
         if (results) {
           results.innerHTML = filtered.map(renderMedia).join("");
@@ -1094,7 +1179,7 @@ const loadWatchAgendaItems = () =>
     })
     .catch(() => {
       if (count) {
-        count.textContent = "Médiathèque indisponible";
+        count.textContent = "Les images ne peuvent pas être affichées dans ce contexte.";
       }
     });
 })();

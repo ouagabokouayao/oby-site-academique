@@ -3690,3 +3690,53 @@ main:focus {
     grid-template-columns: 1fr;
   }
 }
+
+/* P2 — ligne de portée sous un repère majeur de la liste éditoriale.
+   La liste est une grille à deux colonnes : le titre et sa portée partagent
+   la seconde, sinon la portée retomberait dans la colonne de la date. La
+   gouttière de la grille sert d'écart entre colonnes, pas entre ces deux
+   lignes : l'espacement vertical vient de la marge du paragraphe. */
+.editorial-list > a.repere {
+  row-gap: 0;
+}
+
+.editorial-list > a.repere > strong,
+.editorial-list > a.repere > p {
+  grid-column: 2;
+}
+
+.editorial-list > a.repere > p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+
+/* Sous 560 px la liste passe à une seule colonne : le placement explicite en
+   colonne 2 doit être relâché, sinon la date et le titre se superposent. */
+@media (max-width: 560px) {
+  .editorial-list > a.repere {
+    row-gap: 8px;
+  }
+
+  .editorial-list > a.repere > strong,
+  .editorial-list > a.repere > p {
+    grid-column: auto;
+  }
+
+  .editorial-list > a.repere > p {
+    margin: 0;
+  }
+}
+
+/* Environnement de circulation affiché sur une fiche de la médiathèque. */
+.media-environment {
+  align-self: center;
+  color: var(--blue);
+  font-family: var(--ui);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-align: right;
+  text-transform: uppercase;
+}
