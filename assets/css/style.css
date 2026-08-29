@@ -3740,3 +3740,114 @@ main:focus {
   text-align: right;
   text-transform: uppercase;
 }
+
+/* Fiche d'événement : résumé court toujours visible, contextualisation dépliable.
+   Le résumé porte le poids éditorial de la fiche ; le bloc « Contexte & repères »
+   n'est ouvert que par qui veut le détail, ce qui garde la page parcourable. */
+.event-summary {
+  color: var(--ink);
+}
+
+.event-context {
+  min-width: 0;
+  margin: 16px 0 4px;
+  border-top: 1px solid var(--line);
+}
+
+/* Ce <details> est imbriqué dans un `.collection-disclosure`, dont la règle
+   `.collection-disclosure summary` — un sélecteur de descendance — s'applique
+   aussi ici et impose une grille de trois colonnes. Chaque propriété qu'elle
+   pose doit donc être remise à plat, faute de quoi le libellé se tasse dans une
+   première colonne de 130 px et le marqueur part à l'autre bout de la carte. */
+.event-context > summary {
+  position: static;
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  min-height: 0;
+  margin-top: 12px;
+  padding: 0;
+  color: var(--blue);
+  font-family: var(--ui);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 1.45;
+  cursor: pointer;
+  list-style: none;
+}
+
+.event-context > summary::-webkit-details-marker {
+  display: none;
+}
+
+.event-context > summary::after {
+  content: "+";
+  grid-column: auto;
+  grid-row: auto;
+  margin-left: 8px;
+  color: var(--gold);
+  font-family: var(--ui);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+  text-align: left;
+}
+
+.event-context[open] > summary::after {
+  content: "−";
+}
+
+.event-context > summary:hover,
+.event-context > summary:focus-visible {
+  color: var(--navy);
+}
+
+.event-context-body {
+  margin-top: 12px;
+  border-left: 2px solid var(--gold-line);
+  padding-left: 14px;
+}
+
+.event-context-body > p {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.6;
+  overflow-wrap: break-word;
+}
+
+.event-context-body > p:last-child {
+  margin-bottom: 0;
+}
+
+/* Sélecteur enfant plutôt qu'une classe seule : sans lui, `.event-context-body > p`
+   — déclaré juste au-dessus — l'emporterait sur la taille voulue ici. */
+.event-context-body > .event-themes,
+.event-context-body > .event-sources {
+  font-size: 0.86rem;
+}
+
+.event-themes strong,
+.event-sources strong {
+  color: var(--navy);
+}
+
+.event-sources a {
+  border-bottom: 1px solid var(--gold-line);
+  color: var(--blue);
+  font-weight: 800;
+  overflow-wrap: anywhere;
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.event-sources a:hover {
+  color: var(--navy);
+  border-color: var(--gold);
+}
+
+@media (max-width: 560px) {
+  .event-context-body {
+    padding-left: 11px;
+  }
+}

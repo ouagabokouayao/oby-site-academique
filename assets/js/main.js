@@ -1097,7 +1097,7 @@ const loadWatchAgendaItems = () =>
     `;
   };
 
-  fetch("assets/data/mediatheque-oby.json?v=oby-v3-7")
+  fetch("assets/data/mediatheque-oby.json?v=oby-v3-8")
     .then((response) => {
       if (!response.ok) {
         throw new Error("Media data unavailable");

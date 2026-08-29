@@ -25,10 +25,25 @@ ASSOCIATED_STRUCTURES = ("BlueWave", "Concordia", "AquaLab", "PromptMaster", "Be
 REMOTE_SCHEMES = {"http", "https", "mailto", "tel", "sms", "javascript", "data"}
 
 
+# Termes proscrits sur la fiche du stage AEM et sur son entrée de médiathèque :
+# le stage n'a jamais relevé d'un cadre doctoral et ne doit pas le laisser croire.
+AEM_ID = "aem-cote-ivoire-2020"
+# Motifs bornés : « thèse » sans borne se retrouve dans « synthèse », terme
+# parfaitement légitime, et le contrôle échouerait alors sur un faux positif.
+AEM_FORBIDDEN = (
+    re.compile(r"\bdoctorat\b"),
+    re.compile(r"\bdoctoral(?:e|es|aux)?\b"),
+    re.compile(r"\bth[eè]ses?\b"),
+)
+# Les fiches d'événement portent leur contexte dans un bloc dépliable normalisé.
+EVENT_CONTEXT_MARKERS = ('<details class="event-context">', "event-context-body", "event-themes")
+
+
 class PageParser(HTMLParser):
     def __init__(self) -> None:
         super().__init__(convert_charrefs=True)
         self.ids = set()
+        self.id_list = []
         self.links = []
         self.assets = []
         self.h1_count = 0
@@ -46,6 +61,7 @@ class PageParser(HTMLParser):
         tag = tag.lower()
         if attrs.get("id"):
             self.ids.add(attrs["id"])
+            self.id_list.append(attrs["id"])
         if attrs.get("name") and tag == "a":
             self.ids.add(attrs["name"])
         if tag == "title":
@@ -245,6 +261,80 @@ def main():
             json.loads(path.read_text(encoding="utf-8"))
         except (OSError, UnicodeError, json.JSONDecodeError) as exc:
             add(errors, "JSON_INVALID", path, str(exc))
+
+    # --- unicité des id dans une page -------------------------------------
+    # `parser.ids` est un ensemble : un id dupliqué y disparaît silencieusement,
+    # alors qu'il casse l'ancre et le lien croisé qui la vise.
+    for page, parser in parsed_pages.items():
+        vus = set()
+        for ident in parser.id_list:
+            if ident in vus:
+                add(errors, "ID_DUPLICATE", page, ident)
+            vus.add(ident)
+
+    # --- réciprocité des liens participations / médiathèque ----------------
+    # Une entrée publique de la médiathèque qui renvoie vers une fiche doit être
+    # atteignable depuis cette fiche : sans quoi la circulation n'existe que dans
+    # un sens et la galerie reste invisible pour qui lit la fiche.
+    media_data = root / "assets/data/mediatheque-oby.json"
+    interventions = (root / "interventions.html").resolve()
+    if media_data.exists() and interventions in texts:
+        try:
+            records = json.loads(media_data.read_text(encoding="utf-8"))
+        except (OSError, UnicodeError, json.JSONDecodeError):
+            records = []
+        page_ids = parsed_pages[interventions].ids
+        page_text = texts[interventions]
+        for record in records:
+            if not isinstance(record, dict) or record.get("statut") != "public-valide":
+                continue
+            ident = str(record.get("id") or "")
+            lien = str(record.get("pageLiee") or "")
+            if not ident or not lien.startswith("interventions.html#"):
+                continue
+            fragment = lien.split("#", 1)[1]
+            if fragment not in page_ids:
+                add(errors, "CROSS_ID_MISSING", media_data, f"{ident} -> {lien}")
+            elif fragment == ident and f"mediatheque.html#{ident}" not in page_text:
+                add(errors, "CROSS_LINK_ONE_WAY", interventions, f"#{ident} ne renvoie pas vers mediatheque.html#{ident}")
+
+    # --- fiche AEM : aucun terme doctoral ----------------------------------
+    if interventions in texts:
+        debut = texts[interventions].find(f'id="{AEM_ID}"')
+        if debut >= 0:
+            fin = texts[interventions].find("</article>", debut)
+            bloc = texts[interventions][debut:fin].casefold()
+            for motif in AEM_FORBIDDEN:
+                trouve = motif.search(bloc)
+                if trouve:
+                    add(errors, "AEM_FORBIDDEN_TERM", interventions, trouve.group(0))
+    if media_data.exists():
+        entree = json.dumps(
+            [r for r in json.loads(media_data.read_text(encoding="utf-8")) if isinstance(r, dict) and r.get("id") == AEM_ID],
+            ensure_ascii=False,
+        ).casefold()
+        for motif in AEM_FORBIDDEN:
+            trouve = motif.search(entree)
+            if trouve:
+                add(errors, "AEM_FORBIDDEN_TERM", media_data, trouve.group(0))
+
+    # --- cohérence du busting de cache -------------------------------------
+    # Un même fichier servi sous deux jetons `?v=` crée deux entrées de cache pour
+    # une seule ressource : la dérive est invisible en navigation et coûteuse.
+    version_pattern = re.compile(r'([\w./-]+\.(?:css|js|json))\?v=([\w.-]+)')
+    versions = defaultdict(set)
+    for path, text in list(texts.items()) + [(p, p.read_text(encoding="utf-8")) for p in [root / "assets/js/main.js"] if p.exists()]:
+        for asset, token in version_pattern.findall(text):
+            versions[asset.rsplit("/", 1)[-1]].add(token)
+    for asset, tokens in sorted(versions.items()):
+        if len(tokens) > 1:
+            add(errors, "CACHE_VERSION_SPLIT", root, f"{asset}: {sorted(tokens)}")
+
+    # --- structure des fiches enrichies ------------------------------------
+    if interventions in texts:
+        for marqueur in EVENT_CONTEXT_MARKERS:
+            if marqueur not in texts[interventions]:
+                add(warnings, "EVENT_CONTEXT_MARKER", interventions, f"marqueur absent : {marqueur}")
 
     term_locations = defaultdict(list)
     structure_locations = defaultdict(list)
