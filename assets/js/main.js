@@ -1097,7 +1097,7 @@ const loadWatchAgendaItems = () =>
     `;
   };
 
-  fetch("assets/data/mediatheque-oby.json?v=oby-v3-8")
+  fetch("assets/data/mediatheque-oby.json?v=oby-v3-9")
     .then((response) => {
       if (!response.ok) {
         throw new Error("Media data unavailable");
@@ -1202,3 +1202,119 @@ const revealHashTarget = () => {
 
 revealHashTarget();
 window.addEventListener("hashchange", revealHashTarget);
+
+// Détail d'une participation : participation.html?id=<slug>.
+// La page de liste ne porte plus que l'essentiel ; tout le contexte, les
+// thématiques, les sources et la galerie sont rendus ici depuis le JSON
+// canonique, ce qui évite une page HTML par événement.
+(() => {
+  const racine = document.querySelector("[data-participation]");
+
+  if (!racine) {
+    return;
+  }
+
+  const titre = racine.querySelector("[data-participation-titre]");
+  const meta = racine.querySelector("[data-participation-meta]");
+  const resume = racine.querySelector("[data-participation-resume]");
+  const contexte = racine.querySelector("[data-participation-contexte]");
+  const vide = racine.querySelector("[data-participation-vide]");
+  const sectionGalerie = racine.querySelector("[data-participation-section-galerie]");
+  const galerie = racine.querySelector("[data-participation-galerie]");
+
+  const proteger = (valeur) =>
+    String(valeur ?? "")
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+
+  const identifiant = new URLSearchParams(window.location.search).get("id") || "";
+
+  const introuvable = (message) => {
+    if (titre) titre.textContent = "Participation introuvable";
+    if (meta) meta.textContent = "";
+    if (resume) resume.textContent = message;
+    if (contexte) contexte.innerHTML = "";
+    if (vide) vide.hidden = true;
+  };
+
+  if (!identifiant) {
+    introuvable("Aucune participation n’est désignée dans l’adresse. La liste complète reste accessible depuis la page des participations.");
+    return;
+  }
+
+  fetch("assets/data/participations-oby.json?v=oby-v3-9")
+    .then((reponse) => {
+      if (!reponse.ok) {
+        throw new Error("Participations indisponibles");
+      }
+      return reponse.json();
+    })
+    .then((fiches) => {
+      const fiche = fiches.find((entree) => entree.id === identifiant);
+
+      if (!fiche) {
+        introuvable("Cette participation n’existe pas ou n’est plus publiée.");
+        return;
+      }
+
+      document.title = `${fiche.titre} — Participations — OUAGA Bokoua Yao`;
+      if (titre) titre.textContent = fiche.titre;
+      if (meta) meta.textContent = fiche.meta || "";
+      if (resume) resume.textContent = fiche.resume || fiche.ligne || "";
+
+      const blocs = [];
+      (fiche.contexte || []).forEach((paragraphe) => {
+        blocs.push(`<p>${proteger(paragraphe)}</p>`);
+      });
+      if (fiche.themes) {
+        blocs.push(`<p class="event-themes"><strong>Thématiques associées :</strong> ${proteger(fiche.themes)}</p>`);
+      }
+      if ((fiche.sources || []).length) {
+        const liens = fiche.sources
+          .map((source) => `<a href="${proteger(source.url)}" target="_blank" rel="noopener">${proteger(source.libelle)}</a>`)
+          .join(" · ");
+        blocs.push(`<p class="event-sources"><strong>Sources officielles :</strong> ${liens}</p>`);
+      }
+      const renvois = [...(fiche.liens || [])];
+      if (fiche.mediatheque) {
+        renvois.push({ libelle: "Voir la galerie dans la médiathèque", url: fiche.mediatheque });
+      }
+      if (renvois.length) {
+        const liens = renvois
+          .map((renvoi) => `<a href="${proteger(renvoi.url)}">${proteger(renvoi.libelle)}</a>`)
+          .join(" · ");
+        blocs.push(`<p class="card-link">${liens}</p>`);
+      }
+
+      if (contexte) {
+        contexte.innerHTML = blocs.length ? `<div class="event-context-body">${blocs.join("")}</div>` : "";
+      }
+      if (vide) {
+        vide.hidden = blocs.length > 0;
+      }
+
+      const photos = Array.isArray(fiche.galerie) ? fiche.galerie.filter((photo) => photo && photo.fichier) : [];
+      if (photos.length && galerie && sectionGalerie) {
+        galerie.innerHTML = photos
+          .map((photo, index) => {
+            const dimensions = photo.largeur && photo.hauteur ? ` width="${photo.largeur}" height="${photo.hauteur}"` : "";
+            const principale = index === 0 ? ' class="event-media-primary"' : "";
+            const legende = photo.legende ? `<figcaption>${proteger(photo.legende)}</figcaption>` : "";
+            return `<figure${principale}><img src="${proteger(photo.fichier)}" alt="${proteger(photo.alt)}"${dimensions} loading="lazy">${legende}</figure>`;
+          })
+          .join("");
+        sectionGalerie.hidden = false;
+        // La section était `hidden` — donc de taille nulle — au moment où
+        // l'IntersectionObserver a enregistré les cibles de révélation. Elle
+        // n'apparaîtrait qu'au premier défilement ; on la marque visible
+        // directement pour ne pas dépendre de ce hasard de séquence.
+        sectionGalerie.classList.add("is-visible");
+      }
+    })
+    .catch(() => {
+      introuvable("La fiche ne peut pas être affichée dans ce contexte.");
+    });
+})();

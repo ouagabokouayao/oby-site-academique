@@ -12,8 +12,9 @@ from urllib.parse import unquote, urlsplit
 
 
 REQUIRED_ROBOTS = {"noindex", "nofollow", "noarchive", "nosnippet"}
-# 16 pages historiques + recherche-droit-mer-golfe-guinee.html
-EXPECTED_HTML_PAGES = 17
+# 16 pages historiques + recherche-droit-mer-golfe-guinee.html, les deux portes
+# Académique / Professionnelle, et le détail d'une participation.
+EXPECTED_HTML_PAGES = 20
 RISK_TERMS = (
     "doctorant",
     "doctorat en cours",
@@ -35,8 +36,36 @@ AEM_FORBIDDEN = (
     re.compile(r"\bdoctoral(?:e|es|aux)?\b"),
     re.compile(r"\bth[eè]ses?\b"),
 )
-# Les fiches d'événement portent leur contexte dans un bloc dépliable normalisé.
-EVENT_CONTEXT_MARKERS = ('<details class="event-context">', "event-context-body", "event-themes")
+# Le capital événementiel vit dans ce JSON ; interventions.html n'en affiche que
+# la liste compacte et participation.html?id=<id> le détail.
+PARTICIPATIONS_DATA = "assets/data/participations-oby.json"
+# Bornes de plausibilité des dimensions déclarées pour un média publié.
+MEDIA_DIM_MIN = 100
+MEDIA_DIM_MAX = 10000
+
+
+def dimensions_webp(chemin):
+    """Dimensions d'un WebP, ou None si le conteneur n'est pas lisible ici.
+
+    Les trois formes du format sont distinguées par le quatrième chunk du RIFF,
+    à un offset fixe : chercher « VP8 » n'importe où dans le fichier tomberait
+    sur des octets de données compressées et donnerait des valeurs absurdes.
+    """
+    try:
+        d = chemin.read_bytes()
+    except OSError:
+        return None
+    if len(d) < 30 or d[:4] != b"RIFF" or d[8:12] != b"WEBP":
+        return None
+    forme = d[12:16]
+    if forme == b"VP8X":
+        return (int.from_bytes(d[24:27], "little") + 1, int.from_bytes(d[27:30], "little") + 1)
+    if forme == b"VP8L" and d[20] == 0x2F:
+        n = int.from_bytes(d[21:25], "little")
+        return ((n & 0x3FFF) + 1, ((n >> 14) & 0x3FFF) + 1)
+    if forme == b"VP8 " and d[23:26] == b"\x9d\x01\x2a":
+        return (int.from_bytes(d[26:28], "little") & 0x3FFF, int.from_bytes(d[28:30], "little") & 0x3FFF)
+    return None
 
 
 class PageParser(HTMLParser):
@@ -298,6 +327,54 @@ def main():
             elif fragment == ident and f"mediatheque.html#{ident}" not in page_text:
                 add(errors, "CROSS_LINK_ONE_WAY", interventions, f"#{ident} ne renvoie pas vers mediatheque.html#{ident}")
 
+    # --- médias déclarés dans les JSON -------------------------------------
+    # qa_site vérifie les assets référencés depuis le HTML ; ceux des galeries
+    # ne vivent que dans les JSON et échapperaient sinon à tout contrôle.
+    for nom in ("assets/data/participations-oby.json", "assets/data/mediatheque-oby.json"):
+        source = root / nom
+        if not source.exists():
+            continue
+        try:
+            entrees = json.loads(source.read_text(encoding="utf-8"))
+        except (OSError, UnicodeError, json.JSONDecodeError):
+            continue
+        for entree in entrees:
+            if not isinstance(entree, dict):
+                continue
+            refs = [entree.get("fichier")] + [g.get("fichier") for g in (entree.get("galerie") or []) if isinstance(g, dict)]
+            for ref in [r for r in refs if r]:
+                if not (root / ref).exists():
+                    add(errors, "MEDIA_FILE_MISSING", source, f"{entree.get('id', '?')} : {ref}")
+            for photo in (entree.get("galerie") or []):
+                if not isinstance(photo, dict):
+                    continue
+                if not (photo.get("alt") or "").strip():
+                    add(errors, "MEDIA_ALT_MISSING", source, f"{entree.get('id', '?')} : {photo.get('fichier')}")
+                # Dimensions : elles alimentent les attributs width/height, donc la
+                # réservation d'espace au chargement. Une valeur absurde passe
+                # inaperçue à l'œil mais fait sauter la mise en page.
+                if "largeur" in photo or "hauteur" in photo:
+                    w, h = photo.get("largeur"), photo.get("hauteur")
+                    if not isinstance(w, int) or not isinstance(h, int) or w < MEDIA_DIM_MIN or h < MEDIA_DIM_MIN or w > MEDIA_DIM_MAX or h > MEDIA_DIM_MAX:
+                        add(errors, "MEDIA_DIM_INVALID", source, f"{entree.get('id', '?')} : {photo.get('fichier')} → {w}x{h}")
+                    else:
+                        reelles = dimensions_webp(root / photo["fichier"])
+                        if reelles and reelles != (w, h):
+                            add(errors, "MEDIA_DIM_INVALID", source,
+                                f"{entree.get('id', '?')} : {photo.get('fichier')} déclaré {w}x{h}, réel {reelles[0]}x{reelles[1]}")
+
+    # --- double encodage HTML ----------------------------------------------
+    # Les JSON stockent des données : un « & » y reste un « & ». S'il y est déjà
+    # échappé, le générateur l'échappe une seconde fois et le visiteur lit
+    # « &amp; » en clair dans la page.
+    for page, text in texts.items():
+        if "&amp;amp;" in text:
+            add(errors, "DOUBLE_ENTITY", page, "&amp;amp; présent dans la page")
+    for nom in ("assets/data/participations-oby.json", "assets/data/mediatheque-oby.json"):
+        source = root / nom
+        if source.exists() and "&amp;" in source.read_text(encoding="utf-8"):
+            add(errors, "DOUBLE_ENTITY", source, "entité HTML stockée dans un texte éditorial")
+
     # --- fiche AEM : aucun terme doctoral ----------------------------------
     if interventions in texts:
         debut = texts[interventions].find(f'id="{AEM_ID}"')
@@ -330,11 +407,45 @@ def main():
         if len(tokens) > 1:
             add(errors, "CACHE_VERSION_SPLIT", root, f"{asset}: {sorted(tokens)}")
 
-    # --- structure des fiches enrichies ------------------------------------
-    if interventions in texts:
-        for marqueur in EVENT_CONTEXT_MARKERS:
-            if marqueur not in texts[interventions]:
-                add(warnings, "EVENT_CONTEXT_MARKER", interventions, f"marqueur absent : {marqueur}")
+    # --- concordance liste / JSON des participations -----------------------
+    # La liste compacte et le JSON canonique doivent décrire exactement le même
+    # ensemble : une carte sans fiche mène à un détail vide, une fiche sans carte
+    # devient inatteignable.
+    participations = root / PARTICIPATIONS_DATA
+    if participations.exists() and interventions in texts:
+        try:
+            fiches = json.loads(participations.read_text(encoding="utf-8"))
+        except (OSError, UnicodeError, json.JSONDecodeError):
+            fiches = []
+        ids_json = [str(f.get("id") or "") for f in fiches if isinstance(f, dict)]
+        doublons = {i for i in ids_json if ids_json.count(i) > 1}
+        for ident in sorted(doublons):
+            add(errors, "PARTICIPATION_ID_DUPLICATE", participations, ident)
+        ids_json = set(ids_json)
+        ids_html = set(re.findall(r'<article class="card participation-card" id="([^"]+)"', texts[interventions]))
+        for ident in sorted(ids_html - ids_json):
+            add(errors, "PARTICIPATION_MISSING_IN_JSON", interventions, ident)
+        for ident in sorted(ids_json - ids_html):
+            add(errors, "PARTICIPATION_MISSING_IN_LIST", participations, ident)
+        # Toute adresse participation.html?id=… doit désigner une fiche réelle.
+        # Les commentaires sont retirés : ils contiennent le gabarit `?id=<id>`.
+        for page, text in texts.items():
+            for ident in re.findall(r'participation\.html\?id=([^"&#\s]+)', re.sub(r"<!--.*?-->", "", text, flags=re.S)):
+                if ident not in ids_json:
+                    add(errors, "PARTICIPATION_ID_UNKNOWN", page, ident)
+        # Les champs obligatoires d'une fiche publiée.
+        for fiche in fiches:
+            if not isinstance(fiche, dict):
+                continue
+            for champ in ("id", "titre", "meta", "ligne"):
+                if not fiche.get(champ):
+                    add(errors, "PARTICIPATION_FIELD_MISSING", participations, f"{fiche.get('id', '?')} : {champ}")
+        # La règle AEM vaut aussi sur le JSON, qui porte désormais le texte long.
+        entree_aem = json.dumps([f for f in fiches if isinstance(f, dict) and f.get("id") == AEM_ID], ensure_ascii=False).casefold()
+        for motif in AEM_FORBIDDEN:
+            trouve = motif.search(entree_aem)
+            if trouve:
+                add(errors, "AEM_FORBIDDEN_TERM", participations, trouve.group(0))
 
     term_locations = defaultdict(list)
     structure_locations = defaultdict(list)

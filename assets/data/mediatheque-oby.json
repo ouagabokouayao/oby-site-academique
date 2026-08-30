@@ -301,17 +301,26 @@
   },
   {
     "id": "forum-mouillage-mediterranee-2024",
-    "titre": "Forum Mouillage Méditerranée",
+    "titre": "3ᵉ Forum Mouillage Méditerranée",
     "annee": "2024",
     "lieu": "DIRM Méditerranée, Marseille",
     "categorie": "evenement-academique",
-    "typeMedia": "visuel-documentaire",
-    "evenementLie": "Forum Mouillage Méditerranée",
+    "typeMedia": "photographie-evenement",
+    "evenementLie": "3ᵉ Forum Mouillage Méditerranée",
     "pageLiee": "interventions.html#forum-mouillage-mediterranee-2024",
-    "fichier": "assets/img/media/placeholder-evenement-oby.svg",
-    "statut": "media-non-publie",
-    "description": "Trace documentaire conservée en interne.",
-    "notePrudence": "Aucune photographie source exploitable n’est actuellement accessible pour cette entrée."
+    "fichier": "assets/img/media/events/forum-mouillage-mediterranee-2024/oby_forum_mouillage_mediterranee_2024_01.webp",
+    "statut": "public-valide",
+    "description": "Participation au 3ᵉ Forum Mouillage Méditerranée, le 18 novembre 2024 au Palais du Pharo à Marseille, consacré à l’encadrement du mouillage des navires et à la protection des herbiers méditerranéens.",
+    "notePrudence": "Les légendes situent les scènes sans attribuer de fonction, de collaboration ou de relation non établie.",
+    "alt": "Séance plénière du Forum Mouillage Méditerranée consacrée à une zone de mouillage organisée.",
+    "legende": "Séance du 3ᵉ Forum Mouillage Méditerranée, Palais du Pharo, Marseille, 18 novembre 2024.",
+    "galerie": [
+      {
+        "fichier": "assets/img/media/events/forum-mouillage-mediterranee-2024/oby_forum_mouillage_mediterranee_2024_02.webp",
+        "alt": "Écran de projection consacré à la préservation des herbiers de posidonie lors du Forum Mouillage Méditerranée.",
+        "legende": "Séquence consacrée à la préservation des herbiers, Forum Mouillage Méditerranée, 2024."
+      }
+    ]
   },
   {
     "id": "proteus-mediterranee-2024",
@@ -1178,41 +1187,51 @@
   },
   {
     "id": "expertise-france-oceans-economie-bleue-2019",
-    "titre": "Sécuriser les océans pour favoriser l'économie bleue ?",
+    "titre": "Les Rendez-vous de l’Expertise — « Sécuriser les océans pour favoriser l’économie bleue ? »",
     "annee": "2019",
     "lieu": "Paris",
     "categorie": "evenement-academique",
-    "typeMedia": "visuel-documentaire",
-    "evenementLie": "Sécuriser les océans pour favoriser l'économie bleue ?",
+    "typeMedia": "photographie-evenement",
+    "evenementLie": "Les Rendez-vous de l’Expertise — « Sécuriser les océans pour favoriser l’économie bleue ? »",
     "pageLiee": "interventions.html#expertise-france-oceans-economie-bleue-2019",
-    "fichier": "assets/img/media/placeholder-evenement-oby.svg",
-    "statut": "media-non-publie",
-    "description": "Trace documentaire conservée en interne.",
-    "notePrudence": "La source recensée est un badge ou un document d’identification, et non une photographie d’événement destinée à la galerie.",
-    "type_evenement": "visuel-documentaire",
-    "statut_publication": "non publie",
+    "fichier": "assets/img/media/events/expertise-france-oceans-economie-bleue-2019/oby_expertise_france_oceans_economie_bleue_2019_01.webp",
+    "statut": "public-valide",
+    "description": "Participation aux Rendez-vous de l’Expertise consacrés à la sécurisation des océans au service de l’économie bleue, le 24 janvier 2019 à Paris.",
+    "notePrudence": "Les légendes situent les scènes sans attribuer de fonction, de collaboration ou de relation non établie.",
     "axe_associe": "Innovation, économie bleue et entrepreneuriat académique",
-    "sensibilite": "a verifier avant publication",
-    "action_recommandee": "valider, recadrer ou anonymiser avant toute publication de média réel"
+    "alt": "Salle et table ronde des Rendez-vous de l’Expertise, à Paris.",
+    "legende": "Rendez-vous de l’Expertise consacré à la sécurisation des océans, Paris, 24 janvier 2019.",
+    "galerie": [
+      {
+        "fichier": "assets/img/media/events/expertise-france-oceans-economie-bleue-2019/oby_expertise_france_oceans_economie_bleue_2019_02.webp",
+        "alt": "OUAGA Bokoua Yao et deux participants en marge des Rendez-vous de l’Expertise.",
+        "legende": "En marge des Rendez-vous de l’Expertise, Paris, janvier 2019."
+      }
+    ]
   },
   {
     "id": "innovactions-gardanne-2024",
-    "titre": "INNOV'ACTIONS",
+    "titre": "INNOV’ACTIONS",
     "annee": "2024",
     "lieu": "Gardanne",
     "categorie": "evenement-academique",
-    "typeMedia": "visuel-documentaire",
-    "evenementLie": "INNOV'ACTIONS",
+    "typeMedia": "photographie-evenement",
+    "evenementLie": "INNOV’ACTIONS",
     "pageLiee": "interventions.html#innovactions-gardanne-2024",
-    "fichier": "assets/img/media/placeholder-evenement-oby.svg",
-    "statut": "media-non-publie",
-    "description": "Trace documentaire conservée en interne.",
-    "notePrudence": "La source recensée est un badge ou un document d’identification, et non une photographie d’événement destinée à la galerie.",
-    "type_evenement": "visuel-documentaire",
-    "statut_publication": "non publie",
+    "fichier": "assets/img/media/events/innovactions-gardanne-2024/oby_innovactions_gardanne_2024_01.webp",
+    "statut": "public-valide",
+    "description": "Participation aux trois jours d’INNOV’ACTIONS sur le campus de Gardanne de Mines Saint-Étienne. L’événement place des équipes en travail de projet intensif, de la formulation d’un besoin jusqu’à la présentation d’une solution devant l’écosystème d’accompagnement.",
+    "notePrudence": "Les légendes situent les scènes sans attribuer de fonction, de collaboration ou de relation non établie.",
     "axe_associe": "Innovation, économie bleue et entrepreneuriat académique",
-    "sensibilite": "a verifier avant publication",
-    "action_recommandee": "valider, recadrer ou anonymiser avant toute publication de média réel"
+    "alt": "Séance plénière d’INNOV’ACTIONS devant un écran de présentation, à Gardanne.",
+    "legende": "Séquence plénière d’INNOV’ACTIONS, campus Provence de Mines Saint-Étienne, février 2024.",
+    "galerie": [
+      {
+        "fichier": "assets/img/media/events/innovactions-gardanne-2024/oby_innovactions_gardanne_2024_02.webp",
+        "alt": "Participants réunis en équipe pendant les trois jours d’INNOV’ACTIONS.",
+        "legende": "Travail en équipe pendant INNOV’ACTIONS, Gardanne, février 2024."
+      }
+    ]
   },
   {
     "id": "meetup-etudiants-entrepreneurs-pepite-2024",
@@ -1254,22 +1273,27 @@
   },
   {
     "id": "doctoriales-sud-pepite-2024",
-    "titre": "Doctoriales du Sud Pépite",
+    "titre": "Doctoriales du Sud",
     "annee": "2024",
-    "lieu": "Pépite Provence",
+    "lieu": "Espace Bargemon, Marseille",
     "categorie": "evenement-academique",
-    "typeMedia": "visuel-documentaire",
-    "evenementLie": "Doctoriales du Sud Pépite",
+    "typeMedia": "photographie-evenement",
+    "evenementLie": "Doctoriales du Sud",
     "pageLiee": "interventions.html#doctoriales-sud-pepite-2024",
-    "fichier": "assets/img/media/placeholder-evenement-oby.svg",
-    "statut": "media-non-publie",
-    "description": "Trace documentaire conservée en interne.",
-    "notePrudence": "La source recensée est un badge ou un document d’identification, et non une photographie d’événement destinée à la galerie.",
-    "type_evenement": "visuel-documentaire",
-    "statut_publication": "non publie",
+    "fichier": "assets/img/media/events/doctoriales-sud-pepite-2024/oby_doctoriales_sud_pepite_2024_01.webp",
+    "statut": "public-valide",
+    "description": "Participation aux Doctoriales du Sud le 14 novembre 2024, à l’Espace Bargemon à Marseille, comme ambassadeur PÉPITE, chargé du stand PÉPITE Provence.",
+    "notePrudence": "Les légendes situent les scènes sans attribuer de fonction, de collaboration ou de relation non établie.",
     "axe_associe": "Innovation, économie bleue et entrepreneuriat académique",
-    "sensibilite": "a verifier avant publication",
-    "action_recommandee": "valider, recadrer ou anonymiser avant toute publication de média réel"
+    "alt": "OUAGA Bokoua Yao, en gilet PÉPITE Provence, au stand n° 28 du réseau lors des Doctoriales du Sud ; les codes QR sont masqués.",
+    "legende": "Stand PÉPITE Provence, Les Doctoriales du Sud, Espace Bargemon, 14 novembre 2024.",
+    "galerie": [
+      {
+        "fichier": "assets/img/media/events/doctoriales-sud-pepite-2024/oby_doctoriales_sud_pepite_2024_02.webp",
+        "alt": "OUAGA Bokoua Yao en gilet PÉPITE Provence devant le kakémono du réseau.",
+        "legende": "Au stand PÉPITE Provence pendant Les Doctoriales du Sud, 2024."
+      }
+    ]
   },
   {
     "id": "pass-entreprendre-cciamp-2025",
@@ -1718,6 +1742,534 @@
         "fichier": "assets/img/media/events/terrain-gestion-sedimentaire-var-2023/oby_terrain_gestion_sedimentaire_var_2023_10.webp",
         "alt": "Épi rocheux de protection implanté sur la plage de Saint-Aygulf, novembre 2023.",
         "legende": "Épi rocheux de protection, Saint-Aygulf, 2023."
+      }
+    ]
+  },
+  {
+    "id": "tidm-hambourg-2019",
+    "titre": "Stage au Tribunal international du droit de la mer",
+    "annee": "2019",
+    "lieu": "Hambourg",
+    "categorie": "evenement-academique",
+    "typeMedia": "photographie-evenement",
+    "evenementLie": "Stage au Tribunal international du droit de la mer",
+    "pageLiee": "interventions.html#tidm-hambourg-2019",
+    "fichier": "assets/img/media/events/tidm-hambourg-2019/oby_tidm_hambourg_2019_01.webp",
+    "statut": "public-valide",
+    "description": "Stage de trois mois au Tribunal international du droit de la mer, à Hambourg, effectué avec une bourse et en appui au Service juridique du Tribunal. Le stage a couvert des recherches de fond, le suivi de deux affaires de mesures conservatoires et la présence aux audiences.",
+    "notePrudence": "Les légendes situent les scènes sans attribuer de fonction, de collaboration ou de relation non établie.",
+    "alt": "OUAGA Bokoua Yao devant la stèle d’entrée du Tribunal international du droit de la mer à Hambourg.",
+    "legende": "Devant la signalétique du Tribunal international du droit de la mer, à Hambourg, en 2019.",
+    "galerie": [
+      {
+        "fichier": "assets/img/media/events/tidm-hambourg-2019/oby_tidm_hambourg_2019_02.webp",
+        "alt": "Bureau de travail avec ouvrages de droit de la mer pendant le stage au Tribunal international du droit de la mer ; l’écran est masqué.",
+        "legende": "Poste de travail pendant le stage de recherche, Tribunal international du droit de la mer, 2019."
+      },
+      {
+        "fichier": "assets/img/media/events/tidm-hambourg-2019/oby_tidm_hambourg_2019_03.webp",
+        "alt": "Participants réunis dans la salle d’audience du Tribunal international du droit de la mer à Hambourg.",
+        "legende": "Salle d’audience du Tribunal international du droit de la mer, 2019."
+      }
+    ]
+  },
+  {
+    "id": "cij-audiences-ukraine-russie-2019",
+    "titre": "Audiences à la Cour internationale de Justice — Ukraine c. Fédération de Russie",
+    "annee": "2019",
+    "lieu": "Cour internationale de Justice, La Haye",
+    "categorie": "evenement-academique",
+    "typeMedia": "photographie-evenement",
+    "evenementLie": "Audiences à la Cour internationale de Justice — Ukraine c. Fédération de Russie",
+    "pageLiee": "interventions.html#cij-audiences-ukraine-russie-2019",
+    "fichier": "assets/img/media/events/cij-audiences-ukraine-russie-2019/oby_cij_audiences_ukraine_russie_2019_01.webp",
+    "statut": "public-valide",
+    "description": "Présence aux audiences publiques de la Cour internationale de Justice dans l’affaire Ukraine c. Fédération de Russie, en juin 2019, pendant la période du stage de recherche au Tribunal international du droit de la mer.",
+    "notePrudence": "Les légendes situent les scènes sans attribuer de fonction, de collaboration ou de relation non établie.",
+    "alt": "OUAGA Bokoua Yao dans l’escalier d’honneur du Palais de la Paix à La Haye.",
+    "legende": "Palais de la Paix, siège de la Cour internationale de Justice, La Haye, 2019.",
+    "galerie": [
+      {
+        "fichier": "assets/img/media/events/cij-audiences-ukraine-russie-2019/oby_cij_audiences_ukraine_russie_2019_02.webp",
+        "alt": "OUAGA Bokoua Yao assis dans les jardins du Palais de la Paix à La Haye.",
+        "legende": "En marge des audiences publiques de la Cour internationale de Justice, La Haye, 2019."
+      }
+    ]
+  },
+  {
+    "id": "academie-la-haye-cours-hiver-2020",
+    "titre": "Cours d’hiver de l’Académie de droit international de La Haye",
+    "annee": "2020",
+    "lieu": "La Haye",
+    "categorie": "evenement-academique",
+    "typeMedia": "photographie-evenement",
+    "evenementLie": "Cours d’hiver de l’Académie de droit international de La Haye",
+    "pageLiee": "interventions.html#academie-la-haye-cours-hiver-2020",
+    "fichier": "assets/img/media/events/academie-la-haye-cours-hiver-2020/oby_academie_la_haye_cours_hiver_2020_01.webp",
+    "statut": "public-valide",
+    "description": "Participation aux Cours d’hiver 2020 de l’Académie de droit international de La Haye, sur sélection et avec bourse. Les Cours d’hiver sont une session intensive de droit international dispensée par des universitaires et des praticiens de plusieurs traditions juridiques.",
+    "notePrudence": "Les légendes situent les scènes sans attribuer de fonction, de collaboration ou de relation non établie.",
+    "alt": "OUAGA Bokoua Yao devant le kakémono de l’Académie de droit international de La Haye.",
+    "legende": "Cours d’hiver de l’Académie de droit international de La Haye, janvier 2020.",
+    "galerie": [
+      {
+        "fichier": "assets/img/media/events/academie-la-haye-cours-hiver-2020/oby_academie_la_haye_cours_hiver_2020_02.webp",
+        "alt": "Auditorium de l’Académie de droit international de La Haye pendant la session des Cours d’hiver.",
+        "legende": "Auditorium des Cours d’hiver de l’Académie de droit international, La Haye, 2020."
+      }
+    ]
+  },
+  {
+    "id": "cij-rencontre-greffier-2020",
+    "titre": "Rencontre avec le Greffier de la Cour internationale de Justice",
+    "annee": "2020",
+    "lieu": "Cour internationale de Justice, La Haye",
+    "categorie": "evenement-academique",
+    "typeMedia": "photographie-evenement",
+    "evenementLie": "Rencontre avec le Greffier de la Cour internationale de Justice",
+    "pageLiee": "interventions.html#cij-rencontre-greffier-2020",
+    "fichier": "assets/img/media/events/cij-rencontre-greffier-2020/oby_cij_rencontre_greffier_2020_01.webp",
+    "statut": "public-valide",
+    "description": "Rencontre et échange avec Philippe Gautier, Greffier de la Cour internationale de Justice, le 22 janvier 2020 à La Haye, dans le contexte des Cours d’hiver de l’Académie de droit international.",
+    "notePrudence": "Les légendes situent les scènes sans attribuer de fonction, de collaboration ou de relation non établie.",
+    "alt": "OUAGA Bokoua Yao et le Greffier de la Cour internationale de Justice, à La Haye.",
+    "legende": "Rencontre au Greffe de la Cour internationale de Justice, La Haye, 22 janvier 2020.",
+    "galerie": []
+  },
+  {
+    "id": "stage-cabinet-me-oukhelifa-2022-2023",
+    "titre": "Stage en cabinet d’avocat",
+    "annee": "2023",
+    "lieu": "Paris",
+    "categorie": "evenement-academique",
+    "typeMedia": "photographie-evenement",
+    "evenementLie": "Stage en cabinet d’avocat",
+    "pageLiee": "interventions.html#stage-cabinet-me-oukhelifa-2022-2023",
+    "fichier": "assets/img/media/events/stage-cabinet-me-oukhelifa-2022-2023/oby_stage_cabinet_me_oukhelifa_2022_2023_01.webp",
+    "statut": "public-valide",
+    "description": "Stage de six mois en cabinet d’avocat à Paris, du 26 octobre 2022 au 25 avril 2023, dans le cadre du Master 2 Droit international des affaires. Le récit complet de cette expérience figure sur la page Expertise, missions & contributions.",
+    "notePrudence": "Les légendes situent les scènes sans attribuer de fonction, de collaboration ou de relation non établie.",
+    "alt": "OUAGA Bokoua Yao à son poste de travail en cabinet d’avocat ; l’écran est masqué.",
+    "legende": "Poste de travail pendant le stage en cabinet d’avocat, 2022-2023.",
+    "galerie": []
+  },
+  {
+    "id": "ersuma-soutenance-cmo-2026",
+    "titre": "ERSUMA / OHADA — soutenance du travail de fin de formation en médiation",
+    "annee": "2026",
+    "lieu": "ERSUMA, Abidjan",
+    "categorie": "evenement-academique",
+    "typeMedia": "photographie-evenement",
+    "evenementLie": "ERSUMA / OHADA — soutenance du travail de fin de formation en médiation",
+    "pageLiee": "interventions.html#ersuma-soutenance-cmo-2026",
+    "fichier": "assets/img/media/events/ersuma-soutenance-cmo-2026/oby_ersuma_soutenance_cmo_2026_01.webp",
+    "statut": "public-valide",
+    "description": "Soutenance du travail de fin de formation du Certificat de médiateur OHADA, à Abidjan du 27 au 31 juillet 2026, sur l’indépendance et l’impartialité du médiateur.",
+    "notePrudence": "Les légendes situent les scènes sans attribuer de fonction, de collaboration ou de relation non établie.",
+    "alt": "OUAGA Bokoua Yao devant le bâtiment du centre d’arbitrage et de médiation à Abidjan.",
+    "legende": "Centre d’arbitrage et de médiation, Abidjan, séquence du Certificat de médiateur OHADA, 2026.",
+    "galerie": [
+      {
+        "fichier": "assets/img/media/events/ersuma-soutenance-cmo-2026/oby_ersuma_soutenance_cmo_2026_02.webp",
+        "alt": "Groupe de participants réunis devant le centre d’arbitrage et de médiation à Abidjan.",
+        "legende": "Participants de la séquence du Certificat de médiateur OHADA, Abidjan, 2026."
+      }
+    ]
+  },
+  {
+    "id": "ersuma-simulations-mediation-2026",
+    "titre": "ERSUMA / OHADA — simulations pratiques de médiation",
+    "annee": "2026",
+    "lieu": "ERSUMA, Abidjan",
+    "categorie": "evenement-academique",
+    "typeMedia": "photographie-evenement",
+    "evenementLie": "ERSUMA / OHADA — simulations pratiques de médiation",
+    "pageLiee": "interventions.html#ersuma-simulations-mediation-2026",
+    "fichier": "assets/img/media/events/ersuma-simulations-mediation-2026/oby_ersuma_simulations_mediation_2026_01.webp",
+    "statut": "public-valide",
+    "description": "Participation aux simulations pratiques de médiation commerciale du Certificat de médiateur OHADA, à Abidjan du 27 au 31 juillet 2026.",
+    "notePrudence": "Les légendes situent les scènes sans attribuer de fonction, de collaboration ou de relation non établie.",
+    "alt": "Groupe de participants aux simulations pratiques de médiation commerciale, à Abidjan.",
+    "legende": "Participants aux simulations pratiques de médiation, ERSUMA, Abidjan, 2026.",
+    "galerie": []
+  },
+  {
+    "id": "ersuma-cloture-sequence-2026",
+    "titre": "ERSUMA / OHADA — clôture de la séquence de soutenances et de simulations",
+    "annee": "2026",
+    "lieu": "ERSUMA, Abidjan",
+    "categorie": "evenement-academique",
+    "typeMedia": "photographie-evenement",
+    "evenementLie": "ERSUMA / OHADA — clôture de la séquence de soutenances et de simulations",
+    "pageLiee": "interventions.html#ersuma-cloture-sequence-2026",
+    "fichier": "assets/img/media/events/ersuma-cloture-sequence-2026/oby_ersuma_cloture_sequence_2026_01.webp",
+    "statut": "public-valide",
+    "description": "Participation à la séquence de clôture du Certificat de médiateur OHADA, à Abidjan en juillet 2026, à l’issue des soutenances et des simulations pratiques.",
+    "notePrudence": "Les légendes situent les scènes sans attribuer de fonction, de collaboration ou de relation non établie.",
+    "alt": "Table de clôture devant les drapeaux des États membres de l’OHADA, à Abidjan.",
+    "legende": "Séquence de clôture du Certificat de médiateur OHADA, Abidjan, juillet 2026.",
+    "galerie": [
+      {
+        "fichier": "assets/img/media/events/ersuma-cloture-sequence-2026/oby_ersuma_cloture_sequence_2026_02.webp",
+        "alt": "Salle et panel de la séquence de clôture du Certificat de médiateur OHADA.",
+        "legende": "Salle de la séquence de clôture, ERSUMA, Abidjan, 2026."
+      }
+    ]
+  },
+  {
+    "id": "meetup-pepite-ete-2024",
+    "titre": "Meet’up de l’été — PÉPITE Provence",
+    "annee": "2024",
+    "lieu": "Marseille",
+    "categorie": "evenement-academique",
+    "typeMedia": "photographie-evenement",
+    "evenementLie": "Meet’up de l’été — PÉPITE Provence",
+    "pageLiee": "interventions.html#meetup-pepite-ete-2024",
+    "fichier": "assets/img/media/events/meetup-pepite-ete-2024/oby_meetup_pepite_ete_2024_01.webp",
+    "statut": "public-valide",
+    "description": "Participation au Meet’up de l’été de PÉPITE Provence, le 8 juillet 2024 à Marseille, rendez-vous de réseau entre étudiants-entrepreneurs accompagnés par le pôle.",
+    "notePrudence": "Les légendes situent les scènes sans attribuer de fonction, de collaboration ou de relation non établie.",
+    "alt": "Participants réunis en plein air pour le Meet’up de l’été de PÉPITE Provence, à Marseille.",
+    "legende": "Meet’up de l’été de PÉPITE Provence, Marseille, 8 juillet 2024.",
+    "galerie": []
+  },
+  {
+    "id": "sprint-for-impact-zebox-2026",
+    "titre": "Sprint for Impact — ZEBOX",
+    "annee": "2026",
+    "lieu": "ZEBOX, Marseille",
+    "categorie": "evenement-academique",
+    "typeMedia": "photographie-evenement",
+    "evenementLie": "Sprint for Impact — ZEBOX",
+    "pageLiee": "interventions.html#sprint-for-impact-zebox-2026",
+    "fichier": "assets/img/media/events/sprint-for-impact-zebox-2026/oby_sprint_for_impact_zebox_2026_01.webp",
+    "statut": "public-valide",
+    "description": "Participation au Sprint for Impact organisé par ZEBOX à Marseille, du 31 mars au 2 avril 2026 : un sprint d’innovation de cinquante-quatre heures consacré à des solutions à impact.",
+    "notePrudence": "Les légendes situent les scènes sans attribuer de fonction, de collaboration ou de relation non établie.",
+    "alt": "OUAGA Bokoua Yao devant l’écran d’accueil du Sprint for Impact chez ZEBOX.",
+    "legende": "Sprint for Impact, ZEBOX, Marseille, 31 mars-2 avril 2026.",
+    "galerie": [
+      {
+        "fichier": "assets/img/media/events/sprint-for-impact-zebox-2026/oby_sprint_for_impact_zebox_2026_02.webp",
+        "alt": "OUAGA Bokoua Yao prenant la parole pendant le Sprint for Impact chez ZEBOX.",
+        "legende": "Restitution pendant le Sprint for Impact, ZEBOX, 2026."
+      },
+      {
+        "fichier": "assets/img/media/events/sprint-for-impact-zebox-2026/oby_sprint_for_impact_zebox_2026_03.webp",
+        "alt": "Participants du Sprint for Impact réunis devant l’écran d’accueil de ZEBOX.",
+        "legende": "Équipes du Sprint for Impact, ZEBOX, Marseille, 2026."
+      }
+    ]
+  },
+  {
+    "id": "rentree-d2e1-2024-2025",
+    "titre": "Rentrée D2E1 — première session 2024/2025",
+    "annee": "2024",
+    "lieu": "PÉPITE Provence, Aix-Marseille",
+    "categorie": "evenement-academique",
+    "typeMedia": "photographie-evenement",
+    "evenementLie": "Rentrée D2E1 — première session 2024/2025",
+    "pageLiee": "interventions.html#rentree-d2e1-2024-2025",
+    "fichier": "assets/img/media/events/rentree-d2e1-2024-2025/oby_rentree_d2e1_2024_2025_01.webp",
+    "statut": "public-valide",
+    "description": "Participation à la rentrée de la première session 2024/2025 du Diplôme d’étudiant-entrepreneur de PÉPITE Provence, le 12 octobre 2024.",
+    "notePrudence": "Les légendes situent les scènes sans attribuer de fonction, de collaboration ou de relation non établie.",
+    "alt": "Photographie de groupe de la promotion du Diplôme d’étudiant-entrepreneur, PÉPITE Provence.",
+    "legende": "Rentrée de la promotion D2E1, PÉPITE Provence, 12 octobre 2024.",
+    "galerie": []
+  },
+  {
+    "id": "genies-en-herbe-ohada-2012",
+    "titre": "4ᵉ Concours international « Génies en Herbe OHADA » — phase finale",
+    "annee": "2012",
+    "lieu": "Abidjan, Côte d’Ivoire",
+    "categorie": "evenement-academique",
+    "typeMedia": "photographie-evenement",
+    "evenementLie": "4ᵉ Concours international « Génies en Herbe OHADA » — phase finale",
+    "pageLiee": "interventions.html#genies-en-herbe-ohada-2012",
+    "fichier": "assets/img/media/events/genies-en-herbe-ohada-2012/oby_genies_en_herbe_ohada_2012_01.webp",
+    "statut": "public-valide",
+    "description": "Participation comme greffier fictif à la phase finale du 4ᵉ Concours international « Génies en Herbe OHADA », à Abidjan du 29 au 31 août 2012.",
+    "notePrudence": "Les légendes situent les scènes sans attribuer de fonction, de collaboration ou de relation non établie.",
+    "alt": "OUAGA Bokoua Yao en robe au pupitre portant la mention « Greffier », lors du concours Génies en Herbe OHADA.",
+    "legende": "Au pupitre du greffier, concours « Génies en Herbe OHADA », Abidjan, août 2012.",
+    "galerie": [
+      {
+        "fichier": "assets/img/media/events/genies-en-herbe-ohada-2012/oby_genies_en_herbe_ohada_2012_02.webp",
+        "alt": "OUAGA Bokoua Yao lisant un document au pupitre du greffier pendant le concours.",
+        "legende": "Lecture au pupitre du greffier, concours « Génies en Herbe OHADA », 2012."
+      }
+    ]
+  },
+  {
+    "id": "moot-court-droits-homme-2012",
+    "titre": "Concours interuniversitaire de plaidoirie en droits de l’homme",
+    "annee": "2012",
+    "lieu": "Yamoussoukro, Côte d’Ivoire",
+    "categorie": "evenement-academique",
+    "typeMedia": "photographie-evenement",
+    "evenementLie": "Concours interuniversitaire de plaidoirie en droits de l’homme",
+    "pageLiee": "interventions.html#moot-court-droits-homme-2012",
+    "fichier": "assets/img/media/events/moot-court-droits-homme-2012/oby_moot_court_droits_homme_2012_01.webp",
+    "statut": "public-valide",
+    "description": "Participation comme greffier fictif au concours interuniversitaire de plaidoirie consacré aux droits de l’homme, le 12 octobre 2012 à Yamoussoukro.",
+    "notePrudence": "Les légendes situent les scènes sans attribuer de fonction, de collaboration ou de relation non établie.",
+    "alt": "OUAGA Bokoua Yao en robe dans l’hémicycle, lors du concours de plaidoirie en droits de l’homme.",
+    "legende": "Concours de plaidoirie en droits de l’homme, Yamoussoukro, 12 octobre 2012.",
+    "galerie": [
+      {
+        "fichier": "assets/img/media/events/moot-court-droits-homme-2012/oby_moot_court_droits_homme_2012_02.webp",
+        "alt": "Participants installés à la table du greffe pendant le concours de plaidoirie.",
+        "legende": "Table du greffe pendant le concours de plaidoirie, Yamoussoukro, 2012."
+      }
+    ]
+  },
+  {
+    "id": "grand-lahou-trait-cote-2017",
+    "titre": "Sortie de terrain — dynamique du trait de côte à Grand-Lahou",
+    "annee": "2017",
+    "lieu": "Grand-Lahou, Côte d’Ivoire",
+    "categorie": "evenement-academique",
+    "typeMedia": "photographie-evenement",
+    "evenementLie": "Sortie de terrain — dynamique du trait de côte à Grand-Lahou",
+    "pageLiee": "interventions.html#grand-lahou-trait-cote-2017",
+    "fichier": "assets/img/media/events/grand-lahou-trait-cote-2017/oby_grand_lahou_trait_cote_2017_01.webp",
+    "statut": "public-valide",
+    "description": "Participation à une sortie de terrain scientifique consacrée à la dynamique du trait de côte à Grand-Lahou, le 8 avril 2017, en qualité d’assistant du Coordonnateur du Programme national de gestion de l’environnement côtier, aux côtés du Professeur Éric M. Valère Djagoua.",
+    "notePrudence": "Les légendes situent les scènes sans attribuer de fonction, de collaboration ou de relation non établie.",
+    "alt": "OUAGA Bokoua Yao sur un front d’érosion sableux du littoral de Grand-Lahou.",
+    "legende": "Front d’érosion du trait de côte à Grand-Lahou, 8 avril 2017.",
+    "galerie": [
+      {
+        "fichier": "assets/img/media/events/grand-lahou-trait-cote-2017/oby_grand_lahou_trait_cote_2017_02.webp",
+        "alt": "OUAGA Bokoua Yao sur la plage de Grand-Lahou, le long du trait de côte.",
+        "legende": "Plage et trait de côte à Grand-Lahou, avril 2017."
+      },
+      {
+        "fichier": "assets/img/media/events/grand-lahou-trait-cote-2017/oby_grand_lahou_trait_cote_2017_03.webp",
+        "alt": "OUAGA Bokoua Yao à bord d’une pirogue lors de la sortie de terrain à Grand-Lahou.",
+        "legende": "Traversée en pirogue vers le site d’observation, Grand-Lahou, 2017."
+      }
+    ]
+  },
+  {
+    "id": "alter-mediterranee-tethys-aqualab",
+    "titre": "Agora des Jeunes — ALTER MÉDITERRANÉE / Saison Méditerranée 2026",
+    "annee": "2026",
+    "lieu": "Campus Pharo, Marseille",
+    "categorie": "evenement-academique",
+    "typeMedia": "photographie-evenement",
+    "evenementLie": "Agora des Jeunes — ALTER MÉDITERRANÉE / Saison Méditerranée 2026",
+    "pageLiee": "interventions.html#alter-mediterranee-tethys-aqualab",
+    "fichier": "assets/img/media/events/alter-mediterranee-tethys-aqualab/oby_alter_mediterranee_tethys_aqualab_01.webp",
+    "statut": "public-valide",
+    "description": "Présentation d’AquaLab lors de l’Agora des Jeunes d’ALTER MÉDITERRANÉE, le 20 mai 2026 au Campus Pharo à Marseille, sous la forme d’un pitch de cinq minutes. AquaLab est une initiative distincte, qui conserve son cadre et son autonomie propres.",
+    "notePrudence": "Les légendes situent les scènes sans attribuer de fonction, de collaboration ou de relation non établie.",
+    "alt": "OUAGA Bokoua Yao, en tenue du consortium Téthys, devant la signalétique des Rencontres d’Aix-Marseille Université.",
+    "legende": "Devant la signalétique des Rencontres d’Aix-Marseille Université, Marseille, 2026.",
+    "galerie": [
+      {
+        "fichier": "assets/img/media/events/alter-mediterranee-tethys-aqualab/oby_alter_mediterranee_tethys_aqualab_02.webp",
+        "alt": "Groupe de participants réunis sur les marches, en marge de la séquence.",
+        "legende": "Participants réunis en marge de la séquence, Marseille, 2026."
+      }
+    ]
+  },
+  {
+    "id": "36h-chrono-pepite-2024",
+    "titre": "36H Chrono de la création d’entreprise — PÉPITE Provence",
+    "annee": "2024",
+    "lieu": "PÉPITE Provence, Marseille",
+    "categorie": "evenement-academique",
+    "typeMedia": "photographie-evenement",
+    "evenementLie": "36H Chrono de la création d’entreprise — PÉPITE Provence",
+    "pageLiee": "interventions.html#36h-chrono-pepite-2024",
+    "fichier": "assets/img/media/events/36h-chrono-pepite-2024/oby_36h_chrono_pepite_2024_01.webp",
+    "statut": "public-valide",
+    "description": "Appui à l’organisation du 36H Chrono de la création d’entreprise de PÉPITE Provence, du 25 au 29 novembre 2024 à Marseille : préparation logistique, mise en place et contribution au déroulement de l’événement.",
+    "notePrudence": "Les légendes situent les scènes sans attribuer de fonction, de collaboration ou de relation non établie.",
+    "alt": "OUAGA Bokoua Yao devant la signalétique du 36H Chrono de la création d’entreprise.",
+    "legende": "36H Chrono de la création d’entreprise, PÉPITE Provence, novembre 2024.",
+    "galerie": [
+      {
+        "fichier": "assets/img/media/events/36h-chrono-pepite-2024/oby_36h_chrono_pepite_2024_02.webp",
+        "alt": "Salle du 36H Chrono avec les équipes participantes réunies autour des tables.",
+        "legende": "Salle du 36H Chrono pendant l’événement, Marseille, novembre 2024."
+      }
+    ]
+  },
+  {
+    "id": "rfdi-nice-gouvernance-oceans-2026",
+    "titre": "22ᵉ colloque annuel du Réseau francophone de droit international — gouvernance internationale des océans",
+    "annee": "2026",
+    "lieu": "Université Côte d’Azur, campus Trotabas, Nice",
+    "categorie": "evenement-academique",
+    "typeMedia": "photographie-evenement",
+    "evenementLie": "22ᵉ colloque annuel du Réseau francophone de droit international — gouvernance internationale des océans",
+    "pageLiee": "interventions.html#rfdi-nice-gouvernance-oceans-2026",
+    "fichier": "assets/img/media/events/rfdi-nice-gouvernance-oceans-2026/oby_rfdi_nice_gouvernance_oceans_2026_01.webp",
+    "statut": "public-valide",
+    "description": "Participation au 22ᵉ colloque annuel du Réseau francophone de droit international, consacré à la gouvernance internationale des océans, le 4 mai 2026 à l’Université Côte d’Azur.",
+    "notePrudence": "Les légendes situent les scènes sans attribuer de fonction, de collaboration ou de relation non établie.",
+    "alt": "Séance du colloque consacré à la gouvernance internationale des océans, à l’Université Côte d’Azur.",
+    "legende": "Séance du colloque du Réseau francophone de droit international, Nice, 4 mai 2026.",
+    "galerie": [
+      {
+        "fichier": "assets/img/media/events/rfdi-nice-gouvernance-oceans-2026/oby_rfdi_nice_gouvernance_oceans_2026_02.webp",
+        "alt": "Panel et écran de projection lors d’une séance du colloque du Réseau francophone de droit international.",
+        "legende": "Séquence du colloque consacrée à la protection des personnes en mer, Nice, 2026."
+      }
+    ]
+  },
+  {
+    "id": "fete-mer-londe-2026",
+    "titre": "Fête de la Mer et du Nautisme",
+    "annee": "2026",
+    "lieu": "Port Miramar, La Londe-les-Maures",
+    "categorie": "evenement-academique",
+    "typeMedia": "photographie-evenement",
+    "evenementLie": "Fête de la Mer et du Nautisme",
+    "pageLiee": "interventions.html#fete-mer-londe-2026",
+    "fichier": "assets/img/media/events/fete-mer-londe-2026/oby_fete_mer_londe_2026_01.webp",
+    "statut": "public-valide",
+    "description": "Participation à la Fête de la Mer et du Nautisme, le 6 juin 2026 à Port Miramar, à La Londe-les-Maures.",
+    "notePrudence": "Les légendes situent les scènes sans attribuer de fonction, de collaboration ou de relation non établie.",
+    "alt": "OUAGA Bokoua Yao sur le quai de Port Miramar pendant la Fête de la Mer et du Nautisme.",
+    "legende": "Port Miramar pendant la Fête de la Mer et du Nautisme, La Londe-les-Maures, 6 juin 2026.",
+    "galerie": [
+      {
+        "fichier": "assets/img/media/events/fete-mer-londe-2026/oby_fete_mer_londe_2026_02.webp",
+        "alt": "Panneau d’information du sentier sous-marin rappelant les interdictions de prélèvement et la préservation des fonds marins.",
+        "legende": "Panneau du sentier sous-marin « Le Jardin des Mattes », La Londe-les-Maures, 2026."
+      }
+    ]
+  },
+  {
+    "id": "arbois-levee-fonds-investisseur-2025",
+    "titre": "La levée de fonds du point de vue de l’investisseur",
+    "annee": "2025",
+    "lieu": "Technopôle de l’Environnement Arbois-Méditerranée, Aix-en-Provence",
+    "categorie": "evenement-academique",
+    "typeMedia": "photographie-evenement",
+    "evenementLie": "La levée de fonds du point de vue de l’investisseur",
+    "pageLiee": "interventions.html#arbois-levee-fonds-investisseur-2025",
+    "fichier": "assets/img/media/events/arbois-levee-fonds-investisseur-2025/oby_arbois_levee_fonds_investisseur_2025_01.webp",
+    "statut": "public-valide",
+    "description": "Participation à la rencontre « [12/14 de l’Arbois] — La levée de fonds du point de vue de l’investisseur », le 4 mars 2025 au Technopôle de l’Environnement Arbois-Méditerranée.",
+    "notePrudence": "Les légendes situent les scènes sans attribuer de fonction, de collaboration ou de relation non établie.",
+    "alt": "Table ronde et écran de la séance consacrée à la levée de fonds au Technopôle de l’Environnement Arbois-Méditerranée.",
+    "legende": "Séance « La levée de fonds du point de vue de l’investisseur », Technopôle de l’Arbois, 4 mars 2025.",
+    "galerie": [
+      {
+        "fichier": "assets/img/media/events/arbois-levee-fonds-investisseur-2025/oby_arbois_levee_fonds_investisseur_2025_02.webp",
+        "alt": "OUAGA Bokoua Yao et un participant en marge de la séance du Technopôle de l’Arbois.",
+        "legende": "En marge de la séance du Technopôle de l’Arbois, mars 2025."
+      },
+      {
+        "fichier": "assets/img/media/events/arbois-levee-fonds-investisseur-2025/oby_arbois_levee_fonds_investisseur_2025_03.webp",
+        "alt": "OUAGA Bokoua Yao et deux participants à l’issue de la séance du Technopôle de l’Arbois.",
+        "legende": "Participants de la séance du Technopôle de l’Arbois, mars 2025."
+      }
+    ]
+  },
+  {
+    "id": "ocean-day-institut-ocean-2024",
+    "titre": "Ocean Day #2 — « Les Métiers d’Avenir dans le domaine de la mer et de l’économie bleue »",
+    "annee": "2024",
+    "lieu": "L’Embarcadère, Marseille",
+    "categorie": "evenement-academique",
+    "typeMedia": "photographie-evenement",
+    "evenementLie": "Ocean Day #2 — « Les Métiers d’Avenir dans le domaine de la mer et de l’économie bleue »",
+    "pageLiee": "interventions.html#ocean-day-institut-ocean-2024",
+    "fichier": "assets/img/media/events/ocean-day-institut-ocean-2024/oby_ocean_day_institut_ocean_2024_01.webp",
+    "statut": "public-valide",
+    "description": "Participation à Ocean Day #2, le 8 juin 2024 à L’Embarcadère à Marseille, consacré aux métiers d’avenir de la mer et de l’économie bleue.",
+    "notePrudence": "Les légendes situent les scènes sans attribuer de fonction, de collaboration ou de relation non établie.",
+    "alt": "Photographie de groupe des participants d’Ocean Day #2, à Marseille.",
+    "legende": "Ocean Day #2, L’Embarcadère, Marseille, 8 juin 2024.",
+    "galerie": []
+  },
+  {
+    "id": "rencontres-entrepreneurs-avocats-2024",
+    "titre": "Rencontres Entrepreneurs & Avocats",
+    "annee": "2024",
+    "lieu": "Palais de la Bourse, Marseille",
+    "categorie": "evenement-academique",
+    "typeMedia": "photographie-evenement",
+    "evenementLie": "Rencontres Entrepreneurs & Avocats",
+    "pageLiee": "interventions.html#rencontres-entrepreneurs-avocats-2024",
+    "fichier": "assets/img/media/events/rencontres-entrepreneurs-avocats-2024/oby_rencontres_entrepreneurs_avocats_2024_01.webp",
+    "statut": "public-valide",
+    "description": "Participation aux Rencontres Entrepreneurs & Avocats, le 11 décembre 2024 au Palais de la Bourse à Marseille, consacrées aux besoins juridiques des porteurs de projet et des entreprises.",
+    "notePrudence": "Les légendes situent les scènes sans attribuer de fonction, de collaboration ou de relation non établie.",
+    "alt": "Écran d’ouverture des Rencontres Entrepreneurs et Avocats au Palais de la Bourse.",
+    "legende": "Les Rencontres Entrepreneurs & Avocats, Palais de la Bourse, Marseille, 11 décembre 2024.",
+    "galerie": [
+      {
+        "fichier": "assets/img/media/events/rencontres-entrepreneurs-avocats-2024/oby_rencontres_entrepreneurs_avocats_2024_02.webp",
+        "alt": "Écran de projection présentant les bénéfices des modes amiables de règlement des différends.",
+        "legende": "Séquence consacrée aux modes amiables de règlement des différends, Marseille, 2024."
+      },
+      {
+        "fichier": "assets/img/media/events/rencontres-entrepreneurs-avocats-2024/oby_rencontres_entrepreneurs_avocats_2024_03.webp",
+        "alt": "OUAGA Bokoua Yao et deux participants dans les salons du Palais de la Bourse.",
+        "legende": "Participants des Rencontres Entrepreneurs & Avocats, Marseille, décembre 2024."
+      }
+    ]
+  },
+  {
+    "id": "arbe-amenagement-biodiversite-sfn-2026",
+    "titre": "ARBE Région Sud — Club Aménagement & Biodiversité / Solutions fondées sur la Nature",
+    "annee": "2026",
+    "lieu": "Aix-en-Provence",
+    "categorie": "evenement-academique",
+    "typeMedia": "photographie-evenement",
+    "evenementLie": "ARBE Région Sud — Club Aménagement & Biodiversité / Solutions fondées sur la Nature",
+    "pageLiee": "interventions.html#arbe-amenagement-biodiversite-sfn-2026",
+    "fichier": "assets/img/media/events/arbe-amenagement-biodiversite-sfn-2026/oby_arbe_amenagement_biodiversite_sfn_2026_01.webp",
+    "statut": "public-valide",
+    "description": "Participation à une rencontre régionale du Club Aménagement & Biodiversité de l’Agence régionale pour la biodiversité et l’environnement de la Région Sud, consacrée aux solutions fondées sur la nature. La rencontre réunit collectivités, aménageurs et acteurs de l’environnement autour de la place que ces solutions occupent, en pratique, dans les projets d’aménagement et l’adaptation des territoires.",
+    "notePrudence": "Les légendes situent les scènes sans attribuer de fonction, de collaboration ou de relation non établie.",
+    "alt": "OUAGA Bokoua Yao devant les kakémonos de la rencontre régionale consacrée aux solutions fondées sur la nature.",
+    "legende": "Rencontre régionale du Club Aménagement & Biodiversité, Aix-en-Provence, 30 juin 2026.",
+    "galerie": [
+      {
+        "fichier": "assets/img/media/events/arbe-amenagement-biodiversite-sfn-2026/oby_arbe_amenagement_biodiversite_sfn_2026_02.webp",
+        "alt": "Écrans annonçant la rencontre régionale du Club Aménagement et Biodiversité — Solutions fondées sur la Nature.",
+        "legende": "Signalétique de la rencontre régionale du Club Aménagement & Biodiversité, 2026."
+      },
+      {
+        "fichier": "assets/img/media/events/arbe-amenagement-biodiversite-sfn-2026/oby_arbe_amenagement_biodiversite_sfn_2026_03.webp",
+        "alt": "Séance de la rencontre régionale consacrée aux perceptions et potentialités des solutions fondées sur la nature en milieu littoral urbanisé.",
+        "legende": "Séquence consacrée aux solutions fondées sur la nature en milieu littoral urbanisé, 2026."
+      }
+    ]
+  },
+  {
+    "id": "soiree-alumni-amu-2024",
+    "titre": "Grande Soirée Alumni Aix-Marseille Université",
+    "annee": "2024",
+    "lieu": "Palais de la Bourse, Marseille",
+    "categorie": "evenement-academique",
+    "typeMedia": "photographie-evenement",
+    "evenementLie": "Grande Soirée Alumni Aix-Marseille Université",
+    "pageLiee": "interventions.html#soiree-alumni-amu-2024",
+    "fichier": "assets/img/media/events/soiree-alumni-amu-2024/oby_soiree_alumni_amu_2024_01.webp",
+    "statut": "public-valide",
+    "description": "Appui à l’organisation de la Grande Soirée Alumni d’Aix-Marseille Université, le 2 décembre 2024 au Palais de la Bourse, dans le cadre d’un job étudiant lié à PÉPITE Provence.",
+    "notePrudence": "Les légendes situent les scènes sans attribuer de fonction, de collaboration ou de relation non établie.",
+    "alt": "OUAGA Bokoua Yao devant l’écran de la Grande Soirée Alumni d’Aix-Marseille Université.",
+    "legende": "Grande Soirée Alumni d’Aix-Marseille Université, Palais de la Bourse, 2 décembre 2024.",
+    "galerie": [
+      {
+        "fichier": "assets/img/media/events/soiree-alumni-amu-2024/oby_soiree_alumni_amu_2024_02.webp",
+        "alt": "Grande salle du Palais de la Bourse aménagée pour la Grande Soirée Alumni.",
+        "legende": "Salons du Palais de la Bourse pendant la Grande Soirée Alumni, décembre 2024."
+      },
+      {
+        "fichier": "assets/img/media/events/soiree-alumni-amu-2024/oby_soiree_alumni_amu_2024_03.webp",
+        "alt": "OUAGA Bokoua Yao devant les kakémonos d’Aix-Marseille Université lors de la Grande Soirée Alumni.",
+        "legende": "Signalétique de la Grande Soirée Alumni d’Aix-Marseille Université, 2024."
       }
     ]
   }

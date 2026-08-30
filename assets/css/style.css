@@ -3851,3 +3851,73 @@ main:focus {
     padding-left: 11px;
   }
 }
+
+/* Liste compacte des participations : une photo, un titre cliquable, une ligne.
+   Le détail vit sur participation.html, ce qui garde la page parcourable même
+   lorsque le nombre d'entrées augmente. */
+.participation-card {
+  /* `align-self: start` est indispensable : sans lui, la carte s'étire sur la
+     hauteur de la rangée, et une entrée sans photo se retrouve creusée d'un
+     grand vide dès qu'une entrée voisine en porte une. */
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  padding: 22px;
+}
+
+.participation-visual {
+  margin: 0 0 16px;
+  border: 1px solid rgba(8, 26, 47, 0.1);
+  border-radius: var(--radius-sm);
+  background: var(--ivory);
+  overflow: hidden;
+}
+
+.participation-visual img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.participation-card h3 {
+  margin: 10px 0 8px;
+  font-size: 1.32rem;
+}
+
+.participation-card h3 a {
+  color: var(--navy);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.participation-card h3 a:hover,
+.participation-card h3 a:focus-visible {
+  color: var(--blue);
+  border-color: var(--gold-line);
+}
+
+.participation-card > .meta {
+  margin: 0 0 10px;
+  font-size: 0.86rem;
+}
+
+.participation-card > p {
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+
+.participation-card > .card-link {
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+/* Objets de demande pré-qualifiés sur la page Contact : une ligne de liens,
+   qui reste lisible quand elle se replie sur plusieurs lignes. */
+.contact-qualification {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  margin-top: 10px;
+}
