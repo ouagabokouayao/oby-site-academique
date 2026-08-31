@@ -45,6 +45,69 @@
         "legende": "Salle d’audience du Tribunal international du droit de la mer, 2019.",
         "largeur": 1400,
         "hauteur": 934
+      },
+      {
+        "fichier": "assets/img/media/events/tidm-hambourg-2019/oby_tidm_hambourg_2019_04.webp",
+        "alt": "OUAGA Bokoua Yao avec d’autres participants dans une salle du Tribunal international du droit de la mer à Hambourg.",
+        "legende": "Photographie de groupe au Tribunal international du droit de la mer, Hambourg, 2019.",
+        "largeur": 1600,
+        "hauteur": 1011
+      },
+      {
+        "fichier": "assets/img/media/events/tidm-hambourg-2019/oby_tidm_hambourg_2019_05.webp",
+        "alt": "Photographie — Stage au Tribunal international du droit de la mer",
+        "legende": "Photographie complémentaire — Stage au Tribunal international du droit de la mer.",
+        "largeur": 933,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/tidm-hambourg-2019/oby_tidm_hambourg_2019_06.webp",
+        "alt": "Participants à la 4e Hamburg International Environmental Law Conference, suivie dans le cadre du stage au Tribunal international du droit de la mer.",
+        "legende": "4e Hamburg International Environmental Law Conference (HIELC), Bucerius Law School, Hambourg, 4–5 avril 2019, suivie dans le cadre du stage au Tribunal international du droit de la mer.",
+        "largeur": 1400,
+        "hauteur": 885
+      },
+      {
+        "fichier": "assets/img/media/events/tidm-hambourg-2019/oby_tidm_hambourg_2019_07.webp",
+        "alt": "Photographie — Stage au Tribunal international du droit de la mer",
+        "legende": "Photographie complémentaire — Stage au Tribunal international du droit de la mer.",
+        "largeur": 1400,
+        "hauteur": 933
+      },
+      {
+        "fichier": "assets/img/media/events/tidm-hambourg-2019/oby_tidm_hambourg_2019_08.webp",
+        "alt": "Photographie — Stage au Tribunal international du droit de la mer",
+        "legende": "Photographie complémentaire — Stage au Tribunal international du droit de la mer.",
+        "largeur": 1400,
+        "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/tidm-hambourg-2019/oby_tidm_hambourg_2019_09.webp",
+        "alt": "Photographie — Stage au Tribunal international du droit de la mer",
+        "legende": "Photographie complémentaire — Stage au Tribunal international du droit de la mer.",
+        "largeur": 1400,
+        "hauteur": 933
+      },
+      {
+        "fichier": "assets/img/media/events/tidm-hambourg-2019/oby_tidm_hambourg_2019_10.webp",
+        "alt": "Photographie — Stage au Tribunal international du droit de la mer",
+        "legende": "Photographie complémentaire — Stage au Tribunal international du droit de la mer.",
+        "largeur": 933,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/tidm-hambourg-2019/oby_tidm_hambourg_2019_11.webp",
+        "alt": "Photographie — Stage au Tribunal international du droit de la mer",
+        "legende": "Photographie complémentaire — Stage au Tribunal international du droit de la mer.",
+        "largeur": 1400,
+        "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/tidm-hambourg-2019/oby_tidm_hambourg_2019_12.webp",
+        "alt": "Photographie — Stage au Tribunal international du droit de la mer",
+        "legende": "Photographie complémentaire — Stage au Tribunal international du droit de la mer.",
+        "largeur": 1400,
+        "hauteur": 933
       }
     ],
     "mediatheque": "mediatheque.html#tidm-hambourg-2019",
@@ -87,6 +150,83 @@
         "legende": "Auditorium des Cours d’hiver de l’Académie de droit international, La Haye, 2020.",
         "largeur": 1400,
         "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/academie-la-haye-cours-hiver-2020/oby_academie_la_haye_cours_hiver_2020_03.webp",
+        "alt": "Photographie — Cours d’hiver de l’Académie de droit international de La Haye",
+        "legende": "Photographie complémentaire — Cours d’hiver de l’Académie de droit international de La Haye.",
+        "largeur": 1050,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/academie-la-haye-cours-hiver-2020/oby_academie_la_haye_cours_hiver_2020_04.webp",
+        "alt": "Photographie — Cours d’hiver de l’Académie de droit international de La Haye",
+        "legende": "Photographie complémentaire — Cours d’hiver de l’Académie de droit international de La Haye.",
+        "largeur": 1400,
+        "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/academie-la-haye-cours-hiver-2020/oby_academie_la_haye_cours_hiver_2020_05.webp",
+        "alt": "Photographie — Cours d’hiver de l’Académie de droit international de La Haye",
+        "legende": "Photographie complémentaire — Cours d’hiver de l’Académie de droit international de La Haye.",
+        "largeur": 1050,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/academie-la-haye-cours-hiver-2020/oby_academie_la_haye_cours_hiver_2020_06.webp",
+        "alt": "Photographie — Cours d’hiver de l’Académie de droit international de La Haye",
+        "legende": "Photographie complémentaire — Cours d’hiver de l’Académie de droit international de La Haye.",
+        "largeur": 1400,
+        "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/academie-la-haye-cours-hiver-2020/oby_academie_la_haye_cours_hiver_2020_07.webp",
+        "alt": "Photographie — Cours d’hiver de l’Académie de droit international de La Haye",
+        "legende": "Photographie complémentaire — Cours d’hiver de l’Académie de droit international de La Haye.",
+        "largeur": 1050,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/academie-la-haye-cours-hiver-2020/oby_academie_la_haye_cours_hiver_2020_08.webp",
+        "alt": "Photographie — Cours d’hiver de l’Académie de droit international de La Haye",
+        "legende": "Photographie complémentaire — Cours d’hiver de l’Académie de droit international de La Haye.",
+        "largeur": 1050,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/academie-la-haye-cours-hiver-2020/oby_academie_la_haye_cours_hiver_2020_09.webp",
+        "alt": "Photographie — Cours d’hiver de l’Académie de droit international de La Haye",
+        "legende": "Photographie complémentaire — Cours d’hiver de l’Académie de droit international de La Haye.",
+        "largeur": 1050,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/academie-la-haye-cours-hiver-2020/oby_academie_la_haye_cours_hiver_2020_10.webp",
+        "alt": "Photographie — Cours d’hiver de l’Académie de droit international de La Haye",
+        "legende": "Photographie complémentaire — Cours d’hiver de l’Académie de droit international de La Haye.",
+        "largeur": 1400,
+        "hauteur": 1213
+      },
+      {
+        "fichier": "assets/img/media/events/academie-la-haye-cours-hiver-2020/oby_academie_la_haye_cours_hiver_2020_11.webp",
+        "alt": "Photographie — Cours d’hiver de l’Académie de droit international de La Haye",
+        "legende": "Photographie complémentaire — Cours d’hiver de l’Académie de droit international de La Haye.",
+        "largeur": 1400,
+        "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/academie-la-haye-cours-hiver-2020/oby_academie_la_haye_cours_hiver_2020_12.webp",
+        "alt": "Photographie — Cours d’hiver de l’Académie de droit international de La Haye",
+        "legende": "Photographie complémentaire — Cours d’hiver de l’Académie de droit international de La Haye.",
+        "largeur": 874,
+        "hauteur": 698
+      },
+      {
+        "fichier": "assets/img/media/events/academie-la-haye-cours-hiver-2020/oby_academie_la_haye_cours_hiver_2020_13.webp",
+        "alt": "Photographie — Cours d’hiver de l’Académie de droit international de La Haye",
+        "legende": "Photographie complémentaire — Cours d’hiver de l’Académie de droit international de La Haye.",
+        "largeur": 1400,
+        "hauteur": 1050
       }
     ],
     "mediatheque": "mediatheque.html#academie-la-haye-cours-hiver-2020",
@@ -116,7 +256,8 @@
     ],
     "liens": [],
     "galerie": [],
-    "mediatheque": null
+    "mediatheque": null,
+    "affichage_participations": false
   },
   {
     "id": "afim-mediation-2026",
@@ -140,7 +281,8 @@
     ],
     "liens": [],
     "galerie": [],
-    "mediatheque": null
+    "mediatheque": null,
+    "affichage_participations": false
   },
   {
     "id": "oceanexpert-plateforme-2024",
@@ -164,7 +306,8 @@
     ],
     "liens": [],
     "galerie": [],
-    "mediatheque": "mediatheque.html#oceanexpert-plateforme-2024"
+    "mediatheque": "mediatheque.html#oceanexpert-plateforme-2024",
+    "affichage_participations": false
   },
   {
     "id": "ocean-decade-network-2024",
@@ -188,7 +331,8 @@
     ],
     "liens": [],
     "galerie": [],
-    "mediatheque": "mediatheque.html#ocean-decade-network-2024"
+    "mediatheque": "mediatheque.html#ocean-decade-network-2024",
+    "affichage_participations": false
   },
   {
     "id": "rfdi-nice-gouvernance-oceans-2026",
@@ -223,6 +367,41 @@
         "fichier": "assets/img/media/events/rfdi-nice-gouvernance-oceans-2026/oby_rfdi_nice_gouvernance_oceans_2026_02.webp",
         "alt": "Panel et écran de projection lors d’une séance du colloque du Réseau francophone de droit international.",
         "legende": "Séquence du colloque consacrée à la protection des personnes en mer, Nice, 2026.",
+        "largeur": 1400,
+        "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/rfdi-nice-gouvernance-oceans-2026/oby_rfdi_nice_gouvernance_oceans_2026_03.webp",
+        "alt": "Portrait de OUAGA Bokoua Yao lors du colloque du Réseau francophone de droit international à Nice.",
+        "legende": "Au colloque du Réseau francophone de droit international, Nice, 4 mai 2026.",
+        "largeur": 1200,
+        "hauteur": 1599
+      },
+      {
+        "fichier": "assets/img/media/events/rfdi-nice-gouvernance-oceans-2026/oby_rfdi_nice_gouvernance_oceans_2026_04.webp",
+        "alt": "Vue complémentaire de « 22ᵉ colloque annuel du Réseau francophone de droit international — gouvernance internationale des océans » — photographie 4.",
+        "legende": "Photographie complémentaire — 22ᵉ colloque annuel du Réseau francophone de droit international — gouvernance internationale des océans.",
+        "largeur": 1400,
+        "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/rfdi-nice-gouvernance-oceans-2026/oby_rfdi_nice_gouvernance_oceans_2026_05.webp",
+        "alt": "Vue complémentaire de « 22ᵉ colloque annuel du Réseau francophone de droit international — gouvernance internationale des océans » — photographie 5.",
+        "legende": "Photographie complémentaire — 22ᵉ colloque annuel du Réseau francophone de droit international — gouvernance internationale des océans.",
+        "largeur": 1400,
+        "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/rfdi-nice-gouvernance-oceans-2026/oby_rfdi_nice_gouvernance_oceans_2026_06.webp",
+        "alt": "Vue complémentaire de « 22ᵉ colloque annuel du Réseau francophone de droit international — gouvernance internationale des océans » — photographie 6.",
+        "legende": "Photographie complémentaire — 22ᵉ colloque annuel du Réseau francophone de droit international — gouvernance internationale des océans.",
+        "largeur": 1400,
+        "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/rfdi-nice-gouvernance-oceans-2026/oby_rfdi_nice_gouvernance_oceans_2026_07.webp",
+        "alt": "Vue complémentaire de « 22ᵉ colloque annuel du Réseau francophone de droit international — gouvernance internationale des océans » — photographie 7.",
+        "legende": "Photographie complémentaire — 22ᵉ colloque annuel du Réseau francophone de droit international — gouvernance internationale des océans.",
         "largeur": 1400,
         "hauteur": 1050
       }
@@ -269,11 +448,130 @@
         "hauteur": 1350
       },
       {
+        "fichier": "assets/img/media/events/indemer-monaco-2025/oby_indemer_monaco_2025_03.webp",
+        "alt": "Programme et publications présentés dans le contexte du Colloque INDEMER à Monaco en 2025.",
+        "legende": "Programme et supports du Colloque INDEMER, 2025.",
+        "largeur": 1350,
+        "hauteur": 1800
+      },
+      {
+        "fichier": "assets/img/media/events/indemer-monaco-2025/oby_indemer_monaco_2025_04.webp",
+        "alt": "Table ronde du Colloque INDEMER sur les usages contemporains de la mer à Monaco en 2025.",
+        "legende": "Table ronde du Colloque INDEMER, Monaco, 2025.",
+        "largeur": 1800,
+        "hauteur": 1350
+      },
+      {
         "fichier": "assets/img/media/events/indemer-monaco-2025/oby_indemer_monaco_2025_05.webp",
         "alt": "Projection consacrée aux usages contemporains de la mer lors du Colloque INDEMER à Monaco en 2025.",
         "legende": "Séquence consacrée aux usages contemporains de la mer, 2025.",
         "largeur": 1350,
         "hauteur": 1800
+      },
+      {
+        "fichier": "assets/img/media/events/indemer-monaco-2025/oby_indemer_monaco_2025_06.webp",
+        "alt": "Projection consacrée aux défis et enjeux juridiques de l’autonomie maritime au Colloque INDEMER en 2025.",
+        "legende": "Défis et enjeux juridiques de l’autonomie maritime, INDEMER, 2025.",
+        "largeur": 1350,
+        "hauteur": 1800
+      },
+      {
+        "fichier": "assets/img/media/events/indemer-monaco-2025/oby_indemer_monaco_2025_07.webp",
+        "alt": "Projection consacrée à la dimension sociale de la maritimité au Colloque INDEMER en 2025.",
+        "legende": "Dimension sociale de la maritimité, INDEMER, 2025.",
+        "largeur": 1350,
+        "hauteur": 1800
+      },
+      {
+        "fichier": "assets/img/media/events/indemer-monaco-2025/oby_indemer_monaco_2025_08.webp",
+        "alt": "OUAGA Bokoua Yao avec deux participants au Colloque INDEMER à Monaco en 2025.",
+        "legende": "Temps d’échange entre participants, INDEMER, 2025.",
+        "largeur": 1800,
+        "hauteur": 1350
+      },
+      {
+        "fichier": "assets/img/media/events/indemer-monaco-2025/oby_indemer_monaco_2025_09.webp",
+        "alt": "Groupe de participants devant la signalétique du Colloque INDEMER à Monaco en 2025.",
+        "legende": "Participants devant la signalétique du colloque, 2025.",
+        "largeur": 1800,
+        "hauteur": 1350
+      },
+      {
+        "fichier": "assets/img/media/events/indemer-monaco-2025/oby_indemer_monaco_2025_10.webp",
+        "alt": "Groupe de participants devant la signalétique du Colloque INDEMER à Monaco en 2025, dans un second cadrage.",
+        "legende": "Second cadrage du groupe de participants, INDEMER, 2025.",
+        "largeur": 1800,
+        "hauteur": 1350
+      },
+      {
+        "fichier": "assets/img/media/events/indemer-monaco-2025/oby_indemer_monaco_2025_11.webp",
+        "alt": "Projection consacrée aux usages économiques de la mer au Colloque INDEMER en 2025.",
+        "legende": "Usages économiques de la mer, INDEMER, 2025.",
+        "largeur": 1350,
+        "hauteur": 1800
+      },
+      {
+        "fichier": "assets/img/media/events/indemer-monaco-2025/oby_indemer_monaco_2025_12.webp",
+        "alt": "Vue extérieure du site du Colloque INDEMER à Monaco en 2025.",
+        "legende": "Environnement du Colloque INDEMER à Monaco, 2025.",
+        "largeur": 1350,
+        "hauteur": 1800
+      },
+      {
+        "fichier": "assets/img/media/events/indemer-monaco-2025/oby_indemer_monaco_2025_13.webp",
+        "alt": "OUAGA Bokoua Yao sur le site du Colloque INDEMER à Monaco en 2025.",
+        "legende": "Sur le site du Colloque INDEMER, Monaco, 2025.",
+        "largeur": 1350,
+        "hauteur": 1800
+      },
+      {
+        "fichier": "assets/img/media/events/indemer-monaco-2025/oby_indemer_monaco_2025_14.webp",
+        "alt": "Portrait de OUAGA Bokoua Yao sur le site du Colloque INDEMER à Monaco en 2025.",
+        "legende": "Portrait contextualisé, Colloque INDEMER, 2025.",
+        "largeur": 1350,
+        "hauteur": 1800
+      },
+      {
+        "fichier": "assets/img/media/events/indemer-monaco-2025/oby_indemer_monaco_2025_15.webp",
+        "alt": "OUAGA Bokoua Yao dans l’environnement extérieur du Colloque INDEMER à Monaco en 2025.",
+        "legende": "Environnement extérieur du Colloque INDEMER, 2025.",
+        "largeur": 1350,
+        "hauteur": 1800
+      },
+      {
+        "fichier": "assets/img/media/events/indemer-monaco-2025/oby_indemer_monaco_2025_16.webp",
+        "alt": "Table ronde consacrée à la gouvernance du milieu marin et de ses usages au Colloque INDEMER en 2025.",
+        "legende": "Gouvernance du milieu marin et de ses usages, INDEMER, 2025.",
+        "largeur": 1800,
+        "hauteur": 1350
+      },
+      {
+        "fichier": "assets/img/media/events/indemer-monaco-2025/oby_indemer_monaco_2025_17.webp",
+        "alt": "Projection du programme consacré à la gouvernance du milieu marin et de ses usages au Colloque INDEMER en 2025.",
+        "legende": "Programme de la séquence sur la gouvernance du milieu marin, 2025.",
+        "largeur": 1350,
+        "hauteur": 1800
+      },
+      {
+        "fichier": "assets/img/media/events/indemer-monaco-2025/oby_indemer_monaco_2025_18.webp",
+        "alt": "Séquence de conclusion et de clôture du Colloque INDEMER à Monaco en 2025.",
+        "legende": "Conclusion et clôture du Colloque INDEMER, 2025.",
+        "largeur": 1350,
+        "hauteur": 1800
+      },
+      {
+        "fichier": "assets/img/media/events/indemer-monaco-2025/oby_indemer_monaco_2025_19.webp",
+        "alt": "Échange entre participants dans l’environnement du Colloque INDEMER à Monaco en 2025.",
+        "legende": "Échange entre participants, INDEMER, 2025.",
+        "largeur": 1350,
+        "hauteur": 1800
+      },
+      {
+        "fichier": "assets/img/media/events/indemer-monaco-2025/oby_indemer_monaco_2025_20.webp",
+        "alt": "Vue de l’auditoire du Colloque INDEMER sur les usages contemporains de la mer à Monaco en 2025.",
+        "legende": "Auditoire du Colloque INDEMER, Monaco, 2025.",
+        "largeur": 1800,
+        "hauteur": 1201
       }
     ],
     "mediatheque": "mediatheque.html#indemer-usages-mer-monaco-2025"
@@ -306,24 +604,94 @@
     "galerie": [
       {
         "fichier": "assets/img/media/events/academies-marine-ensm-2025/oby_academies_marine_ensm_2025_01.webp",
-        "alt": "Portrait contextualisé devant la signalétique du Colloque des Académies de marine européennes à Marseille, 2025.",
-        "legende": "Colloque des Académies de marine européennes, 2025.",
+        "alt": "OUAGA Bokoua Yao devant la signalétique du Colloque des Académies de marine européennes à Marseille en 2025.",
+        "legende": "Signalétique du Colloque des Académies de marine européennes, 2025.",
         "largeur": 810,
         "hauteur": 1080
       },
       {
         "fichier": "assets/img/media/events/academies-marine-ensm-2025/oby_academies_marine_ensm_2025_02.webp",
-        "alt": "Écran d'ouverture du Colloque des Académies de marine européennes portant les emblèmes des académies participantes, 2025.",
+        "alt": "Écran d’ouverture du Colloque des Académies de marine européennes portant les emblèmes des académies participantes en 2025.",
         "legende": "Ouverture du Colloque des Académies de marine européennes, 2025.",
         "largeur": 810,
         "hauteur": 506
       },
       {
         "fichier": "assets/img/media/events/academies-marine-ensm-2025/oby_academies_marine_ensm_2025_03.webp",
-        "alt": "Projection consacrée aux obligations climatiques des États au regard du droit de la mer, lors du Colloque des Académies de marine européennes, 2025.",
-        "legende": "Séquence consacrée aux obligations climatiques des États, 2025.",
+        "alt": "Projection consacrée aux obligations climatiques des États au regard du droit de la mer lors du Colloque des Académies de marine européennes en 2025.",
+        "legende": "Obligations climatiques des États, Colloque des Académies de marine, 2025.",
         "largeur": 810,
         "hauteur": 506
+      },
+      {
+        "fichier": "assets/img/media/events/academies-marine-ensm-2025/oby_academies_marine_ensm_2025_04.webp",
+        "alt": "Projection consacrée à la pollution marine, à ses conséquences et à ses enjeux lors du Colloque des Académies de marine européennes en 2025.",
+        "legende": "Pollution marine : réalités, conséquences et enjeux, 2025.",
+        "largeur": 810,
+        "hauteur": 1080
+      },
+      {
+        "fichier": "assets/img/media/events/academies-marine-ensm-2025/oby_academies_marine_ensm_2025_05.webp",
+        "alt": "OUAGA Bokoua Yao devant la signalétique du Colloque des Académies de marine européennes dans un second cadrage en 2025.",
+        "legende": "Second cadrage devant la signalétique du colloque, 2025.",
+        "largeur": 810,
+        "hauteur": 1080
+      },
+      {
+        "fichier": "assets/img/media/events/academies-marine-ensm-2025/oby_academies_marine_ensm_2025_06.webp",
+        "alt": "Projection consacrée à l’économie bleue lors du Colloque des Académies de marine européennes en 2025.",
+        "legende": "Séquence consacrée à l’économie bleue, 2025.",
+        "largeur": 810,
+        "hauteur": 1080
+      },
+      {
+        "fichier": "assets/img/media/events/academies-marine-ensm-2025/oby_academies_marine_ensm_2025_07.webp",
+        "alt": "Projection consacrée à la dispersion et à l’accumulation des plastiques marins lors du colloque en 2025.",
+        "legende": "Dispersion et accumulation des plastiques marins, 2025.",
+        "largeur": 810,
+        "hauteur": 1080
+      },
+      {
+        "fichier": "assets/img/media/events/academies-marine-ensm-2025/oby_academies_marine_ensm_2025_08.webp",
+        "alt": "OUAGA Bokoua Yao dans l’espace d’exposition associé au Colloque des Académies de marine européennes en 2025.",
+        "legende": "Espace d’exposition associé au colloque, 2025.",
+        "largeur": 810,
+        "hauteur": 1080
+      },
+      {
+        "fichier": "assets/img/media/events/academies-marine-ensm-2025/oby_academies_marine_ensm_2025_09.webp",
+        "alt": "OUAGA Bokoua Yao dans l’espace d’exposition du colloque, dans un second cadrage, en 2025.",
+        "legende": "Second cadrage dans l’espace d’exposition, 2025.",
+        "largeur": 810,
+        "hauteur": 1080
+      },
+      {
+        "fichier": "assets/img/media/events/academies-marine-ensm-2025/oby_academies_marine_ensm_2025_10.webp",
+        "alt": "OUAGA Bokoua Yao dans l’espace d’exposition du colloque, dans un troisième cadrage, en 2025.",
+        "legende": "Troisième cadrage dans l’espace d’exposition, 2025.",
+        "largeur": 1080,
+        "hauteur": 810
+      },
+      {
+        "fichier": "assets/img/media/events/academies-marine-ensm-2025/oby_academies_marine_ensm_2025_11.webp",
+        "alt": "Séquence protocolaire du Colloque des Académies de marine européennes à Marseille en 2025.",
+        "legende": "Séquence du Colloque des Académies de marine européennes, 2025.",
+        "largeur": 810,
+        "hauteur": 1080
+      },
+      {
+        "fichier": "assets/img/media/events/academies-marine-ensm-2025/oby_academies_marine_ensm_2025_12.webp",
+        "alt": "Vue d’ensemble de l’auditorium lors du Colloque des Académies de marine européennes en 2025.",
+        "legende": "Auditorium du colloque à Marseille, 2025.",
+        "largeur": 1800,
+        "hauteur": 1350
+      },
+      {
+        "fichier": "assets/img/media/events/academies-marine-ensm-2025/oby_academies_marine_ensm_2025_13.webp",
+        "alt": "Séquence officielle du Colloque des Académies de marine européennes à Marseille en 2025.",
+        "legende": "Séquence officielle du colloque à Marseille, 2025.",
+        "largeur": 1800,
+        "hauteur": 1350
       }
     ],
     "mediatheque": "mediatheque.html#academies-marine-europeennes-ensm-2025"
@@ -342,7 +710,12 @@
       "Ce colloque a permis d’approfondir le contenu juridique concret d’une obligation souvent citée en principe : identifier ce qu’elle impose, ce qu’elle laisse à l’appréciation des États, et comment les sciences de l’océan viennent en préciser la mesure dans un dialogue direct entre disciplines."
     ],
     "themes": "droit de la mer · protection du milieu marin · responsabilité des États · convention de Montego Bay",
-    "sources": [],
+    "sources": [
+      {
+        "libelle": "INDEMER — archives des colloques",
+        "url": "https://www.indemer.mc/institut/evenements-colloque-indemer-institut-de-la-mer/"
+      }
+    ],
     "liens": [],
     "galerie": [],
     "mediatheque": null
@@ -387,11 +760,32 @@
         "hauteur": 1350
       },
       {
+        "fichier": "assets/img/media/events/aem-cote-ivoire-2020/oby_aem_cote_ivoire_2020_02.webp",
+        "alt": "Kakemono institutionnel portant la mention Action de l’État en Mer : unicité d’espace, unicité d’action, coordination.",
+        "legende": "Support institutionnel de l’Action de l’État en Mer, Côte d’Ivoire, 2020.",
+        "largeur": 1350,
+        "hauteur": 1800
+      },
+      {
+        "fichier": "assets/img/media/events/aem-cote-ivoire-2020/oby_aem_cote_ivoire_2020_03.webp",
+        "alt": "Kakemono institutionnel de l’Action de l’État en Mer consacré à l’économie maritime.",
+        "legende": "Support institutionnel consacré à l’économie maritime, Côte d’Ivoire, 2020.",
+        "largeur": 1350,
+        "hauteur": 1800
+      },
+      {
         "fichier": "assets/img/media/events/aem-cote-ivoire-2020/oby_aem_cote_ivoire_2020_04.webp",
         "alt": "Personne travaillant à un bureau avec ordinateur et documents dans un environnement institutionnel.",
         "legende": "Séquence de travail dans le cadre du stage de recherche, Côte d’Ivoire, 2020.",
         "largeur": 1350,
         "hauteur": 1800
+      },
+      {
+        "fichier": "assets/img/media/events/aem-cote-ivoire-2020/oby_aem_cote_ivoire_2020_05.webp",
+        "alt": "Écran affichant une présentation en ligne consacrée aux flux maritimes et aux responsabilités.",
+        "legende": "Séquence de travail à distance sur les enjeux maritimes, Côte d’Ivoire, 2020.",
+        "largeur": 1800,
+        "hauteur": 1350
       },
       {
         "fichier": "assets/img/media/events/aem-cote-ivoire-2020/oby_aem_cote_ivoire_2020_06.webp",
@@ -401,6 +795,20 @@
         "hauteur": 720
       },
       {
+        "fichier": "assets/img/media/events/aem-cote-ivoire-2020/oby_aem_cote_ivoire_2020_07.webp",
+        "alt": "Personne travaillant à une table couverte de documents et d’ordinateurs.",
+        "legende": "Travail documentaire dans le cadre du stage de recherche, Côte d’Ivoire, 2020.",
+        "largeur": 1800,
+        "hauteur": 1350
+      },
+      {
+        "fichier": "assets/img/media/events/aem-cote-ivoire-2020/oby_aem_cote_ivoire_2020_08.webp",
+        "alt": "Deux personnes autour d’une table de travail avec ordinateurs et documents.",
+        "legende": "Séquence de travail dans le cadre du stage de recherche, Côte d’Ivoire, 2020.",
+        "largeur": 1800,
+        "hauteur": 1350
+      },
+      {
         "fichier": "assets/img/media/events/aem-cote-ivoire-2020/oby_aem_cote_ivoire_2020_09.webp",
         "alt": "Personne présentant un contenu affiché sur un écran dans une salle de travail.",
         "legende": "Présentation de travail dans le cadre du stage de recherche, Côte d’Ivoire, 2020.",
@@ -408,9 +816,9 @@
         "hauteur": 1350
       },
       {
-        "fichier": "assets/img/media/events/aem-cote-ivoire-2020/oby_aem_cote_ivoire_2020_07.webp",
-        "alt": "Personne travaillant à une table couverte de documents et d’ordinateurs.",
-        "legende": "Travail documentaire dans le cadre du stage de recherche, Côte d’Ivoire, 2020.",
+        "fichier": "assets/img/media/events/aem-cote-ivoire-2020/oby_aem_cote_ivoire_2020_10.webp",
+        "alt": "Personne assise à un bureau avec ordinateur et documents dans un environnement institutionnel.",
+        "legende": "Séquence de travail dans le cadre du stage de recherche, Côte d’Ivoire, 2020.",
         "largeur": 1800,
         "hauteur": 1350
       }
@@ -461,6 +869,34 @@
         "hauteur": 1800
       },
       {
+        "fichier": "assets/img/media/events/human-sea-nantes-2018/oby_human_sea_nantes_2018_04.webp",
+        "alt": "Participants réunis autour d’une table pendant le colloque Human Sea.",
+        "legende": "Temps de convivialité pendant le colloque final Human Sea, Nantes, 2018.",
+        "largeur": 1800,
+        "hauteur": 1350
+      },
+      {
+        "fichier": "assets/img/media/events/human-sea-nantes-2018/oby_human_sea_nantes_2018_05.webp",
+        "alt": "Intervenant visible sur l’écran de la scène pendant une séance du colloque Human Sea.",
+        "legende": "Séquence du colloque final Human Sea, Nantes, 2018.",
+        "largeur": 1800,
+        "hauteur": 1012
+      },
+      {
+        "fichier": "assets/img/media/events/human-sea-nantes-2018/oby_human_sea_nantes_2018_06.webp",
+        "alt": "Intervenant visible sur l’écran principal pendant une séance du colloque Human Sea.",
+        "legende": "Séquence du colloque final Human Sea, Nantes, 2018.",
+        "largeur": 1800,
+        "hauteur": 1350
+      },
+      {
+        "fichier": "assets/img/media/events/human-sea-nantes-2018/oby_human_sea_nantes_2018_07.webp",
+        "alt": "Groupe de participants photographié dans le lieu du colloque Human Sea.",
+        "legende": "Participants au colloque final Human Sea, Nantes, 2018.",
+        "largeur": 1800,
+        "hauteur": 1350
+      },
+      {
         "fichier": "assets/img/media/events/human-sea-nantes-2018/oby_human_sea_nantes_2018_08.webp",
         "alt": "Table d’intervenants devant un écran annonçant une session du colloque Human Sea.",
         "legende": "Séance du colloque final Human Sea, Nantes, octobre 2018.",
@@ -468,11 +904,32 @@
         "hauteur": 1012
       },
       {
+        "fichier": "assets/img/media/events/human-sea-nantes-2018/oby_human_sea_nantes_2018_09.webp",
+        "alt": "Intervenants à une table devant une projection consacrée aux enjeux maritimes.",
+        "legende": "Séance de travail du colloque final Human Sea, Nantes, 2018.",
+        "largeur": 1032,
+        "hauteur": 581
+      },
+      {
+        "fichier": "assets/img/media/events/human-sea-nantes-2018/oby_human_sea_nantes_2018_10.webp",
+        "alt": "Écran de conclusion d’une présentation et table des intervenants pendant le colloque Human Sea.",
+        "legende": "Conclusion d’une présentation au colloque final Human Sea, Nantes, 2018.",
+        "largeur": 1032,
+        "hauteur": 502
+      },
+      {
         "fichier": "assets/img/media/events/human-sea-nantes-2018/oby_human_sea_nantes_2018_11.webp",
         "alt": "Intervenante visible sur l’écran principal de la scène du colloque Human Sea.",
         "legende": "Séquence du colloque final Human Sea, Nantes, 2018.",
         "largeur": 1800,
         "hauteur": 1350
+      },
+      {
+        "fichier": "assets/img/media/events/human-sea-nantes-2018/oby_human_sea_nantes_2018_12.webp",
+        "alt": "Trois participants photographiés ensemble dans le cadre du colloque Human Sea.",
+        "legende": "Participants au colloque final Human Sea, Nantes, 2018.",
+        "largeur": 1032,
+        "hauteur": 502
       }
     ],
     "mediatheque": "mediatheque.html#human-sea-nantes-2018"
@@ -507,6 +964,20 @@
         "hauteur": 1064
       },
       {
+        "fichier": "assets/img/media/events/dialogue-politiques-abidjan-2017/oby_dialogue_politiques_abidjan_2017_01.webp",
+        "alt": "Joseph OUAGA et deux participants en marge du Dialogue des politiques sur la gouvernance des ressources et des activités maritimes, Abidjan, juin 2017.",
+        "legende": "En marge du Dialogue des politiques, Abidjan, 2017.",
+        "largeur": 1600,
+        "hauteur": 1200
+      },
+      {
+        "fichier": "assets/img/media/events/dialogue-politiques-abidjan-2017/oby_dialogue_politiques_abidjan_2017_02.webp",
+        "alt": "Joseph OUAGA et deux participants lors du Dialogue des politiques sur la gouvernance des ressources et des activités maritimes, Abidjan, juin 2017.",
+        "legende": "Participants au Dialogue des politiques, Abidjan, 2017.",
+        "largeur": 1600,
+        "hauteur": 1064
+      },
+      {
         "fichier": "assets/img/media/events/dialogue-politiques-abidjan-2017/oby_dialogue_politiques_abidjan_2017_04.webp",
         "alt": "Photographie de groupe des participants au Dialogue des politiques sur la gouvernance des ressources et des activités maritimes, Abidjan, juin 2017.",
         "legende": "Photographie de groupe des participants, Abidjan, 2017.",
@@ -514,9 +985,44 @@
         "hauteur": 1064
       },
       {
+        "fichier": "assets/img/media/events/dialogue-politiques-abidjan-2017/oby_dialogue_politiques_abidjan_2017_05.webp",
+        "alt": "Intervention à la tribune lors du Dialogue des politiques sur la gouvernance des ressources et des activités maritimes, Abidjan, juin 2017.",
+        "legende": "Intervention à la tribune, Abidjan, 2017.",
+        "largeur": 1600,
+        "hauteur": 1064
+      },
+      {
         "fichier": "assets/img/media/events/dialogue-politiques-abidjan-2017/oby_dialogue_politiques_abidjan_2017_06.webp",
         "alt": "Joseph OUAGA et Jean-Pierre Beurier, participant au Dialogue des politiques sur la gouvernance des ressources et des activités maritimes, Abidjan, juin 2017.",
         "legende": "Avec Jean-Pierre Beurier, participant au Dialogue des politiques, Abidjan, 2017.",
+        "largeur": 1600,
+        "hauteur": 1064
+      },
+      {
+        "fichier": "assets/img/media/events/dialogue-politiques-abidjan-2017/oby_dialogue_politiques_abidjan_2017_07.webp",
+        "alt": "Joseph OUAGA et une participante lors du Dialogue des politiques sur la gouvernance des ressources et des activités maritimes, Abidjan, juin 2017.",
+        "legende": "Participants au Dialogue des politiques, Abidjan, 2017.",
+        "largeur": 1600,
+        "hauteur": 1064
+      },
+      {
+        "fichier": "assets/img/media/events/dialogue-politiques-abidjan-2017/oby_dialogue_politiques_abidjan_2017_08.webp",
+        "alt": "Échange entre participants, dont Jean-Pierre Beurier, en marge d'une séance du Dialogue des politiques sur la gouvernance des ressources et des activités maritimes, Abidjan, juin 2017.",
+        "legende": "Échange entre participants en séance, Abidjan, 2017.",
+        "largeur": 1600,
+        "hauteur": 1064
+      },
+      {
+        "fichier": "assets/img/media/events/dialogue-politiques-abidjan-2017/oby_dialogue_politiques_abidjan_2017_09.webp",
+        "alt": "Joseph OUAGA et deux participants lors du Dialogue des politiques sur la gouvernance des ressources et des activités maritimes, Abidjan, juin 2017.",
+        "legende": "Participants au Dialogue des politiques, Abidjan, 2017.",
+        "largeur": 1600,
+        "hauteur": 1064
+      },
+      {
+        "fichier": "assets/img/media/events/dialogue-politiques-abidjan-2017/oby_dialogue_politiques_abidjan_2017_10.webp",
+        "alt": "Joseph OUAGA et un participant lors du Dialogue des politiques sur la gouvernance des ressources et des activités maritimes, Abidjan, juin 2017.",
+        "legende": "Participants au Dialogue des politiques, Abidjan, 2017.",
         "largeur": 1600,
         "hauteur": 1064
       }
@@ -564,11 +1070,116 @@
         "hauteur": 1067
       },
       {
+        "fichier": "assets/img/media/events/convention-abidjan-cop12-2017/oby_convention_abidjan_cop12_2017_02.webp",
+        "alt": "Joseph OUAGA et deux participants devant le poster scientifique consacré aux stratégies de gestion durable des macroalgues sargasses envahissant les eaux marines ivoiriennes, COP12 de la Convention d'Abidjan, 27 mars 2017.",
+        "legende": "Devant le poster scientifique sur les sargasses, COP12, Abidjan, 2017.",
+        "largeur": 1600,
+        "hauteur": 1200
+      },
+      {
+        "fichier": "assets/img/media/events/convention-abidjan-cop12-2017/oby_convention_abidjan_cop12_2017_03.webp",
+        "alt": "Échange entre participants dans les espaces de la douzième Conférence des Parties à la Convention d'Abidjan, 27 mars 2017.",
+        "legende": "Échange entre participants, COP12, Abidjan, 2017.",
+        "largeur": 1600,
+        "hauteur": 1200
+      },
+      {
+        "fichier": "assets/img/media/events/convention-abidjan-cop12-2017/oby_convention_abidjan_cop12_2017_04.webp",
+        "alt": "Joseph OUAGA et cinq participants dans les espaces de la douzième Conférence des Parties à la Convention d'Abidjan, 27 mars 2017.",
+        "legende": "Participants à la COP12 de la Convention d'Abidjan, 2017.",
+        "largeur": 1600,
+        "hauteur": 1200
+      },
+      {
+        "fichier": "assets/img/media/events/convention-abidjan-cop12-2017/oby_convention_abidjan_cop12_2017_05.webp",
+        "alt": "Joseph OUAGA devant les pavillons des États parties à la Convention d'Abidjan, sur le site de la COP12, 27 mars 2017.",
+        "legende": "Devant les pavillons des États parties, COP12, Abidjan, 2017.",
+        "largeur": 1600,
+        "hauteur": 1200
+      },
+      {
+        "fichier": "assets/img/media/events/convention-abidjan-cop12-2017/oby_convention_abidjan_cop12_2017_06.webp",
+        "alt": "Joseph OUAGA et une participante sur l'espace d'information consacré à la décision PC 12/11 relative à la lutte contre le trafic et les usages des espèces côtières et marines menacées, COP12 de la Convention d'Abidjan, 27 mars 2017.",
+        "legende": "Espace d'information sur la décision PC 12/11, COP12, Abidjan, 2017.",
+        "largeur": 1600,
+        "hauteur": 1200
+      },
+      {
         "fichier": "assets/img/media/events/convention-abidjan-cop12-2017/oby_convention_abidjan_cop12_2017_07.webp",
         "alt": "Joseph OUAGA et deux participants devant le poster scientifique « Quelles stratégies mettre en œuvre pour gérer durablement les macroalgues sargasses envahissant les eaux marines ivoiriennes ? », COP12 de la Convention d'Abidjan, 28 mars 2017.",
         "legende": "Poster scientifique sur les sargasses, COP12, Abidjan, 2017.",
         "largeur": 1600,
         "hauteur": 1200
+      },
+      {
+        "fichier": "assets/img/media/events/convention-abidjan-cop12-2017/oby_convention_abidjan_cop12_2017_08.webp",
+        "alt": "Joseph OUAGA et deux participants près de l'espace d'information de la COP12 de la Convention d'Abidjan, 30 mars 2017.",
+        "legende": "Participants à la COP12 de la Convention d'Abidjan, 2017.",
+        "largeur": 1600,
+        "hauteur": 1200
+      },
+      {
+        "fichier": "assets/img/media/events/convention-abidjan-cop12-2017/oby_convention_abidjan_cop12_2017_09.webp",
+        "alt": "Joseph OUAGA et une participante dans la salle de conférence de la COP12 de la Convention d'Abidjan, 30 mars 2017.",
+        "legende": "Participants à la COP12 de la Convention d'Abidjan, 2017.",
+        "largeur": 1600,
+        "hauteur": 1200
+      },
+      {
+        "fichier": "assets/img/media/events/convention-abidjan-cop12-2017/oby_convention_abidjan_cop12_2017_10.webp",
+        "alt": "Joseph OUAGA et trois participants en marge d'une séance de la COP12 de la Convention d'Abidjan, 30 mars 2017.",
+        "legende": "En marge d'une séance de la COP12, Abidjan, 2017.",
+        "largeur": 1600,
+        "hauteur": 1200
+      },
+      {
+        "fichier": "assets/img/media/events/convention-abidjan-cop12-2017/oby_convention_abidjan_cop12_2017_11.webp",
+        "alt": "Joseph OUAGA et deux participants lors de la COP12 de la Convention d'Abidjan, 30 mars 2017.",
+        "legende": "Participants à la COP12 de la Convention d'Abidjan, 2017.",
+        "largeur": 1600,
+        "hauteur": 1200
+      },
+      {
+        "fichier": "assets/img/media/events/convention-abidjan-cop12-2017/oby_convention_abidjan_cop12_2017_12.webp",
+        "alt": "Joseph OUAGA et deux participants lors de la COP12 de la Convention d'Abidjan, 30 mars 2017.",
+        "legende": "Participants à la COP12 de la Convention d'Abidjan, 2017.",
+        "largeur": 1600,
+        "hauteur": 1200
+      },
+      {
+        "fichier": "assets/img/media/events/convention-abidjan-cop12-2017/oby_convention_abidjan_cop12_2017_13.webp",
+        "alt": "Joseph OUAGA et un participant devant la tribune de la douzième Conférence des Parties à la Convention d'Abidjan, 30 mars 2017.",
+        "legende": "Devant la tribune de la COP12, Abidjan, 2017.",
+        "largeur": 1600,
+        "hauteur": 1200
+      },
+      {
+        "fichier": "assets/img/media/events/convention-abidjan-cop12-2017/oby_convention_abidjan_cop12_2017_14.webp",
+        "alt": "Joseph OUAGA et un participant lors de la COP12 de la Convention d'Abidjan, 30 mars 2017.",
+        "legende": "Participants à la COP12 de la Convention d'Abidjan, 2017.",
+        "largeur": 1600,
+        "hauteur": 1200
+      },
+      {
+        "fichier": "assets/img/media/events/convention-abidjan-cop12-2017/oby_convention_abidjan_cop12_2017_15.webp",
+        "alt": "Joseph OUAGA et une participante dans la salle plénière de la douzième Conférence des Parties à la Convention d'Abidjan, mars 2017.",
+        "legende": "En salle plénière de la COP12, Abidjan, 2017.",
+        "largeur": 1600,
+        "hauteur": 1067
+      },
+      {
+        "fichier": "assets/img/media/events/convention-abidjan-cop12-2017/oby_convention_abidjan_cop12_2017_16.webp",
+        "alt": "Joseph OUAGA et un participant devant la signalétique officielle de la douzième Conférence des Parties à la Convention d'Abidjan, mars 2017.",
+        "legende": "Devant la signalétique officielle de la COP12, Abidjan, 2017.",
+        "largeur": 1600,
+        "hauteur": 1067
+      },
+      {
+        "fichier": "assets/img/media/events/convention-abidjan-cop12-2017/oby_convention_abidjan_cop12_2017_17.webp",
+        "alt": "Joseph OUAGA et un participant devant la signalétique officielle de la COP12 de la Convention d'Abidjan, portant les dates du 27 au 31 mars 2017.",
+        "legende": "Devant la signalétique officielle de la COP12, Abidjan, 2017.",
+        "largeur": 1600,
+        "hauteur": 1067
       }
     ],
     "mediatheque": "mediatheque.html#convention-abidjan-cop12-2017"
@@ -632,6 +1243,13 @@
         "hauteur": 1196
       },
       {
+        "fichier": "assets/img/media/events/accord-cap-abidjan-2016/oby_accord_cap_abidjan_2016_04.webp",
+        "alt": "Participant dans une salle de conférence avec un drapeau de l’Organisation maritime internationale.",
+        "legende": "Cadre institutionnel du séminaire régional, Abidjan, décembre 2016.",
+        "largeur": 1800,
+        "hauteur": 1350
+      },
+      {
         "fichier": "assets/img/media/events/accord-cap-abidjan-2016/oby_accord_cap_abidjan_2016_05.webp",
         "alt": "Trois participants photographiés ensemble pendant le séminaire régional à Abidjan.",
         "legende": "Participants au séminaire régional, Abidjan, décembre 2016.",
@@ -639,11 +1257,25 @@
         "hauteur": 1350
       },
       {
-        "fichier": "assets/img/media/events/accord-cap-abidjan-2016/oby_accord_cap_abidjan_2016_04.webp",
-        "alt": "Participant dans une salle de conférence avec un drapeau de l’Organisation maritime internationale.",
-        "legende": "Cadre institutionnel du séminaire régional, Abidjan, décembre 2016.",
+        "fichier": "assets/img/media/events/accord-cap-abidjan-2016/oby_accord_cap_abidjan_2016_06.webp",
+        "alt": "Deux participants photographiés ensemble en marge du séminaire régional à Abidjan.",
+        "legende": "Participants photographiés en marge du séminaire régional, Abidjan, 2016.",
         "largeur": 1800,
         "hauteur": 1350
+      },
+      {
+        "fichier": "assets/img/media/events/accord-cap-abidjan-2016/oby_accord_cap_abidjan_2016_07.webp",
+        "alt": "Deux participants photographiés sur une terrasse du site du séminaire à Abidjan.",
+        "legende": "Vue depuis le site du séminaire régional à Abidjan, décembre 2016.",
+        "largeur": 1800,
+        "hauteur": 1350
+      },
+      {
+        "fichier": "assets/img/media/events/accord-cap-abidjan-2016/oby_accord_cap_abidjan_2016_08.webp",
+        "alt": "Deux participants photographiés dans la salle de travail du séminaire régional à Abidjan.",
+        "legende": "Participants dans la salle de travail du séminaire régional, Abidjan, 2016.",
+        "largeur": 1350,
+        "hauteur": 1800
       }
     ],
     "mediatheque": "mediatheque.html#accord-cap-abidjan-2016"
@@ -676,29 +1308,92 @@
     "galerie": [
       {
         "fichier": "assets/img/media/events/sommet-lome-2016/oby_sommet_lome_2016_01.webp",
-        "alt": "Portrait contextualisé devant la signalétique du Sommet de Lomé consacré à la sécurité et à la sûreté maritimes en Afrique, 2016.",
+        "alt": "OUAGA Bokoua Yao devant la signalétique du Sommet de Lomé sur la sécurité et la sûreté maritimes en Afrique, en 2016.",
         "legende": "Sommet de Lomé sur la sécurité et la sûreté maritimes en Afrique, 2016.",
         "largeur": 1600,
         "hauteur": 1000
       },
       {
         "fichier": "assets/img/media/events/sommet-lome-2016/oby_sommet_lome_2016_02.webp",
-        "alt": "Vue du site du Sommet de Lomé consacré à la sécurité et à la sûreté maritimes en Afrique, 2016.",
+        "alt": "Vue extérieure du site du Sommet de Lomé sur la sécurité et la sûreté maritimes en Afrique, en 2016.",
         "legende": "Site du Sommet de Lomé, 2016.",
         "largeur": 1800,
         "hauteur": 1013
       },
       {
         "fichier": "assets/img/media/events/sommet-lome-2016/oby_sommet_lome_2016_03.webp",
-        "alt": "Salle d'un événement parallèle du Sommet de Lomé sur la sécurité et la sûreté maritimes en Afrique, 2016.",
-        "legende": "Espace d'un événement parallèle du Sommet de Lomé, 2016.",
+        "alt": "Salle réunissant des participants lors d’un événement parallèle du Sommet de Lomé en 2016.",
+        "legende": "Événement parallèle du Sommet de Lomé, 2016.",
         "largeur": 1600,
         "hauteur": 901
       },
       {
         "fichier": "assets/img/media/events/sommet-lome-2016/oby_sommet_lome_2016_04.webp",
-        "alt": "Portrait contextualisé sur l'esplanade du site du Sommet de Lomé consacré à la sécurité et à la sûreté maritimes en Afrique, 2016.",
-        "legende": "Esplanade du site du Sommet de Lomé, 2016.",
+        "alt": "OUAGA Bokoua Yao sur l’esplanade du site du Sommet de Lomé en 2016.",
+        "legende": "Esplanade du Sommet de Lomé, 2016.",
+        "largeur": 1800,
+        "hauteur": 1013
+      },
+      {
+        "fichier": "assets/img/media/events/sommet-lome-2016/oby_sommet_lome_2016_05.webp",
+        "alt": "OUAGA Bokoua Yao avec deux participants sur le site du Sommet de Lomé en 2016.",
+        "legende": "Rencontre de participants sur le site du Sommet de Lomé, 2016.",
+        "largeur": 1800,
+        "hauteur": 1013
+      },
+      {
+        "fichier": "assets/img/media/events/sommet-lome-2016/oby_sommet_lome_2016_06.webp",
+        "alt": "OUAGA Bokoua Yao avec deux participants en tenue de service dans l’espace d’exposition du Sommet de Lomé en 2016.",
+        "legende": "Espace d’exposition du Sommet de Lomé, 2016.",
+        "largeur": 1800,
+        "hauteur": 1013
+      },
+      {
+        "fichier": "assets/img/media/events/sommet-lome-2016/oby_sommet_lome_2016_07.webp",
+        "alt": "OUAGA Bokoua Yao et plusieurs participants dans l’espace d’exposition du Sommet de Lomé en 2016.",
+        "legende": "Participants dans l’espace d’exposition, Sommet de Lomé, 2016.",
+        "largeur": 1800,
+        "hauteur": 1013
+      },
+      {
+        "fichier": "assets/img/media/events/sommet-lome-2016/oby_sommet_lome_2016_08.webp",
+        "alt": "OUAGA Bokoua Yao avec un participant devant des supports consacrés aux océans au Sommet de Lomé en 2016.",
+        "legende": "Échange dans l’espace consacré aux océans, Sommet de Lomé, 2016.",
+        "largeur": 1800,
+        "hauteur": 1013
+      },
+      {
+        "fichier": "assets/img/media/events/sommet-lome-2016/oby_sommet_lome_2016_09.webp",
+        "alt": "OUAGA Bokoua Yao avec un participant dans l’espace d’exposition du Sommet de Lomé en 2016.",
+        "legende": "Rencontre dans l’espace d’exposition, Sommet de Lomé, 2016.",
+        "largeur": 1800,
+        "hauteur": 1013
+      },
+      {
+        "fichier": "assets/img/media/events/sommet-lome-2016/oby_sommet_lome_2016_10.webp",
+        "alt": "OUAGA Bokoua Yao avec plusieurs participants sur l’esplanade du Sommet de Lomé en 2016.",
+        "legende": "Échanges sur l’esplanade du Sommet de Lomé, 2016.",
+        "largeur": 1800,
+        "hauteur": 1013
+      },
+      {
+        "fichier": "assets/img/media/events/sommet-lome-2016/oby_sommet_lome_2016_11.webp",
+        "alt": "OUAGA Bokoua Yao au cours d’un échange entre participants sur le site du Sommet de Lomé en 2016.",
+        "legende": "Échange entre participants, Sommet de Lomé, 2016.",
+        "largeur": 1800,
+        "hauteur": 1013
+      },
+      {
+        "fichier": "assets/img/media/events/sommet-lome-2016/oby_sommet_lome_2016_12.webp",
+        "alt": "OUAGA Bokoua Yao avec deux participants en marge du Sommet de Lomé en 2016.",
+        "legende": "Rencontre en marge du Sommet de Lomé, 2016.",
+        "largeur": 1800,
+        "hauteur": 1013
+      },
+      {
+        "fichier": "assets/img/media/events/sommet-lome-2016/oby_sommet_lome_2016_13.webp",
+        "alt": "OUAGA Bokoua Yao avec des participants en tenue de service devant un aéronef, dans le contexte du Sommet de Lomé en 2016.",
+        "legende": "Séquence sur le site du Sommet de Lomé, 2016.",
         "largeur": 1800,
         "hauteur": 1013
       }
@@ -762,6 +1457,55 @@
         "legende": "Séquence consacrée aux solutions fondées sur la nature en milieu littoral urbanisé, 2026.",
         "largeur": 1400,
         "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/arbe-amenagement-biodiversite-sfn-2026/oby_arbe_amenagement_biodiversite_sfn_2026_04.webp",
+        "alt": "Vue complémentaire de « ARBE Région Sud — Club Aménagement & Biodiversité / Solutions fondées sur la Nature » — photographie 4.",
+        "legende": "Photographie complémentaire — ARBE Région Sud — Club Aménagement & Biodiversité / Solutions fondées sur la Nature.",
+        "largeur": 1050,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/arbe-amenagement-biodiversite-sfn-2026/oby_arbe_amenagement_biodiversite_sfn_2026_05.webp",
+        "alt": "Vue complémentaire de « ARBE Région Sud — Club Aménagement & Biodiversité / Solutions fondées sur la Nature » — photographie 5.",
+        "legende": "Photographie complémentaire — ARBE Région Sud — Club Aménagement & Biodiversité / Solutions fondées sur la Nature.",
+        "largeur": 1400,
+        "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/arbe-amenagement-biodiversite-sfn-2026/oby_arbe_amenagement_biodiversite_sfn_2026_06.webp",
+        "alt": "Vue complémentaire de « ARBE Région Sud — Club Aménagement & Biodiversité / Solutions fondées sur la Nature » — photographie 6.",
+        "legende": "Photographie complémentaire — ARBE Région Sud — Club Aménagement & Biodiversité / Solutions fondées sur la Nature.",
+        "largeur": 1400,
+        "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/arbe-amenagement-biodiversite-sfn-2026/oby_arbe_amenagement_biodiversite_sfn_2026_07.webp",
+        "alt": "Vue complémentaire de « ARBE Région Sud — Club Aménagement & Biodiversité / Solutions fondées sur la Nature » — photographie 7.",
+        "legende": "Photographie complémentaire — ARBE Région Sud — Club Aménagement & Biodiversité / Solutions fondées sur la Nature.",
+        "largeur": 1400,
+        "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/arbe-amenagement-biodiversite-sfn-2026/oby_arbe_amenagement_biodiversite_sfn_2026_08.webp",
+        "alt": "Vue complémentaire de « ARBE Région Sud — Club Aménagement & Biodiversité / Solutions fondées sur la Nature » — photographie 8.",
+        "legende": "Photographie complémentaire — ARBE Région Sud — Club Aménagement & Biodiversité / Solutions fondées sur la Nature.",
+        "largeur": 1400,
+        "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/arbe-amenagement-biodiversite-sfn-2026/oby_arbe_amenagement_biodiversite_sfn_2026_09.webp",
+        "alt": "Vue complémentaire de « ARBE Région Sud — Club Aménagement & Biodiversité / Solutions fondées sur la Nature » — photographie 9.",
+        "legende": "Photographie complémentaire — ARBE Région Sud — Club Aménagement & Biodiversité / Solutions fondées sur la Nature.",
+        "largeur": 1400,
+        "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/arbe-amenagement-biodiversite-sfn-2026/oby_arbe_amenagement_biodiversite_sfn_2026_10.webp",
+        "alt": "Vue complémentaire de « ARBE Région Sud — Club Aménagement & Biodiversité / Solutions fondées sur la Nature » — photographie 10.",
+        "legende": "Photographie complémentaire — ARBE Région Sud — Club Aménagement & Biodiversité / Solutions fondées sur la Nature.",
+        "largeur": 1400,
+        "hauteur": 1050
       }
     ],
     "mediatheque": "mediatheque.html#arbe-amenagement-biodiversite-sfn-2026",
@@ -795,6 +1539,20 @@
         "hauteur": 1800
       },
       {
+        "fichier": "assets/img/media/events/protection-environnement-mediterranee-2025/oby_protection_mediterranee_2025_02.webp",
+        "alt": "OUAGA Bokoua Yao devant la signalétique Océanomed à Luminy en 2025.",
+        "legende": "Présence sur le campus Océanomed, Luminy, 2025.",
+        "largeur": 1350,
+        "hauteur": 1800
+      },
+      {
+        "fichier": "assets/img/media/events/protection-environnement-mediterranee-2025/oby_protection_mediterranee_2025_03.webp",
+        "alt": "OUAGA Bokoua Yao devant un support du Mediterranean Institute of Oceanography à Luminy en 2025.",
+        "legende": "Support du Mediterranean Institute of Oceanography, Luminy, 2025.",
+        "largeur": 1800,
+        "hauteur": 1350
+      },
+      {
         "fichier": "assets/img/media/events/protection-environnement-mediterranee-2025/oby_protection_mediterranee_2025_04.webp",
         "alt": "Séance du colloque sur les nouveaux enjeux de protection de l’environnement en Méditerranée à Luminy en 2025.",
         "legende": "Séance du colloque, Luminy-Océanomed, 2025.",
@@ -807,6 +1565,20 @@
         "legende": "Ouverture du colloque sur la protection de l’environnement en Méditerranée, 2025.",
         "largeur": 1350,
         "hauteur": 1800
+      },
+      {
+        "fichier": "assets/img/media/events/protection-environnement-mediterranee-2025/oby_protection_mediterranee_2025_06.webp",
+        "alt": "Table ronde du colloque sur les nouveaux enjeux de protection de l’environnement en Méditerranée en 2025.",
+        "legende": "Table ronde sur les enjeux méditerranéens, 2025.",
+        "largeur": 1800,
+        "hauteur": 1350
+      },
+      {
+        "fichier": "assets/img/media/events/protection-environnement-mediterranee-2025/oby_protection_mediterranee_2025_07.webp",
+        "alt": "Table ronde consacrée aux enjeux de protection de l’environnement en Méditerranée en 2025.",
+        "legende": "Échanges du colloque à Luminy-Océanomed, 2025.",
+        "largeur": 1800,
+        "hauteur": 1350
       }
     ],
     "mediatheque": "mediatheque.html#protection-environnement-mediterranee-2025"
@@ -923,6 +1695,62 @@
         "legende": "Séquence consacrée à la préservation des herbiers, Forum Mouillage Méditerranée, 2024.",
         "largeur": 1400,
         "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/forum-mouillage-mediterranee-2024/oby_forum_mouillage_mediterranee_2024_03.webp",
+        "alt": "Vue complémentaire de « 3ᵉ Forum Mouillage Méditerranée » — photographie 3.",
+        "legende": "Photographie complémentaire — 3ᵉ Forum Mouillage Méditerranée.",
+        "largeur": 1050,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/forum-mouillage-mediterranee-2024/oby_forum_mouillage_mediterranee_2024_04.webp",
+        "alt": "Vue complémentaire de « 3ᵉ Forum Mouillage Méditerranée » — photographie 4.",
+        "legende": "Photographie complémentaire — 3ᵉ Forum Mouillage Méditerranée.",
+        "largeur": 1400,
+        "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/forum-mouillage-mediterranee-2024/oby_forum_mouillage_mediterranee_2024_05.webp",
+        "alt": "Vue complémentaire de « 3ᵉ Forum Mouillage Méditerranée » — photographie 5.",
+        "legende": "Photographie complémentaire — 3ᵉ Forum Mouillage Méditerranée.",
+        "largeur": 1400,
+        "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/forum-mouillage-mediterranee-2024/oby_forum_mouillage_mediterranee_2024_06.webp",
+        "alt": "Vue complémentaire de « 3ᵉ Forum Mouillage Méditerranée » — photographie 6.",
+        "legende": "Photographie complémentaire — 3ᵉ Forum Mouillage Méditerranée.",
+        "largeur": 1050,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/forum-mouillage-mediterranee-2024/oby_forum_mouillage_mediterranee_2024_07.webp",
+        "alt": "Vue complémentaire de « 3ᵉ Forum Mouillage Méditerranée » — photographie 7.",
+        "legende": "Photographie complémentaire — 3ᵉ Forum Mouillage Méditerranée.",
+        "largeur": 1050,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/forum-mouillage-mediterranee-2024/oby_forum_mouillage_mediterranee_2024_08.webp",
+        "alt": "Vue complémentaire de « 3ᵉ Forum Mouillage Méditerranée » — photographie 8.",
+        "legende": "Photographie complémentaire — 3ᵉ Forum Mouillage Méditerranée.",
+        "largeur": 1050,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/forum-mouillage-mediterranee-2024/oby_forum_mouillage_mediterranee_2024_09.webp",
+        "alt": "Vue complémentaire de « 3ᵉ Forum Mouillage Méditerranée » — photographie 9.",
+        "legende": "Photographie complémentaire — 3ᵉ Forum Mouillage Méditerranée.",
+        "largeur": 1050,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/forum-mouillage-mediterranee-2024/oby_forum_mouillage_mediterranee_2024_10.webp",
+        "alt": "Vue complémentaire de « 3ᵉ Forum Mouillage Méditerranée » — photographie 10.",
+        "legende": "Photographie complémentaire — 3ᵉ Forum Mouillage Méditerranée.",
+        "largeur": 1400,
+        "hauteur": 1050
       }
     ],
     "mediatheque": "mediatheque.html#forum-mouillage-mediterranee-2024",
@@ -1004,7 +1832,57 @@
       }
     ],
     "liens": [],
-    "galerie": [],
+    "galerie": [
+      {
+        "fichier": "assets/img/media/events/atelier-medpan-porquerolles-2024/oby_atelier_medpan_porquerolles_2024_01.webp",
+        "alt": "OUAGA Bokoua Yao à bord de la navette maritime, badge de l’atelier au cou, devant le littoral boisé de Porquerolles et des voiliers au mouillage, avril 2024.",
+        "legende": "Traversée vers Porquerolles pendant l’atelier régional MedPAN, avril 2024.",
+        "largeur": 1565,
+        "hauteur": 1333
+      },
+      {
+        "fichier": "assets/img/media/events/atelier-medpan-porquerolles-2024/oby_atelier_medpan_porquerolles_2024_02.webp",
+        "alt": "Panneau d’entrée du Parc national de Port-Cros, avril 2024.",
+        "legende": "Panneau du Parc national de Port-Cros, 2024.",
+        "largeur": 1600,
+        "hauteur": 1066
+      },
+      {
+        "fichier": "assets/img/media/events/atelier-medpan-porquerolles-2024/oby_atelier_medpan_porquerolles_2024_03.webp",
+        "alt": "OUAGA Bokoua Yao et les participants de l’atelier au débarquement sur le quai, Porquerolles, avril 2024.",
+        "legende": "Débarquement des participants de l’atelier, Porquerolles, 2024.",
+        "largeur": 1600,
+        "hauteur": 1066
+      },
+      {
+        "fichier": "assets/img/media/events/atelier-medpan-porquerolles-2024/oby_atelier_medpan_porquerolles_2024_04.webp",
+        "alt": "OUAGA Bokoua Yao et un participant en marge de l’atelier régional MedPAN, avril 2024.",
+        "legende": "Échange en marge de l’atelier régional MedPAN, 2024.",
+        "largeur": 1600,
+        "hauteur": 1066
+      },
+      {
+        "fichier": "assets/img/media/events/atelier-medpan-porquerolles-2024/oby_atelier_medpan_porquerolles_2024_05.webp",
+        "alt": "Sentier littoral et panorama sur la baie, île de Porquerolles, avril 2024.",
+        "legende": "Sentier littoral de Porquerolles, 2024.",
+        "largeur": 1600,
+        "hauteur": 1066
+      },
+      {
+        "fichier": "assets/img/media/events/atelier-medpan-porquerolles-2024/oby_atelier_medpan_porquerolles_2024_06.webp",
+        "alt": "Panneaux directionnels de Porquerolles indiquant Notre-Dame, La Courtade et L’Oustaou, avril 2024.",
+        "legende": "Signalétique des sentiers de Porquerolles, 2024.",
+        "largeur": 1600,
+        "hauteur": 1066
+      },
+      {
+        "fichier": "assets/img/media/events/atelier-medpan-porquerolles-2024/oby_atelier_medpan_porquerolles_2024_07.webp",
+        "alt": "Quai d’embarquement et signalétique des destinations Porquerolles, Port-Cros et Le Levant, La Londe-les-Maures, avril 2024.",
+        "legende": "Quai d’embarquement vers les îles d’Hyères, 2024.",
+        "largeur": 1600,
+        "hauteur": 1066
+      }
+    ],
     "mediatheque": "mediatheque.html#medpan-port-cros-2024"
   },
   {
@@ -1118,6 +1996,20 @@
         "legende": "Cadre de l’atelier national WACA à la Banque mondiale, Abidjan, 2017.",
         "largeur": 1800,
         "hauteur": 1350
+      },
+      {
+        "fichier": "assets/img/media/events/atelier-waca-prevalidation-2017/oby_waca_abidjan_2017_06.webp",
+        "alt": "Vue de la table des intervenants pendant l’atelier national WACA à Abidjan.",
+        "legende": "Séance de l’atelier national WACA, Banque mondiale, Abidjan, 2017.",
+        "largeur": 1800,
+        "hauteur": 1350
+      },
+      {
+        "fichier": "assets/img/media/events/atelier-waca-prevalidation-2017/oby_atelier_waca_prevalidation_2017_07.webp",
+        "alt": "Photographie — Atelier national sur l’identification du projet d’investissement de résilience des zones côtières de la Côte d’Ivoire — WACA",
+        "legende": "Photographie complémentaire — Atelier national sur l’identification du projet d’investissement de résilience des zones côtières de la Côte d’Ivoire — WACA.",
+        "largeur": 1400,
+        "hauteur": 1050
       }
     ],
     "mediatheque": "mediatheque.html#atelier-waca-prevalidation-2017",
@@ -1154,34 +2046,102 @@
       "Cette conférence a permis d’observer une négociation climatique multilatérale et les mobilisations qui l’entourent depuis un parcours déjà orienté vers le littoral et l’environnement : mesurer comment les vulnérabilités côtières apparaissent — ou non — dans un agenda climatique global, et comment la jeunesse s’y organise comme acteur distinct."
     ],
     "themes": "gouvernance climatique · littoral · vulnérabilités côtières · jeunesse · coopération internationale",
-    "sources": [],
+    "sources": [
+      {
+        "libelle": "COP24 — CCNUCC / UNFCCC",
+        "url": "https://unfccc.int/conference/katowice-climate-change-conference-december-2018"
+      }
+    ],
     "liens": [],
     "galerie": [
       {
         "fichier": "assets/img/media/events/cop24-katowice-2018/oby_cop24_katowice_2018_01.webp",
-        "alt": "Groupe de participants dans un espace consacré à l'action climatique à Katowice en 2018.",
-        "legende": "Cadre d'échanges autour de l'action climatique à Katowice, 2018.",
+        "alt": "OUAGA Bokoua Yao avec un groupe de participants dans un espace consacré à l’action climatique à Katowice en 2018.",
+        "legende": "Cadre d’échanges autour de l’action climatique à Katowice, 2018.",
         "largeur": 1600,
         "hauteur": 1200
       },
       {
         "fichier": "assets/img/media/events/cop24-katowice-2018/oby_cop24_katowice_2018_02.webp",
-        "alt": "Signalétique lumineuse de Katowice en marge de la COP24 en 2018.",
+        "alt": "Signalétique lumineuse de Katowice dans le contexte de la COP24 en 2018.",
         "legende": "Katowice dans le contexte de la COP24, 2018.",
         "largeur": 1800,
         "hauteur": 1350
       },
       {
         "fichier": "assets/img/media/events/cop24-katowice-2018/oby_cop24_katowice_2018_03.webp",
-        "alt": "Espace d'accueil de la COY14 à Katowice en 2018.",
-        "legende": "Espace d'accueil de la COY14 à Katowice, 2018.",
+        "alt": "Équipe d’accueil de la COY14 à Katowice en 2018.",
+        "legende": "Espace d’accueil de la COY14 à Katowice, 2018.",
         "largeur": 1032,
         "hauteur": 502
       },
       {
         "fichier": "assets/img/media/events/cop24-katowice-2018/oby_cop24_katowice_2018_04.webp",
-        "alt": "Temps collectif de participants réunis autour des objectifs de développement durable lors de la COY14 à Katowice en 2018.",
+        "alt": "Groupe de participants réunis lors de la COY14 à Katowice en 2018.",
         "legende": "Temps collectif de la COY14 à Katowice, 2018.",
+        "largeur": 1032,
+        "hauteur": 502
+      },
+      {
+        "fichier": "assets/img/media/events/cop24-katowice-2018/oby_cop24_katowice_2018_05.webp",
+        "alt": "Vue d’un groupe réuni autour d’une table de travail lors de la COY14 à Katowice en 2018.",
+        "legende": "Groupe de travail de la COY14, Katowice, 2018.",
+        "largeur": 640,
+        "hauteur": 1351
+      },
+      {
+        "fichier": "assets/img/media/events/cop24-katowice-2018/oby_cop24_katowice_2018_06.webp",
+        "alt": "OUAGA Bokoua Yao avec un participant dans un espace de la COY14 à Katowice en 2018.",
+        "legende": "Rencontre entre participants, COY14, 2018.",
+        "largeur": 960,
+        "hauteur": 773
+      },
+      {
+        "fichier": "assets/img/media/events/cop24-katowice-2018/oby_cop24_katowice_2018_07.webp",
+        "alt": "OUAGA Bokoua Yao avec plusieurs participants lors de la COY14 à Katowice en 2018.",
+        "legende": "Temps collectif entre participants, COY14, 2018.",
+        "largeur": 960,
+        "hauteur": 720
+      },
+      {
+        "fichier": "assets/img/media/events/cop24-katowice-2018/oby_cop24_katowice_2018_08.webp",
+        "alt": "OUAGA Bokoua Yao dans un espace d’animation de la COY14 à Katowice en 2018.",
+        "legende": "Espace d’animation de la COY14, Katowice, 2018.",
+        "largeur": 564,
+        "hauteur": 960
+      },
+      {
+        "fichier": "assets/img/media/events/cop24-katowice-2018/oby_cop24_katowice_2018_09.webp",
+        "alt": "Participants réunis autour d’une table en marge de la COY14 à Katowice en 2018.",
+        "legende": "Rencontre informelle de participants, Katowice, 2018.",
+        "largeur": 1800,
+        "hauteur": 1350
+      },
+      {
+        "fichier": "assets/img/media/events/cop24-katowice-2018/oby_cop24_katowice_2018_10.webp",
+        "alt": "OUAGA Bokoua Yao au cours d’un échange informel avec un participant à Katowice en 2018.",
+        "legende": "Échange informel entre participants, Katowice, 2018.",
+        "largeur": 1800,
+        "hauteur": 1350
+      },
+      {
+        "fichier": "assets/img/media/events/cop24-katowice-2018/oby_cop24_katowice_2018_11.webp",
+        "alt": "OUAGA Bokoua Yao avec plusieurs participants dans le contexte hivernal de Katowice en 2018.",
+        "legende": "Participants à Katowice pendant la COP24, 2018.",
+        "largeur": 1800,
+        "hauteur": 1350
+      },
+      {
+        "fichier": "assets/img/media/events/cop24-katowice-2018/oby_cop24_katowice_2018_12.webp",
+        "alt": "OUAGA Bokoua Yao avec un participant dans un espace d’exposition de la COP24 à Katowice en 2018.",
+        "legende": "Espace d’exposition de la COP24, Katowice, 2018.",
+        "largeur": 1032,
+        "hauteur": 502
+      },
+      {
+        "fichier": "assets/img/media/events/cop24-katowice-2018/oby_cop24_katowice_2018_13.webp",
+        "alt": "Groupe de participants dans un espace d’exposition de la COP24 à Katowice en 2018.",
+        "legende": "Groupe de participants à la COP24, Katowice, 2018.",
         "largeur": 1032,
         "hauteur": 502
       }
@@ -1233,6 +2193,41 @@
         "legende": "En marge des Rendez-vous de l’Expertise, Paris, janvier 2019.",
         "largeur": 1400,
         "hauteur": 708
+      },
+      {
+        "fichier": "assets/img/media/events/expertise-france-oceans-economie-bleue-2019/oby_expertise_france_oceans_economie_bleue_2019_03.webp",
+        "alt": "OUAGA Bokoua Yao avec des participants lors d’un événement consacré aux océans et à l’économie bleue, Expertise France, 2019.",
+        "legende": "Moment d’échange lors d’un événement consacré aux océans et à l’économie bleue, Expertise France, en 2019.",
+        "largeur": 1800,
+        "hauteur": 910
+      },
+      {
+        "fichier": "assets/img/media/events/expertise-france-oceans-economie-bleue-2019/oby_expertise_france_oceans_economie_bleue_2019_04.webp",
+        "alt": "Photographie — Les Rendez-vous de l’Expertise — « Sécuriser les océans pour favoriser l’économie bleue ? »",
+        "legende": "Photographie complémentaire — Les Rendez-vous de l’Expertise — « Sécuriser les océans pour favoriser l’économie bleue ? ».",
+        "largeur": 1400,
+        "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/expertise-france-oceans-economie-bleue-2019/oby_expertise_france_oceans_economie_bleue_2019_05.webp",
+        "alt": "Photographie — Les Rendez-vous de l’Expertise — « Sécuriser les océans pour favoriser l’économie bleue ? »",
+        "legende": "Photographie complémentaire — Les Rendez-vous de l’Expertise — « Sécuriser les océans pour favoriser l’économie bleue ? ».",
+        "largeur": 1400,
+        "hauteur": 698
+      },
+      {
+        "fichier": "assets/img/media/events/expertise-france-oceans-economie-bleue-2019/oby_expertise_france_oceans_economie_bleue_2019_06.webp",
+        "alt": "Photographie — Les Rendez-vous de l’Expertise — « Sécuriser les océans pour favoriser l’économie bleue ? »",
+        "legende": "Photographie complémentaire — Les Rendez-vous de l’Expertise — « Sécuriser les océans pour favoriser l’économie bleue ? ».",
+        "largeur": 1400,
+        "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/expertise-france-oceans-economie-bleue-2019/oby_expertise_france_oceans_economie_bleue_2019_07.webp",
+        "alt": "OUAGA Bokoua Yao lors d’un autre moment d’échange avec des participants à un événement consacré aux océans et à l’économie bleue, Expertise France, 2019.",
+        "legende": "Autre moment d’échange lors d’un événement consacré aux océans et à l’économie bleue, Expertise France, en 2019.",
+        "largeur": 1800,
+        "hauteur": 1084
       }
     ],
     "mediatheque": "mediatheque.html#expertise-france-oceans-economie-bleue-2019",
@@ -1282,6 +2277,27 @@
         "legende": "Table ronde d’Euromaritime, Marseille, 2022.",
         "largeur": 1800,
         "hauteur": 1346
+      },
+      {
+        "fichier": "assets/img/media/events/euromaritime-2022/oby_euromaritime_2022_04.webp",
+        "alt": "Échanges d’un panel lors d’Euromaritime à Marseille en 2022.",
+        "legende": "Panel d’Euromaritime, Marseille, 2022.",
+        "largeur": 1800,
+        "hauteur": 1346
+      },
+      {
+        "fichier": "assets/img/media/events/euromaritime-2022/oby_euromaritime_2022_05.webp",
+        "alt": "Présentation du projet HELENA sur l’hybridation et l’électrification des navires lors d’Euromaritime en 2022.",
+        "legende": "Projet HELENA présenté à Euromaritime, 2022.",
+        "largeur": 1800,
+        "hauteur": 1346
+      },
+      {
+        "fichier": "assets/img/media/events/euromaritime-2022/oby_euromaritime_2022_06.webp",
+        "alt": "Présentation consacrée à la révolution numérique des industries maritimes lors d’Euromaritime en 2022.",
+        "legende": "Industries maritimes et transition numérique, Euromaritime, 2022.",
+        "largeur": 1800,
+        "hauteur": 1346
       }
     ],
     "mediatheque": "mediatheque.html#euromaritime-blue-growth-2022"
@@ -1324,7 +2340,12 @@
       "Les trois jours d’INNOV’ACTIONS ont placé le projet dans un format de travail entrepreneurial intensif : construire et faire mûrir une solution en équipe, la confronter à l’écosystème d’accompagnement, et la présenter lors de la séquence finale."
     ],
     "themes": "innovation · travail en mode projet · entrepreneuriat académique · présentation de projet",
-    "sources": [],
+    "sources": [
+      {
+        "libelle": "INNOV’ACTIONS 2024 — Mines Saint-Étienne",
+        "url": "https://www.mines-stetienne.fr/panoramines/2024/02/26/innovactions-lintelligence-collective-des-futurs-ingenieurs-au-service-du-sport/"
+      }
+    ],
     "liens": [],
     "galerie": [
       {
@@ -1364,7 +2385,43 @@
       }
     ],
     "liens": [],
-    "galerie": [],
+    "galerie": [
+      {
+        "fichier": "assets/img/media/events/emerging-valley-2024/oby_emerging_valley_2024_01.webp",
+        "alt": "OUAGA Bokoua Yao et un participant devant le kakémono de l’Institut de recherche pour le développement — « Déployer la recherche, partager la science, transformer l’avenir » — lors d’Emerging Valley, 3 décembre 2024.",
+        "legende": "Devant le kakémono de l’IRD, Emerging Valley, 3 décembre 2024.",
+        "largeur": 1200,
+        "hauteur": 1600
+      },
+      {
+        "fichier": "assets/img/media/events/emerging-valley-2024/oby_emerging_valley_2024_02.webp",
+        "alt": "Scène « Emerging Valley 2024 » et panélistes en fin de séance, édition du 3 décembre 2024.",
+        "legende": "La scène d’Emerging Valley, édition 2024.",
+        "largeur": 1600,
+        "hauteur": 1200
+      },
+      {
+        "fichier": "assets/img/media/events/emerging-valley-2024/oby_emerging_valley_2024_03.webp",
+        "alt": "Table ronde d’Emerging Valley 2024 avec un intervenant en visioconférence, sous le logo de l’Agence universitaire de la Francophonie.",
+        "legende": "Table ronde et intervention à distance, Emerging Valley, 2024.",
+        "largeur": 1600,
+        "hauteur": 1200
+      },
+      {
+        "fichier": "assets/img/media/events/emerging-valley-2024/oby_emerging_valley_2024_04.webp",
+        "alt": "OUAGA Bokoua Yao et trois participants devant le mur des partenaires d’Emerging Valley 2024, Aix-Marseille-Provence, 3 décembre 2024.",
+        "legende": "Devant le mur des partenaires, Emerging Valley, 2024.",
+        "largeur": 1200,
+        "hauteur": 1600
+      },
+      {
+        "fichier": "assets/img/media/events/emerging-valley-2024/oby_emerging_valley_2024_05.webp",
+        "alt": "OUAGA Bokoua Yao et un participant en marge des séances d’Emerging Valley, 3 décembre 2024.",
+        "legende": "Échange en marge d’Emerging Valley, 2024.",
+        "largeur": 1200,
+        "hauteur": 1600
+      }
+    ],
     "mediatheque": "mediatheque.html#emerging-valley-2024"
   },
   {
@@ -1381,7 +2438,16 @@
       "Cet exercice a permis d’éprouver la formulation d’une initiative liée à l’équipement marin devant un public méditerranéen d’innovation, dans un format court qui oblige à trancher entre le problème traité, la solution et le bénéficiaire."
     ],
     "themes": "économie bleue · innovation · Méditerranée · entrepreneuriat",
-    "sources": [],
+    "sources": [
+      {
+        "libelle": "Agora des Jeunes — Saison Méditerranée 2026",
+        "url": "https://saisonmediterranee2026.culture.gouv.fr/w/388820/evenement/19639699/alter-mediterraneeagora-des-jeunes"
+      },
+      {
+        "libelle": "Saison Méditerranée 2026 — Aix-Marseille Université",
+        "url": "https://allsh.univ-amu.fr/fr/actualites/saison-mediterranee-2026"
+      }
+    ],
     "liens": [],
     "galerie": [
       {
@@ -1397,6 +2463,62 @@
         "legende": "Participants réunis en marge de la séquence, Marseille, 2026.",
         "largeur": 1400,
         "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/alter-mediterranee-tethys-aqualab/oby_alter_mediterranee_tethys_aqualab_03.webp",
+        "alt": "Vue complémentaire de « Agora des Jeunes — ALTER MÉDITERRANÉE / Saison Méditerranée 2026 » — photographie 3.",
+        "legende": "Photographie complémentaire — Agora des Jeunes — ALTER MÉDITERRANÉE / Saison Méditerranée 2026.",
+        "largeur": 1051,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/alter-mediterranee-tethys-aqualab/oby_alter_mediterranee_tethys_aqualab_04.webp",
+        "alt": "Vue complémentaire de « Agora des Jeunes — ALTER MÉDITERRANÉE / Saison Méditerranée 2026 » — photographie 4.",
+        "legende": "Photographie complémentaire — Agora des Jeunes — ALTER MÉDITERRANÉE / Saison Méditerranée 2026.",
+        "largeur": 1400,
+        "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/alter-mediterranee-tethys-aqualab/oby_alter_mediterranee_tethys_aqualab_05.webp",
+        "alt": "Vue complémentaire de « Agora des Jeunes — ALTER MÉDITERRANÉE / Saison Méditerranée 2026 » — photographie 5.",
+        "legende": "Photographie complémentaire — Agora des Jeunes — ALTER MÉDITERRANÉE / Saison Méditerranée 2026.",
+        "largeur": 1400,
+        "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/alter-mediterranee-tethys-aqualab/oby_alter_mediterranee_tethys_aqualab_06.webp",
+        "alt": "Vue complémentaire de « Agora des Jeunes — ALTER MÉDITERRANÉE / Saison Méditerranée 2026 » — photographie 6.",
+        "legende": "Photographie complémentaire — Agora des Jeunes — ALTER MÉDITERRANÉE / Saison Méditerranée 2026.",
+        "largeur": 1400,
+        "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/alter-mediterranee-tethys-aqualab/oby_alter_mediterranee_tethys_aqualab_07.webp",
+        "alt": "Vue complémentaire de « Agora des Jeunes — ALTER MÉDITERRANÉE / Saison Méditerranée 2026 » — photographie 7.",
+        "legende": "Photographie complémentaire — Agora des Jeunes — ALTER MÉDITERRANÉE / Saison Méditerranée 2026.",
+        "largeur": 1050,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/alter-mediterranee-tethys-aqualab/oby_alter_mediterranee_tethys_aqualab_08.webp",
+        "alt": "Vue complémentaire de « Agora des Jeunes — ALTER MÉDITERRANÉE / Saison Méditerranée 2026 » — photographie 8.",
+        "legende": "Photographie complémentaire — Agora des Jeunes — ALTER MÉDITERRANÉE / Saison Méditerranée 2026.",
+        "largeur": 1400,
+        "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/alter-mediterranee-tethys-aqualab/oby_alter_mediterranee_tethys_aqualab_09.webp",
+        "alt": "Vue complémentaire de « Agora des Jeunes — ALTER MÉDITERRANÉE / Saison Méditerranée 2026 » — photographie 9.",
+        "legende": "Photographie complémentaire — Agora des Jeunes — ALTER MÉDITERRANÉE / Saison Méditerranée 2026.",
+        "largeur": 1050,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/alter-mediterranee-tethys-aqualab/oby_alter_mediterranee_tethys_aqualab_10.webp",
+        "alt": "Vue complémentaire de « Agora des Jeunes — ALTER MÉDITERRANÉE / Saison Méditerranée 2026 » — photographie 10.",
+        "legende": "Photographie complémentaire — Agora des Jeunes — ALTER MÉDITERRANÉE / Saison Méditerranée 2026.",
+        "largeur": 1050,
+        "hauteur": 1400
       }
     ],
     "mediatheque": "mediatheque.html#alter-mediterranee-tethys-aqualab",
@@ -1517,6 +2639,13 @@
         "legende": "Au stand PÉPITE Provence pendant Les Doctoriales du Sud, 2024.",
         "largeur": 1200,
         "hauteur": 1599
+      },
+      {
+        "fichier": "assets/img/media/events/doctoriales-sud-pepite-2024/oby_doctoriales_sud_pepite_2024_03.webp",
+        "alt": "Vue complémentaire de « Doctoriales du Sud » — photographie 3.",
+        "legende": "Photographie complémentaire — Doctoriales du Sud.",
+        "largeur": 1061,
+        "hauteur": 1400
       }
     ],
     "mediatheque": "mediatheque.html#doctoriales-sud-pepite-2024"
@@ -1563,6 +2692,55 @@
         "legende": "Participants des Rencontres Entrepreneurs & Avocats, Marseille, décembre 2024.",
         "largeur": 1200,
         "hauteur": 1600
+      },
+      {
+        "fichier": "assets/img/media/events/rencontres-entrepreneurs-avocats-2024/oby_rencontres_entrepreneurs_avocats_2024_04.webp",
+        "alt": "Vue complémentaire de « Rencontres Entrepreneurs & Avocats » — photographie 4.",
+        "legende": "Photographie complémentaire — Rencontres Entrepreneurs & Avocats.",
+        "largeur": 1050,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/rencontres-entrepreneurs-avocats-2024/oby_rencontres_entrepreneurs_avocats_2024_05.webp",
+        "alt": "Vue complémentaire de « Rencontres Entrepreneurs & Avocats » — photographie 5.",
+        "legende": "Photographie complémentaire — Rencontres Entrepreneurs & Avocats.",
+        "largeur": 1050,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/rencontres-entrepreneurs-avocats-2024/oby_rencontres_entrepreneurs_avocats_2024_06.webp",
+        "alt": "Vue complémentaire de « Rencontres Entrepreneurs & Avocats » — photographie 6.",
+        "legende": "Photographie complémentaire — Rencontres Entrepreneurs & Avocats.",
+        "largeur": 1050,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/rencontres-entrepreneurs-avocats-2024/oby_rencontres_entrepreneurs_avocats_2024_07.webp",
+        "alt": "Vue complémentaire de « Rencontres Entrepreneurs & Avocats » — photographie 7.",
+        "legende": "Photographie complémentaire — Rencontres Entrepreneurs & Avocats.",
+        "largeur": 1400,
+        "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/rencontres-entrepreneurs-avocats-2024/oby_rencontres_entrepreneurs_avocats_2024_08.webp",
+        "alt": "Vue complémentaire de « Rencontres Entrepreneurs & Avocats » — photographie 8.",
+        "legende": "Photographie complémentaire — Rencontres Entrepreneurs & Avocats.",
+        "largeur": 1050,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/rencontres-entrepreneurs-avocats-2024/oby_rencontres_entrepreneurs_avocats_2024_09.webp",
+        "alt": "Vue complémentaire de « Rencontres Entrepreneurs & Avocats » — photographie 9.",
+        "legende": "Photographie complémentaire — Rencontres Entrepreneurs & Avocats.",
+        "largeur": 1400,
+        "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/rencontres-entrepreneurs-avocats-2024/oby_rencontres_entrepreneurs_avocats_2024_10.webp",
+        "alt": "Vue complémentaire de « Rencontres Entrepreneurs & Avocats » — photographie 10.",
+        "legende": "Photographie complémentaire — Rencontres Entrepreneurs & Avocats.",
+        "largeur": 1400,
+        "hauteur": 1050
       }
     ],
     "mediatheque": "mediatheque.html#rencontres-entrepreneurs-avocats-2024",
@@ -1662,7 +2840,12 @@
     "resume": "",
     "contexte": [],
     "themes": "",
-    "sources": [],
+    "sources": [
+      {
+        "libelle": "Catalogue officiel des formations ERSUMA/OHADA 2022",
+        "url": "https://www.ohada.org/wp-content/uploads/2022/02/Catalogue-Formations-ERSUMA-2022.pdf"
+      }
+    ],
     "liens": [],
     "galerie": [],
     "mediatheque": null
@@ -1681,7 +2864,12 @@
       "Ce colloque a permis de relier deux champs habituellement traités séparément : le contentieux économique international et les cadres juridiques africains. Il a donné une lecture concrète de la manière dont l’arbitrage d’investissement est discuté, contesté et adapté sur le continent."
     ],
     "themes": "droit des investissements · arbitrage · règlement des différends · Afrique",
-    "sources": [],
+    "sources": [
+      {
+        "libelle": "Annonce de l’événement — OHADA.com / AAPDI",
+        "url": "https://www.ohada.com/actualite/5312/colloque-sur-levolution-et-adaptation-du-droit-des-investissements-et-de-larbitrage-en-afrique-le-26-fevrier-2020-a-paris.html"
+      }
+    ],
     "liens": [],
     "galerie": [],
     "mediatheque": null
@@ -1747,6 +2935,41 @@
         "legende": "Traversée en pirogue vers le site d’observation, Grand-Lahou, 2017.",
         "largeur": 1400,
         "hauteur": 934
+      },
+      {
+        "fichier": "assets/img/media/events/grand-lahou-trait-cote-2017/oby_grand_lahou_trait_cote_2017_04.webp",
+        "alt": "Photographie — Sortie de terrain — dynamique du trait de côte à Grand-Lahou",
+        "legende": "Photographie complémentaire — Sortie de terrain — dynamique du trait de côte à Grand-Lahou.",
+        "largeur": 1400,
+        "hauteur": 933
+      },
+      {
+        "fichier": "assets/img/media/events/grand-lahou-trait-cote-2017/oby_grand_lahou_trait_cote_2017_05.webp",
+        "alt": "Photographie — Sortie de terrain — dynamique du trait de côte à Grand-Lahou",
+        "legende": "Photographie complémentaire — Sortie de terrain — dynamique du trait de côte à Grand-Lahou.",
+        "largeur": 1400,
+        "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/grand-lahou-trait-cote-2017/oby_grand_lahou_trait_cote_2017_06.webp",
+        "alt": "Photographie — Sortie de terrain — dynamique du trait de côte à Grand-Lahou",
+        "legende": "Photographie complémentaire — Sortie de terrain — dynamique du trait de côte à Grand-Lahou.",
+        "largeur": 1400,
+        "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/grand-lahou-trait-cote-2017/oby_grand_lahou_trait_cote_2017_07.webp",
+        "alt": "Photographie — Sortie de terrain — dynamique du trait de côte à Grand-Lahou",
+        "legende": "Photographie complémentaire — Sortie de terrain — dynamique du trait de côte à Grand-Lahou.",
+        "largeur": 1400,
+        "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/grand-lahou-trait-cote-2017/oby_grand_lahou_trait_cote_2017_08.webp",
+        "alt": "Photographie — Sortie de terrain — dynamique du trait de côte à Grand-Lahou",
+        "legende": "Photographie complémentaire — Sortie de terrain — dynamique du trait de côte à Grand-Lahou.",
+        "largeur": 1400,
+        "hauteur": 1050
       }
     ],
     "mediatheque": "mediatheque.html#grand-lahou-trait-cote-2017",
@@ -1768,7 +2991,12 @@
       "Assister à ces audiences a permis de comparer, à quelques semaines d’intervalle, deux juridictions internationales : la manière dont chacune conduit l’oralité, traite l’exception préliminaire et articule le fait et le droit dans un contentieux entre États."
     ],
     "themes": "droit international public · contentieux interétatique · procédure internationale",
-    "sources": [],
+    "sources": [
+      {
+        "libelle": "CIJ — affaire Ukraine c. Fédération de Russie (audiences de juin 2019)",
+        "url": "https://www.icj-cij.org/case/166"
+      }
+    ],
     "liens": [],
     "galerie": [
       {
@@ -1784,6 +3012,41 @@
         "legende": "En marge des audiences publiques de la Cour internationale de Justice, La Haye, 2019.",
         "largeur": 1200,
         "hauteur": 1600
+      },
+      {
+        "fichier": "assets/img/media/events/cij-audiences-ukraine-russie-2019/oby_cij_audiences_ukraine_russie_2019_03.webp",
+        "alt": "Photographie — Audiences à la Cour internationale de Justice — Ukraine c. Fédération de Russie",
+        "legende": "Photographie complémentaire — Audiences à la Cour internationale de Justice — Ukraine c. Fédération de Russie.",
+        "largeur": 1280,
+        "hauteur": 960
+      },
+      {
+        "fichier": "assets/img/media/events/cij-audiences-ukraine-russie-2019/oby_cij_audiences_ukraine_russie_2019_04.webp",
+        "alt": "Photographie — Audiences à la Cour internationale de Justice — Ukraine c. Fédération de Russie",
+        "legende": "Photographie complémentaire — Audiences à la Cour internationale de Justice — Ukraine c. Fédération de Russie.",
+        "largeur": 1050,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/cij-audiences-ukraine-russie-2019/oby_cij_audiences_ukraine_russie_2019_05.webp",
+        "alt": "Photographie — Audiences à la Cour internationale de Justice — Ukraine c. Fédération de Russie",
+        "legende": "Photographie complémentaire — Audiences à la Cour internationale de Justice — Ukraine c. Fédération de Russie.",
+        "largeur": 1050,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/cij-audiences-ukraine-russie-2019/oby_cij_audiences_ukraine_russie_2019_06.webp",
+        "alt": "Photographie — Audiences à la Cour internationale de Justice — Ukraine c. Fédération de Russie",
+        "legende": "Photographie complémentaire — Audiences à la Cour internationale de Justice — Ukraine c. Fédération de Russie.",
+        "largeur": 1280,
+        "hauteur": 960
+      },
+      {
+        "fichier": "assets/img/media/events/cij-audiences-ukraine-russie-2019/oby_cij_audiences_ukraine_russie_2019_07.webp",
+        "alt": "Photographie — Audiences à la Cour internationale de Justice — Ukraine c. Fédération de Russie",
+        "legende": "Photographie complémentaire — Audiences à la Cour internationale de Justice — Ukraine c. Fédération de Russie.",
+        "largeur": 1050,
+        "hauteur": 1400
       }
     ],
     "mediatheque": "mediatheque.html#cij-audiences-ukraine-russie-2019",
@@ -1865,7 +3128,12 @@
       "Cette journée a permis d’observer, sur un port de plaisance déjà fréquenté lors de l’atelier MedPAN, la manière dont la sensibilisation au milieu marin est portée auprès du grand public plutôt qu’auprès des seuls gestionnaires."
     ],
     "themes": "littoral · nautisme · sensibilisation · Méditerranée",
-    "sources": [],
+    "sources": [
+      {
+        "libelle": "Fête de la Mer et du Nautisme — Ville de La Londe-les-Maures",
+        "url": "https://www.ville-lalondelesmaures.fr/culture-et-sport/agenda/fetedelameretdunautisme.html"
+      }
+    ],
     "liens": [],
     "galerie": [
       {
@@ -1881,6 +3149,62 @@
         "legende": "Panneau du sentier sous-marin « Le Jardin des Mattes », La Londe-les-Maures, 2026.",
         "largeur": 1200,
         "hauteur": 1600
+      },
+      {
+        "fichier": "assets/img/media/events/fete-mer-londe-2026/oby_fete_mer_londe_2026_03.webp",
+        "alt": "Vue complémentaire de « Fête de la Mer et du Nautisme » — photographie 3.",
+        "legende": "Photographie complémentaire — Fête de la Mer et du Nautisme.",
+        "largeur": 1400,
+        "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/fete-mer-londe-2026/oby_fete_mer_londe_2026_04.webp",
+        "alt": "Vue complémentaire de « Fête de la Mer et du Nautisme » — photographie 4.",
+        "legende": "Photographie complémentaire — Fête de la Mer et du Nautisme.",
+        "largeur": 1050,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/fete-mer-londe-2026/oby_fete_mer_londe_2026_05.webp",
+        "alt": "Vue complémentaire de « Fête de la Mer et du Nautisme » — photographie 5.",
+        "legende": "Photographie complémentaire — Fête de la Mer et du Nautisme.",
+        "largeur": 1400,
+        "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/fete-mer-londe-2026/oby_fete_mer_londe_2026_06.webp",
+        "alt": "Vue complémentaire de « Fête de la Mer et du Nautisme » — photographie 6.",
+        "legende": "Photographie complémentaire — Fête de la Mer et du Nautisme.",
+        "largeur": 1050,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/fete-mer-londe-2026/oby_fete_mer_londe_2026_07.webp",
+        "alt": "Vue complémentaire de « Fête de la Mer et du Nautisme » — photographie 7.",
+        "legende": "Photographie complémentaire — Fête de la Mer et du Nautisme.",
+        "largeur": 1400,
+        "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/fete-mer-londe-2026/oby_fete_mer_londe_2026_08.webp",
+        "alt": "Vue complémentaire de « Fête de la Mer et du Nautisme » — photographie 8.",
+        "legende": "Photographie complémentaire — Fête de la Mer et du Nautisme.",
+        "largeur": 1050,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/fete-mer-londe-2026/oby_fete_mer_londe_2026_09.webp",
+        "alt": "Vue complémentaire de « Fête de la Mer et du Nautisme » — photographie 9.",
+        "legende": "Photographie complémentaire — Fête de la Mer et du Nautisme.",
+        "largeur": 1050,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/fete-mer-londe-2026/oby_fete_mer_londe_2026_10.webp",
+        "alt": "Vue complémentaire de « Fête de la Mer et du Nautisme » — photographie 10.",
+        "legende": "Photographie complémentaire — Fête de la Mer et du Nautisme.",
+        "largeur": 1050,
+        "hauteur": 1400
       }
     ],
     "mediatheque": "mediatheque.html#fete-mer-londe-2026",
@@ -1916,6 +3240,69 @@
         "legende": "Poste de travail pendant le stage en cabinet d’avocat, 2022-2023.",
         "largeur": 1080,
         "hauteur": 1444
+      },
+      {
+        "fichier": "assets/img/media/events/stage-cabinet-me-oukhelifa-2022-2023/oby_stage_cabinet_me_oukhelifa_2022_2023_02.webp",
+        "alt": "Photographie — Stage en cabinet d’avocat",
+        "legende": "Photographie complémentaire — Stage en cabinet d’avocat.",
+        "largeur": 663,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/stage-cabinet-me-oukhelifa-2022-2023/oby_stage_cabinet_me_oukhelifa_2022_2023_03.webp",
+        "alt": "Photographie — Stage en cabinet d’avocat",
+        "legende": "Photographie complémentaire — Stage en cabinet d’avocat.",
+        "largeur": 719,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/stage-cabinet-me-oukhelifa-2022-2023/oby_stage_cabinet_me_oukhelifa_2022_2023_04.webp",
+        "alt": "Photographie — Stage en cabinet d’avocat",
+        "legende": "Photographie complémentaire — Stage en cabinet d’avocat.",
+        "largeur": 1047,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/stage-cabinet-me-oukhelifa-2022-2023/oby_stage_cabinet_me_oukhelifa_2022_2023_05.webp",
+        "alt": "Photographie — Stage en cabinet d’avocat",
+        "legende": "Photographie complémentaire — Stage en cabinet d’avocat.",
+        "largeur": 1050,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/stage-cabinet-me-oukhelifa-2022-2023/oby_stage_cabinet_me_oukhelifa_2022_2023_06.webp",
+        "alt": "Photographie — Stage en cabinet d’avocat",
+        "legende": "Photographie complémentaire — Stage en cabinet d’avocat.",
+        "largeur": 1800,
+        "hauteur": 904
+      },
+      {
+        "fichier": "assets/img/media/events/stage-cabinet-me-oukhelifa-2022-2023/oby_stage_cabinet_me_oukhelifa_2022_2023_07.webp",
+        "alt": "Photographie — Stage en cabinet d’avocat",
+        "legende": "Photographie complémentaire — Stage en cabinet d’avocat.",
+        "largeur": 1047,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/stage-cabinet-me-oukhelifa-2022-2023/oby_stage_cabinet_me_oukhelifa_2022_2023_08.webp",
+        "alt": "Photographie — Stage en cabinet d’avocat",
+        "legende": "Photographie complémentaire — Stage en cabinet d’avocat.",
+        "largeur": 1047,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/stage-cabinet-me-oukhelifa-2022-2023/oby_stage_cabinet_me_oukhelifa_2022_2023_09.webp",
+        "alt": "Photographie — Stage en cabinet d’avocat",
+        "legende": "Photographie complémentaire — Stage en cabinet d’avocat.",
+        "largeur": 958,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/stage-cabinet-me-oukhelifa-2022-2023/oby_stage_cabinet_me_oukhelifa_2022_2023_10.webp",
+        "alt": "Photographie — Stage en cabinet d’avocat",
+        "legende": "Photographie complémentaire — Stage en cabinet d’avocat.",
+        "largeur": 1047,
+        "hauteur": 1400
       }
     ],
     "mediatheque": "mediatheque.html#stage-cabinet-me-oukhelifa-2022-2023",
@@ -1958,6 +3345,62 @@
         "legende": "Participants de la séquence du Certificat de médiateur OHADA, Abidjan, 2026.",
         "largeur": 1400,
         "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/ersuma-soutenance-cmo-2026/oby_ersuma_soutenance_cmo_2026_03.webp",
+        "alt": "Photographie — ERSUMA / OHADA — soutenance du travail de fin de formation en médiation",
+        "legende": "Photographie complémentaire — ERSUMA / OHADA — soutenance du travail de fin de formation en médiation.",
+        "largeur": 1050,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/ersuma-soutenance-cmo-2026/oby_ersuma_soutenance_cmo_2026_04.webp",
+        "alt": "Photographie — ERSUMA / OHADA — soutenance du travail de fin de formation en médiation",
+        "legende": "Photographie complémentaire — ERSUMA / OHADA — soutenance du travail de fin de formation en médiation.",
+        "largeur": 1400,
+        "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/ersuma-soutenance-cmo-2026/oby_ersuma_soutenance_cmo_2026_05.webp",
+        "alt": "Photographie — ERSUMA / OHADA — soutenance du travail de fin de formation en médiation",
+        "legende": "Photographie complémentaire — ERSUMA / OHADA — soutenance du travail de fin de formation en médiation.",
+        "largeur": 1400,
+        "hauteur": 788
+      },
+      {
+        "fichier": "assets/img/media/events/ersuma-soutenance-cmo-2026/oby_ersuma_soutenance_cmo_2026_06.webp",
+        "alt": "Photographie — ERSUMA / OHADA — soutenance du travail de fin de formation en médiation",
+        "legende": "Photographie complémentaire — ERSUMA / OHADA — soutenance du travail de fin de formation en médiation.",
+        "largeur": 787,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/ersuma-soutenance-cmo-2026/oby_ersuma_soutenance_cmo_2026_07.webp",
+        "alt": "Photographie — ERSUMA / OHADA — soutenance du travail de fin de formation en médiation",
+        "legende": "Photographie complémentaire — ERSUMA / OHADA — soutenance du travail de fin de formation en médiation.",
+        "largeur": 1050,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/ersuma-soutenance-cmo-2026/oby_ersuma_soutenance_cmo_2026_08.webp",
+        "alt": "Photographie — ERSUMA / OHADA — soutenance du travail de fin de formation en médiation",
+        "legende": "Photographie complémentaire — ERSUMA / OHADA — soutenance du travail de fin de formation en médiation.",
+        "largeur": 1400,
+        "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/ersuma-soutenance-cmo-2026/oby_ersuma_soutenance_cmo_2026_09.webp",
+        "alt": "Photographie — ERSUMA / OHADA — soutenance du travail de fin de formation en médiation",
+        "legende": "Photographie complémentaire — ERSUMA / OHADA — soutenance du travail de fin de formation en médiation.",
+        "largeur": 1400,
+        "hauteur": 788
+      },
+      {
+        "fichier": "assets/img/media/events/ersuma-soutenance-cmo-2026/oby_ersuma_soutenance_cmo_2026_10.webp",
+        "alt": "Photographie — ERSUMA / OHADA — soutenance du travail de fin de formation en médiation",
+        "legende": "Photographie complémentaire — ERSUMA / OHADA — soutenance du travail de fin de formation en médiation.",
+        "largeur": 1050,
+        "hauteur": 1400
       }
     ],
     "mediatheque": "mediatheque.html#ersuma-soutenance-cmo-2026",
@@ -1988,6 +3431,83 @@
         "legende": "Participants aux simulations pratiques de médiation, ERSUMA, Abidjan, 2026.",
         "largeur": 1080,
         "hauteur": 810
+      },
+      {
+        "fichier": "assets/img/media/events/ersuma-simulations-mediation-2026/oby_ersuma_simulations_mediation_2026_02.webp",
+        "alt": "Photographie — ERSUMA / OHADA — simulations pratiques de médiation",
+        "legende": "Photographie complémentaire — ERSUMA / OHADA — simulations pratiques de médiation.",
+        "largeur": 787,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/ersuma-simulations-mediation-2026/oby_ersuma_simulations_mediation_2026_03.webp",
+        "alt": "Photographie — ERSUMA / OHADA — simulations pratiques de médiation",
+        "legende": "Photographie complémentaire — ERSUMA / OHADA — simulations pratiques de médiation.",
+        "largeur": 1400,
+        "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/ersuma-simulations-mediation-2026/oby_ersuma_simulations_mediation_2026_04.webp",
+        "alt": "Photographie — ERSUMA / OHADA — simulations pratiques de médiation",
+        "legende": "Photographie complémentaire — ERSUMA / OHADA — simulations pratiques de médiation.",
+        "largeur": 1080,
+        "hauteur": 810
+      },
+      {
+        "fichier": "assets/img/media/events/ersuma-simulations-mediation-2026/oby_ersuma_simulations_mediation_2026_05.webp",
+        "alt": "Photographie — ERSUMA / OHADA — simulations pratiques de médiation",
+        "legende": "Photographie complémentaire — ERSUMA / OHADA — simulations pratiques de médiation.",
+        "largeur": 1080,
+        "hauteur": 810
+      },
+      {
+        "fichier": "assets/img/media/events/ersuma-simulations-mediation-2026/oby_ersuma_simulations_mediation_2026_06.webp",
+        "alt": "Photographie — ERSUMA / OHADA — simulations pratiques de médiation",
+        "legende": "Photographie complémentaire — ERSUMA / OHADA — simulations pratiques de médiation.",
+        "largeur": 1400,
+        "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/ersuma-simulations-mediation-2026/oby_ersuma_simulations_mediation_2026_07.webp",
+        "alt": "Photographie — ERSUMA / OHADA — simulations pratiques de médiation",
+        "legende": "Photographie complémentaire — ERSUMA / OHADA — simulations pratiques de médiation.",
+        "largeur": 1280,
+        "hauteur": 1072
+      },
+      {
+        "fichier": "assets/img/media/events/ersuma-simulations-mediation-2026/oby_ersuma_simulations_mediation_2026_08.webp",
+        "alt": "Photographie — ERSUMA / OHADA — simulations pratiques de médiation",
+        "legende": "Photographie complémentaire — ERSUMA / OHADA — simulations pratiques de médiation.",
+        "largeur": 774,
+        "hauteur": 1032
+      },
+      {
+        "fichier": "assets/img/media/events/ersuma-simulations-mediation-2026/oby_ersuma_simulations_mediation_2026_09.webp",
+        "alt": "Photographie — ERSUMA / OHADA — simulations pratiques de médiation",
+        "legende": "Photographie complémentaire — ERSUMA / OHADA — simulations pratiques de médiation.",
+        "largeur": 1080,
+        "hauteur": 739
+      },
+      {
+        "fichier": "assets/img/media/events/ersuma-simulations-mediation-2026/oby_ersuma_simulations_mediation_2026_10.webp",
+        "alt": "Photographie — ERSUMA / OHADA — simulations pratiques de médiation",
+        "legende": "Photographie complémentaire — ERSUMA / OHADA — simulations pratiques de médiation.",
+        "largeur": 1400,
+        "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/ersuma-simulations-mediation-2026/oby_ersuma_simulations_mediation_2026_11.webp",
+        "alt": "Photographie — ERSUMA / OHADA — simulations pratiques de médiation",
+        "legende": "Photographie complémentaire — ERSUMA / OHADA — simulations pratiques de médiation.",
+        "largeur": 1280,
+        "hauteur": 960
+      },
+      {
+        "fichier": "assets/img/media/events/ersuma-simulations-mediation-2026/oby_ersuma_simulations_mediation_2026_12.webp",
+        "alt": "Photographie — ERSUMA / OHADA — simulations pratiques de médiation",
+        "legende": "Photographie complémentaire — ERSUMA / OHADA — simulations pratiques de médiation.",
+        "largeur": 1280,
+        "hauteur": 960
       }
     ],
     "mediatheque": "mediatheque.html#ersuma-simulations-mediation-2026",
@@ -2025,6 +3545,55 @@
         "legende": "Salle de la séquence de clôture, ERSUMA, Abidjan, 2026.",
         "largeur": 1400,
         "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/ersuma-cloture-sequence-2026/oby_ersuma_cloture_sequence_2026_03.webp",
+        "alt": "Photographie — ERSUMA / OHADA — clôture de la séquence de soutenances et de simulations",
+        "legende": "Photographie complémentaire — ERSUMA / OHADA — clôture de la séquence de soutenances et de simulations.",
+        "largeur": 1400,
+        "hauteur": 933
+      },
+      {
+        "fichier": "assets/img/media/events/ersuma-cloture-sequence-2026/oby_ersuma_cloture_sequence_2026_04.webp",
+        "alt": "Photographie — ERSUMA / OHADA — clôture de la séquence de soutenances et de simulations",
+        "legende": "Photographie complémentaire — ERSUMA / OHADA — clôture de la séquence de soutenances et de simulations.",
+        "largeur": 1400,
+        "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/ersuma-cloture-sequence-2026/oby_ersuma_cloture_sequence_2026_05.webp",
+        "alt": "Photographie — ERSUMA / OHADA — clôture de la séquence de soutenances et de simulations",
+        "legende": "Photographie complémentaire — ERSUMA / OHADA — clôture de la séquence de soutenances et de simulations.",
+        "largeur": 1400,
+        "hauteur": 933
+      },
+      {
+        "fichier": "assets/img/media/events/ersuma-cloture-sequence-2026/oby_ersuma_cloture_sequence_2026_06.webp",
+        "alt": "Photographie — ERSUMA / OHADA — clôture de la séquence de soutenances et de simulations",
+        "legende": "Photographie complémentaire — ERSUMA / OHADA — clôture de la séquence de soutenances et de simulations.",
+        "largeur": 787,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/ersuma-cloture-sequence-2026/oby_ersuma_cloture_sequence_2026_07.webp",
+        "alt": "Photographie — ERSUMA / OHADA — clôture de la séquence de soutenances et de simulations",
+        "legende": "Photographie complémentaire — ERSUMA / OHADA — clôture de la séquence de soutenances et de simulations.",
+        "largeur": 1050,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/ersuma-cloture-sequence-2026/oby_ersuma_cloture_sequence_2026_08.webp",
+        "alt": "Photographie — ERSUMA / OHADA — clôture de la séquence de soutenances et de simulations",
+        "legende": "Photographie complémentaire — ERSUMA / OHADA — clôture de la séquence de soutenances et de simulations.",
+        "largeur": 1400,
+        "hauteur": 933
+      },
+      {
+        "fichier": "assets/img/media/events/ersuma-cloture-sequence-2026/oby_ersuma_cloture_sequence_2026_09.webp",
+        "alt": "Photographie — ERSUMA / OHADA — clôture de la séquence de soutenances et de simulations",
+        "legende": "Photographie complémentaire — ERSUMA / OHADA — clôture de la séquence de soutenances et de simulations.",
+        "largeur": 1400,
+        "hauteur": 933
       }
     ],
     "mediatheque": "mediatheque.html#ersuma-cloture-sequence-2026",
@@ -2046,7 +3615,12 @@
       "Ce concours a constitué le premier contact pratique avec le droit uniforme OHADA et avec la mécanique d’une audience : tenue du dossier, rythme des échanges et exigences formelles d’une procédure, fût-elle reconstituée."
     ],
     "themes": "droit OHADA · droit uniforme des affaires · procédure · concours interuniversitaire",
-    "sources": [],
+    "sources": [
+      {
+        "libelle": "Programme du 4ᵉ Concours — OHADA.com",
+        "url": "https://www.ohada.com/actualite/1646/programme-du-4eme-concours-international-genies-en-herbe-ohada-a-abidjan-du-29-au-31-aout-2012.html?langue=en"
+      }
+    ],
     "liens": [],
     "galerie": [
       {
@@ -2062,6 +3636,41 @@
         "legende": "Lecture au pupitre du greffier, concours « Génies en Herbe OHADA », 2012.",
         "largeur": 720,
         "hauteur": 960
+      },
+      {
+        "fichier": "assets/img/media/events/genies-en-herbe-ohada-2012/oby_genies_en_herbe_ohada_2012_03.webp",
+        "alt": "Photographie — 4ᵉ Concours international « Génies en Herbe OHADA » — phase finale",
+        "legende": "Photographie complémentaire — 4ᵉ Concours international « Génies en Herbe OHADA » — phase finale.",
+        "largeur": 800,
+        "hauteur": 600
+      },
+      {
+        "fichier": "assets/img/media/events/genies-en-herbe-ohada-2012/oby_genies_en_herbe_ohada_2012_04.webp",
+        "alt": "Photographie — 4ᵉ Concours international « Génies en Herbe OHADA » — phase finale",
+        "legende": "Photographie complémentaire — 4ᵉ Concours international « Génies en Herbe OHADA » — phase finale.",
+        "largeur": 720,
+        "hauteur": 960
+      },
+      {
+        "fichier": "assets/img/media/events/genies-en-herbe-ohada-2012/oby_genies_en_herbe_ohada_2012_05.webp",
+        "alt": "Photographie — 4ᵉ Concours international « Génies en Herbe OHADA » — phase finale",
+        "legende": "Photographie complémentaire — 4ᵉ Concours international « Génies en Herbe OHADA » — phase finale.",
+        "largeur": 960,
+        "hauteur": 720
+      },
+      {
+        "fichier": "assets/img/media/events/genies-en-herbe-ohada-2012/oby_genies_en_herbe_ohada_2012_06.webp",
+        "alt": "Photographie — 4ᵉ Concours international « Génies en Herbe OHADA » — phase finale",
+        "legende": "Photographie complémentaire — 4ᵉ Concours international « Génies en Herbe OHADA » — phase finale.",
+        "largeur": 800,
+        "hauteur": 600
+      },
+      {
+        "fichier": "assets/img/media/events/genies-en-herbe-ohada-2012/oby_genies_en_herbe_ohada_2012_07.webp",
+        "alt": "Photographie — 4ᵉ Concours international « Génies en Herbe OHADA » — phase finale",
+        "legende": "Photographie complémentaire — 4ᵉ Concours international « Génies en Herbe OHADA » — phase finale.",
+        "largeur": 800,
+        "hauteur": 600
       }
     ],
     "mediatheque": "mediatheque.html#genies-en-herbe-ohada-2012",
@@ -2083,7 +3692,12 @@
       "Cet exercice a permis de travailler la procédure contentieuse régionale africaine du côté du greffe, et de mesurer ce que la forme impose au fond dans un contentieux de droits fondamentaux."
     ],
     "themes": "droits de l’homme · système africain · plaidoirie · procédure",
-    "sources": [],
+    "sources": [
+      {
+        "libelle": "Commission africaine des droits de l’homme et des peuples — communiqué final de la 52ᵉ session",
+        "url": "https://achpr.au.int/fr/news/final-communiques/2012-10-22/communique-finale"
+      }
+    ],
     "liens": [],
     "galerie": [
       {
@@ -2097,6 +3711,20 @@
         "fichier": "assets/img/media/events/moot-court-droits-homme-2012/oby_moot_court_droits_homme_2012_02.webp",
         "alt": "Participants installés à la table du greffe pendant le concours de plaidoirie.",
         "legende": "Table du greffe pendant le concours de plaidoirie, Yamoussoukro, 2012.",
+        "largeur": 960,
+        "hauteur": 640
+      },
+      {
+        "fichier": "assets/img/media/events/moot-court-droits-homme-2012/oby_moot_court_droits_homme_2012_03.webp",
+        "alt": "Photographie — Concours interuniversitaire de plaidoirie en droits de l’homme",
+        "legende": "Photographie complémentaire — Concours interuniversitaire de plaidoirie en droits de l’homme.",
+        "largeur": 960,
+        "hauteur": 640
+      },
+      {
+        "fichier": "assets/img/media/events/moot-court-droits-homme-2012/oby_moot_court_droits_homme_2012_04.webp",
+        "alt": "Photographie — Concours interuniversitaire de plaidoirie en droits de l’homme",
+        "legende": "Photographie complémentaire — Concours interuniversitaire de plaidoirie en droits de l’homme.",
         "largeur": 960,
         "hauteur": 640
       }
@@ -2120,7 +3748,16 @@
       "Cette contribution a permis de voir un dispositif entrepreneurial depuis l’organisation plutôt que depuis la participation : ce qu’exige matériellement l’accueil d’équipes en temps contraint, et comment un format pédagogique intensif tient debout."
     ],
     "themes": "entrepreneuriat académique · organisation d’événement · logistique · accompagnement",
-    "sources": [],
+    "sources": [
+      {
+        "libelle": "36h Chrono 2024 — Aix-Marseille Université",
+        "url": "https://feg.univ-amu.fr/fr/actualites?field_categorie_actu_target_id=219&page=29"
+      },
+      {
+        "libelle": "36h Chrono 11ᵉ édition — La French Tech Aix-Marseille",
+        "url": "https://lafrenchtech-aixmarseille.fr/agenda/36h-chrono-11e-edition/"
+      }
+    ],
     "liens": [],
     "galerie": [
       {
@@ -2136,6 +3773,62 @@
         "legende": "Salle du 36H Chrono pendant l’événement, Marseille, novembre 2024.",
         "largeur": 1202,
         "hauteur": 1600
+      },
+      {
+        "fichier": "assets/img/media/events/36h-chrono-pepite-2024/oby_36h_chrono_pepite_2024_03.webp",
+        "alt": "Vue complémentaire de « 36H Chrono de la création d’entreprise — PÉPITE Provence » — photographie 3.",
+        "legende": "Photographie complémentaire — 36H Chrono de la création d’entreprise — PÉPITE Provence.",
+        "largeur": 1050,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/36h-chrono-pepite-2024/oby_36h_chrono_pepite_2024_04.webp",
+        "alt": "Vue complémentaire de « 36H Chrono de la création d’entreprise — PÉPITE Provence » — photographie 4.",
+        "legende": "Photographie complémentaire — 36H Chrono de la création d’entreprise — PÉPITE Provence.",
+        "largeur": 1400,
+        "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/36h-chrono-pepite-2024/oby_36h_chrono_pepite_2024_05.webp",
+        "alt": "Vue complémentaire de « 36H Chrono de la création d’entreprise — PÉPITE Provence » — photographie 5.",
+        "legende": "Photographie complémentaire — 36H Chrono de la création d’entreprise — PÉPITE Provence.",
+        "largeur": 1400,
+        "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/36h-chrono-pepite-2024/oby_36h_chrono_pepite_2024_06.webp",
+        "alt": "Vue complémentaire de « 36H Chrono de la création d’entreprise — PÉPITE Provence » — photographie 6.",
+        "legende": "Photographie complémentaire — 36H Chrono de la création d’entreprise — PÉPITE Provence.",
+        "largeur": 1050,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/36h-chrono-pepite-2024/oby_36h_chrono_pepite_2024_07.webp",
+        "alt": "Vue complémentaire de « 36H Chrono de la création d’entreprise — PÉPITE Provence » — photographie 7.",
+        "legende": "Photographie complémentaire — 36H Chrono de la création d’entreprise — PÉPITE Provence.",
+        "largeur": 1400,
+        "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/36h-chrono-pepite-2024/oby_36h_chrono_pepite_2024_08.webp",
+        "alt": "Vue complémentaire de « 36H Chrono de la création d’entreprise — PÉPITE Provence » — photographie 8.",
+        "legende": "Photographie complémentaire — 36H Chrono de la création d’entreprise — PÉPITE Provence.",
+        "largeur": 1400,
+        "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/36h-chrono-pepite-2024/oby_36h_chrono_pepite_2024_09.webp",
+        "alt": "Vue complémentaire de « 36H Chrono de la création d’entreprise — PÉPITE Provence » — photographie 9.",
+        "legende": "Photographie complémentaire — 36H Chrono de la création d’entreprise — PÉPITE Provence.",
+        "largeur": 1400,
+        "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/36h-chrono-pepite-2024/oby_36h_chrono_pepite_2024_10.webp",
+        "alt": "Vue complémentaire de « 36H Chrono de la création d’entreprise — PÉPITE Provence » — photographie 10.",
+        "legende": "Photographie complémentaire — 36H Chrono de la création d’entreprise — PÉPITE Provence.",
+        "largeur": 1400,
+        "hauteur": 933
       }
     ],
     "mediatheque": "mediatheque.html#36h-chrono-pepite-2024",
@@ -2157,7 +3850,12 @@
       "Ce sprint a permis de travailler une solution à impact dans un format extrêmement contraint, aux côtés de profils techniques et entrepreneuriaux, et d’éprouver ce qu’un apport juridique et institutionnel peut ajouter — ou non — à un prototype en cinquante-quatre heures."
     ],
     "themes": "innovation · impact · logistique et maritime · travail en équipe",
-    "sources": [],
+    "sources": [
+      {
+        "libelle": "Sprint for Impact 2026 — ZEBOX",
+        "url": "https://fr.ze-box.io/newsroom/zebox-launches-the-3rd-edition-of-sprint-for-impact-6-startups-and-students-joining-forces-for-54-hours-to-tackle-strategic-challenges"
+      }
+    ],
     "liens": [],
     "galerie": [
       {
@@ -2180,6 +3878,55 @@
         "legende": "Équipes du Sprint for Impact, ZEBOX, Marseille, 2026.",
         "largeur": 1400,
         "hauteur": 932
+      },
+      {
+        "fichier": "assets/img/media/events/sprint-for-impact-zebox-2026/oby_sprint_for_impact_zebox_2026_04.webp",
+        "alt": "Vue complémentaire de « Sprint for Impact — ZEBOX » — photographie 4.",
+        "legende": "Photographie complémentaire — Sprint for Impact — ZEBOX.",
+        "largeur": 1400,
+        "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/sprint-for-impact-zebox-2026/oby_sprint_for_impact_zebox_2026_05.webp",
+        "alt": "Vue complémentaire de « Sprint for Impact — ZEBOX » — photographie 5.",
+        "legende": "Photographie complémentaire — Sprint for Impact — ZEBOX.",
+        "largeur": 1400,
+        "hauteur": 1197
+      },
+      {
+        "fichier": "assets/img/media/events/sprint-for-impact-zebox-2026/oby_sprint_for_impact_zebox_2026_06.webp",
+        "alt": "Vue complémentaire de « Sprint for Impact — ZEBOX » — photographie 6.",
+        "legende": "Photographie complémentaire — Sprint for Impact — ZEBOX.",
+        "largeur": 1050,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/sprint-for-impact-zebox-2026/oby_sprint_for_impact_zebox_2026_07.webp",
+        "alt": "Vue complémentaire de « Sprint for Impact — ZEBOX » — photographie 7.",
+        "legende": "Photographie complémentaire — Sprint for Impact — ZEBOX.",
+        "largeur": 1400,
+        "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/sprint-for-impact-zebox-2026/oby_sprint_for_impact_zebox_2026_08.webp",
+        "alt": "Vue complémentaire de « Sprint for Impact — ZEBOX » — photographie 8.",
+        "legende": "Photographie complémentaire — Sprint for Impact — ZEBOX.",
+        "largeur": 1050,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/sprint-for-impact-zebox-2026/oby_sprint_for_impact_zebox_2026_09.webp",
+        "alt": "Vue complémentaire de « Sprint for Impact — ZEBOX » — photographie 9.",
+        "legende": "Photographie complémentaire — Sprint for Impact — ZEBOX.",
+        "largeur": 1050,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/sprint-for-impact-zebox-2026/oby_sprint_for_impact_zebox_2026_10.webp",
+        "alt": "Vue complémentaire de « Sprint for Impact — ZEBOX » — photographie 10.",
+        "legende": "Photographie complémentaire — Sprint for Impact — ZEBOX.",
+        "largeur": 1050,
+        "hauteur": 1400
       }
     ],
     "mediatheque": "mediatheque.html#sprint-for-impact-zebox-2026",
@@ -2210,6 +3957,48 @@
         "legende": "Meet’up de l’été de PÉPITE Provence, Marseille, 8 juillet 2024.",
         "largeur": 1400,
         "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/meetup-pepite-ete-2024/oby_meetup_pepite_ete_2024_02.webp",
+        "alt": "OUAGA Bokoua Yao avec trois participantes lors du Meet’up de l’été de PÉPITE Provence à Marseille.",
+        "legende": "Rencontre entre participants au Meet’up de l’été de PÉPITE Provence, Marseille, 8 juillet 2024.",
+        "largeur": 1600,
+        "hauteur": 1200
+      },
+      {
+        "fichier": "assets/img/media/events/meetup-pepite-ete-2024/oby_meetup_pepite_ete_2024_03.webp",
+        "alt": "OUAGA Bokoua Yao avec un participant pendant le Meet’up de l’été de PÉPITE Provence à Marseille.",
+        "legende": "Échange entre participants au Meet’up de l’été de PÉPITE Provence, Marseille, 2024.",
+        "largeur": 1600,
+        "hauteur": 1200
+      },
+      {
+        "fichier": "assets/img/media/events/meetup-pepite-ete-2024/oby_meetup_pepite_ete_2024_04.webp",
+        "alt": "Vue panoramique de Marseille depuis les hauteurs pendant le Meet’up de l’été de PÉPITE Provence.",
+        "legende": "Marseille vue depuis les hauteurs, dans le cadre du Meet’up de l’été de PÉPITE Provence, 2024.",
+        "largeur": 1600,
+        "hauteur": 1200
+      },
+      {
+        "fichier": "assets/img/media/events/meetup-pepite-ete-2024/oby_meetup_pepite_ete_2024_05.webp",
+        "alt": "Panorama urbain et littoral de Marseille pendant le Meet’up de l’été de PÉPITE Provence.",
+        "legende": "Panorama de Marseille pendant le Meet’up de l’été de PÉPITE Provence, juillet 2024.",
+        "largeur": 1600,
+        "hauteur": 1200
+      },
+      {
+        "fichier": "assets/img/media/events/meetup-pepite-ete-2024/oby_meetup_pepite_ete_2024_06.webp",
+        "alt": "Participants réunis en extérieur pendant le Meet’up de l’été de PÉPITE Provence à Marseille.",
+        "legende": "Temps collectif en extérieur, Meet’up de l’été de PÉPITE Provence, Marseille, 2024.",
+        "largeur": 1600,
+        "hauteur": 1200
+      },
+      {
+        "fichier": "assets/img/media/events/meetup-pepite-ete-2024/oby_meetup_pepite_ete_2024_07.webp",
+        "alt": "OUAGA Bokoua Yao avec deux participants en extérieur pendant le Meet’up de l’été de PÉPITE Provence.",
+        "legende": "Rencontre en extérieur pendant le Meet’up de l’été de PÉPITE Provence, Marseille, 2024.",
+        "largeur": 1600,
+        "hauteur": 1200
       }
     ],
     "mediatheque": "mediatheque.html#meetup-pepite-ete-2024",
@@ -2261,7 +4050,12 @@
       "Cette séance a permis de comprendre les critères par lesquels un investisseur lit un dossier — traction, équipe, marché, dilution — et donc ce qu’un porteur de projet doit être capable de documenter avant de solliciter un financement."
     ],
     "themes": "levée de fonds · financement de l’innovation · entrepreneuriat",
-    "sources": [],
+    "sources": [
+      {
+        "libelle": "[12/14 de l’Arbois] — La French Tech Aix-Marseille",
+        "url": "https://lafrenchtech-aixmarseille.fr/agenda/12-14-de-larbois-19/"
+      }
+    ],
     "liens": [],
     "galerie": [
       {
@@ -2284,6 +4078,34 @@
         "legende": "Participants de la séance du Technopôle de l’Arbois, mars 2025.",
         "largeur": 1200,
         "hauteur": 1600
+      },
+      {
+        "fichier": "assets/img/media/events/arbois-levee-fonds-investisseur-2025/oby_arbois_levee_fonds_investisseur_2025_04.webp",
+        "alt": "Vue complémentaire de « La levée de fonds du point de vue de l’investisseur » — photographie 4.",
+        "legende": "Photographie complémentaire — La levée de fonds du point de vue de l’investisseur.",
+        "largeur": 1050,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/arbois-levee-fonds-investisseur-2025/oby_arbois_levee_fonds_investisseur_2025_05.webp",
+        "alt": "Vue complémentaire de « La levée de fonds du point de vue de l’investisseur » — photographie 5.",
+        "legende": "Photographie complémentaire — La levée de fonds du point de vue de l’investisseur.",
+        "largeur": 1050,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/arbois-levee-fonds-investisseur-2025/oby_arbois_levee_fonds_investisseur_2025_06.webp",
+        "alt": "Vue complémentaire de « La levée de fonds du point de vue de l’investisseur » — photographie 6.",
+        "legende": "Photographie complémentaire — La levée de fonds du point de vue de l’investisseur.",
+        "largeur": 1050,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/arbois-levee-fonds-investisseur-2025/oby_arbois_levee_fonds_investisseur_2025_07.webp",
+        "alt": "Vue complémentaire de « La levée de fonds du point de vue de l’investisseur » — photographie 7.",
+        "legende": "Photographie complémentaire — La levée de fonds du point de vue de l’investisseur.",
+        "largeur": 1050,
+        "hauteur": 1400
       }
     ],
     "mediatheque": "mediatheque.html#arbois-levee-fonds-investisseur-2025",
@@ -2328,6 +4150,41 @@
         "legende": "Signalétique de la Grande Soirée Alumni d’Aix-Marseille Université, 2024.",
         "largeur": 1200,
         "hauteur": 1600
+      },
+      {
+        "fichier": "assets/img/media/events/soiree-alumni-amu-2024/oby_soiree_alumni_amu_2024_04.webp",
+        "alt": "Vue complémentaire de « Grande Soirée Alumni Aix-Marseille Université » — photographie 4.",
+        "legende": "Photographie complémentaire — Grande Soirée Alumni Aix-Marseille Université.",
+        "largeur": 1050,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/soiree-alumni-amu-2024/oby_soiree_alumni_amu_2024_05.webp",
+        "alt": "Vue complémentaire de « Grande Soirée Alumni Aix-Marseille Université » — photographie 5.",
+        "legende": "Photographie complémentaire — Grande Soirée Alumni Aix-Marseille Université.",
+        "largeur": 1400,
+        "hauteur": 1050
+      },
+      {
+        "fichier": "assets/img/media/events/soiree-alumni-amu-2024/oby_soiree_alumni_amu_2024_06.webp",
+        "alt": "Vue complémentaire de « Grande Soirée Alumni Aix-Marseille Université » — photographie 6.",
+        "legende": "Photographie complémentaire — Grande Soirée Alumni Aix-Marseille Université.",
+        "largeur": 1050,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/soiree-alumni-amu-2024/oby_soiree_alumni_amu_2024_07.webp",
+        "alt": "Vue complémentaire de « Grande Soirée Alumni Aix-Marseille Université » — photographie 7.",
+        "legende": "Photographie complémentaire — Grande Soirée Alumni Aix-Marseille Université.",
+        "largeur": 720,
+        "hauteur": 540
+      },
+      {
+        "fichier": "assets/img/media/events/soiree-alumni-amu-2024/oby_soiree_alumni_amu_2024_08.webp",
+        "alt": "Vue complémentaire de « Grande Soirée Alumni Aix-Marseille Université » — photographie 8.",
+        "legende": "Photographie complémentaire — Grande Soirée Alumni Aix-Marseille Université.",
+        "largeur": 1400,
+        "hauteur": 788
       }
     ],
     "mediatheque": "mediatheque.html#soiree-alumni-amu-2024",

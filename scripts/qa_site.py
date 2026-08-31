@@ -417,15 +417,20 @@ def main():
             fiches = json.loads(participations.read_text(encoding="utf-8"))
         except (OSError, UnicodeError, json.JSONDecodeError):
             fiches = []
-        ids_json = [str(f.get("id") or "") for f in fiches if isinstance(f, dict)]
-        doublons = {i for i in ids_json if ids_json.count(i) > 1}
+        ids_json_liste = [str(f.get("id") or "") for f in fiches if isinstance(f, dict)]
+        doublons = {i for i in ids_json_liste if ids_json_liste.count(i) > 1}
         for ident in sorted(doublons):
             add(errors, "PARTICIPATION_ID_DUPLICATE", participations, ident)
-        ids_json = set(ids_json)
+        ids_json = set(ids_json_liste)
+        ids_json_visibles = {
+            str(f.get("id") or "")
+            for f in fiches
+            if isinstance(f, dict) and f.get("affichage_participations", True) is not False
+        }
         ids_html = set(re.findall(r'<article class="card participation-card" id="([^"]+)"', texts[interventions]))
         for ident in sorted(ids_html - ids_json):
             add(errors, "PARTICIPATION_MISSING_IN_JSON", interventions, ident)
-        for ident in sorted(ids_json - ids_html):
+        for ident in sorted(ids_json_visibles - ids_html):
             add(errors, "PARTICIPATION_MISSING_IN_LIST", participations, ident)
         # Toute adresse participation.html?id=… doit désigner une fiche réelle.
         # Les commentaires sont retirés : ils contiennent le gabarit `?id=<id>`.

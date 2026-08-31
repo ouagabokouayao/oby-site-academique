@@ -3921,3 +3921,77 @@ main:focus {
   gap: 6px 14px;
   margin-top: 10px;
 }
+
+
+/* OBY correctif post-audit — médiathèque compacte : richesse en arrière-plan. */
+.media-card-disclosure {
+  display: block;
+}
+
+.media-card-disclosure > summary {
+  list-style: none;
+}
+
+.media-card-disclosure > summary::-webkit-details-marker {
+  display: none;
+}
+
+.media-card-summary {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.media-card-summary:focus-visible {
+  outline: 3px solid var(--gold-line);
+  outline-offset: -3px;
+}
+
+.media-card-summary-body {
+  padding: 18px 20px 20px;
+}
+
+.media-card-summary-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(8, 26, 47, 0.1);
+  color: var(--blue);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.media-photo-count {
+  color: var(--muted);
+  font-weight: 760;
+}
+
+.media-open-label::after {
+  content: " +";
+}
+
+.media-card-disclosure[open] .media-open-label::after {
+  content: " −";
+}
+
+.media-card-expanded {
+  border-top: 1px solid rgba(8, 26, 47, 0.1);
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.media-card-gallery-collapsed {
+  margin-top: 16px;
+}
+
+.media-primary-caption {
+  font-size: 0.82rem;
+  font-style: italic;
+}
+
+.media-card-compact .media-card-primary figcaption {
+  display: none;
+}

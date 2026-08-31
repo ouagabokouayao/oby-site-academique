@@ -1057,47 +1057,65 @@ const loadWatchAgendaItems = () =>
             </figure>`
         )
         .join("");
-    const visibleGalleryItems = galleryItems.slice(0, 4);
-    const additionalGalleryItems = galleryItems.slice(4);
+    const photoCount = (item.fichier && /\.(?:jpe?g|png|webp|avif)$/i.test(item.fichier) ? 1 : 0) + galleryItems.length;
     const gallery = galleryItems.length
-      ? `<div class="media-card-gallery" aria-label="Photographies complémentaires">
-          ${renderGalleryEntries(visibleGalleryItems)}
-        </div>
-        ${additionalGalleryItems.length
-          ? `<details class="media-gallery-more">
-              <summary>Voir ${additionalGalleryItems.length} photo${additionalGalleryItems.length > 1 ? "s" : ""} supplémentaire${additionalGalleryItems.length > 1 ? "s" : ""}</summary>
-              <div class="media-card-gallery media-card-gallery-more" aria-label="Photographies supplémentaires">
-                ${renderGalleryEntries(additionalGalleryItems)}
-              </div>
-            </details>`
-          : ""}`
+      ? `<div class="media-card-gallery media-card-gallery-collapsed" aria-label="Photographies complémentaires">
+          ${renderGalleryEntries(galleryItems)}
+        </div>`
       : "";
     const contextLink = item.pageLiee
       ? `<a class="media-link" href="${escapeHtml(item.pageLiee)}">Voir le contexte associé</a>`
       : "";
+    const counter = photoCount
+      ? `<span class="media-photo-count">${photoCount} photo${photoCount > 1 ? "s" : ""}</span>`
+      : "";
+
+    if (!galleryItems.length) {
+      return `
+        <article class="media-card media-card-compact${imageClass}" id="${escapeHtml(item.id || "")}">
+          <figure class="media-card-primary">
+            <img src="${escapeHtml(item.fichier || "assets/img/media/placeholder-document-oby.svg")}" alt="${escapeHtml(item.alt || item.titre || "Trace documentaire OBY")}" loading="lazy">
+          </figure>
+          <div class="media-card-body">
+            <div class="media-card-top">
+              <span class="media-type">${escapeHtml(type)}</span>
+              <span class="media-environment">${escapeHtml(environmentOf(item))}</span>
+            </div>
+            <h3>${escapeHtml(item.titre || "Trace documentaire")}</h3>
+            ${metadata ? `<p class="media-meta">${escapeHtml(metadata)}</p>` : ""}
+            ${contextLink}
+          </div>
+        </article>
+      `;
+    }
 
     return `
-      <article class="media-card${imageClass}" id="${escapeHtml(item.id || "")}">
-        <figure class="media-card-primary">
-          <img src="${escapeHtml(item.fichier || "assets/img/media/placeholder-document-oby.svg")}" alt="${escapeHtml(item.alt || item.titre || "Trace documentaire OBY")}" loading="lazy">
-          ${item.legende ? `<figcaption>${escapeHtml(item.legende)}</figcaption>` : ""}
-        </figure>
-        <div class="media-card-body">
-          <div class="media-card-top">
-            <span class="media-type">${escapeHtml(type)}</span>
-            <span class="media-environment">${escapeHtml(environmentOf(item))}</span>
+      <details class="media-card media-card-compact media-card-disclosure${imageClass}" id="${escapeHtml(item.id || "")}">
+        <summary class="media-card-summary">
+          <figure class="media-card-primary">
+            <img src="${escapeHtml(item.fichier || "assets/img/media/placeholder-document-oby.svg")}" alt="${escapeHtml(item.alt || item.titre || "Trace documentaire OBY")}" loading="lazy">
+          </figure>
+          <div class="media-card-summary-body">
+            <div class="media-card-top">
+              <span class="media-type">${escapeHtml(type)}</span>
+              <span class="media-environment">${escapeHtml(environmentOf(item))}</span>
+            </div>
+            <h3>${escapeHtml(item.titre || "Trace documentaire")}</h3>
+            ${metadata ? `<p class="media-meta">${escapeHtml(metadata)}</p>` : ""}
+            <div class="media-card-summary-footer">${counter}<span class="media-open-label">Voir les photographies</span></div>
           </div>
-          <h3>${escapeHtml(item.titre || "Trace documentaire")}</h3>
-          ${metadata ? `<p class="media-meta">${escapeHtml(metadata)}</p>` : ""}
-          <p>${escapeHtml(item.description || item.evenementLie || "Trace documentaire publique associée au parcours OBY.")}</p>
+        </summary>
+        <div class="media-card-body media-card-expanded">
+          ${item.description ? `<p>${escapeHtml(item.description)}</p>` : ""}
+          ${item.legende ? `<p class="media-primary-caption">${escapeHtml(item.legende)}</p>` : ""}
           ${gallery}
           ${contextLink}
         </div>
-      </article>
+      </details>
     `;
   };
 
-  fetch("assets/data/mediatheque-oby.json?v=oby-v3-9")
+  fetch("assets/data/mediatheque-oby.json?v=oby-v3-10")
     .then((response) => {
       if (!response.ok) {
         throw new Error("Media data unavailable");
@@ -1245,7 +1263,7 @@ window.addEventListener("hashchange", revealHashTarget);
     return;
   }
 
-  fetch("assets/data/participations-oby.json?v=oby-v3-9")
+  fetch("assets/data/participations-oby.json?v=oby-v3-10")
     .then((reponse) => {
       if (!reponse.ok) {
         throw new Error("Participations indisponibles");
