@@ -1115,7 +1115,7 @@ const loadWatchAgendaItems = () =>
     `;
   };
 
-  fetch("assets/data/mediatheque-oby.json?v=oby-v3-10")
+  fetch("assets/data/mediatheque-oby.json?v=oby-v3-11")
     .then((response) => {
       if (!response.ok) {
         throw new Error("Media data unavailable");
@@ -1263,7 +1263,7 @@ window.addEventListener("hashchange", revealHashTarget);
     return;
   }
 
-  fetch("assets/data/participations-oby.json?v=oby-v3-10")
+  fetch("assets/data/participations-oby.json?v=oby-v3-11")
     .then((reponse) => {
       if (!reponse.ok) {
         throw new Error("Participations indisponibles");
