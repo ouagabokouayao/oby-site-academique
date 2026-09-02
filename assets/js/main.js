@@ -76,127 +76,37 @@ if ("IntersectionObserver" in window) {
   revealTargets.forEach((target) => target.classList.add("is-visible"));
 }
 
+// Repli hors ligne : strictement la même projection publique que
+// assets/data/veille-agenda-oby.json — aucune donnée de back-office.
 const WATCH_AGENDA_FALLBACK_ITEMS = [
-  {
-    id: "treasure-business-maritime-day-la-seyne-2026",
-    titre: "TREASURE — événement final et Business Maritime Day",
-    type: "Événement",
-    date_publication_interne: "2026-08-16",
-    date_evenement: "2026-09-29 au 2026-09-30",
-    organisateur: "TREASURE",
-    zone: "La Seyne-sur-Mer · Var · Méditerranée",
-    axes: ["économie bleue", "innovation maritime", "coopération européenne", "transitions littorales"],
-    statut: "Inscription confirmée",
-    resume:
-      "Inscription confirmée à l'événement final TREASURE à La Seyne-sur-Mer, les 29 et 30 septembre 2026, dans le prolongement des axes économie bleue, innovation maritime, coopération européenne et transitions littorales. Le Business Maritime Day est une journée associée à ce rendez-vous.",
-    interet_oby:
-      "Ce rendez-vous situe l'économie bleue et l'innovation maritime dans un cadre de coopération européenne et de transitions littorales.",
-    lien_source: "",
-    affichage_accueil: false,
-    ordre: 1,
-    image: "",
-    video: "",
-    media_status: "à ajouter plus tard",
-  },
-  {
-    id: "loi-littoral-40-ans-nice-2026",
-    titre:
-      "La loi littoral a 40 ans — Érosion ou mutation au service des territoires ?",
-    type: "Événement",
-    date_publication_interne: "2026-08-16",
-    date_evenement: "2026-10-01 au 2026-10-02",
-    organisateur: "Université Côte d'Azur — CERDACFF UPR 7267",
-    zone: "Campus Trotabas · Faculté de droit et science politique · Nice",
-    axes: ["droit du littoral", "érosion côtière", "territoires", "gouvernance littorale", "adaptation", "politiques publiques"],
-    statut: "Inscription confirmée",
-    resume:
-      "Inscription confirmée à l'événement « La loi littoral a 40 ans — Érosion ou mutation au service des territoires ? », organisé à Nice par l'Université Côte d'Azur / CERDACFF, les 1er et 2 octobre 2026, du 1er octobre à 09h00 au 2 octobre à 17h00, sur le campus Trotabas de la Faculté de droit et science politique.",
-    interet_oby:
-      "Un cadre juridique et territorial directement relié au droit du littoral, à l'érosion côtière et aux politiques d'adaptation.",
-    lien_source: "",
-    affichage_accueil: false,
-    ordre: 2,
-    image: "",
-    video: "",
-    media_status: "à ajouter plus tard",
-  },
-  {
-    id: "refmar-2026-niveau-marin-golfe-de-guinee",
-    titre: "Journées REFMAR 2026",
-    type: "Événement",
-    date_publication_interne: "2026-08-16",
-    date_evenement: "2026",
-    organisateur: "REFMAR",
-    zone: "Golfe de Guinée · observation du niveau marin",
-    axes: ["niveau marin", "Golfe de Guinée", "politiques publiques côtières", "observation maritime", "données", "littoral"],
-    statut: "Inscription confirmée",
-    resume:
-      "Inscription confirmée aux Journées REFMAR 2026, avec proposition de poster notée sur le thème : « Niveau marin dans le Golfe de Guinée : déficit observationnel et enjeux pour les politiques publiques côtières ».",
-    interet_oby:
-      "Ce rendez-vous relie l'observation du niveau marin, les données côtières et les politiques publiques littorales dans le Golfe de Guinée.",
-    lien_source: "",
-    affichage_accueil: false,
-    ordre: 3,
-    image: "",
-    video: "",
-    media_status: "à ajouter plus tard",
-  },
   {
     id: "plan-bleu-rendez-vous-aires-marines-protegees",
     titre: "Plan Bleu — Rendez-vous consacré aux aires marines protégées",
     type: "Ressource institutionnelle",
-    date_publication_interne: "2026-08-16",
     date_evenement: "",
     organisateur: "Plan Bleu",
     zone: "Méditerranée",
     axes: ["aires marines protégées", "Méditerranée", "biodiversité", "coûts et bénéfices", "gouvernance environnementale"],
     statut: "Ressource de veille",
-    resume:
-      "Rendez-vous du Plan Bleu consacré aux coûts et bénéfices des aires marines protégées, mobilisé comme ressource de veille sur la gouvernance méditerranéenne, la biodiversité marine et les politiques de protection.",
-    interet_oby:
-      "Cette ressource éclaire l'évaluation économique des aires marines protégées et les arbitrages de gouvernance en Méditerranée.",
+    resume: "Rendez-vous du Plan Bleu consacré aux coûts et bénéfices des aires marines protégées, mobilisé comme ressource de veille sur la gouvernance méditerranéenne, la biodiversité marine et les politiques de protection.",
+    interet_oby: "Cette ressource éclaire l'évaluation économique des aires marines protégées et les arbitrages de gouvernance en Méditerranée.",
     lien_source: "",
     affichage_accueil: false,
     ordre: 4,
     image: "",
     video: "",
-    media_status: "à ajouter plus tard",
-  },
-  {
-    id: "meetup-pepite-provence-eau-biodiversite-economie-bleue",
-    titre: "Meet-Up Pépite Provence — eau, biodiversité et économie bleue",
-    type: "Événement",
-    date_publication_interne: "2026-08-16",
-    date_evenement: "",
-    organisateur: "Pépite Provence",
-    zone: "Provence · Méditerranée",
-    axes: ["économie bleue", "biodiversité", "eau", "entrepreneuriat académique"],
-    statut: "Trace préparatoire",
-    resume:
-      "Échanges préparatoires autour d'un Meet-Up Pépite Provence consacré à l'eau, la biodiversité et l'économie bleue.",
-    interet_oby:
-      "Trace préparatoire : aucune participation réalisée n'est revendiquée à ce stade.",
-    lien_source: "",
-    affichage_accueil: false,
-    ordre: 5,
-    image: "",
-    video: "",
-    media_status: "à ajouter plus tard",
   },
   {
     id: "imo-securite-maritime-golfe-guinee",
     titre: "IMO — sécurité maritime, piraterie et Golfe de Guinée",
     type: "Ressource institutionnelle",
-    date_publication_interne: "2026-06-23",
     date_evenement: "",
     organisateur: "International Maritime Organization",
     zone: "Golfe de Guinée · Afrique de l'Ouest et centrale",
     axes: ["sécurité maritime", "gouvernance maritime", "Golfe de Guinée"],
     statut: "Repère",
-    resume:
-      "Page institutionnelle de l'IMO consacrée à la sécurité maritime, à la piraterie, au Code ISPS, aux risques cyber et aux initiatives liées au Golfe de Guinée.",
-    interet_oby:
-      "Ce repère soutient une lecture juridique et institutionnelle de la sécurisation maritime dans les espaces africains.",
+    resume: "Page institutionnelle de l'IMO consacrée à la sécurité maritime, à la piraterie, au Code ISPS, aux risques cyber et aux initiatives liées au Golfe de Guinée.",
+    interet_oby: "Ce repère soutient une lecture juridique et institutionnelle de la sécurisation maritime dans les espaces africains.",
     lien_source: "https://www.imo.org/en/ourwork/security/pages/default.aspx",
     affichage_accueil: true,
     ordre: 6,
@@ -205,16 +115,13 @@ const WATCH_AGENDA_FALLBACK_ITEMS = [
     id: "ocean-decade-call-actions-2026",
     titre: "Ocean Decade — Call for Decade Actions No. 11/2026",
     type: "Appel à contributions",
-    date_publication_interne: "2026-06-23",
     date_evenement: "",
     organisateur: "UNESCO-IOC · Ocean Decade",
     zone: "International",
     axes: ["innovation", "science océanique", "prospective"],
     statut: "Opportunité",
-    resume:
-      "Appel de l'Ocean Decade invitant à soumettre des initiatives océaniques comme projets, programmes ou contributions de la Décennie.",
-    interet_oby:
-      "Ce repère ouvre une passerelle entre recherche, innovation, gouvernance de l'océan et contribution scientifique structurée.",
+    resume: "Appel de l'Ocean Decade invitant à soumettre des initiatives océaniques comme projets, programmes ou contributions de la Décennie.",
+    interet_oby: "Ce repère ouvre une passerelle entre recherche, innovation, gouvernance de l'océan et contribution scientifique structurée.",
     lien_source: "https://oceandecade.org/",
     affichage_accueil: true,
     ordre: 7,
@@ -223,16 +130,13 @@ const WATCH_AGENDA_FALLBACK_ITEMS = [
     id: "fao-peche-inn-cadre-international",
     titre: "FAO — pêche INN et instruments internationaux",
     type: "Ressource institutionnelle",
-    date_publication_interne: "2026-06-23",
     date_evenement: "",
     organisateur: "Food and Agriculture Organization of the United Nations",
     zone: "International · États côtiers · pêcheries",
     axes: ["pêche INN", "ressources halieutiques", "économie bleue"],
     statut: "Repère",
-    resume:
-      "Ressource FAO sur la pêche illicite, non déclarée et non réglementée, ses effets sur les écosystèmes marins, la sécurité alimentaire et les capacités de contrôle.",
-    interet_oby:
-      "Ce repère relie économie bleue, souveraineté côtière, criminalité maritime et gouvernance durable des ressources marines.",
+    resume: "Ressource FAO sur la pêche illicite, non déclarée et non réglementée, ses effets sur les écosystèmes marins, la sécurité alimentaire et les capacités de contrôle.",
+    interet_oby: "Ce repère relie économie bleue, souveraineté côtière, criminalité maritime et gouvernance durable des ressources marines.",
     lien_source: "https://www.fao.org/iuu-fishing/en/",
     affichage_accueil: true,
     ordre: 8,
@@ -241,16 +145,13 @@ const WATCH_AGENDA_FALLBACK_ITEMS = [
     id: "ocean-decade-conference-2027-rio",
     titre: "Ocean Decade Conference 2027 — Rio de Janeiro",
     type: "Événement",
-    date_publication_interne: "2026-06-23",
     date_evenement: "2027-04-07 au 2027-04-09",
     organisateur: "UNESCO-IOC · Ocean Decade",
     zone: "Rio de Janeiro · International",
     axes: ["science océanique", "coopération internationale", "prospective"],
     statut: "À suivre",
-    resume:
-      "Conférence Ocean Decade annoncée à Rio de Janeiro pour réunir la communauté océanique internationale autour de l'action pour l'océan.",
-    interet_oby:
-      "Ce repère permet de suivre un espace structurant pour les liens entre science, politique publique, prospective et gouvernance maritime.",
+    resume: "Conférence Ocean Decade annoncée à Rio de Janeiro pour réunir la communauté océanique internationale autour de l'action pour l'océan.",
+    interet_oby: "Ce repère permet de suivre un espace structurant pour les liens entre science, politique publique, prospective et gouvernance maritime.",
     lien_source: "https://oceandecade.org/",
     affichage_accueil: false,
     ordre: 9,
@@ -445,7 +346,10 @@ const loadWatchAgendaItems = () =>
       }
 
       if (mediaCount) {
-        mediaCount.textContent = String(media.length);
+        // Le compteur public ne compte que les entrées réellement publiées.
+        mediaCount.textContent = String(
+          media.filter((item) => item.statut === "public-valide").length
+        );
       }
 
       fillSelect(axisSelect, uniqueValues(subjects, "axe"));
@@ -763,12 +667,13 @@ const loadWatchAgendaItems = () =>
         title: item.titre || "Référence",
         type: "Référence",
         category: item.categorie || item.sousCategorie || "Bibliothèque",
+        // `note` reste une note de travail : elle est affichée sur la fiche,
+        // mais n'entre pas dans l'index de recherche publique.
         searchText: [
           ...(item.auteurs || []),
           ...(item.direction || []),
           item.editeur,
           item.collection,
-          item.note,
         ].join(" "),
         url: "bibliotheque-ressources.html",
       }));

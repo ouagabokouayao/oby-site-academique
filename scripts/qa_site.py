@@ -36,6 +36,25 @@ AEM_FORBIDDEN = (
     re.compile(r"\bdoctoral(?:e|es|aux)?\b"),
     re.compile(r"\bth[eè]ses?\b"),
 )
+# Le dépôt GitHub est public : ce qui figure dans un fichier servi est lisible,
+# même si l'interface ne l'affiche pas. Ces champs relèvent du back-office et
+# n'ont donc pas leur place dans la projection publique.
+CHAMPS_INTERNES = ("date_publication_interne", "media_status")
+# Règle structurelle, plus fiable qu'une liste de chaînes : la veille publique
+# n'admet que ces clés. Un champ de back-office introduit plus tard est refusé
+# sans qu'il ait fallu le prévoir nommément.
+VEILLE_CLES_PUBLIQUES = frozenset({
+    "id", "titre", "type", "date_evenement", "organisateur", "zone", "axes",
+    "statut", "resume", "interet_oby", "lien_source", "affichage_accueil",
+    "ordre", "image", "video",
+})
+# Filet secondaire : formulations qui trahissent un état de workflow ou une
+# trace préparatoire, y compris à l'intérieur d'un champ par ailleurs légitime.
+FORMULATIONS_INTERNES = (
+    re.compile(r"Trace préparatoire"),
+    re.compile(r"à ajouter plus tard"),
+    re.compile(r"(?:sur|par nouvelle) photo\b"),
+)
 # Le capital événementiel vit dans ce JSON ; interventions.html n'en affiche que
 # la liste compacte et participation.html?id=<id> le détail.
 PARTICIPATIONS_DATA = "assets/data/participations-oby.json"
@@ -451,6 +470,48 @@ def main():
             trouve = motif.search(entree_aem)
             if trouve:
                 add(errors, "AEM_FORBIDDEN_TERM", participations, trouve.group(0))
+
+    # --- données de back-office dans la projection publique ------------------
+    # Le dépôt est public : une donnée interne masquée dans l'interface reste
+    # lisible dans le fichier. Ces champs et ces formulations ne doivent donc
+    # figurer ni dans les JSON servis, ni dans le JavaScript qui les double.
+    portee_publique = [root / "assets/data" / nom for nom in (
+        "veille-agenda-oby.json", "bibliotheque-oby.json", "sujets-recherche-oby.json",
+        "mediatheque-oby.json", "participations-oby.json")]
+    portee_publique.append(root / "assets/js/main.js")
+    for source in portee_publique:
+        if not source.exists():
+            continue
+        try:
+            brut = source.read_text(encoding="utf-8")
+        except (OSError, UnicodeError):
+            continue
+        for champ in CHAMPS_INTERNES:
+            if re.search(rf'["\']?{re.escape(champ)}["\']?\s*:', brut):
+                add(errors, "INTERNAL_FIELD_PUBLISHED", source, champ)
+        # Liste blanche de clés : refuse tout champ non prévu, y compris ceux
+        # qu'aucune liste noire n'aurait anticipés.
+        if source.name == "veille-agenda-oby.json":
+            try:
+                entrees_veille = json.loads(brut)
+            except json.JSONDecodeError:
+                entrees_veille = []
+            for entree in entrees_veille:
+                if not isinstance(entree, dict):
+                    continue
+                for cle in sorted(set(entree) - VEILLE_CLES_PUBLIQUES):
+                    add(errors, "PUBLIC_SCHEMA_VIOLATION", source, f"{entree.get('id', '?')} : {cle}")
+        for motif in FORMULATIONS_INTERNES:
+            trouve = motif.search(brut)
+            if trouve:
+                add(errors, "INTERNAL_WORDING_PUBLISHED", source, trouve.group(0))
+
+    # Le compteur public de la médiathèque ne doit décompter que le publiable.
+    principal = root / "assets/js/main.js"
+    if principal.exists():
+        js = principal.read_text(encoding="utf-8")
+        if re.search(r"mediaCount\.textContent\s*=\s*String\(\s*media\.length\s*\)", js):
+            add(errors, "PUBLIC_COUNTER_UNFILTERED", principal, "mediaCount compte les entrées non publiées")
 
     term_locations = defaultdict(list)
     structure_locations = defaultdict(list)

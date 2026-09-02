@@ -52,7 +52,7 @@
     "sousCategorie": "droit de la mer",
     "statutMetadata": "à vérifier",
     "sourceVerification": "",
-    "note": "Auteur exact, édition et année à confirmer par nouvelle photo ou notice fiable."
+    "note": "Auteur exact, édition et année à confirmer."
   },
   {
     "id": "conservation-biodiversite-espaces-maritimes-internationaux",
@@ -732,7 +732,7 @@
     "sousCategorie": "médiation",
     "statutMetadata": "confirmé",
     "sourceVerification": "https://www.librest.com/livres/methode-de-mediation--au-coeur-de-la-conciliation-alain-pekar-lempereur-jacques-salzer-aurelien-colson_0-4932292_9782100780822.html",
-    "note": "Deux exemplaires physiques identifiés dans la bibliothèque ; une seule notice publique."
+    "note": "Une seule notice publique retenue pour cet ouvrage."
   },
   {
     "id": "methode-mediation-helene-weber",
@@ -836,7 +836,7 @@
     "sousCategorie": "MARD",
     "statutMetadata": "confirmé",
     "sourceVerification": "https://ci.nii.ac.jp/ncid/BD06682361",
-    "note": "Édition 2020-2021 confirmée ; édition physique exacte à vérifier sur photo."
+    "note": "Édition 2020-2021 confirmée ; édition exacte à confirmer."
   },
   {
     "id": "negociation-internationale-techniques-pratiques",
