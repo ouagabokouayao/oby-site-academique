@@ -22,7 +22,10 @@ RISK_TERMS = (
     "these en cours",
     "thèse en cours",
 )
-ASSOCIATED_STRUCTURES = ("BlueWave", "Concordia", "AquaLab", "PromptMaster", "Betsaleel")
+ASSOCIATED_STRUCTURES = (
+    "BlueWave Solutions", "BlueWave", "Concordia Consulting", "Concordia",
+    "AquaLab", "Betsaleel Holding", "Betsaleel", "PromptMaster",
+)
 REMOTE_SCHEMES = {"http", "https", "mailto", "tel", "sms", "javascript", "data"}
 
 
@@ -514,17 +517,37 @@ def main():
             add(errors, "PUBLIC_COUNTER_UNFILTERED", principal, "mediaCount compte les entrées non publiées")
 
     term_locations = defaultdict(list)
-    structure_locations = defaultdict(list)
     for path, text in texts.items():
         lowered = text.casefold()
         for term in RISK_TERMS:
             if term.casefold() in lowered:
                 term_locations[term].append(path.name)
-        for name in ASSOCIATED_STRUCTURES:
-            if name.casefold() in lowered:
-                structure_locations[name].append(path.name)
     for term, locations in sorted(term_locations.items()):
         add(warnings, "RISK_TERM", ", ".join(locations), term)
+
+    # Doctrine publique OBY : les initiatives associées sont décrites par leur
+    # domaine et leur nature, sans nom de marque dans les pages, données ou
+    # scripts servis. Les chemins d'assets sont contrôlés pour la même raison.
+    structure_locations = defaultdict(list)
+    sources_publiques = list(texts.items())
+    for path in portee_publique:
+        if path.exists():
+            sources_publiques.append((path.resolve(), path.read_text(encoding="utf-8")))
+    for path, text in sources_publiques:
+        lowered = text.casefold()
+        for name in ASSOCIATED_STRUCTURES:
+            if name.casefold() in lowered:
+                structure_locations[name].append(str(path.relative_to(root)))
+    chemins_publics = list(root.glob("*.html")) + list((root / "assets").rglob("*"))
+    for path in chemins_publics:
+        relatif = str(path.relative_to(root))
+        lowered = relatif.casefold()
+        for name in ASSOCIATED_STRUCTURES:
+            if name.casefold() in lowered:
+                structure_locations[name].append(relatif)
+    for name, locations in sorted(structure_locations.items()):
+        for location in sorted(set(locations)):
+            add(errors, "ASSOCIATED_STRUCTURE_PUBLISHED", location, name)
 
     report = {
         "status": "FAIL" if errors else "PASS",
