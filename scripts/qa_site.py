@@ -64,6 +64,20 @@ PARTICIPATIONS_DATA = "assets/data/participations-oby.json"
 # Bornes de plausibilité des dimensions déclarées pour un média publié.
 MEDIA_DIM_MIN = 100
 MEDIA_DIM_MAX = 10000
+PARCOURS_ANCHORS = {
+    "droit-public-littoral",
+    "institutions-maritimes",
+    "droit-mer-international",
+    "affaires-pratique-juridique",
+    "geographie-littoral",
+    "mediation-innovation",
+}
+ROBOTS_REQUIRED_LINES = {
+    "User-agent: *",
+    "Disallow: /assets/documents/cv/",
+    "Allow: /",
+    "Sitemap: https://ouagabokouayao.github.io/oby-site-academique/sitemap.xml",
+}
 
 
 def dimensions_webp(chemin):
@@ -259,6 +273,49 @@ def main():
             except json.JSONDecodeError as exc:
                 add(errors, "JSON_LD_INVALID", page, str(exc))
 
+    # --- contrat fonctionnel du micro-correctif Médiathèque ---------------
+    media_page = (root / "mediatheque.html").resolve()
+    media_js = root / "assets/js/main.js"
+    media_text = texts.get(media_page, "")
+    js_text = media_js.read_text(encoding="utf-8") if media_js.exists() else ""
+    if 'select name="annee"' not in media_text:
+        add(errors, "MEDIA_YEAR_FILTER_MISSING", media_page, "Le filtre Année est absent")
+    lightbox_markers = (
+        "<dialog",
+        "data-media-lightbox",
+        "data-media-lightbox-previous",
+        "data-media-lightbox-next",
+    )
+    for marker in lightbox_markers:
+        if marker not in media_text:
+            add(errors, "MEDIA_LIGHTBOX_MARKUP_MISSING", media_page, marker)
+    for marker in (
+        "showModal()",
+        'event.key === "Escape"',
+        'event.key === "ArrowLeft"',
+        'event.key === "ArrowRight"',
+    ):
+        if marker not in js_text:
+            add(errors, "MEDIA_LIGHTBOX_BEHAVIOR_MISSING", media_js, marker)
+
+    profile_page = (root / "profil.html").resolve()
+    profile_parser = parsed_pages.get(profile_page)
+    if profile_parser:
+        for anchor in sorted(PARCOURS_ANCHORS - profile_parser.ids):
+            add(errors, "PARCOURS_ANCHOR_MISSING", profile_page, anchor)
+
+    robots_path = root / "robots.txt"
+    if not robots_path.exists():
+        add(errors, "ROBOTS_MISSING", robots_path, "robots.txt absent")
+    else:
+        robots_lines = {
+            line.strip()
+            for line in robots_path.read_text(encoding="utf-8").splitlines()
+            if line.strip()
+        }
+        for line in sorted(ROBOTS_REQUIRED_LINES - robots_lines):
+            add(errors, "ROBOTS_GUARD", robots_path, f"Ligne absente : {line}")
+
     dynamic_id_sources = {
         "mediatheque.html": root / "assets/data/mediatheque-oby.json",
         "veille-agenda.html": root / "assets/data/veille-agenda-oby.json",
@@ -324,30 +381,43 @@ def main():
             vus.add(ident)
 
     # --- réciprocité des liens participations / médiathèque ----------------
-    # Une entrée publique de la médiathèque qui renvoie vers une fiche doit être
-    # atteignable depuis cette fiche : sans quoi la circulation n'existe que dans
-    # un sens et la galerie reste invisible pour qui lit la fiche.
+    # Lorsqu'un id public est aussi celui d'une fiche Participation, la carte va
+    # directement à cette fiche et celle-ci revient vers la même entrée média.
     media_data = root / "assets/data/mediatheque-oby.json"
+    participation_data = root / PARTICIPATIONS_DATA
     interventions = (root / "interventions.html").resolve()
-    if media_data.exists() and interventions in texts:
+    if media_data.exists() and participation_data.exists() and interventions in texts:
         try:
             records = json.loads(media_data.read_text(encoding="utf-8"))
+            participation_records = json.loads(participation_data.read_text(encoding="utf-8"))
         except (OSError, UnicodeError, json.JSONDecodeError):
             records = []
+            participation_records = []
+        participation_by_id = {
+            str(record.get("id")): record
+            for record in participation_records
+            if isinstance(record, dict) and record.get("id")
+        }
         page_ids = parsed_pages[interventions].ids
-        page_text = texts[interventions]
         for record in records:
             if not isinstance(record, dict) or record.get("statut") != "public-valide":
                 continue
             ident = str(record.get("id") or "")
             lien = str(record.get("pageLiee") or "")
-            if not ident or not lien.startswith("interventions.html#"):
+            if not ident:
                 continue
-            fragment = lien.split("#", 1)[1]
-            if fragment not in page_ids:
-                add(errors, "CROSS_ID_MISSING", media_data, f"{ident} -> {lien}")
-            elif fragment == ident and f"mediatheque.html#{ident}" not in page_text:
-                add(errors, "CROSS_LINK_ONE_WAY", interventions, f"#{ident} ne renvoie pas vers mediatheque.html#{ident}")
+            participation = participation_by_id.get(ident)
+            if participation:
+                expected = f"participation.html?id={ident}"
+                if lien != expected:
+                    add(errors, "MEDIA_PARTICIPATION_LINK_INDIRECT", media_data, f"{ident} -> {lien}")
+                retour = str(participation.get("mediatheque") or "")
+                if retour != f"mediatheque.html#{ident}":
+                    add(errors, "CROSS_LINK_ONE_WAY", participation_data, f"{ident} -> {retour or '(absent)'}")
+            elif lien.startswith("interventions.html#"):
+                fragment = lien.split("#", 1)[1]
+                if fragment not in page_ids:
+                    add(errors, "CROSS_ID_MISSING", media_data, f"{ident} -> {lien}")
 
     # --- médias déclarés dans les JSON -------------------------------------
     # qa_site vérifie les assets référencés depuis le HTML ; ceux des galeries

@@ -874,6 +874,18 @@ const loadWatchAgendaItems = () =>
   const searchInput = controls?.elements.q;
   const typeSelect = controls?.elements.type;
   const environmentSelect = controls?.elements.environnement;
+  const yearSelect = controls?.elements.annee;
+  const lightbox = document.querySelector("[data-media-lightbox]");
+  const lightboxImage = lightbox?.querySelector("[data-media-lightbox-image]");
+  const lightboxCaption = lightbox?.querySelector("[data-media-lightbox-caption]");
+  const lightboxCount = lightbox?.querySelector("[data-media-lightbox-count]");
+  const lightboxPrevious = lightbox?.querySelector("[data-media-lightbox-previous]");
+  const lightboxNext = lightbox?.querySelector("[data-media-lightbox-next]");
+  const lightboxClose = lightbox?.querySelector("[data-media-lightbox-close]");
+  const photoGroups = new Map();
+  let activePhotos = [];
+  let activePhotoIndex = 0;
+  let lightboxTrigger = null;
 
   // Libellés lisibles pour les valeurs techniques du fichier éditorial : le
   // visiteur voit une nature de document, pas un identifiant de champ.
@@ -944,91 +956,256 @@ const loadWatchAgendaItems = () =>
       .replace(/[\u0300-\u036f]/g, "")
       .toLowerCase();
 
+  const MEDIA_MONTHS = {
+    janvier: 0,
+    fevrier: 1,
+    mars: 2,
+    avril: 3,
+    mai: 4,
+    juin: 5,
+    juillet: 6,
+    aout: 7,
+    septembre: 8,
+    octobre: 9,
+    novembre: 10,
+    decembre: 11,
+  };
+
+  // Une date canonique reliée prime. Pour une période, la borne la plus récente
+  // est retenue ; à défaut de date exploitable, seule l'année publique départage.
+  const mediaDateRank = (dateCanonique, publicYear) => {
+    const value = normalize(dateCanonique).replace(/[–—]/g, "-");
+    const years = [...value.matchAll(/\b(\d{4})\b/g)].map((match) => Number(match[1]));
+    const fallbackYear = years.at(-1) || Number(publicYear) || 0;
+    const datedParts = [];
+    const fullDatePattern = new RegExp(
+      `\\b(\\d{1,2})(?:er)?\\s+(${Object.keys(MEDIA_MONTHS).join("|")})(?:\\s+(\\d{4}))?`,
+      "g"
+    );
+
+    for (const match of value.matchAll(fullDatePattern)) {
+      const yearBefore = [...value.slice(0, match.index).matchAll(/\b(\d{4})\b/g)].at(-1);
+      const year = Number(match[3] || yearBefore?.[1] || fallbackYear);
+      if (year) {
+        datedParts.push(Date.UTC(year, MEDIA_MONTHS[match[2]], Number(match[1])));
+      }
+    }
+
+    if (!datedParts.length && fallbackYear) {
+      const month = Object.keys(MEDIA_MONTHS).find((name) => value.includes(name));
+      datedParts.push(Date.UTC(fallbackYear, month ? MEDIA_MONTHS[month] : 0, 1));
+    }
+
+    return datedParts.length ? Math.max(...datedParts) : 0;
+  };
+
+  const isRasterImage = (path) => /\.(?:jpe?g|png|webp|avif)$/i.test(path || "");
+
+  const dimensionAttributes = (photo) =>
+    Number.isInteger(photo.largeur) && Number.isInteger(photo.hauteur)
+      ? ` width="${photo.largeur}" height="${photo.hauteur}"`
+      : "";
+
+  const mediaPhotos = (item) => {
+    const photos = [];
+    if (isRasterImage(item.fichier)) {
+      photos.push({
+        fichier: item.fichier,
+        alt: item.alt || item.titre || "Photographie OBY",
+        legende: item.legende || "",
+        largeur: item.largeur,
+        hauteur: item.hauteur,
+      });
+    }
+    if (Array.isArray(item.galerie)) {
+      photos.push(...item.galerie.filter((entry) => entry && isRasterImage(entry.fichier)));
+    }
+    return photos;
+  };
+
   const renderMedia = (item) => {
     const brut = item.typeMedia || item.categorie || "";
     const type = MEDIA_TYPE_LABELS[brut] || brut || "Trace documentaire";
     const metadata = [item.annee, item.lieu].filter(Boolean).join(" · ");
-    const imageClass = /\.(?:jpe?g|png|webp|avif)$/i.test(item.fichier || "") ? " media-card-photo" : "";
-    const galleryItems = Array.isArray(item.galerie)
-      ? item.galerie.filter((entry) => entry && entry.fichier)
-      : [];
+    const imageClass = isRasterImage(item.fichier) ? " media-card-photo" : "";
+    const photos = mediaPhotos(item);
+    const galleryItems = photos.slice(1);
+    photoGroups.set(item.id, photos);
     const renderGalleryEntries = (entries) =>
       entries
         .map(
-          (entry) => `
+          (entry, index) => `
             <figure>
-              <img src="${escapeHtml(entry.fichier)}" alt="${escapeHtml(entry.alt || "")}" loading="lazy">
+              <button class="media-lightbox-trigger media-gallery-trigger" type="button" data-media-lightbox-id="${escapeHtml(item.id || "")}" data-media-lightbox-index="${index + 1}" aria-label="Agrandir la photographie ${index + 2} sur ${photos.length}">
+                <img src="${escapeHtml(entry.fichier)}" alt="${escapeHtml(entry.alt || "")}" loading="lazy"${dimensionAttributes(entry)}>
+              </button>
               ${entry.legende ? `<figcaption>${escapeHtml(entry.legende)}</figcaption>` : ""}
             </figure>`
         )
         .join("");
-    const photoCount = (item.fichier && /\.(?:jpe?g|png|webp|avif)$/i.test(item.fichier) ? 1 : 0) + galleryItems.length;
+    const photoCount = photos.length;
     const gallery = galleryItems.length
       ? `<div class="media-card-gallery media-card-gallery-collapsed" aria-label="Photographies complémentaires">
           ${renderGalleryEntries(galleryItems)}
         </div>`
       : "";
     const contextLink = item.pageLiee
-      ? `<a class="media-link" href="${escapeHtml(item.pageLiee)}">Voir le contexte associé</a>`
+      ? `<a class="media-link" href="${escapeHtml(item.pageLiee)}">${item.pageLiee.startsWith("participation.html?id=") ? "Voir la participation" : "Voir le contexte associé"}</a>`
       : "";
     const counter = photoCount
       ? `<span class="media-photo-count">${photoCount} photo${photoCount > 1 ? "s" : ""}</span>`
       : "";
-
-    if (!galleryItems.length) {
-      return `
-        <article class="media-card media-card-compact${imageClass}" id="${escapeHtml(item.id || "")}">
-          <figure class="media-card-primary">
-            <img src="${escapeHtml(item.fichier || "assets/img/media/placeholder-document-oby.svg")}" alt="${escapeHtml(item.alt || item.titre || "Trace documentaire OBY")}" loading="lazy">
-          </figure>
-          <div class="media-card-body">
-            <div class="media-card-top">
-              <span class="media-type">${escapeHtml(type)}</span>
-              <span class="media-environment">${escapeHtml(environmentOf(item))}</span>
-            </div>
-            <h3>${escapeHtml(item.titre || "Trace documentaire")}</h3>
-            ${metadata ? `<p class="media-meta">${escapeHtml(metadata)}</p>` : ""}
-            ${contextLink}
-          </div>
-        </article>
-      `;
-    }
+    const primary = photos.length
+      ? `<button class="media-card-primary media-lightbox-trigger" type="button" data-media-lightbox-id="${escapeHtml(item.id || "")}" data-media-lightbox-index="0" aria-label="Agrandir la photographie principale de ${escapeHtml(item.titre || "cet événement")}">
+          <img src="${escapeHtml(photos[0].fichier)}" alt="${escapeHtml(photos[0].alt || "")}" loading="lazy"${dimensionAttributes(photos[0])}>
+          <span class="media-zoom-label" aria-hidden="true">Agrandir</span>
+        </button>`
+      : `<figure class="media-card-primary"><img src="assets/img/media/placeholder-document-oby.svg" alt="${escapeHtml(item.alt || item.titre || "Trace documentaire OBY")}" loading="lazy"></figure>`;
+    const galleryDisclosure = galleryItems.length
+      ? `<details class="media-card-disclosure">
+          <summary class="media-card-summary-footer">${counter}<span class="media-open-label">Voir les photographies</span></summary>
+          <div class="media-card-expanded">${gallery}</div>
+        </details>`
+      : `<div class="media-card-summary-footer media-card-summary-static">${counter}</div>`;
 
     return `
-      <details class="media-card media-card-compact media-card-disclosure${imageClass}" id="${escapeHtml(item.id || "")}">
-        <summary class="media-card-summary">
-          <figure class="media-card-primary">
-            <img src="${escapeHtml(item.fichier || "assets/img/media/placeholder-document-oby.svg")}" alt="${escapeHtml(item.alt || item.titre || "Trace documentaire OBY")}" loading="lazy">
-          </figure>
-          <div class="media-card-summary-body">
-            <div class="media-card-top">
-              <span class="media-type">${escapeHtml(type)}</span>
-              <span class="media-environment">${escapeHtml(environmentOf(item))}</span>
-            </div>
-            <h3>${escapeHtml(item.titre || "Trace documentaire")}</h3>
-            ${metadata ? `<p class="media-meta">${escapeHtml(metadata)}</p>` : ""}
-            <div class="media-card-summary-footer">${counter}<span class="media-open-label">Voir les photographies</span></div>
+      <article class="media-card media-card-compact${imageClass}" id="${escapeHtml(item.id || "")}">
+        ${primary}
+        <div class="media-card-body">
+          <div class="media-card-top">
+            <span class="media-type">${escapeHtml(type)}</span>
+            <span class="media-environment">${escapeHtml(environmentOf(item))}</span>
           </div>
-        </summary>
-        <div class="media-card-body media-card-expanded">
-          ${item.description ? `<p>${escapeHtml(item.description)}</p>` : ""}
-          ${item.legende ? `<p class="media-primary-caption">${escapeHtml(item.legende)}</p>` : ""}
-          ${gallery}
+          <h3>${escapeHtml(item.titre || "Trace documentaire")}</h3>
+          ${metadata ? `<p class="media-meta">${escapeHtml(metadata)}</p>` : ""}
+          ${item.legende ? `<p class="media-card-fact">${escapeHtml(item.legende)}</p>` : ""}
+          ${galleryDisclosure}
           ${contextLink}
         </div>
-      </details>
+      </article>
     `;
   };
 
-  fetch("assets/data/mediatheque-oby.json?v=oby-v3-11")
-    .then((response) => {
+  const showActivePhoto = () => {
+    const photo = activePhotos[activePhotoIndex];
+    if (!photo || !lightboxImage || !lightboxCaption || !lightboxCount) {
+      return;
+    }
+
+    lightboxImage.src = photo.fichier;
+    lightboxImage.alt = photo.alt || "";
+    lightboxCount.textContent = `${activePhotoIndex + 1} / ${activePhotos.length}`;
+    lightboxCaption.textContent = photo.legende || "";
+    lightboxCaption.hidden = !photo.legende;
+    if (photo.legende) {
+      lightboxImage.setAttribute("aria-describedby", "media-lightbox-caption");
+    } else {
+      lightboxImage.removeAttribute("aria-describedby");
+    }
+    if (lightboxPrevious) {
+      lightboxPrevious.disabled = activePhotoIndex === 0;
+    }
+    if (lightboxNext) {
+      lightboxNext.disabled = activePhotoIndex === activePhotos.length - 1;
+    }
+  };
+
+  const moveActivePhoto = (step) => {
+    const nextIndex = activePhotoIndex + step;
+    if (nextIndex < 0 || nextIndex >= activePhotos.length) {
+      return;
+    }
+    activePhotoIndex = nextIndex;
+    showActivePhoto();
+  };
+
+  results?.addEventListener("click", (event) => {
+    const trigger = event.target.closest("[data-media-lightbox-id]");
+    if (!trigger || !lightbox?.showModal) {
+      return;
+    }
+    const photos = photoGroups.get(trigger.dataset.mediaLightboxId) || [];
+    const index = Number(trigger.dataset.mediaLightboxIndex);
+    if (!photos[index]) {
+      return;
+    }
+    activePhotos = photos;
+    activePhotoIndex = index;
+    lightboxTrigger = trigger;
+    showActivePhoto();
+    lightbox.showModal();
+    lightboxClose?.focus();
+  });
+
+  lightboxPrevious?.addEventListener("click", () => moveActivePhoto(-1));
+  lightboxNext?.addEventListener("click", () => moveActivePhoto(1));
+  lightboxClose?.addEventListener("click", () => lightbox.close());
+
+  lightbox?.addEventListener("click", (event) => {
+    if (event.target === lightbox) {
+      lightbox.close();
+    }
+  });
+
+  lightbox?.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      event.preventDefault();
+      lightbox.close();
+      return;
+    }
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      moveActivePhoto(-1);
+    }
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
+      moveActivePhoto(1);
+    }
+  });
+
+  lightbox?.addEventListener("close", () => {
+    lightboxImage?.removeAttribute("src");
+    if (lightboxTrigger?.isConnected) {
+      lightboxTrigger.focus();
+    }
+    activePhotos = [];
+    lightboxTrigger = null;
+  });
+
+  const fetchJson = (url, errorMessage) =>
+    fetch(url).then((response) => {
       if (!response.ok) {
-        throw new Error("Media data unavailable");
+        throw new Error(errorMessage);
       }
       return response.json();
-    })
-    .then((items) => {
-      const publicItems = items.filter((item) => item.statut === "public-valide");
+    });
+
+  Promise.all([
+    fetchJson("assets/data/mediatheque-oby.json?v=oby-v3-11", "Media data unavailable"),
+    fetchJson("assets/data/participations-oby.json?v=oby-v3-11", "Participation data unavailable"),
+  ])
+    .then(([items, participations]) => {
+      const canonicalDates = new Map(
+        participations
+          .filter((item) => item && item.id && item.date_canonique)
+          .map((item) => [item.id, item.date_canonique])
+      );
+      const publicItems = items
+        .map((item, sourceIndex) => ({
+          ...item,
+          sourceIndex,
+          dateCanonique: canonicalDates.get(item.id) || "",
+        }))
+        .filter((item) => item.statut === "public-valide")
+        .sort((a, b) => {
+          const dateDifference =
+            mediaDateRank(b.dateCanonique, b.annee) - mediaDateRank(a.dateCanonique, a.annee);
+          if (dateDifference) {
+            return dateDifference;
+          }
+          const yearDifference = (Number(b.annee) || 0) - (Number(a.annee) || 0);
+          return yearDifference || a.sourceIndex - b.sourceIndex;
+        });
 
       [...new Set(publicItems.map((item) => item.typeMedia || item.categorie).filter(Boolean))]
         .map((brut) => [brut, MEDIA_TYPE_LABELS[brut] || brut])
@@ -1053,13 +1230,26 @@ const loadWatchAgendaItems = () =>
           environmentSelect?.appendChild(option);
         });
 
+      [...new Set(publicItems.map((item) => item.annee).filter(Boolean))]
+        .sort((a, b) => Number(b) - Number(a) || String(b).localeCompare(String(a), "fr"))
+        .forEach((year) => {
+          const option = document.createElement("option");
+          option.value = year;
+          option.textContent = year;
+          yearSelect?.appendChild(option);
+        });
+
       const render = () => {
         const query = normalize(searchInput?.value || "");
         const type = typeSelect?.value || "";
         const environment = environmentSelect?.value || "";
+        const year = yearSelect?.value || "";
         const filtered = publicItems.filter((item) => {
           const itemType = item.typeMedia || item.categorie || "";
           if (environment && environmentOf(item) !== environment) {
+            return false;
+          }
+          if (year && item.annee !== year) {
             return false;
           }
           const searchable = normalize(
@@ -1079,7 +1269,7 @@ const loadWatchAgendaItems = () =>
 
         if (count) {
           const photos = filtered.reduce(
-            (total, item) => total + 1 + (Array.isArray(item.galerie) ? item.galerie.length : 0),
+            (total, item) => total + mediaPhotos(item).length,
             0
           );
           count.textContent =

@@ -77,6 +77,7 @@
           <label class="search-field"><span>Rechercher</span><input type="search" name="q" placeholder="Un lieu, un événement, une année…" autocomplete="off"></label>
           <label><span>Environnement</span><select name="environnement"><option value="">Tous les environnements</option></select></label>
           <label><span>Nature</span><select name="type"><option value="">Toutes les natures</option></select></label>
+          <label><span>Année</span><select name="annee"><option value="">Toutes les années</option></select></label>
           <button class="button secondary" type="reset">Réinitialiser</button>
         </form>
         <div class="results-bar" aria-live="polite"><strong data-public-media-count>Chargement…</strong><span data-public-media-hint>Ouvrez une fiche pour voir toutes les photographies publiques de l’événement.</span></div>
@@ -100,6 +101,22 @@
       </div>
     </section>
   </main>
+  <dialog class="media-lightbox" data-media-lightbox aria-label="Visionneuse photographique">
+    <div class="media-lightbox-shell">
+      <div class="media-lightbox-toolbar">
+        <span class="media-lightbox-count" data-media-lightbox-count aria-live="polite"></span>
+        <button class="media-lightbox-close" type="button" data-media-lightbox-close aria-label="Fermer la visionneuse">Fermer</button>
+      </div>
+      <figure class="media-lightbox-figure">
+        <img alt="" data-media-lightbox-image>
+        <figcaption id="media-lightbox-caption" data-media-lightbox-caption hidden></figcaption>
+      </figure>
+      <div class="media-lightbox-navigation" aria-label="Navigation dans les photographies">
+        <button type="button" data-media-lightbox-previous aria-label="Photographie précédente">Précédente</button>
+        <button type="button" data-media-lightbox-next aria-label="Photographie suivante">Suivante</button>
+      </div>
+    </div>
+  </dialog>
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">
