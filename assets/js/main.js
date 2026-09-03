@@ -1194,7 +1194,7 @@ const loadWatchAgendaItems = () =>
         .map((item, sourceIndex) => ({
           ...item,
           sourceIndex,
-          dateCanonique: canonicalDates.get(item.id) || "",
+          dateCanonique: item.date_canonique || canonicalDates.get(item.id) || "",
         }))
         .filter((item) => item.statut === "public-valide")
         .sort((a, b) => {
