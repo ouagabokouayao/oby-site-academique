@@ -971,15 +971,29 @@ const loadWatchAgendaItems = () =>
     decembre: 11,
   };
 
-  // Une date canonique reliée prime. Pour une période, la borne la plus récente
-  // est retenue ; à défaut de date exploitable, seule l'année publique départage.
+  // Une date canonique reliée prime. Pour une période, la date de début est
+  // retenue ; à défaut de date exploitable, seule l'année publique départage.
   const mediaDateRank = (dateCanonique, publicYear) => {
     const value = normalize(dateCanonique).replace(/[–—]/g, "-");
     const years = [...value.matchAll(/\b(\d{4})\b/g)].map((match) => Number(match[1]));
     const fallbackYear = years.at(-1) || Number(publicYear) || 0;
     const datedParts = [];
+    const monthNames = Object.keys(MEDIA_MONTHS).join("|");
+    const sharedMonthPeriod = value.match(
+      new RegExp(
+        `\\b(\\d{1,2})(?:er)?\\s*(?:-|au|et)\\s*\\d{1,2}(?:er)?\\s+(${monthNames})(?:\\s+(\\d{4}))?`
+      )
+    );
+    if (sharedMonthPeriod) {
+      const year = Number(sharedMonthPeriod[3] || fallbackYear);
+      if (year) {
+        datedParts.push(
+          Date.UTC(year, MEDIA_MONTHS[sharedMonthPeriod[2]], Number(sharedMonthPeriod[1]))
+        );
+      }
+    }
     const fullDatePattern = new RegExp(
-      `\\b(\\d{1,2})(?:er)?\\s+(${Object.keys(MEDIA_MONTHS).join("|")})(?:\\s+(\\d{4}))?`,
+      `\\b(\\d{1,2})(?:er)?\\s+(${monthNames})(?:\\s+(\\d{4}))?`,
       "g"
     );
 
@@ -996,7 +1010,7 @@ const loadWatchAgendaItems = () =>
       datedParts.push(Date.UTC(fallbackYear, month ? MEDIA_MONTHS[month] : 0, 1));
     }
 
-    return datedParts.length ? Math.max(...datedParts) : 0;
+    return datedParts.length ? Math.min(...datedParts) : 0;
   };
 
   const isRasterImage = (path) => /\.(?:jpe?g|png|webp|avif)$/i.test(path || "");
@@ -1204,7 +1218,10 @@ const loadWatchAgendaItems = () =>
             return dateDifference;
           }
           const yearDifference = (Number(b.annee) || 0) - (Number(a.annee) || 0);
-          return yearDifference || a.sourceIndex - b.sourceIndex;
+          if (yearDifference) {
+            return yearDifference;
+          }
+          return !a.dateCanonique && !b.dateCanonique ? a.sourceIndex - b.sourceIndex : 0;
         });
 
       [...new Set(publicItems.map((item) => item.typeMedia || item.categorie).filter(Boolean))]
