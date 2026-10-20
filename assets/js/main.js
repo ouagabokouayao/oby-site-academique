@@ -1396,7 +1396,12 @@ window.addEventListener("hashchange", revealHashTarget);
       if (resume) resume.textContent = fiche.resume || fiche.ligne || "";
 
       const blocs = [];
-      (fiche.contexte || []).forEach((paragraphe) => {
+      const intertitres = Array.isArray(fiche.intertitres) ? fiche.intertitres : [];
+      (fiche.contexte || []).forEach((paragraphe, position) => {
+        const intertitre = intertitres.find((item) => item.avant === position);
+        if (intertitre && intertitre.titre) {
+          blocs.push(`<h2 class="event-story-heading">${proteger(intertitre.titre)}</h2>`);
+        }
         blocs.push(`<p>${proteger(paragraphe)}</p>`);
       });
       if (fiche.themes) {
