@@ -1064,7 +1064,7 @@ const loadWatchAgendaItems = () =>
         </div>`
       : "";
     const contextLink = item.pageLiee
-      ? `<a class="media-link" href="${escapeHtml(item.pageLiee)}">${item.pageLiee.startsWith("participation.html?id=") ? "Voir la participation" : "Voir le contexte associé"}</a>`
+      ? `<a class="media-link" href="${escapeHtml(item.pageLiee)}">${escapeHtml(item.libellePageLiee || (item.pageLiee.startsWith("participation.html?id=") ? "Voir la participation" : "Voir le contexte associé"))}</a>`
       : "";
     const counter = photoCount
       ? `<span class="media-photo-count">${photoCount} photo${photoCount > 1 ? "s" : ""}</span>`
@@ -1303,6 +1303,12 @@ const loadWatchAgendaItems = () =>
       };
 
       render();
+      // Les albums sont insérés après la navigation : l'ancre doit être
+      // positionnée une fois son contenu disponible, pas avant le fetch.
+      const albumTarget = document.getElementById(window.location.hash.slice(1));
+      if (albumTarget && results?.contains(albumTarget)) {
+        albumTarget.scrollIntoView({ block: "start" });
+      }
       controls?.addEventListener("input", render);
       controls?.addEventListener("change", render);
       controls?.addEventListener("reset", () => window.setTimeout(render, 0));
@@ -1415,7 +1421,7 @@ window.addEventListener("hashchange", revealHashTarget);
       }
       const renvois = [...(fiche.liens || [])];
       if (fiche.mediatheque) {
-        renvois.push({ libelle: "Voir la galerie dans la médiathèque", url: fiche.mediatheque });
+        renvois.push({ libelle: fiche.mediathequeLibelle || "Voir la galerie dans la médiathèque", url: fiche.mediatheque });
       }
       if (renvois.length) {
         const liens = renvois
