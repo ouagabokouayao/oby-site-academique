@@ -4176,11 +4176,82 @@ main:focus {
 }
 
 /* --- Idées & Analyses ----------------------------------------------------
-   La rubrique réutilise les composants existants (.card, .map-shell, .map-pill,
-   .event-context-body). Ces règles n'ajoutent que ce qui lui est propre : le
-   titre cliquable d'une carte, la carte de collection et la mise en page de
-   lecture d'un texte long. */
+   La rubrique réutilise les composants du site (.card, .map-shell, .map-pill,
+   .tagline). Ces règles n'ajoutent que ce qui lui est propre : la mise en page
+   de lecture longue, la carte d'analyse et la carte de collection. */
 
+/* Collections -------------------------------------------------------------- */
+
+.analysis-collection {
+  display: flex;
+  flex-direction: column;
+}
+
+.analysis-collection h3 {
+  font-size: 1.46rem;
+}
+
+.analysis-collection > p {
+  margin-bottom: 0;
+}
+
+/* Le décompte se détache du résumé et se cale en bas de carte : les cinq
+   cartes gardent la même ligne de base quelle que soit la longueur du texte. */
+.analysis-card-meta {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.analysis-collection .analysis-card-meta {
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+/* Une collection qui porte des textes devient une cible entière. */
+a.analysis-collection {
+  text-decoration: none;
+}
+
+a.analysis-collection .analysis-card-meta::after {
+  content: " →";
+  color: var(--gold);
+}
+
+.analysis-collections-note {
+  margin: 26px 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.analysis-collections-note strong {
+  color: var(--navy);
+}
+
+/* Catalogue ---------------------------------------------------------------- */
+
+.analysis-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.analysis-card h3 {
+  font-size: 1.52rem;
+}
+
+.analysis-card .map-tags {
+  margin-top: 14px;
+}
+
+.analysis-card .analysis-card-meta {
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+/* Le titre porte le lien, mais toute la carte réagit : le soulignement se
+   déploie au survol de la carte comme au focus clavier du lien lui-même. */
 .analysis-card h3 a {
   color: inherit;
   text-decoration: none;
@@ -4191,77 +4262,210 @@ main:focus {
   transition: background-size var(--transition);
 }
 
-.analysis-card h3 a:hover,
+.analysis-card:hover h3 a,
 .analysis-card h3 a:focus-visible {
   background-size: 100% 2px;
 }
 
-.analysis-collection .meta {
-  margin-top: auto;
-  padding-top: 10px;
+/* Lecture ------------------------------------------------------------------ */
+
+.analysis-chapeau {
+  max-width: 56ch;
+  font-size: 1.06rem;
+  line-height: 1.62;
+}
+
+/* Colonne de lecture centrée. Le sommaire, quand il existe, occupe la marge
+   de droite au lieu de la laisser vide ; en dessous de 1180 px il repasse
+   au-dessus du texte, replié. */
+.analysis-layout {
+  display: grid;
+  justify-content: center;
+  gap: 24px;
+  grid-template-columns: minmax(0, 58ch);
+}
+
+@media (min-width: 1180px) {
+  .analysis-layout.has-toc {
+    gap: 64px;
+    grid-template-columns: minmax(0, 58ch) 230px;
+  }
+
+  .analysis-layout.has-toc > article {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .analysis-layout.has-toc .analysis-toc {
+    position: sticky;
+    top: 112px;
+    grid-column: 2;
+    grid-row: 1;
+    align-self: start;
+  }
+
+  /* Dans la marge, le sommaire est toujours ouvert : son intitulé redevient un
+     simple titre et perd le chevron du dépliant. */
+  .analysis-layout.has-toc .analysis-toc-shell > summary {
+    cursor: default;
+    pointer-events: none;
+    list-style: none;
+  }
+
+  .analysis-layout.has-toc .analysis-toc-shell > summary::-webkit-details-marker {
+    display: none;
+  }
+}
+
+.analysis-toc-shell {
+  border-top: 2px solid var(--gold-line);
+  padding-top: 14px;
+}
+
+.analysis-toc-shell > summary {
+  color: var(--navy);
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.analysis-toc-shell ol {
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: sommaire;
+}
+
+.analysis-toc-shell li {
+  counter-increment: sommaire;
+  margin-bottom: 9px;
+}
+
+.analysis-toc-shell a {
+  display: block;
   color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.42;
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  padding-left: 12px;
+  transition: color var(--transition), border-color var(--transition);
 }
 
-/* Le corps d'une analyse se lit en continu : mesure courte, interlignage
-   généreux, intertitres détachés du flux des paragraphes. */
-.analysis-body {
-  max-width: 68ch;
+.analysis-toc-shell a::before {
+  content: counter(sommaire) ". ";
+  color: var(--gold);
+  font-variant-numeric: tabular-nums;
 }
 
+.analysis-toc-shell a:hover,
+.analysis-toc-shell a:focus-visible {
+  color: var(--navy);
+  border-left-color: var(--gold);
+}
+
+/* Corps du texte : mesure courte, interlignage ample, intertitres détachés. */
 .analysis-body > p {
+  margin: 0 0 18px;
   color: var(--ink);
-  font-size: 1rem;
-  line-height: 1.72;
+  font-size: 1.02rem;
+  line-height: 1.76;
+  overflow-wrap: break-word;
 }
 
 .analysis-heading {
-  margin: 30px 0 12px;
+  margin: 38px 0 14px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
   color: var(--navy);
   font-family: var(--serif);
-  font-size: 1.42rem;
-  line-height: 1.18;
+  font-size: 1.46rem;
+  line-height: 1.2;
   text-wrap: balance;
 }
 
 .analysis-heading:first-child {
   margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+/* Appareil de fin de texte : thématiques, références, renvois. */
+.analysis-aside-title {
+  margin: 0 0 12px;
+  color: var(--navy);
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.analysis-themes {
+  margin-top: 34px;
 }
 
 .analysis-references {
   margin-top: 30px;
   border-top: 1px solid var(--line);
-  padding-top: 18px;
+  padding-top: 20px;
 }
 
-.analysis-references h2 {
-  margin: 0 0 10px;
-  color: var(--navy);
-  font-family: var(--sans);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.analysis-references ul {
+/* Références numérotées en retrait pendant : la numérotation reste lisible
+   même quand une référence court sur plusieurs lignes. */
+.analysis-references ol {
   margin: 0;
-  padding-left: 18px;
-  color: var(--muted);
-  font-size: 0.9rem;
-  line-height: 1.6;
+  padding: 0;
+  list-style: none;
+  counter-reset: reference;
 }
 
 .analysis-references li {
-  margin-bottom: 6px;
+  counter-increment: reference;
+  position: relative;
+  margin-bottom: 9px;
+  padding-left: 30px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
   overflow-wrap: break-word;
+}
+
+.analysis-references li::before {
+  content: counter(reference);
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--gold);
+  font-size: 0.8rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.analysis-links {
+  margin: 28px 0 0;
+  font-size: 0.9rem;
+}
+
+.analysis-links a {
+  color: var(--blue);
+  font-weight: 600;
 }
 
 @media (max-width: 640px) {
   .analysis-heading {
-    font-size: 1.24rem;
+    margin-top: 30px;
+    font-size: 1.22rem;
   }
 
   .analysis-body > p {
     font-size: 0.98rem;
+  }
+
+  .analysis-collection h3,
+  .analysis-card h3 {
+    font-size: 1.3rem;
   }
 }

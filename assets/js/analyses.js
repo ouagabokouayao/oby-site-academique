@@ -108,49 +108,55 @@ const ligneMeta = (analyse, collections) =>
   const resultats = racine.querySelector("[data-analyses-results]");
   const vide = racine.querySelector("[data-analyses-empty]");
   const compteur = racine.querySelector("[data-analyses-count]");
-  const total = document.querySelector("[data-analyses-total]");
-  const totalCollections = document.querySelector("[data-collections-total]");
+  const annonce = document.querySelector("[data-collections-note]");
   const reinitialiser = racine.querySelector("[data-analyses-reset]");
   const champRecherche = controles?.elements.q;
   const selectCollection = controles?.elements.collection;
 
+  const compte = (nombre) =>
+    nombre === 0 ? "Aucune analyse" : `${nombre} analyse${nombre > 1 ? "s" : ""}`;
+
   const carte = (analyse, collections) => {
-    const meta = ligneMeta(analyse, collections);
+    const secondaire = [
+      dateLisible(analyse.date_publication),
+      analyse.lecture_minutes ? `${analyse.lecture_minutes} min de lecture` : "",
+    ]
+      .filter(Boolean)
+      .join(" · ");
     const axes = Array.isArray(analyse.axes)
       ? analyse.axes.map((axe) => `<span class="map-pill">${proteger(axe)}</span>`).join("")
       : "";
+    const adresse = `analyse.html?id=${encodeURIComponent(analyse.id)}`;
 
     return `
       <article class="card analysis-card">
         <span class="tagline">${proteger(titreCollection(collections, analyse.collection))}</span>
-        <h3><a href="analyse.html?id=${encodeURIComponent(analyse.id)}">${proteger(analyse.titre)}</a></h3>
-        ${meta ? `<p class="meta">${proteger(meta)}</p>` : ""}
+        <h3><a href="${adresse}">${proteger(analyse.titre)}</a></h3>
         ${analyse.chapeau ? `<p>${proteger(analyse.chapeau)}</p>` : ""}
         ${axes ? `<div class="map-tags">${axes}</div>` : ""}
-        <p class="card-link"><a href="analyse.html?id=${encodeURIComponent(analyse.id)}">Lire l’analyse</a></p>
+        ${secondaire ? `<p class="analysis-card-meta">${proteger(secondaire)}</p>` : ""}
       </article>
     `;
   };
 
-  const carteCollection = (collection, analyses) => {
+  // Trois états possibles pour une collection : elle porte des textes, elle n'en
+  // porte pas encore alors que d'autres en ont, ou le catalogue entier est vide.
+  // Dans ce dernier cas la carte ne dit rien : une seule phrase, sous la grille,
+  // vaut mieux que la même annonce répétée cinq fois.
+  const carteCollection = (collection, analyses, catalogueVide) => {
     const nombre = analyses.filter((analyse) => analyse.collection === collection.id).length;
-    const etat = nombre
-      ? `${nombre} analyse${nombre > 1 ? "s" : ""}`
-      : "Collection ouverte — premiers textes à venir";
-
-    return `
-      <article class="card analysis-collection">
-        <span class="tagline">Collection</span>
-        <h3>${proteger(collection.titre)}</h3>
-        <p>${proteger(collection.resume || "")}</p>
-        <p class="meta">${proteger(etat)}</p>
-        ${
-          nombre
-            ? `<p class="card-link"><a href="#catalogue" data-analyses-filter="${proteger(collection.id)}">Voir les analyses</a></p>`
-            : ""
-        }
-      </article>
+    const corps = `
+      <span class="tagline">Collection</span>
+      <h3>${proteger(collection.titre)}</h3>
+      <p>${proteger(collection.resume || "")}</p>
+      ${catalogueVide ? "" : `<p class="analysis-card-meta">${compte(nombre)}</p>`}
     `;
+
+    // Quand la collection a des textes, la carte entière devient la cible :
+    // un seul geste à la souris comme au clavier.
+    return nombre
+      ? `<a class="card analysis-collection is-open" href="#catalogue" data-analyses-filter="${proteger(collection.id)}">${corps}</a>`
+      : `<article class="card analysis-collection">${corps}</article>`;
   };
 
   const rendre = ({ collections, analyses }) => {
@@ -171,7 +177,7 @@ const ligneMeta = (analyse, collections) =>
     });
 
     if (compteur) {
-      compteur.textContent = String(filtrees.length);
+      compteur.textContent = compte(filtrees.length);
     }
 
     if (resultats) {
@@ -192,19 +198,21 @@ const ligneMeta = (analyse, collections) =>
 
   chargerCatalogue()
     .then(({ collections, analyses }) => {
+      const catalogueVide = analyses.length === 0;
+
       if (grilleCollections) {
         grilleCollections.innerHTML = collections
-          .map((collection) => carteCollection(collection, analyses))
+          .map((collection) => carteCollection(collection, analyses, catalogueVide))
           .join("");
       }
 
-      if (totalCollections) {
-        totalCollections.textContent = String(collections.length);
-      }
-
-      // Le compteur public ne décompte que les analyses réellement publiées.
-      if (total) {
-        total.textContent = String(analyses.length);
+      // Une seule ligne sous la grille : une annonce éditoriale tant que rien
+      // n'est publié, le décompte réel ensuite. Le compteur public ne décompte
+      // que les analyses réellement publiées.
+      if (annonce) {
+        annonce.innerHTML = catalogueVide
+          ? "Les cinq collections sont ouvertes : les premières analyses y paraîtront au fil des publications."
+          : `<strong data-collections-total>${collections.length}</strong> collections · <strong data-analyses-total>${analyses.length}</strong> analyses publiées.`;
       }
 
       if (selectCollection) {
@@ -269,6 +277,14 @@ const ligneMeta = (analyse, collections) =>
   const vide = racine.querySelector("[data-analyse-vide]");
   const sectionVoisins = racine.querySelector("[data-analyse-section-voisins]");
   const voisins = racine.querySelector("[data-analyse-voisins]");
+  const miseEnPage = racine.querySelector("[data-analyse-layout]");
+  const sommaire = racine.querySelector("[data-analyse-toc]");
+  const sommaireRepli = racine.querySelector("[data-analyse-toc-shell]");
+  const sommaireListe = racine.querySelector("[data-analyse-toc-list]");
+
+  // Un sommaire ne se justifie qu'au-delà d'un certain nombre de parties :
+  // en dessous, il double la lecture au lieu de l'aider.
+  const SEUIL_SOMMAIRE = 4;
 
   const identifiant = new URLSearchParams(window.location.search).get("id") || "";
 
@@ -279,6 +295,7 @@ const ligneMeta = (analyse, collections) =>
     if (corps) corps.innerHTML = "";
     if (vide) vide.hidden = true;
     if (sectionVoisins) sectionVoisins.hidden = true;
+    if (sommaire) sommaire.hidden = true;
   };
 
   if (!identifiant) {
@@ -303,9 +320,14 @@ const ligneMeta = (analyse, collections) =>
       if (chapeau) chapeau.textContent = analyse.chapeau || "";
 
       const blocs = [];
-      (analyse.sections || []).forEach((section) => {
+      const parties = [];
+      (analyse.sections || []).forEach((section, position) => {
         if (section?.titre) {
-          blocs.push(`<h2 class="analysis-heading">${proteger(section.titre)}</h2>`);
+          // L'ancre est dérivée du rang, pas du titre : elle reste stable même si
+          // deux parties portent le même intitulé, et ne casse pas à la relecture.
+          const ancre = `partie-${position + 1}`;
+          parties.push({ ancre, titre: section.titre });
+          blocs.push(`<h2 class="analysis-heading" id="${ancre}">${proteger(section.titre)}</h2>`);
         }
         (section?.paragraphes || []).forEach((paragraphe) => {
           blocs.push(`<p>${proteger(paragraphe)}</p>`);
@@ -313,8 +335,11 @@ const ligneMeta = (analyse, collections) =>
       });
 
       if (Array.isArray(analyse.axes) && analyse.axes.length) {
+        const pastilles = analyse.axes
+          .map((axe) => `<span class="map-pill">${proteger(axe)}</span>`)
+          .join("");
         blocs.push(
-          `<p class="event-themes"><strong>Thématiques associées :</strong> ${proteger(analyse.axes.join(" · "))}</p>`
+          `<div class="analysis-themes"><p class="analysis-aside-title">Thématiques associées</p><div class="map-tags">${pastilles}</div></div>`
         );
       }
 
@@ -326,21 +351,37 @@ const ligneMeta = (analyse, collections) =>
               : `<li>${proteger(reference?.libelle)}</li>`
           )
           .join("");
-        blocs.push(`<div class="analysis-references"><h2>Références</h2><ul>${liste}</ul></div>`);
+        blocs.push(
+          `<div class="analysis-references"><p class="analysis-aside-title">Références</p><ol>${liste}</ol></div>`
+        );
       }
 
       if (Array.isArray(analyse.liens) && analyse.liens.length) {
         const renvois = analyse.liens
           .map((lien) => `<a href="${proteger(lien.url)}">${proteger(lien.libelle)}</a>`)
           .join(" · ");
-        blocs.push(`<p class="card-link">${renvois}</p>`);
+        blocs.push(`<p class="analysis-links">${renvois}</p>`);
       }
 
       if (corps) {
-        corps.innerHTML = blocs.length ? `<div class="event-context-body analysis-body">${blocs.join("")}</div>` : "";
+        corps.innerHTML = blocs.length ? `<div class="analysis-body">${blocs.join("")}</div>` : "";
       }
       if (vide) {
         vide.hidden = blocs.length > 0;
+      }
+
+      // Sommaire : il n'apparaît que pour un texte assez long pour en avoir besoin.
+      if (sommaire && sommaireListe && parties.length >= SEUIL_SOMMAIRE) {
+        sommaireListe.innerHTML = parties
+          .map((partie) => `<li><a href="#${partie.ancre}">${proteger(partie.titre)}</a></li>`)
+          .join("");
+        sommaire.hidden = false;
+        miseEnPage?.classList.add("has-toc");
+        // Déplié d'emblée là où il tient dans la marge, replié sur petit écran
+        // pour ne pas repousser le début du texte.
+        if (sommaireRepli) {
+          sommaireRepli.open = window.matchMedia("(min-width: 1180px)").matches;
+        }
       }
 
       // Navigation de lecture : les textes voisins de la même collection.

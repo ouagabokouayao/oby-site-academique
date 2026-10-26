@@ -51,13 +51,21 @@
         <div class="eyebrow"><a class="text-link light" href="idees-analyses.html">Idées &amp; Analyses</a></div>
         <h1 data-analyse-titre>Analyse</h1>
         <p class="meta" data-analyse-meta></p>
-        <p data-analyse-chapeau>Chargement de l’analyse…</p>
+        <p class="analysis-chapeau" data-analyse-chapeau>Chargement de l’analyse…</p>
       </div>
     </section>
 
     <section class="section">
       <div class="section-inner">
-        <article data-analyse-corps></article>
+        <div class="analysis-layout" data-analyse-layout>
+          <nav class="analysis-toc" data-analyse-toc hidden aria-label="Sommaire de l’analyse">
+            <details class="analysis-toc-shell" data-analyse-toc-shell>
+              <summary>Sommaire</summary>
+              <ol data-analyse-toc-list></ol>
+            </details>
+          </nav>
+          <article data-analyse-corps></article>
+        </div>
         <p class="empty-state" data-analyse-vide hidden>Le texte de cette analyse n’est pas encore publié. Le catalogue complet reste accessible depuis la rubrique Idées &amp; Analyses.</p>
       </div>
     </section>
