@@ -4602,3 +4602,230 @@ a.analysis-collection .analysis-card-meta::after {
 .site-footer .eyebrow {
   color: var(--gold);
 }
+
+/* ==========================================================================
+   PREMIUM V1.1 — propositions soumises à arbitrage
+   Ce bloc est additif et se retire d'un seul tenant : il ne réécrit aucune
+   règle de la V1, il la surcharge en fin de feuille.
+   ========================================================================== */
+
+/* --- A · Hero d'accueil, variante B -------------------------------------
+   En V1 le nom occupe jusqu'à 123 px sur trois lignes forcées : il écrase le
+   positionnement, la promesse et les trois appels à l'action, qui sont
+   pourtant ce qui qualifie une visite. La variante B rend au nom une échelle
+   d'affiche sans en faire un mur, et redistribue le poids vers ce qui suit.
+   Aucun texte, aucun lien, aucune photographie ne change.
+
+   Le rééquilibrage ne vaut que là où le hero est en deux colonnes : en
+   dessous de 1061 px il s'empile, et les paliers mobiles de la V1 — qui
+   viennent plus haut dans la feuille — doivent garder la main. */
+
+@media (min-width: 1061px) {
+  .hero-inner {
+    min-height: 640px;
+    grid-template-columns: minmax(0, 0.92fr) minmax(380px, 540px);
+    gap: 52px;
+    padding: 76px 0;
+  }
+
+  .hero h1 {
+    margin: 14px 0 18px;
+    font-size: clamp(3.2rem, 5.4vw, 4.9rem);
+    line-height: 1.02;
+  }
+
+  .hero-signature {
+    margin-top: 28px;
+    font-size: clamp(1.22rem, 1.4vw + 1rem, 1.7rem);
+  }
+
+  .hero .actions {
+    margin-top: 32px;
+    gap: 14px 18px;
+  }
+
+  .hero .button.primary {
+    padding-inline: 26px;
+  }
+
+  .hero-portrait-panel .official-portrait {
+    box-shadow: 0 34px 100px rgba(0, 0, 0, 0.28);
+  }
+}
+
+/* Le positionnement disciplinaire devient la deuxième voix du hero : un filet
+   doré l'ancre sous le nom au lieu de le laisser flotter entre deux blocs.
+   Utile à toutes les largeurs, donc hors palier. */
+.hero-position {
+  position: relative;
+  max-width: 34ch;
+  padding-top: 16px;
+  line-height: 1.42;
+}
+
+.hero-position::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 64px;
+  height: 2px;
+  background: var(--gold);
+}
+
+.hero-promise {
+  max-width: 48ch;
+  margin-top: 18px;
+  color: rgba(246, 243, 234, 0.9);
+  line-height: 1.68;
+}
+
+/* --- B · Travaux, habillage éditorial des pages de garde -----------------
+   Les cinq vignettes sont des scans de documents réels, de formats proches
+   mais de hauteurs variables selon la largeur de leur carte. Elles sont
+   présentées sur un support de proportion constante — le « plateau » du site —
+   où la feuille reste une feuille : fond blanc, filet propre, ombre portée.
+   La distinction est donc graphique autant que textuelle : l'habillage
+   appartient au site, le document garde son apparence de document. Aucun
+   recadrage : `contain` conserve la page entière. */
+
+.page-garde-figure {
+  position: relative;
+  margin: var(--s-4) 0 var(--s-5);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: linear-gradient(180deg, var(--ivory), rgba(246, 243, 234, 0.55));
+  padding: var(--s-5);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.75),
+    0 10px 26px rgba(11, 29, 51, 0.06);
+}
+
+.page-garde-figure img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: 268px;
+  max-height: none;
+  margin: 0 auto;
+  object-fit: contain;
+  border: 1px solid rgba(11, 29, 51, 0.16);
+  border-radius: 2px;
+  background: var(--white);
+  box-shadow: 0 6px 18px rgba(11, 29, 51, 0.13);
+}
+
+.card:hover .page-garde-figure {
+  border-color: var(--gold-line);
+}
+
+/* --- C · Mobile 390 et 375 px --------------------------------------------
+   Mesures relevées en V1 : le titre de section occupe 37 px sur une colonne
+   de 354 px, contre 48 px sur 1440. Rapporté à la largeur disponible, il est
+   deux fois plus lourd sur téléphone que sur ordinateur, et la hiérarchie se
+   referme (37 → 27 → 16 au lieu de 48 → 25 → 16). On rouvre l'écart, on
+   élargit la gouttière et on donne aux boutons une surface tactile franche.
+   Aucun contenu n'est retiré. */
+
+@media (max-width: 640px) {
+  .section-title {
+    font-size: clamp(1.68rem, 7vw, 2rem);
+  }
+
+  .card h2,
+  .card h3 {
+    font-size: 1.32rem;
+  }
+
+  .section {
+    padding: 52px 0;
+  }
+
+  .section-heading {
+    gap: var(--s-5);
+    margin-bottom: var(--s-6);
+  }
+
+  /* Surface tactile : 48 px de haut, au-delà du minimum recommandé. */
+  .button {
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-menu .nav-link {
+    min-height: 46px;
+    display: flex;
+    align-items: center;
+  }
+
+  .page-garde-figure {
+    padding: var(--s-4);
+  }
+
+  .page-garde-figure img {
+    height: 224px;
+  }
+}
+
+@media (max-width: 390px) {
+  /* 18 px de gouttière serrent le texte contre le bord de l'écran. */
+  .header-inner,
+  .section-inner,
+  .footer-inner {
+    width: calc(100% - 40px);
+  }
+
+  .card {
+    padding: 22px 20px;
+  }
+}
+
+@media (max-width: 375px) {
+  .header-inner,
+  .section-inner,
+  .footer-inner {
+    width: calc(100% - 36px);
+  }
+
+  .section-title {
+    font-size: 1.62rem;
+  }
+
+  .card h2,
+  .card h3 {
+    font-size: 1.24rem;
+  }
+}
+
+/* Trois pages ont un réglage mobile qui leur est propre, plus spécifique que
+   la règle générale. Leurs titres de section suivent ici la même échelle que
+   les autres, sans toucher à leur gabarit de colonne, qui est délibéré. */
+@media (max-width: 640px) {
+  body[data-page="interventions"] .section-title,
+  body[data-page="travaux"] .section-title,
+  body[data-page="mediatheque"] .section-title {
+    font-size: clamp(1.62rem, 7vw, 1.95rem);
+  }
+
+  body[data-page="interventions"] .card h2,
+  body[data-page="interventions"] .card h3,
+  body[data-page="travaux"] .card h2,
+  body[data-page="travaux"] .card h3,
+  body[data-page="mediatheque"] .card h2,
+  body[data-page="mediatheque"] .card h3 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Pied de page sur téléphone : vingt liens empilés à 26 px de haut. C'est
+   au-dessus du minimum normatif de 24 px, mais sous le seuil de confort au
+   pouce. On les amène à 36 px sans rien retirer ni réordonner. */
+@media (max-width: 640px) {
+  .footer-links a {
+    display: block;
+    min-height: 36px;
+    padding-block: 5px;
+  }
+}

@@ -1,0 +1,95 @@
+/* OBY — OPTION TYPOGRAPHIQUE — NON INTÉGRÉE
+   ==========================================================================
+   Ce fichier n'est appelé par aucune page. Il consigne une option soumise à
+   la décision de Joseph, conformément au volet D de la mission V1.1 :
+   « Ne pas intégrer de police externe ou hébergée sans décision ultérieure. »
+
+   LE PROBLÈME
+   -----------
+   La pile serif du site est :
+     "Iowan Old Style", Baskerville, "Palatino Linotype", "Book Antiqua",
+     Georgia, serif
+   Iowan Old Style est livrée avec macOS et iOS, pas avec Windows. Palatino
+   Linotype et Book Antiqua sont présentes sous Windows, pas sous macOS.
+   Georgia est sur les deux. Un même titre est donc composé dans trois
+   dessins différents selon la machine du visiteur, avec des chasses et des
+   hauteurs d'x différentes : le nom du hero peut tenir sur deux lignes ici
+   et sur trois ailleurs.
+
+   La pile sans-serif pose la même question : Inter n'est installée par
+   défaut ni sous macOS ni sous Windows. En pratique, un Mac rend Avenir
+   Next et un PC Segoe UI.
+
+   CE QUI A ÉTÉ MESURÉ
+   -------------------
+   Les polices nommées ci-dessus n'étant pas installées dans l'environnement
+   de test, l'écart Mac/Windows n'a pas pu être mesuré directement. Mesure de
+   substitution, sur trois serif réellement présentes, même chaîne, même
+   corps de 64 px, même graisse :
+     DejaVu Serif .......... 705 px
+     Bitstream Charter ..... 577 px   (−18 %)
+     Caladea ............... 547 px   (−22 %)
+   L'ordre de grandeur de la divergence est donc bien réel.
+
+   OPTION 1 — NORMALISER SANS RIEN TÉLÉCHARGER (recommandée à l'essai)
+   -------------------------------------------------------------------
+   Le descripteur `size-adjust` d'une règle @font-face appliquée à une police
+   locale ramène les différentes substitutions à une même chasse apparente.
+   Aucun fichier n'est téléchargé, aucun service tiers n'est appelé, le poids
+   de la page ne bouge pas, et l'identité reste celle de la charte.
+
+   Les pourcentages ci-dessous sont des valeurs à CALIBRER sur une vraie
+   machine Windows en les comparant au rendu macOS de référence : ils ne
+   peuvent pas être déterminés depuis cet environnement, où l'accès aux
+   polices locales est refusé par le navigateur sans interface.
+
+@font-face {
+  font-family: "OBY Serif";
+  src: local("Iowan Old Style"), local("IowanOldStyle-Roman");
+  font-weight: 400 700;
+}
+
+@font-face {
+  font-family: "OBY Serif";
+  src: local("Palatino Linotype"), local("PalatinoLinotype-Roman");
+  size-adjust: 100%;
+  font-weight: 400 700;
+}
+
+@font-face {
+  font-family: "OBY Serif";
+  src: local("Book Antiqua");
+  size-adjust: 100%;
+  font-weight: 400 700;
+}
+
+@font-face {
+  font-family: "OBY Serif";
+  src: local("Georgia");
+  size-adjust: 100%;
+  font-weight: 400 700;
+}
+
+:root {
+  --serif: "OBY Serif", "Iowan Old Style", Baskerville, "Palatino Linotype",
+           "Book Antiqua", Georgia, serif;
+}
+
+   OPTION 2 — HÉBERGER UNE SERIF LIBRE
+   -----------------------------------
+   Une seule police servie depuis le dépôt garantit un rendu identique
+   partout, y compris sous Linux et Android, où la pile actuelle tombe sur
+   une serif générique. Coût : un fichier WOFF2 de l'ordre de 80 à 120 Ko,
+   un `font-display: swap` à régler, et surtout un choix d'identité — le
+   dessin des titres changerait sur toutes les machines, y compris celle de
+   Joseph. C'est une décision de charte, pas une décision technique.
+
+   OPTION 3 — NE RIEN CHANGER
+   --------------------------
+   La pile actuelle est robuste : elle ne dépend d'aucun réseau, ne ralentit
+   rien et ne casse jamais. Son défaut est une variation d'apparence que la
+   plupart des visiteurs ne perçoivent pas, puisqu'ils ne voient qu'une seule
+   version du site. C'est l'option la plus sûre si la priorité va à la
+   stabilité plutôt qu'à l'uniformité.
+
+   ========================================================================== */
