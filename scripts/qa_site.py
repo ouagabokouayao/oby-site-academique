@@ -13,8 +13,9 @@ from urllib.parse import unquote, urlsplit
 
 REQUIRED_ROBOTS = {"noindex", "nofollow", "noarchive", "nosnippet"}
 # 16 pages historiques + recherche-droit-mer-golfe-guinee.html, les deux portes
-# Académique / Professionnelle, et le détail d'une participation.
-EXPECTED_HTML_PAGES = 20
+# Académique / Professionnelle, le détail d'une participation, puis le catalogue
+# « Idées & Analyses » et son gabarit de lecture.
+EXPECTED_HTML_PAGES = 22
 RISK_TERMS = (
     "doctorant",
     "doctorat en cours",
@@ -61,6 +62,28 @@ FORMULATIONS_INTERNES = (
 # Le capital événementiel vit dans ce JSON ; interventions.html n'en affiche que
 # la liste compacte et participation.html?id=<id> le détail.
 PARTICIPATIONS_DATA = "assets/data/participations-oby.json"
+# Même principe pour la rubrique « Idées & Analyses » : un seul catalogue,
+# idees-analyses.html pour la liste et analyse.html?id=<id> pour la lecture.
+ANALYSES_DATA = "assets/data/analyses-oby.json"
+# Identifiants techniques arrêtés par 00. Les intitulés publics peuvent évoluer,
+# pas les id : ils sont la clé de rattachement de chaque texte.
+ANALYSES_COLLECTIONS = (
+    "gouverner-mer",
+    "littoral-climat-transitions",
+    "mediation-confiance-differends",
+    "innovation-technologie-pi",
+    "economie-bleue-finance-valeur",
+)
+ANALYSE_CHAMPS_REQUIS = ("id", "titre", "collection", "statut")
+# Liste blanche de clés, comme pour la veille : un champ de travail glissé plus
+# tard dans une analyse est refusé sans qu'il ait fallu le nommer d'avance.
+ANALYSE_CLES_PUBLIQUES = frozenset({
+    "id", "titre", "collection", "statut", "chapeau", "date_publication",
+    "lecture_minutes", "axes", "sections", "references", "liens", "ordre",
+})
+# Un catalogue public ne contient que du publiable : pas de brouillon mis de côté
+# dans un dépôt que tout le monde peut lire.
+ANALYSE_STATUT_PUBLIC = "publie"
 # Bornes de plausibilité des dimensions déclarées pour un média publié.
 MEDIA_DIM_MIN = 100
 MEDIA_DIM_MAX = 10000
@@ -492,7 +515,8 @@ def main():
     # une seule ressource : la dérive est invisible en navigation et coûteuse.
     version_pattern = re.compile(r'([\w./-]+\.(?:css|js|json))\?v=([\w.-]+)')
     versions = defaultdict(set)
-    for path, text in list(texts.items()) + [(p, p.read_text(encoding="utf-8")) for p in [root / "assets/js/main.js"] if p.exists()]:
+    scripts_servis = [root / "assets/js/main.js", root / "assets/js/analyses.js"]
+    for path, text in list(texts.items()) + [(p, p.read_text(encoding="utf-8")) for p in scripts_servis if p.exists()]:
         for asset, token in version_pattern.findall(text):
             versions[asset.rsplit("/", 1)[-1]].add(token)
     for asset, tokens in sorted(versions.items()):
@@ -544,14 +568,100 @@ def main():
             if trouve:
                 add(errors, "AEM_FORBIDDEN_TERM", participations, trouve.group(0))
 
+    # --- rubrique « Idées & Analyses » --------------------------------------
+    # Deux gabarits pour un seul catalogue : la rubrique doit rester lisible
+    # avec zéro analyse publiée, et ne jamais servir de réserve de brouillons.
+    catalogue_page = (root / "idees-analyses.html").resolve()
+    lecture_page = (root / "analyse.html").resolve()
+    analyses_js = root / "assets/js/analyses.js"
+    analyses_data = root / ANALYSES_DATA
+
+    for page, marqueurs in (
+        (catalogue_page, ("data-analyses", "data-analyses-collections", "data-analyses-controls",
+                          "data-analyses-results", "data-analyses-empty", "data-analyses-count")),
+        (lecture_page, ("data-analyse", "data-analyse-titre", "data-analyse-corps",
+                        "data-analyse-vide", "data-analyse-voisins")),
+    ):
+        texte = texts.get(page, "")
+        if not texte:
+            add(errors, "ANALYSES_PAGE_MISSING", page, "gabarit absent")
+            continue
+        for marqueur in marqueurs:
+            if marqueur not in texte:
+                add(errors, "ANALYSES_MARKUP_MISSING", page, marqueur)
+        if "assets/js/analyses.js" not in texte:
+            add(errors, "ANALYSES_SCRIPT_MISSING", page, "assets/js/analyses.js")
+
+    if not analyses_js.exists():
+        add(errors, "ANALYSES_SCRIPT_MISSING", analyses_js, "fichier absent")
+    else:
+        js_analyses = analyses_js.read_text(encoding="utf-8")
+        # Le catalogue et son compteur ne montrent que ce qui est publiable.
+        if f'statut === "{ANALYSE_STATUT_PUBLIC}"' not in js_analyses:
+            add(errors, "PUBLIC_COUNTER_UNFILTERED", analyses_js,
+                "le catalogue n'est pas filtré sur le statut publiable")
+
+    ids_analyses = set()
+    if not analyses_data.exists():
+        add(errors, "ANALYSES_DATA_MISSING", analyses_data, "catalogue absent")
+    else:
+        try:
+            catalogue = json.loads(analyses_data.read_text(encoding="utf-8"))
+        except (OSError, UnicodeError, json.JSONDecodeError) as exc:
+            catalogue = {}
+            add(errors, "ANALYSES_DATA_INVALID", analyses_data, str(exc))
+        collections = catalogue.get("collections") if isinstance(catalogue, dict) else None
+        collections = collections if isinstance(collections, list) else []
+        ids_collections = [str(c.get("id") or "") for c in collections if isinstance(c, dict)]
+        for attendu in ANALYSES_COLLECTIONS:
+            if attendu not in ids_collections:
+                add(errors, "ANALYSES_COLLECTION_MISSING", analyses_data, attendu)
+        for inconnue in sorted(set(ids_collections) - set(ANALYSES_COLLECTIONS)):
+            add(errors, "ANALYSES_COLLECTION_UNKNOWN", analyses_data, inconnue)
+        for collection in collections:
+            if isinstance(collection, dict) and not collection.get("titre"):
+                add(errors, "ANALYSES_COLLECTION_FIELD_MISSING", analyses_data,
+                    f"{collection.get('id', '?')} : titre")
+        entrees = catalogue.get("analyses") if isinstance(catalogue, dict) else None
+        if not isinstance(entrees, list):
+            add(errors, "ANALYSES_DATA_INVALID", analyses_data, "la clé « analyses » doit être une liste")
+            entrees = []
+        liste_ids = [str(e.get("id") or "") for e in entrees if isinstance(e, dict)]
+        for doublon in sorted({i for i in liste_ids if liste_ids.count(i) > 1}):
+            add(errors, "ANALYSE_ID_DUPLICATE", analyses_data, doublon)
+        ids_analyses = set(liste_ids)
+        for entree in entrees:
+            if not isinstance(entree, dict):
+                add(errors, "ANALYSES_DATA_INVALID", analyses_data, "entrée non structurée")
+                continue
+            reference = entree.get("id", "?")
+            for champ in ANALYSE_CHAMPS_REQUIS:
+                if not entree.get(champ):
+                    add(errors, "ANALYSE_FIELD_MISSING", analyses_data, f"{reference} : {champ}")
+            if entree.get("statut") not in (None, ANALYSE_STATUT_PUBLIC):
+                add(errors, "ANALYSE_STATUT_NON_PUBLIC", analyses_data,
+                    f"{reference} : {entree.get('statut')}")
+            if entree.get("collection") and entree["collection"] not in ANALYSES_COLLECTIONS:
+                add(errors, "ANALYSE_COLLECTION_UNKNOWN", analyses_data,
+                    f"{reference} : {entree['collection']}")
+            for cle in sorted(set(entree) - ANALYSE_CLES_PUBLIQUES):
+                add(errors, "PUBLIC_SCHEMA_VIOLATION", analyses_data, f"{reference} : {cle}")
+
+    # Toute adresse analyse.html?id=… doit désigner un texte réellement publié.
+    for page, text in texts.items():
+        for ident in re.findall(r'analyse\.html\?id=([^"&#\s]+)', re.sub(r"<!--.*?-->", "", text, flags=re.S)):
+            if ident not in ids_analyses:
+                add(errors, "ANALYSE_ID_UNKNOWN", page, ident)
+
     # --- données de back-office dans la projection publique ------------------
     # Le dépôt est public : une donnée interne masquée dans l'interface reste
     # lisible dans le fichier. Ces champs et ces formulations ne doivent donc
     # figurer ni dans les JSON servis, ni dans le JavaScript qui les double.
     portee_publique = [root / "assets/data" / nom for nom in (
         "veille-agenda-oby.json", "bibliotheque-oby.json", "sujets-recherche-oby.json",
-        "mediatheque-oby.json", "participations-oby.json")]
+        "mediatheque-oby.json", "participations-oby.json", "analyses-oby.json")]
     portee_publique.append(root / "assets/js/main.js")
+    portee_publique.append(root / "assets/js/analyses.js")
     for source in portee_publique:
         if not source.exists():
             continue

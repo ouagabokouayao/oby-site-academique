@@ -4174,3 +4174,94 @@ main:focus {
     padding-inline: 10px;
   }
 }
+
+/* --- Idées & Analyses ----------------------------------------------------
+   La rubrique réutilise les composants existants (.card, .map-shell, .map-pill,
+   .event-context-body). Ces règles n'ajoutent que ce qui lui est propre : le
+   titre cliquable d'une carte, la carte de collection et la mise en page de
+   lecture d'un texte long. */
+
+.analysis-card h3 a {
+  color: inherit;
+  text-decoration: none;
+  background-image: linear-gradient(var(--gold-line), var(--gold-line));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0 2px;
+  transition: background-size var(--transition);
+}
+
+.analysis-card h3 a:hover,
+.analysis-card h3 a:focus-visible {
+  background-size: 100% 2px;
+}
+
+.analysis-collection .meta {
+  margin-top: auto;
+  padding-top: 10px;
+  color: var(--muted);
+}
+
+/* Le corps d'une analyse se lit en continu : mesure courte, interlignage
+   généreux, intertitres détachés du flux des paragraphes. */
+.analysis-body {
+  max-width: 68ch;
+}
+
+.analysis-body > p {
+  color: var(--ink);
+  font-size: 1rem;
+  line-height: 1.72;
+}
+
+.analysis-heading {
+  margin: 30px 0 12px;
+  color: var(--navy);
+  font-family: var(--serif);
+  font-size: 1.42rem;
+  line-height: 1.18;
+  text-wrap: balance;
+}
+
+.analysis-heading:first-child {
+  margin-top: 0;
+}
+
+.analysis-references {
+  margin-top: 30px;
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+}
+
+.analysis-references h2 {
+  margin: 0 0 10px;
+  color: var(--navy);
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.analysis-references ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.analysis-references li {
+  margin-bottom: 6px;
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 640px) {
+  .analysis-heading {
+    font-size: 1.24rem;
+  }
+
+  .analysis-body > p {
+    font-size: 0.98rem;
+  }
+}

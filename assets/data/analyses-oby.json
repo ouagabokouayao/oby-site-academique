@@ -1,0 +1,36 @@
+{
+  "version": "oby-analyses-v1",
+  "collections": [
+    {
+      "id": "gouverner-mer",
+      "titre": "Gouverner la mer",
+      "resume": "Droit international de la mer, souveraineté, sécurité maritime, institutions et coopération régionale.",
+      "ordre": 1
+    },
+    {
+      "id": "littoral-climat-transitions",
+      "titre": "Littoral, climat & transitions",
+      "resume": "Vulnérabilités côtières, adaptation, environnement marin, usages des territoires littoraux et aménagement.",
+      "ordre": 2
+    },
+    {
+      "id": "mediation-confiance-differends",
+      "titre": "Médiation, confiance & différends",
+      "resume": "Prévention et règlement amiable des différends, négociation, indépendance, impartialité et construction de la confiance.",
+      "ordre": 3
+    },
+    {
+      "id": "innovation-technologie-pi",
+      "titre": "Innovation, technologie & propriété intellectuelle",
+      "resume": "Technologies, régulation, propriété intellectuelle et transformations des pratiques juridiques et institutionnelles.",
+      "ordre": 4
+    },
+    {
+      "id": "economie-bleue-finance-valeur",
+      "titre": "Économie bleue, finance & valeur",
+      "resume": "Économie maritime, financement des activités de la mer, chaînes de valeur et prospective des espaces marins.",
+      "ordre": 5
+    }
+  ],
+  "analyses": []
+}

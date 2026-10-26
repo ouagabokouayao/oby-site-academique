@@ -599,6 +599,7 @@ const loadWatchAgendaItems = () =>
     { title: "Médiathèque", type: "Page", category: "Photographies et lieux", url: "mediatheque.html" },
     { title: "Cartographie intellectuelle", type: "Page", category: "Exploration", url: "cartographie.html" },
     { title: "À la une · Veille & agenda", type: "Page", category: "Veille", url: "veille-agenda.html" },
+    { title: "Idées & Analyses", type: "Page", category: "Analyses", url: "idees-analyses.html" },
     { title: "Carnet d’idées", type: "Page", category: "Réflexions", url: "carnet-idees.html" },
     { title: "Reconnaissances", type: "Page", category: "Appuis et engagements", url: "distinctions-bourses.html" },
     { title: "Initiatives reliées", type: "Page", category: "Écosystème", url: "ecosysteme.html" },
@@ -654,8 +655,13 @@ const loadWatchAgendaItems = () =>
     fetch("assets/data/bibliotheque-oby.json").then((response) => response.json()),
     fetch("assets/data/mediatheque-oby.json").then((response) => response.json()),
     loadWatchAgendaItems().then(({ items }) => items),
+    // Catalogue des analyses : il peut être vide, et son absence ne doit pas
+    // priver la recherche des quatre autres corpus.
+    fetch("assets/data/analyses-oby.json?v=oby-v3-11")
+      .then((response) => response.json())
+      .catch(() => ({ collections: [], analyses: [] })),
   ])
-    .then(([subjects, references, media, watch]) => {
+    .then(([subjects, references, media, watch, catalogue]) => {
       const subjectItems = subjects.map((item) => ({
         title: item.titre || item.titreOriginal || "Sujet",
         type: "Sujet",
@@ -691,7 +697,19 @@ const loadWatchAgendaItems = () =>
         searchText: [item.type, item.statut, item.zone, item.resume, item.interet_oby, ...(item.axes || [])].join(" "),
         url: "veille-agenda.html",
       }));
-      const items = [...pages, ...subjectItems, ...referenceItems, ...mediaItems, ...watchItems];
+      const collectionsAnalyses = Array.isArray(catalogue?.collections) ? catalogue.collections : [];
+      const analysisItems = (Array.isArray(catalogue?.analyses) ? catalogue.analyses : [])
+        .filter((item) => item && item.id && item.statut === "publie")
+        .map((item) => ({
+          title: item.titre || "Analyse",
+          type: "Analyse",
+          category:
+            collectionsAnalyses.find((collection) => collection.id === item.collection)?.titre ||
+            "Idées & Analyses",
+          searchText: [item.chapeau, ...(item.axes || [])].join(" "),
+          url: `analyse.html?id=${encodeURIComponent(item.id)}`,
+        }));
+      const items = [...pages, ...subjectItems, ...referenceItems, ...mediaItems, ...watchItems, ...analysisItems];
 
       const params = new URLSearchParams(window.location.search);
       if (searchInput && params.get("q")) {
