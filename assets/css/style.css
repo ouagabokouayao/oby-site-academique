@@ -4831,3 +4831,53 @@ a.analysis-collection .analysis-card-meta::after {
     padding-block: 5px;
   }
 }
+
+/* --- C · Contact sur téléphone -------------------------------------------
+   La liste de qualification est une suite de liens séparés par des points
+   médians. Sur une ligne large, elle se lit comme une énumération. Sur un
+   téléphone, chaque lien occupe sa propre ligne et les séparateurs se
+   retrouvent isolés en début ou en fin de ligne, avec des soulignements de
+   longueurs inégales : l'ensemble ne ressemble plus à rien.
+
+   Le point médian est une ponctuation décorative. On annule sa taille sur le
+   conteneur — les nœuds de texte disparaissent visuellement — et on la rend
+   aux liens, qui deviennent une vraie liste verticale. Aucun lien, aucun
+   libellé, aucune adresse n'est touché. */
+
+@media (max-width: 640px) {
+  /* Sélecteur aligné sur `.section-inner > p`, qui borne la mesure de lecture
+     et l'emporterait sinon en spécificité. */
+  .section-inner > .contact-qualification {
+    /* Le conteneur est une boîte flexible qui enveloppe : on la bascule en
+       colonne, et la taille nulle efface les points médians sans toucher au
+       balisage. Les liens, eux, reprennent leur corps. */
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: 0;
+    font-size: 0;
+    /* La mesure de lecture générale est exprimée en `ch`, unité qui vaut zéro
+       quand la taille de police l'est aussi : sans cette neutralisation, le
+       bloc se réduirait à une largeur nulle. */
+    max-width: none;
+    margin-top: var(--s-3);
+    border-top: 1px solid var(--line);
+  }
+
+  .section-inner > .contact-qualification a.text-link {
+    display: block;
+    width: 100%;
+    padding: 13px 0 13px 14px;
+    border-bottom: 1px solid var(--line);
+    border-left: 2px solid var(--gold-line);
+    font-size: 0.95rem;
+    line-height: 1.4;
+    background-image: none;
+  }
+
+  .section-inner > .contact-qualification a.text-link:hover,
+  .section-inner > .contact-qualification a.text-link:focus-visible {
+    border-left-color: var(--gold);
+    background-color: rgba(246, 243, 234, 0.6);
+  }
+}
