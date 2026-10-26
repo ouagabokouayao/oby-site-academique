@@ -619,11 +619,26 @@ select:focus-visible {
 
 /* .page-hero partage le fond bleu nuit de .hero : même traitement du bouton
    secondaire, qui serait sinon en bleu nuit sur bleu nuit (cas de 404.html).
-   Volontairement non étendu à .section.navy : les boutons y reposent sur des
-   panneaux clairs et doivent rester sombres. */
+   La règle ne vise pas .section.navy en bloc, parce que ses boutons reposent
+   le plus souvent sur un panneau clair et doivent rester sombres — c'est le
+   cas de .research-highlight. Restent deux panneaux réellement sombres où le
+   bouton était, lui, illisible à 1:1 : l'encart d'appel et la coquille de
+   filtres d'une section navy. La coquille de filtres sert aussi sur fond
+   clair (catalogue d'Idées & Analyses) : le sélecteur reste donc borné. */
 .hero .button.secondary,
-.page-hero .button.secondary {
+.page-hero .button.secondary,
+.callout .button.secondary,
+.navy .map-shell .button.secondary,
+.navy .watch-shell .button.secondary {
   color: var(--ivory);
+  border-color: rgba(246, 243, 234, 0.42);
+}
+
+.callout .button.secondary:hover,
+.navy .map-shell .button.secondary:hover,
+.navy .watch-shell .button.secondary:hover {
+  border-color: var(--gold-line);
+  background: rgba(246, 243, 234, 0.12);
 }
 
 .button.secondary:hover {
