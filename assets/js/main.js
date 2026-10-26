@@ -599,7 +599,6 @@ const loadWatchAgendaItems = () =>
     { title: "Médiathèque", type: "Page", category: "Photographies et lieux", url: "mediatheque.html" },
     { title: "Cartographie intellectuelle", type: "Page", category: "Exploration", url: "cartographie.html" },
     { title: "À la une · Veille & agenda", type: "Page", category: "Veille", url: "veille-agenda.html" },
-    { title: "Idées & Analyses", type: "Page", category: "Analyses", url: "idees-analyses.html" },
     { title: "Carnet d’idées", type: "Page", category: "Réflexions", url: "carnet-idees.html" },
     { title: "Reconnaissances", type: "Page", category: "Appuis et engagements", url: "distinctions-bourses.html" },
     { title: "Initiatives reliées", type: "Page", category: "Écosystème", url: "ecosysteme.html" },
