@@ -310,12 +310,12 @@ select:focus-visible {
 .hero-inner {
   position: relative;
   z-index: 1;
-  min-height: 700px;
+  min-height: 640px;
   display: grid;
-  grid-template-columns: minmax(0, 0.96fr) minmax(360px, 520px);
+  grid-template-columns: minmax(0, 0.92fr) minmax(380px, 540px);
   align-items: center;
-  gap: 44px;
-  padding: 92px 0;
+  gap: 52px;
+  padding: 76px 0;
 }
 
 .hero-kicker,
@@ -365,9 +365,10 @@ select:focus-visible {
 }
 
 .hero h1 {
-  margin: 18px 0 16px;
+  margin: 14px 0 18px;
   max-width: 820px;
-  font-size: clamp(4.4rem, 8.4vw, 7.7rem);
+  font-size: clamp(3.2rem, 5.4vw, 4.9rem);
+  line-height: 1.02;
   font-weight: 700;
   overflow-wrap: break-word;
   text-wrap: balance;
@@ -375,11 +376,33 @@ select:focus-visible {
 }
 
 .hero-position {
-  max-width: 760px;
+  position: relative;
+  max-width: 34ch;
+  padding-top: 16px;
   color: var(--ivory);
-  font-size: clamp(1.02rem, 2vw, 1.25rem);
+  font-size: clamp(1.06rem, 1.1vw + 0.88rem, 1.32rem);
   font-weight: 650;
+  line-height: 1.42;
   overflow-wrap: break-word;
+}
+
+/* Un filet doré ancre le positionnement disciplinaire sous le nom. */
+.hero-position::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 64px;
+  height: 2px;
+  background: var(--gold);
+}
+
+.hero-promise {
+  max-width: 48ch;
+  margin-top: 18px;
+  color: rgba(246, 243, 234, 0.9);
+  font-size: 1rem;
+  line-height: 1.68;
 }
 
 .hero-subposition {
@@ -393,12 +416,12 @@ select:focus-visible {
 
 .hero-signature {
   display: inline-block;
-  margin-top: 24px;
+  margin-top: 28px;
   padding-top: 18px;
   border-top: 1px solid rgba(200, 169, 107, 0.64);
   color: var(--ivory);
   font-family: var(--serif);
-  font-size: clamp(1.35rem, 2.6vw, 2rem);
+  font-size: clamp(1.22rem, 1.4vw + 1rem, 1.7rem);
   font-style: italic;
   overflow-wrap: break-word;
 }
@@ -541,7 +564,7 @@ select:focus-visible {
   border: 1px solid rgba(200, 169, 107, 0.3);
   border-radius: 10px;
   background: var(--navy);
-  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 34px 100px rgba(0, 0, 0, 0.28);
 }
 
 .hero-panel .official-portrait img {
@@ -598,6 +621,33 @@ select:focus-visible {
 .hero .button.primary {
   color: var(--navy);
   background: var(--ivory);
+}
+
+/* Groupe d'appels à l'action du hero.
+   Les deux boutons sont de même rang et tiennent sur une ligne ; le troisième
+   lien est tertiaire et occupait, par simple retour à la ligne, une seconde
+   ligne qui avait l'air subie. On la rend intentionnelle : il prend toute la
+   largeur du groupe et se détache par un filet doré. Aucune action n'est
+   masquée ni retirée. Le remplissage large du bouton principal est un réglage
+   de hero en deux colonnes : sous 1061 px les boutons occupent toute la
+   largeur et le palier téléphone leur donne un remplissage serré. */
+@media (min-width: 1061px) {
+  .hero .actions {
+    margin-top: 32px;
+    gap: 16px 18px;
+    align-items: center;
+  }
+
+  .hero .button.primary {
+    padding-inline: 26px;
+  }
+
+  .hero .actions .hero-text-link {
+    flex-basis: 100%;
+    margin-top: 2px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(200, 169, 107, 0.34);
+  }
 }
 
 .hero .text-link {
@@ -894,21 +944,39 @@ select:focus-visible {
   overflow-wrap: break-word;
 }
 
+/* Les pages de garde sont des scans de documents, de hauteurs variables selon
+   la largeur de leur carte. Le plateau épouse la feuille et se centre ; la
+   feuille garde son apparence de feuille. Aucun recadrage : `contain`
+   conserve la page entière. */
 .page-garde-figure {
-  margin: 18px 0 16px;
-  border: 1px solid rgba(11, 29, 51, 0.12);
-  border-radius: 6px;
-  background: var(--white);
-  padding: 10px;
-  box-shadow: 0 14px 36px rgba(11, 29, 51, 0.08);
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+  margin: var(--s-4) auto var(--s-5);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: linear-gradient(180deg, var(--ivory), rgba(246, 243, 234, 0.55));
+  padding: var(--s-5);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.75),
+    0 10px 26px rgba(11, 29, 51, 0.06);
 }
 
 .page-garde-figure img {
-  width: 100%;
-  max-height: 320px;
-  height: auto;
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: 300px;
+  margin: 0 auto;
   object-fit: contain;
-  border-radius: 4px;
+  border: 1px solid rgba(11, 29, 51, 0.16);
+  border-radius: 2px;
+  background: var(--white);
+  box-shadow: 0 6px 18px rgba(11, 29, 51, 0.13);
+}
+
+.card:hover .page-garde-figure {
+  border-color: var(--gold-line);
 }
 
 .capability-accordion {
@@ -4603,131 +4671,17 @@ a.analysis-collection .analysis-card-meta::after {
   color: var(--gold);
 }
 
-/* ==========================================================================
-   PREMIUM V1.1 — propositions soumises à arbitrage
-   Ce bloc est additif et se retire d'un seul tenant : il ne réécrit aucune
-   règle de la V1, il la surcharge en fin de feuille.
-   ========================================================================== */
+/* --- Paliers téléphone — finition premium V1.1 ---------------------------
+   Mesures relevées en V1 : le titre de section occupait 37 px sur une colonne
+   de 354 px, contre 48 px sur 1440. Rapporté à la largeur disponible, il
+   pesait deux fois plus sur téléphone que sur ordinateur, et la hiérarchie se
+   refermait (37 → 27 → 16 au lieu de 48 → 25 → 16). On rouvre l'écart, on
+   élargit la gouttière et on donne aux cibles une surface tactile franche.
+   Aucun contenu n'est retiré.
 
-/* --- A · Hero d'accueil, variante B -------------------------------------
-   En V1 le nom occupe jusqu'à 123 px sur trois lignes forcées : il écrase le
-   positionnement, la promesse et les trois appels à l'action, qui sont
-   pourtant ce qui qualifie une visite. La variante B rend au nom une échelle
-   d'affiche sans en faire un mur, et redistribue le poids vers ce qui suit.
-   Aucun texte, aucun lien, aucune photographie ne change.
-
-   Le rééquilibrage ne vaut que là où le hero est en deux colonnes : en
-   dessous de 1061 px il s'empile, et les paliers mobiles de la V1 — qui
-   viennent plus haut dans la feuille — doivent garder la main. */
-
-@media (min-width: 1061px) {
-  .hero-inner {
-    min-height: 640px;
-    grid-template-columns: minmax(0, 0.92fr) minmax(380px, 540px);
-    gap: 52px;
-    padding: 76px 0;
-  }
-
-  .hero h1 {
-    margin: 14px 0 18px;
-    font-size: clamp(3.2rem, 5.4vw, 4.9rem);
-    line-height: 1.02;
-  }
-
-  .hero-signature {
-    margin-top: 28px;
-    font-size: clamp(1.22rem, 1.4vw + 1rem, 1.7rem);
-  }
-
-  .hero .actions {
-    margin-top: 32px;
-    gap: 14px 18px;
-  }
-
-  .hero .button.primary {
-    padding-inline: 26px;
-  }
-
-  .hero-portrait-panel .official-portrait {
-    box-shadow: 0 34px 100px rgba(0, 0, 0, 0.28);
-  }
-}
-
-/* Le positionnement disciplinaire devient la deuxième voix du hero : un filet
-   doré l'ancre sous le nom au lieu de le laisser flotter entre deux blocs.
-   Utile à toutes les largeurs, donc hors palier. */
-.hero-position {
-  position: relative;
-  max-width: 34ch;
-  padding-top: 16px;
-  line-height: 1.42;
-}
-
-.hero-position::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 64px;
-  height: 2px;
-  background: var(--gold);
-}
-
-.hero-promise {
-  max-width: 48ch;
-  margin-top: 18px;
-  color: rgba(246, 243, 234, 0.9);
-  line-height: 1.68;
-}
-
-/* --- B · Travaux, habillage éditorial des pages de garde -----------------
-   Les cinq vignettes sont des scans de documents réels, de formats proches
-   mais de hauteurs variables selon la largeur de leur carte. Elles sont
-   présentées sur un support de proportion constante — le « plateau » du site —
-   où la feuille reste une feuille : fond blanc, filet propre, ombre portée.
-   La distinction est donc graphique autant que textuelle : l'habillage
-   appartient au site, le document garde son apparence de document. Aucun
-   recadrage : `contain` conserve la page entière. */
-
-.page-garde-figure {
-  position: relative;
-  width: fit-content;
-  max-width: 100%;
-  margin: var(--s-4) auto var(--s-5);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-md);
-  background: linear-gradient(180deg, var(--ivory), rgba(246, 243, 234, 0.55));
-  padding: var(--s-5);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.75),
-    0 10px 26px rgba(11, 29, 51, 0.06);
-}
-
-.page-garde-figure img {
-  display: block;
-  width: auto;
-  max-width: 100%;
-  height: 300px;
-  max-height: none;
-  margin: 0 auto;
-  object-fit: contain;
-  border: 1px solid rgba(11, 29, 51, 0.16);
-  border-radius: 2px;
-  background: var(--white);
-  box-shadow: 0 6px 18px rgba(11, 29, 51, 0.13);
-}
-
-.card:hover .page-garde-figure {
-  border-color: var(--gold-line);
-}
-
-/* --- C · Mobile 390 et 375 px --------------------------------------------
-   Mesures relevées en V1 : le titre de section occupe 37 px sur une colonne
-   de 354 px, contre 48 px sur 1440. Rapporté à la largeur disponible, il est
-   deux fois plus lourd sur téléphone que sur ordinateur, et la hiérarchie se
-   referme (37 → 27 → 16 au lieu de 48 → 25 → 16). On rouvre l'écart, on
-   élargit la gouttière et on donne aux boutons une surface tactile franche.
-   Aucun contenu n'est retiré. */
+   Un seul palier par largeur, dans l'ordre 640 → 390 → 375, pour que le plus
+   étroit ait naturellement le dernier mot sans recourir à une spécificité
+   supplémentaire. */
 
 @media (max-width: 640px) {
   .section-title {
@@ -4762,6 +4716,14 @@ a.analysis-collection .analysis-card-meta::after {
     align-items: center;
   }
 
+  /* Vingt liens de pied de page empilés à 26 px : au-dessus du minimum
+     normatif de 24 px, mais sous le seuil de confort au pouce. */
+  .footer-links a {
+    display: block;
+    min-height: 36px;
+    padding-block: 5px;
+  }
+
   .page-garde-figure {
     padding: var(--s-4);
   }
@@ -4769,10 +4731,67 @@ a.analysis-collection .analysis-card-meta::after {
   .page-garde-figure img {
     height: 224px;
   }
+
+  /* Trois pages ont un gabarit de colonne qui leur est propre, délibéré, et
+     des titres plus spécifiques que la règle générale. Seule leur échelle est
+     alignée sur celle des autres pages. */
+  body[data-page="interventions"] .section-title,
+  body[data-page="travaux"] .section-title,
+  body[data-page="mediatheque"] .section-title {
+    font-size: clamp(1.62rem, 7vw, 1.95rem);
+  }
+
+  body[data-page="interventions"] .card h2,
+  body[data-page="interventions"] .card h3,
+  body[data-page="travaux"] .card h2,
+  body[data-page="travaux"] .card h3,
+  body[data-page="mediatheque"] .card h2,
+  body[data-page="mediatheque"] .card h3 {
+    font-size: 1.3rem;
+  }
+
+  /* Contact — liste de qualification des demandes.
+     C'est une suite de liens séparés par des points médians : une énumération
+     sur une ligne large, un désordre sur un téléphone, où chaque lien prend sa
+     propre ligne et laisse les séparateurs isolés en début ou en fin de ligne.
+     Le point médian étant une ponctuation décorative, on annule sa taille sur
+     le conteneur et on la rend aux liens, qui deviennent une vraie liste
+     verticale. Aucun lien, aucun libellé, aucune adresse n'est touché.
+     Le sélecteur est aligné sur `.section-inner > p`, qui borne la mesure de
+     lecture et l'emporterait sinon. */
+  .section-inner > .contact-qualification {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: 0;
+    font-size: 0;
+    /* La mesure générale est en `ch`, unité qui vaut zéro quand la taille de
+       police l'est aussi : sans cette neutralisation, le bloc disparaîtrait. */
+    max-width: none;
+    margin-top: var(--s-3);
+    border-top: 1px solid var(--line);
+  }
+
+  .section-inner > .contact-qualification a.text-link {
+    display: block;
+    width: 100%;
+    padding: 13px 0 13px 14px;
+    border-bottom: 1px solid var(--line);
+    border-left: 2px solid var(--gold-line);
+    font-size: 0.95rem;
+    line-height: 1.4;
+    background-image: none;
+  }
+
+  .section-inner > .contact-qualification a.text-link:hover,
+  .section-inner > .contact-qualification a.text-link:focus-visible {
+    border-left-color: var(--gold);
+    background-color: rgba(246, 243, 234, 0.6);
+  }
 }
 
 @media (max-width: 390px) {
-  /* 18 px de gouttière serrent le texte contre le bord de l'écran. */
+  /* 18 px de gouttière serraient le texte contre le bord de l'écran. */
   .header-inner,
   .section-inner,
   .footer-inner {
@@ -4798,86 +4817,5 @@ a.analysis-collection .analysis-card-meta::after {
   .card h2,
   .card h3 {
     font-size: 1.24rem;
-  }
-}
-
-/* Trois pages ont un réglage mobile qui leur est propre, plus spécifique que
-   la règle générale. Leurs titres de section suivent ici la même échelle que
-   les autres, sans toucher à leur gabarit de colonne, qui est délibéré. */
-@media (max-width: 640px) {
-  body[data-page="interventions"] .section-title,
-  body[data-page="travaux"] .section-title,
-  body[data-page="mediatheque"] .section-title {
-    font-size: clamp(1.62rem, 7vw, 1.95rem);
-  }
-
-  body[data-page="interventions"] .card h2,
-  body[data-page="interventions"] .card h3,
-  body[data-page="travaux"] .card h2,
-  body[data-page="travaux"] .card h3,
-  body[data-page="mediatheque"] .card h2,
-  body[data-page="mediatheque"] .card h3 {
-    font-size: 1.3rem;
-  }
-}
-
-/* Pied de page sur téléphone : vingt liens empilés à 26 px de haut. C'est
-   au-dessus du minimum normatif de 24 px, mais sous le seuil de confort au
-   pouce. On les amène à 36 px sans rien retirer ni réordonner. */
-@media (max-width: 640px) {
-  .footer-links a {
-    display: block;
-    min-height: 36px;
-    padding-block: 5px;
-  }
-}
-
-/* --- C · Contact sur téléphone -------------------------------------------
-   La liste de qualification est une suite de liens séparés par des points
-   médians. Sur une ligne large, elle se lit comme une énumération. Sur un
-   téléphone, chaque lien occupe sa propre ligne et les séparateurs se
-   retrouvent isolés en début ou en fin de ligne, avec des soulignements de
-   longueurs inégales : l'ensemble ne ressemble plus à rien.
-
-   Le point médian est une ponctuation décorative. On annule sa taille sur le
-   conteneur — les nœuds de texte disparaissent visuellement — et on la rend
-   aux liens, qui deviennent une vraie liste verticale. Aucun lien, aucun
-   libellé, aucune adresse n'est touché. */
-
-@media (max-width: 640px) {
-  /* Sélecteur aligné sur `.section-inner > p`, qui borne la mesure de lecture
-     et l'emporterait sinon en spécificité. */
-  .section-inner > .contact-qualification {
-    /* Le conteneur est une boîte flexible qui enveloppe : on la bascule en
-       colonne, et la taille nulle efface les points médians sans toucher au
-       balisage. Les liens, eux, reprennent leur corps. */
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: stretch;
-    gap: 0;
-    font-size: 0;
-    /* La mesure de lecture générale est exprimée en `ch`, unité qui vaut zéro
-       quand la taille de police l'est aussi : sans cette neutralisation, le
-       bloc se réduirait à une largeur nulle. */
-    max-width: none;
-    margin-top: var(--s-3);
-    border-top: 1px solid var(--line);
-  }
-
-  .section-inner > .contact-qualification a.text-link {
-    display: block;
-    width: 100%;
-    padding: 13px 0 13px 14px;
-    border-bottom: 1px solid var(--line);
-    border-left: 2px solid var(--gold-line);
-    font-size: 0.95rem;
-    line-height: 1.4;
-    background-image: none;
-  }
-
-  .section-inner > .contact-qualification a.text-link:hover,
-  .section-inner > .contact-qualification a.text-link:focus-visible {
-    border-left-color: var(--gold);
-    background-color: rgba(246, 243, 234, 0.6);
   }
 }
