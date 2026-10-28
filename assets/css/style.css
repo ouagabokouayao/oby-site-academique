@@ -810,6 +810,17 @@ select:focus-visible {
   display: none;
 }
 
+/* Photographie de groupe en tête de page : le cadre épouse le 4/3 de la prise
+   de vue à toutes les largeurs, de sorte que personne ne soit coupé par le
+   recadrage du cadre 16/9 de l'ordinateur ni par celui, vertical, du téléphone. */
+.page-hero-visual.page-hero-groupe {
+  aspect-ratio: 4 / 3;
+}
+
+.page-hero-groupe::after {
+  display: none;
+}
+
 .section {
   position: relative;
   padding: var(--space-section) 0;
