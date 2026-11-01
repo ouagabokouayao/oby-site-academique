@@ -53,10 +53,10 @@
       "science océanique",
       "prospective"
     ],
-    "statut": "Opportunité",
-    "resume": "Appel de l'Ocean Decade invitant à soumettre des initiatives océaniques comme projets, programmes ou contributions de la Décennie.",
+    "statut": "Partiellement clos",
+    "resume": "Appel de l'Ocean Decade en trois volets. Les manifestations d'intérêt pour des programmes (31 mai 2026), puis les propositions de programmes et de projets (31 août 2026), sont closes ; selon le texte de l'appel, les contributions à la Décennie sont reçues au fil de l'eau.",
     "interet_oby": "Ce repère ouvre une passerelle entre recherche, innovation, gouvernance de l'océan et contribution scientifique structurée.",
-    "lien_source": "https://oceandecade.org/",
+    "lien_source": "https://oceandecade.org/call-for-decade-actions-11-2026/",
     "affichage_accueil": true,
     "ordre": 7
   },
@@ -94,7 +94,7 @@
     "statut": "À suivre",
     "resume": "Conférence Ocean Decade annoncée à Rio de Janeiro pour réunir la communauté océanique internationale autour de l'action pour l'océan.",
     "interet_oby": "Ce repère permet de suivre un espace structurant pour les liens entre science, politique publique, prospective et gouvernance maritime.",
-    "lien_source": "https://oceandecade.org/",
+    "lien_source": "https://oceandecade.org/events/2027-ocean-decade-conference/",
     "affichage_accueil": false,
     "ordre": 9
   }
