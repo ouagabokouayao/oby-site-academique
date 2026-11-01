@@ -1408,7 +1408,8 @@ window.addEventListener("hashchange", revealHashTarget);
     .then((fiches) => {
       const fiche = fiches.find((entree) => entree.id === identifiant);
 
-      if (!fiche) {
+      // Une fiche retirée de la liste ne doit pas rester lisible par son adresse.
+      if (!fiche || fiche.affichage_participations === false) {
         introuvable("Cette participation n’existe pas ou n’est plus publiée.");
         return;
       }
