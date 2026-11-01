@@ -30,6 +30,7 @@ RUBRIQUES = [
     ("Accueil", "Accueil", "index.html", []),
     ("Profil", "Profil", "profil.html", [
         ("Mon profil", "profil.html"),
+        ("Parcours en récits", "parcours-recits.html"),
         ("Participations & événements", "interventions.html"),
         ("Bourses, distinctions & accompagnements", "distinctions-bourses.html"),
         ("Réseaux, engagements & initiatives", "ecosysteme.html"),

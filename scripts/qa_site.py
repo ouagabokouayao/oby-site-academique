@@ -14,8 +14,8 @@ from urllib.parse import unquote, urlsplit
 REQUIRED_ROBOTS = {"noindex", "nofollow", "noarchive", "nosnippet"}
 # 16 pages historiques + recherche-droit-mer-golfe-guinee.html, les deux portes
 # Académique / Professionnelle, le détail d'une participation, puis le catalogue
-# « Idées & Analyses » et son gabarit de lecture.
-EXPECTED_HTML_PAGES = 22
+# « Idées & Analyses » et son gabarit de lecture, enfin le parcours en récits.
+EXPECTED_HTML_PAGES = 23
 RISK_TERMS = (
     "doctorant",
     "doctorat en cours",

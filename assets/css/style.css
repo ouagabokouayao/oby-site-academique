@@ -4843,6 +4843,84 @@ a.analysis-collection .analysis-card-meta::after {
   }
 }
 
+/* Parcours en récits ------------------------------------------------------- */
+/* Trois récits longs dans la colonne de lecture des analyses. Chacun s'ouvre
+   sur son surtitre, son titre et son chapeau, et se clôt sur ses renvois ; un
+   filet doré marque le passage d'un récit au suivant. */
+.recit + .recit {
+  margin-top: 56px;
+  padding-top: 40px;
+  border-top: 2px solid var(--gold-line);
+}
+
+.recit > .eyebrow {
+  margin: 0;
+}
+
+.recit-title {
+  margin: 8px 0 12px;
+  color: var(--navy);
+  font-family: var(--serif);
+  font-size: clamp(1.7rem, 3.2vw, 2.2rem);
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.analysis-body > p.recit-chapeau {
+  margin-bottom: 26px;
+  color: var(--muted);
+  font-size: 1.08rem;
+  line-height: 1.6;
+}
+
+.recit-figure {
+  margin: 28px 0 30px;
+}
+
+.recit-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+}
+
+.recit-figure figcaption {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.recit-figure figcaption a,
+.recit-renvois a {
+  color: var(--blue);
+  font-weight: 600;
+}
+
+.recit-suite {
+  margin-top: 30px;
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+}
+
+.recit-renvois {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.recit-renvois li {
+  margin-bottom: 10px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  overflow-wrap: break-word;
+}
+
+.recit-renvois strong {
+  color: var(--navy);
+}
+
 /* --- Refonte esthétique : harmonisation des vignettes documentaires -------
    Les pages de garde sont des documents aux formats très différents — un
    mémoire en portrait, un rapport en paysage. Alignées telles quelles dans une
