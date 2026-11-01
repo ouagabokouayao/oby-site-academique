@@ -35,12 +35,54 @@
       </a>
       <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="navigation" aria-label="Ouvrir le menu principal">☰</button>
       <nav class="nav-menu" id="navigation" data-nav-menu aria-label="Navigation principale">
-        <a class="nav-link" href="index.html" data-page-link="accueil">Accueil</a>
-        <a class="nav-link" href="profil.html" data-page-link="profil">Profil</a>
-        <a class="nav-link" href="axes-recherche.html" data-page-link="axes">Expertise</a>
-        <a class="nav-link" href="travaux-publications.html" data-page-link="travaux">Travaux</a>
-        <a class="nav-link" href="bibliotheque-ressources.html" data-page-link="ressources">Ressources</a>
-        <a class="nav-link nav-cta" href="contact.html" data-page-link="contact">Contact</a>
+        <ul class="nav-list">
+          <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+          <li class="nav-item nav-group is-current">
+            <a class="nav-link" href="profil.html">Profil</a>
+            <button class="nav-sub-toggle" type="button" aria-expanded="false" aria-controls="sous-menu-profil" data-nav-sub-toggle><span class="visually-hidden">Afficher les pages : Profil</span></button>
+            <ul class="nav-submenu" id="sous-menu-profil">
+              <li><a href="profil.html">Mon profil</a></li>
+              <li><a href="interventions.html">Participations &amp; événements</a></li>
+              <li><a href="distinctions-bourses.html">Bourses, distinctions &amp; accompagnements</a></li>
+              <li><a href="ecosysteme.html" aria-current="page">Réseaux, engagements &amp; initiatives</a></li>
+            </ul>
+          </li>
+          <li class="nav-item nav-group">
+            <a class="nav-link" href="axes-recherche.html">Expertise</a>
+            <button class="nav-sub-toggle" type="button" aria-expanded="false" aria-controls="sous-menu-expertise" data-nav-sub-toggle><span class="visually-hidden">Afficher les pages : Expertise</span></button>
+            <ul class="nav-submenu" id="sous-menu-expertise">
+              <li><a href="axes-recherche.html">Domaines d’expertise</a></li>
+              <li><a href="expertise-missions-contributions.html">Missions &amp; contributions</a></li>
+              <li><a href="enseignement-transmission-accompagnement.html">Enseignement, transmission &amp; accompagnement</a></li>
+            </ul>
+          </li>
+          <li class="nav-item nav-group">
+            <a class="nav-link" href="travaux-publications.html">Travaux</a>
+            <button class="nav-sub-toggle" type="button" aria-expanded="false" aria-controls="sous-menu-travaux" data-nav-sub-toggle><span class="visually-hidden">Afficher les pages : Travaux &amp; recherche</span></button>
+            <ul class="nav-submenu" id="sous-menu-travaux">
+              <li><a href="travaux-publications.html">Travaux &amp; publications</a></li>
+              <li><a href="recherche-droit-mer-golfe-guinee.html">Recherche : le droit de la mer dans le golfe de Guinée</a></li>
+              <li><a href="travaux-publications.html#travaux-selectionnes">Littoral, Méditerranée &amp; environnement marin</a></li>
+              <li><a href="travaux-publications.html#mediation-ohada">Médiation &amp; règlement des différends</a></li>
+              <li><a href="travaux-publications.html#innovation-droit-affaires">Innovation &amp; droit des affaires</a></li>
+              <li><a href="travaux-publications.html#terrains">Terrains</a></li>
+            </ul>
+          </li>
+          <li class="nav-item nav-group">
+            <a class="nav-link" href="bibliotheque-ressources.html">Ressources</a>
+            <button class="nav-sub-toggle" type="button" aria-expanded="false" aria-controls="sous-menu-ressources" data-nav-sub-toggle><span class="visually-hidden">Afficher les pages : Ressources &amp; exploration</span></button>
+            <ul class="nav-submenu" id="sous-menu-ressources">
+              <li><a href="bibliotheque-ressources.html">Bibliothèque &amp; ressources</a></li>
+              <li><a href="cartographie.html">Cartographie intellectuelle</a></li>
+              <li><a href="idees-analyses.html">Idées &amp; analyses</a></li>
+              <li><a href="carnet-idees.html">Carnet d’idées</a></li>
+              <li><a href="mediatheque.html">Médiathèque</a></li>
+              <li><a href="veille-agenda.html">Veille &amp; agenda</a></li>
+              <li><a href="recherche.html">Recherche dans le site</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link nav-cta" href="contact.html">Contact</a></li>
+        </ul>
       </nav>
     </div>
   </header>
@@ -175,13 +217,13 @@
         <p>Site personnel professionnel, académique et intellectuel.</p>
       </div>
       <div class="footer-links">
-        <div><h3>Navigation</h3><a href="index.html">Accueil</a><a href="profil.html">Profil</a><a href="axes-recherche.html">Expertise</a><a href="enseignement-transmission-accompagnement.html">Enseignement &amp; accompagnement</a><a href="expertise-missions-contributions.html">Missions &amp; contributions</a><a href="travaux-publications.html">Travaux</a><a href="bibliotheque-ressources.html">Ressources</a><a href="contact.html">Contact</a></div>
-        <div><h3>Explorer</h3><a href="interventions.html">Participations</a><a href="cartographie.html">Cartographie</a><a href="mediatheque.html">Médiathèque</a><a href="recherche.html">Recherche locale</a></div>
-        <div><h3>Ressources</h3><a href="carnet-idees.html">Carnet d’idées</a><a href="veille-agenda.html">Veille &amp; agenda</a><a href="distinctions-bourses.html">Reconnaissances</a><a href="ecosysteme.html">Réseaux &amp; initiatives</a></div>
-        <div><h3>Repères</h3><a href="profil.html#parcours">Parcours</a><a href="travaux-publications.html#travaux-selectionnes">Travaux sélectionnés</a><a href="mentions-legales.html">Mentions légales</a><a href="mailto:bokouaromeo225@gmail.com">Email public</a></div>
+        <div><h3>Profil</h3><a href="profil.html">Mon profil</a><a href="interventions.html">Participations &amp; événements</a><a href="distinctions-bourses.html">Bourses, distinctions &amp; accompagnements</a><a href="ecosysteme.html">Réseaux, engagements &amp; initiatives</a></div>
+        <div><h3>Expertise</h3><a href="axes-recherche.html">Domaines d’expertise</a><a href="expertise-missions-contributions.html">Missions &amp; contributions</a><a href="enseignement-transmission-accompagnement.html">Enseignement, transmission &amp; accompagnement</a></div>
+        <div><h3>Travaux &amp; recherche</h3><a href="travaux-publications.html">Travaux &amp; publications</a><a href="recherche-droit-mer-golfe-guinee.html">Recherche : le droit de la mer dans le golfe de Guinée</a></div>
+        <div><h3>Ressources &amp; exploration</h3><a href="bibliotheque-ressources.html">Bibliothèque &amp; ressources</a><a href="cartographie.html">Cartographie intellectuelle</a><a href="idees-analyses.html">Idées &amp; analyses</a><a href="carnet-idees.html">Carnet d’idées</a><a href="mediatheque.html">Médiathèque</a><a href="veille-agenda.html">Veille &amp; agenda</a><a href="recherche.html">Recherche dans le site</a></div>
       </div>
     </div>
-    <div class="footer-bottom"><div class="section-inner">© 2026 OUAGA Bokoua Yao — Site personnel professionnel, académique et intellectuel.</div></div>
+    <div class="footer-bottom"><div class="section-inner footer-bottom-inner"><span>© 2026 OUAGA Bokoua Yao — Site personnel professionnel, académique et intellectuel.</span><span class="footer-legal"><a href="contact.html">Contact</a><a href="mentions-legales.html">Mentions légales</a><a href="mailto:bokouaromeo225@gmail.com">Email public</a></span></div></div>
   </footer>
   <script src="assets/js/main.js?v=oby-v3-11"></script>
 </body>

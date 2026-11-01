@@ -276,6 +276,145 @@ select:focus-visible {
   display: none;
 }
 
+/* Menus déroulants. Le lien de rubrique mène toujours à sa page ; le bouton
+   voisin ouvre la liste des sous-pages. Au pointeur, le survol suffit ; au
+   clavier et au toucher, le bouton. */
+.nav-list {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.nav-group > .nav-link {
+  padding-right: 2px;
+}
+
+.nav-sub-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 40px;
+  margin-right: 4px;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--navy);
+  cursor: pointer;
+}
+
+.nav-sub-toggle::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform 180ms ease;
+}
+
+.nav-sub-toggle[aria-expanded="true"]::before {
+  transform: translateY(2px) rotate(-135deg);
+}
+
+.nav-sub-toggle:hover {
+  color: var(--blue);
+}
+
+.nav-group.is-current > .nav-link {
+  color: var(--blue);
+}
+
+.nav-group.is-current > .nav-link::after {
+  transform: scaleX(1);
+}
+
+.nav-submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 60;
+  min-width: 250px;
+  max-width: min(340px, calc(100vw - 32px));
+  margin: 0;
+  padding: 8px;
+  list-style: none;
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--gold);
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  background: var(--white);
+  box-shadow: var(--shadow);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity 160ms ease, transform 160ms ease, visibility 0s linear 160ms;
+}
+
+/* Les dernières rubriques s'ouvrent vers la gauche, pour ne jamais déborder
+   du bord droit de l'écran. */
+.nav-item:nth-last-child(-n + 3) > .nav-submenu {
+  left: auto;
+  right: 0;
+}
+
+.nav-group.is-open > .nav-submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition-delay: 0s;
+}
+
+@media (hover: hover) and (min-width: 1061px) {
+  .nav-group:hover > .nav-submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition-delay: 0s;
+  }
+}
+
+.nav-submenu a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 6px;
+  color: var(--navy);
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.nav-submenu a:hover,
+.nav-submenu a:focus-visible {
+  background: var(--ivory);
+  color: var(--blue);
+}
+
+.nav-submenu a[aria-current="page"] {
+  color: var(--blue);
+  font-weight: 700;
+  box-shadow: inset 2px 0 0 var(--gold);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .hero {
   position: relative;
   overflow: hidden;
@@ -2798,6 +2937,26 @@ main:focus {
   font-size: 0.9rem;
 }
 
+.footer-bottom-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 24px;
+}
+
+.footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+}
+
+.footer-legal a {
+  color: var(--ivory);
+  text-decoration: underline;
+  text-decoration-color: rgba(200, 169, 107, 0.6);
+  text-underline-offset: 3px;
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(18px);
@@ -2864,10 +3023,74 @@ main:focus {
     padding: 10px 12px;
     box-shadow: var(--shadow);
     z-index: 80;
+    max-height: calc(100vh - 96px);
+    max-height: calc(100dvh - 96px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
   }
 
   .nav-menu.is-open {
     display: flex;
+  }
+
+  /* Sur écran étroit, chaque rubrique se déplie sur place, sous son lien. */
+  .nav-list {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav-item {
+    flex-wrap: wrap;
+    border-top: 1px solid rgba(11, 29, 51, 0.08);
+  }
+
+  .nav-item:first-child {
+    border-top: 0;
+  }
+
+  .nav-item > .nav-link {
+    flex: 1 1 auto;
+  }
+
+  .nav-sub-toggle {
+    width: 44px;
+    height: 44px;
+    margin: 0;
+  }
+
+  .nav-submenu {
+    position: static;
+    display: none;
+    flex: 0 0 100%;
+    min-width: 0;
+    max-width: none;
+    margin: 0 0 8px 10px;
+    padding: 0 0 0 10px;
+    border: 0;
+    border-left: 2px solid var(--gold-line);
+    border-radius: 0;
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition: none;
+  }
+
+  .nav-group.is-open > .nav-submenu {
+    display: block;
+  }
+
+  .nav-submenu a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 8px 10px;
+  }
+
+  .nav-menu .nav-cta {
+    justify-content: center;
+    min-height: 44px;
+    margin: 8px 0 2px;
   }
 
   .nav-direct {
@@ -3067,7 +3290,7 @@ main:focus {
 
   .nav-menu {
     max-width: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
   }
 
   .nav-link {
@@ -4733,6 +4956,12 @@ a.analysis-collection .analysis-card-meta::after {
     display: block;
     min-height: 36px;
     padding-block: 5px;
+  }
+
+  .footer-legal a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
   }
 
   .page-garde-figure {

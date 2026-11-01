@@ -1,15 +1,57 @@
 const navToggle = document.querySelector("[data-nav-toggle]");
 const navMenu = document.querySelector("[data-nav-menu]");
 
-if (navToggle && navMenu) {
-  const closeMainMenu = () => {
-    navMenu.classList.remove("is-open");
-    navToggle.setAttribute("aria-expanded", "false");
+// Le menu et l'état actif sont écrits dans le HTML par scripts/navigation.py ;
+// ce script n'ajoute que l'ouverture des sous-menus et du panneau mobile.
+if (navMenu) {
+  const subToggles = [...navMenu.querySelectorAll("[data-nav-sub-toggle]")];
+
+  const closeSubMenu = (toggle) => {
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.closest(".nav-group")?.classList.remove("is-open");
   };
 
-  navToggle.addEventListener("click", () => {
+  const openSubMenu = (toggle) => {
+    subToggles.forEach((other) => {
+      if (other !== toggle) {
+        closeSubMenu(other);
+      }
+    });
+    toggle.setAttribute("aria-expanded", "true");
+    toggle.closest(".nav-group")?.classList.add("is-open");
+  };
+
+  subToggles.forEach((toggle) => {
+    toggle.addEventListener("click", () => {
+      if (toggle.getAttribute("aria-expanded") === "true") {
+        closeSubMenu(toggle);
+      } else {
+        openSubMenu(toggle);
+      }
+    });
+
+    // Au clavier, quitter une rubrique referme son sous-menu.
+    toggle.closest(".nav-group")?.addEventListener("focusout", (event) => {
+      if (!event.currentTarget.contains(event.relatedTarget)) {
+        closeSubMenu(toggle);
+      }
+    });
+  });
+
+  const closeMainMenu = () => {
+    subToggles.forEach(closeSubMenu);
+    navMenu.classList.remove("is-open");
+    navToggle?.setAttribute("aria-expanded", "false");
+  };
+
+  navToggle?.addEventListener("click", () => {
     const isOpen = navMenu.classList.toggle("is-open");
     navToggle.setAttribute("aria-expanded", String(isOpen));
+    // Sur mobile, la rubrique de la page affichée s'ouvre d'emblée.
+    const current = navMenu.querySelector(".nav-group.is-current [data-nav-sub-toggle]");
+    if (isOpen && current) {
+      openSubMenu(current);
+    }
   });
 
   navMenu.querySelectorAll("a").forEach((link) => {
@@ -19,34 +61,22 @@ if (navToggle && navMenu) {
   });
 
   document.addEventListener("click", (event) => {
-    if (!navMenu.contains(event.target) && !navToggle.contains(event.target)) {
+    if (!navMenu.contains(event.target) && !navToggle?.contains(event.target)) {
       closeMainMenu();
     }
   });
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      closeMainMenu();
-      navToggle.focus();
+    if (event.key !== "Escape") {
+      return;
     }
-  });
-}
-
-const currentPage = document.body.dataset.page;
-
-if (currentPage) {
-  const primaryPage = {
-    cartographie: "axes",
-    interventions: "travaux",
-    mediatheque: "ressources",
-    recherche: "ressources",
-    veille: "ressources",
-    carnet: "ressources",
-  }[currentPage] || currentPage;
-
-  document.querySelectorAll("[data-page-link]").forEach((link) => {
-    if (link.dataset.pageLink === primaryPage) {
-      link.setAttribute("aria-current", "page");
+    const openToggle = subToggles.find((toggle) => toggle.getAttribute("aria-expanded") === "true");
+    if (openToggle && !navMenu.classList.contains("is-open")) {
+      closeSubMenu(openToggle);
+      openToggle.focus();
+    } else if (navMenu.classList.contains("is-open")) {
+      closeMainMenu();
+      navToggle?.focus();
     }
   });
 }

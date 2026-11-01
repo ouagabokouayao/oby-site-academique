@@ -527,6 +527,14 @@ def main():
         if len(tokens) > 1:
             add(errors, "CACHE_VERSION_SPLIT", root, f"{asset}: {sorted(tokens)}")
 
+    # --- navigation commune -------------------------------------------------
+    # Le menu et le pied de page des pages sont générés par scripts/navigation.py.
+    # Une copie retouchée à la main sur une seule page ferait diverger le site.
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    import navigation
+    for ecart in navigation.divergences(root):
+        add(errors, "NAVIGATION_DIVERGENTE", root, ecart)
+
     # --- concordance liste / JSON des participations -----------------------
     # La liste compacte et le JSON canonique doivent décrire exactement le même
     # ensemble : une carte sans fiche mène à un détail vide, une fiche sans carte
