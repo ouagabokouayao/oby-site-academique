@@ -342,7 +342,10 @@ const loadWatchAgendaItems = () =>
       }
 
       if (refCount) {
-        refCount.textContent = String(references.length);
+        // Seules les notices confirmées sont publiques : le compteur ne compte qu'elles.
+        refCount.textContent = String(
+          references.filter((item) => item.statutMetadata === "confirmé").length
+        );
       }
 
       if (mediaCount) {
@@ -668,20 +671,24 @@ const loadWatchAgendaItems = () =>
         searchText: [item.titreOriginal, item.dossier, item.statut, item.publication, item.resume].join(" "),
         url: "cartographie.html",
       }));
-      const referenceItems = references.map((item) => ({
-        title: item.titre || "Référence",
-        type: "Référence",
-        category: item.categorie || item.sousCategorie || "Bibliothèque",
-        // `note` reste une note de travail : elle est affichée sur la fiche,
-        // mais n'entre pas dans l'index de recherche publique.
-        searchText: [
-          ...(item.auteurs || []),
-          ...(item.direction || []),
-          item.editeur,
-          item.collection,
-        ].join(" "),
-        url: "bibliotheque-ressources.html",
-      }));
+      // Même périmètre que la bibliothèque : les notices non confirmées restent
+      // dans le registre et ne doivent pas ressortir par la recherche.
+      const referenceItems = references
+        .filter((item) => item.statutMetadata === "confirmé")
+        .map((item) => ({
+          title: item.titre || "Référence",
+          type: "Référence",
+          category: item.categorie || item.sousCategorie || "Bibliothèque",
+          // `note` reste une note de travail : elle est affichée sur la fiche,
+          // mais n'entre pas dans l'index de recherche publique.
+          searchText: [
+            ...(item.auteurs || []),
+            ...(item.direction || []),
+            item.editeur,
+            item.collection,
+          ].join(" "),
+          url: "bibliotheque-ressources.html",
+        }));
       const mediaItems = media.filter((item) => item.statut === "public-valide").map((item) => ({
         title: item.titre || "Média documentaire",
         type: "Média",
