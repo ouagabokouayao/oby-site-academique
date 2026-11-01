@@ -43,7 +43,11 @@ AEM_FORBIDDEN = (
 # Le dépôt GitHub est public : ce qui figure dans un fichier servi est lisible,
 # même si l'interface ne l'affiche pas. Ces champs relèvent du back-office et
 # n'ont donc pas leur place dans la projection publique.
-CHAMPS_INTERNES = ("date_publication_interne", "media_status")
+CHAMPS_INTERNES = ("date_publication_interne", "media_status",
+                   # état de traitement éditorial et notes de caviardage : ils disent
+                   # ce que les originaux contiennent et ce qui reste à décider
+                   "action_recommandee", "statut_publication", "sensibilite",
+                   "notePrudence", "prudence")
 # Règle structurelle, plus fiable qu'une liste de chaînes : la veille publique
 # n'admet que ces clés. Un champ de back-office introduit plus tard est refusé
 # sans qu'il ait fallu le prévoir nommément.
