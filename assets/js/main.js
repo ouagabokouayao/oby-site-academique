@@ -1,6 +1,18 @@
 const navToggle = document.querySelector("[data-nav-toggle]");
 const navMenu = document.querySelector("[data-nav-menu]");
 
+// Les formulaires du site sont des filtres instantanés : ils réagissent à la
+// saisie. La touche Entrée ne doit pas les envoyer, ce qui rechargerait la
+// page et effacerait la recherche en cours.
+document
+  .querySelectorAll(
+    "form[data-library-controls], form[data-map-controls], form[data-search-controls], " +
+      "form[data-watch-controls], form[data-public-media-controls], form[data-analyses-controls]"
+  )
+  .forEach((formulaire) => {
+    formulaire.addEventListener("submit", (event) => event.preventDefault());
+  });
+
 // Le menu et l'état actif sont écrits dans le HTML par scripts/navigation.py ;
 // ce script n'ajoute que l'ouverture des sous-menus et du panneau mobile.
 if (navMenu) {
