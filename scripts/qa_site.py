@@ -355,7 +355,15 @@ def main():
         try:
             records = json.loads(data_path.read_text(encoding="utf-8"))
             if isinstance(records, list):
-                parser.ids.update(str(record["id"]) for record in records if isinstance(record, dict) and record.get("id"))
+                # La médiathèque n'affiche que les albums « public-valide » : un
+                # album retenu n'a pas d'ancre dans la page rendue.
+                parser.ids.update(
+                    str(record["id"])
+                    for record in records
+                    if isinstance(record, dict)
+                    and record.get("id")
+                    and (page_name != "mediatheque.html" or record.get("statut") == "public-valide")
+                )
         except (OSError, UnicodeError, json.JSONDecodeError):
             pass
 
@@ -445,6 +453,21 @@ def main():
                 fragment = lien.split("#", 1)[1]
                 if fragment not in page_ids:
                     add(errors, "CROSS_ID_MISSING", media_data, f"{ident} -> {lien}")
+
+        # Un renvoi vers la médiathèque n'a de sens que si l'album y est publié :
+        # sinon l'ancre tombe dans le vide, la page ne montrant que les albums
+        # « public-valide ». Une fiche publique ne renvoie pas non plus à une
+        # ancre nue : affichée dans participation.html, elle ne mène nulle part.
+        publics = {str(r.get("id")) for r in records if isinstance(r, dict) and r.get("statut") == "public-valide"}
+        for record in participation_records:
+            if not isinstance(record, dict) or record.get("affichage_participations") is False:
+                continue
+            renvoi = str(record.get("mediatheque") or "")
+            if renvoi.startswith("mediatheque.html#") and renvoi.split("#", 1)[1] not in publics:
+                add(errors, "MEDIA_LINK_NOT_PUBLIC", participation_data, f"{record.get('id')} -> {renvoi}")
+            for lien_fiche in record.get("liens") or []:
+                if isinstance(lien_fiche, dict) and str(lien_fiche.get("url") or "").startswith("#"):
+                    add(errors, "PARTICIPATION_BARE_ANCHOR", participation_data, f"{record.get('id')} -> {lien_fiche.get('url')}")
 
     # --- médias déclarés dans les JSON -------------------------------------
     # qa_site vérifie les assets référencés depuis le HTML ; ceux des galeries
