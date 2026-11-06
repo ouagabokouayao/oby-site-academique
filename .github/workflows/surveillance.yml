@@ -1,0 +1,119 @@
+name: Surveillance du site publié
+
+# Contrôles en lecture seule du site publié sur GitHub Pages : aucune
+# publication, aucun envoi de données, aucune notification externe.
+#
+# Les déclencheurs planifiés ne s'activent que lorsque ce fichier se trouve sur
+# la branche par défaut (main). Sur une autre branche, une poussée qui modifie
+# la surveillance en lance une exécution d'essai contre le site publié.
+on:
+  schedule:
+    - cron: "23 5 * * *" # chaque jour : disponibilité, noindex, ressources, configuration
+    - cron: "41 6 * * 1" # chaque lundi : en plus, liens externes et Lighthouse en ligne
+  workflow_dispatch:
+  push:
+    branches-ignore: [main]
+    paths:
+      - "scripts/surveiller_site.py"
+      - ".github/workflows/surveillance.yml"
+
+permissions:
+  contents: read
+  pages: read
+  actions: read
+
+env:
+  SITE: https://ouagabokouayao.github.io/oby-site-academique/
+
+jobs:
+  site-publie:
+    name: Disponibilité, noindex, ressources et configuration
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Site publié (pages, noindex, robots.txt, ressources, 404, HTTPS)
+        run: |
+          option=""
+          # Sur main, le site publié doit être identique au dépôt.
+          if [ "${GITHUB_REF}" = "refs/heads/main" ]; then option="--comparer"; fi
+          python3 scripts/surveiller_site.py --base "$SITE" --root . $option --json-report surveillance.json | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Configuration GitHub Pages (source main, racine, HTTPS forcé, dernière publication)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          pages=$(gh api "repos/${GITHUB_REPOSITORY}/pages")
+          echo "$pages" | jq '{source, https_enforced, cname, build_type}'
+          test "$(echo "$pages" | jq -r .source.branch)" = "main"
+          test "$(echo "$pages" | jq -r .source.path)" = "/"
+          test "$(echo "$pages" | jq -r .https_enforced)" = "true"
+          test "$(echo "$pages" | jq -r .cname)" = "null"
+          statut=$(gh api "repos/${GITHUB_REPOSITORY}/pages/builds/latest" --jq .status)
+          echo "Dernière publication : $statut"
+          test "$statut" = "built"
+      - name: Dernier contrôle QA de main
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          conclusion=$(gh run list --repo "$GITHUB_REPOSITORY" --workflow "QA site" --branch main --limit 1 --json conclusion --jq '.[0].conclusion')
+          echo "Dernier « QA site » sur main : $conclusion"
+          test "$conclusion" != "failure"
+      - name: Rapport
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: surveillance
+          path: surveillance.json
+          if-no-files-found: ignore
+
+  liens-externes:
+    name: Liens externes (informatif)
+    if: github.event_name != 'schedule' || github.event.schedule == '41 6 * * 1'
+    continue-on-error: true
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Classement des liens externes
+        run: python3 scripts/check_external_links.py --root . --json-report liens-externes.json
+      - name: Rapport
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: liens-externes
+          path: liens-externes.json
+          if-no-files-found: ignore
+
+  lighthouse-en-ligne:
+    name: Lighthouse sur le site publié (informatif)
+    if: github.event_name != 'schedule' || github.event.schedule == '41 6 * * 1'
+    continue-on-error: true
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Mesures (mobile)
+        run: >
+          npx --yes @lhci/cli@0.14.0 collect
+          --url="${SITE}" --url="${SITE}profil.html" --url="${SITE}contact.html"
+          --numberOfRuns=1 --settings.chromeFlags="--no-sandbox --headless=new"
+      - name: Rapports
+        run: npx --yes @lhci/cli@0.14.0 upload --target=filesystem --outputDir=rapports-lighthouse/en-ligne
+      - name: Résumé
+        run: python3 scripts/resume_lighthouse.py rapports-lighthouse
+      - name: Rapports Lighthouse
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-en-ligne
+          path: rapports-lighthouse
+          if-no-files-found: ignore
