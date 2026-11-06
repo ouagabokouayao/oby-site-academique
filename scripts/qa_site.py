@@ -573,6 +573,12 @@ def main():
     for ecart in navigation.divergences(root):
         add(errors, "NAVIGATION_DIVERGENTE", root, ecart)
 
+    # --- vignettes de la médiathèque ---
+    import vignettes
+    if root == vignettes.RACINE:
+        for code, ident in vignettes.ecarts():
+            add(errors, code, root / "assets/img/media/vignettes", ident)
+
     # --- concordance liste / JSON des participations -----------------------
     # La liste compacte et le JSON canonique doivent décrire exactement le même
     # ensemble : une carte sans fiche mène à un détail vide, une fiche sans carte

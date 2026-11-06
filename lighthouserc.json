@@ -12,7 +12,7 @@
         "http://127.0.0.1:4190/mediatheque.html",
         "http://127.0.0.1:4190/contact.html"
       ],
-      "numberOfRuns": 1,
+      "numberOfRuns": 3,
       "settings": {
         "chromeFlags": "--no-sandbox --headless=new"
       }
