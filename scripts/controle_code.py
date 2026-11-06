@@ -37,7 +37,7 @@ EXTENSIONS_TEXTE = {".html", ".css", ".js", ".json", ".py", ".yml", ".yaml", ".m
 CSP = (
     "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; "
     "font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; "
-    "form-action 'self'; upgrade-insecure-requests"
+    "form-action 'self'"
 )
 
 
