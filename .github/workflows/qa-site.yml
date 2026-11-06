@@ -24,11 +24,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: "22"
       - name: QA du site (pages, noindex, liens internes, ancres, ressources, JSON, médias)
@@ -41,7 +41,7 @@ jobs:
         run: npx --yes html-validate@8.18.2 --formatter stylish *.html
       - name: Rapports
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: controles-statiques
           path: |
@@ -58,8 +58,8 @@ jobs:
       CI: "true"
       OBY_MOTEURS: chromium,firefox,webkit
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: "22"
       - name: Dépendances de test
@@ -78,7 +78,7 @@ jobs:
         run: npx playwright test --project=captures --reporter=html --output=captures
       - name: Rapports et captures
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: rapports-navigateur
           path: |
@@ -94,8 +94,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: "22"
       - name: Installation sans exécution de scripts
@@ -109,8 +109,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: "22"
       - name: Lighthouse — mobile
@@ -123,7 +123,7 @@ jobs:
         run: python3 scripts/resume_lighthouse.py rapports-lighthouse
       - name: Rapports Lighthouse
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: rapports-lighthouse
           path: rapports-lighthouse
