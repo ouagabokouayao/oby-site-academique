@@ -39,3 +39,8 @@ assets/documents/*
 
 # CV public à réintégrer seulement après validation d'une version pleinement publiable
 assets/documents/cv/
+
+# rapports produits par les tests et la CI
+rapports-lighthouse/
+rapport-captures/
+.lighthouseci/
