@@ -38,6 +38,10 @@ def main():
                    "| Page | Perf. | Access. | Bonnes pr. | LCP | CLS | TBT | Poids |",
                    "|---|---|---|---|---|---|---|---|"]
         for entree in json.loads(manifest.read_text(encoding="utf-8")):
+            # Plusieurs mesures par page : seule la mesure représentative
+            # (la médiane retenue par Lighthouse CI) figure au tableau.
+            if not entree.get("isRepresentativeRun", True):
+                continue
             resume = entree.get("summary", {})
             mesures = []
             chemin = manifest.parent / Path(entree.get("jsonPath", "")).name
