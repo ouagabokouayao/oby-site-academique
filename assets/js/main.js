@@ -1,6 +1,18 @@
 const navToggle = document.querySelector("[data-nav-toggle]");
 const navMenu = document.querySelector("[data-nav-menu]");
 
+// Les formulaires du site sont des filtres instantanés : ils réagissent à la
+// saisie. La touche Entrée ne doit pas les envoyer, ce qui rechargerait la
+// page et effacerait la recherche en cours.
+document
+  .querySelectorAll(
+    "form[data-library-controls], form[data-map-controls], form[data-search-controls], " +
+      "form[data-watch-controls], form[data-public-media-controls], form[data-analyses-controls]"
+  )
+  .forEach((formulaire) => {
+    formulaire.addEventListener("submit", (event) => event.preventDefault());
+  });
+
 // Le menu et l'état actif sont écrits dans le HTML par scripts/navigation.py ;
 // ce script n'ajoute que l'ouverture des sous-menus et du panneau mobile.
 if (navMenu) {
@@ -1091,6 +1103,12 @@ const loadWatchAgendaItems = () =>
     return photos;
   };
 
+  // La carte affiche une vignette réduite (scripts/vignettes.py) ; la
+  // visionneuse ouvre toujours la photographie d'origine. La QA garantit
+  // qu'une vignette à jour existe pour chaque album public.
+  const vignette = (item, photo) =>
+    item.id ? `assets/img/media/vignettes/${encodeURIComponent(item.id)}.webp` : photo.fichier;
+
   const renderMedia = (item) => {
     const brut = item.typeMedia || item.categorie || "";
     const type = MEDIA_TYPE_LABELS[brut] || brut || "Trace documentaire";
@@ -1113,7 +1131,7 @@ const loadWatchAgendaItems = () =>
         .join("");
     const photoCount = photos.length;
     const gallery = galleryItems.length
-      ? `<div class="media-card-gallery media-card-gallery-collapsed" aria-label="Photographies complémentaires">
+      ? `<div class="media-card-gallery media-card-gallery-collapsed" role="group" aria-label="Photographies complémentaires">
           ${renderGalleryEntries(galleryItems)}
         </div>`
       : "";
@@ -1125,7 +1143,7 @@ const loadWatchAgendaItems = () =>
       : "";
     const primary = photos.length
       ? `<button class="media-card-primary media-lightbox-trigger" type="button" data-media-lightbox-id="${escapeHtml(item.id || "")}" data-media-lightbox-index="0" aria-label="Agrandir la photographie principale de ${escapeHtml(item.titre || "cet événement")}">
-          <img src="${escapeHtml(photos[0].fichier)}" alt="${escapeHtml(photos[0].alt || "")}" loading="lazy"${dimensionAttributes(photos[0])}>
+          <img src="${escapeHtml(vignette(item, photos[0]))}" alt="${escapeHtml(photos[0].alt || "")}" loading="lazy"${dimensionAttributes(photos[0])}>
           <span class="media-zoom-label" aria-hidden="true">Agrandir</span>
         </button>`
       : `<figure class="media-card-primary"><img src="assets/img/media/placeholder-document-oby.svg" alt="${escapeHtml(item.alt || item.titre || "Trace documentaire OBY")}" loading="lazy"></figure>`;

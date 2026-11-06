@@ -1838,7 +1838,7 @@
     "liens": [
       {
         "libelle": "Entretien publié par le projet",
-        "url": "#proteus-entretien-joseph-ouaga-2024"
+        "url": "participation.html?id=proteus-entretien-joseph-ouaga-2024"
       }
     ],
     "galerie": [],
@@ -1865,8 +1865,7 @@
       }
     ],
     "liens": [],
-    "galerie": [],
-    "mediatheque": "mediatheque.html#proteus-entretien-joseph-ouaga-2024"
+    "galerie": []
   },
   {
     "id": "medpan-port-cros-2024",

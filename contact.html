@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Contact — OUAGA Bokoua Yao</title>
   <meta name="description" content="Contacter OUAGA Bokoua Yao pour une collaboration de recherche, une expertise, un enseignement, une intervention, un projet, une médiation ou une opportunité professionnelle.">
   <meta name="author" content="OUAGA Bokoua Yao">
@@ -99,7 +101,7 @@
         <figure class="page-hero-visual">
           <picture>
             <source srcset="assets/img/visuals/oby_v1_visuel_contact_echange_qualifie_mobile.webp" media="(max-width: 640px)" width="1080" height="1350">
-            <img src="assets/img/visuals/oby_v1_visuel_contact_echange_qualifie_desktop.webp" alt="Espace de correspondance avec carnet et horizon maritime, évoquant un échange direct avec OBY." loading="eager" width="1920" height="1080">
+            <img fetchpriority="high" src="assets/img/visuals/oby_v1_visuel_contact_echange_qualifie_desktop.webp" alt="Espace de correspondance avec carnet et horizon maritime, évoquant un échange direct avec OBY." loading="eager" width="1920" height="1080">
           </picture>
         </figure>
       </div>

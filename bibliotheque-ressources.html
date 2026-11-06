@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Ressources &amp; transmission — OUAGA Bokoua Yao</title>
   <meta name="description" content="Ressources, analyses, repères bibliographiques, outils de veille et contenus de transmission autour du droit de la mer, du littoral, de la médiation, de l’innovation et de la gouvernance maritime.">
   <meta name="author" content="OUAGA Bokoua Yao">
@@ -22,7 +24,6 @@
   <link rel="icon" href="assets/img/identity/oby-favicon-officiel-512.png" sizes="512x512" type="image/png">
   <link rel="apple-touch-icon" href="assets/img/identity/oby-favicon-officiel-192.png">
   <link rel="stylesheet" href="assets/css/style.css?v=oby-v3-11">
-  <style>.resources-public .library-status{display:none}.resources-public .library-card-top{justify-content:flex-start}</style>
 </head>
 <body data-page="ressources" class="resources-public">
   <a class="skip-link" href="#contenu">Aller au contenu</a>
@@ -100,7 +101,7 @@
         <figure class="page-hero-visual">
           <picture>
             <source srcset="assets/img/visuals/oby_v1_visuel_ressources_bibliotheque_veille_mobile.webp" media="(max-width: 640px)" width="1080" height="1350">
-            <img src="assets/img/visuals/oby_v1_visuel_ressources_bibliotheque_veille_desktop.webp" alt="Bibliothèque de travail avec atlas, fiches abstraites et références, évoquant les ressources et la veille intellectuelle OBY." loading="eager" width="1920" height="1080">
+            <img fetchpriority="high" src="assets/img/visuals/oby_v1_visuel_ressources_bibliotheque_veille_desktop.webp" alt="Bibliothèque de travail avec atlas, fiches abstraites et références, évoquant les ressources et la veille intellectuelle OBY." loading="eager" width="1920" height="1080">
           </picture>
         </figure>
       </div>

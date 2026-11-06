@@ -1,36 +1,131 @@
 name: QA site
 
+# Intégration continue du site. Elle contrôle et teste, sans jamais publier :
+# le déploiement GitHub Pages reste celui de la branche main, distinct de ce
+# workflow. La surveillance du site en ligne vit dans surveillance.yml.
 on:
   push:
   pull_request:
   workflow_dispatch:
-  schedule:
-    - cron: "17 6 * * 1"
 
 permissions:
   contents: read
 
-jobs:
-  site:
-    name: HTML, noindex, links, assets and JSON
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-      - name: Run the site QA gate
-        run: python3 scripts/qa_site.py --root . --json-report /tmp/oby-qa-site.json
+concurrency:
+  group: qa-${{ github.ref }}
+  cancel-in-progress: true
 
-  external-links:
-    name: External links (informational)
-    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
-    continue-on-error: true
+jobs:
+  statique:
+    name: Contrôles statiques (HTML, JSON, liens, CSS, JS, secrets, CSP)
+    # Une pull request ouverte depuis ce dépôt est déjà contrôlée par les
+    # poussées sur sa branche : on ne double pas les exécutions.
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.repository
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
-      - name: Classify external links
-        run: python3 scripts/check_external_links.py --root . --json-report /tmp/oby-external-links.json
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+      - name: QA du site (pages, noindex, liens internes, ancres, ressources, JSON, médias)
+        run: python3 scripts/qa_site.py --root . --json-report qa-site.json
+      - name: Code et secrets (CSS, syntaxe JavaScript, secrets, Content-Security-Policy)
+        run: python3 scripts/controle_code.py --root . --json-report controle-code.json
+      - name: Navigation commune identique sur toutes les pages
+        run: python3 scripts/navigation.py --verifier
+      - name: Validation HTML (html-validate, préréglage « standard »)
+        run: npx --yes html-validate@8.18.2 --formatter stylish *.html
+      - name: Rapports
+        if: always()
+        uses: actions/upload-artifact@v5
+        with:
+          name: controles-statiques
+          path: |
+            qa-site.json
+            controle-code.json
+          if-no-files-found: ignore
+
+  navigateur:
+    name: Tests navigateur et accessibilité (Chromium, Firefox, WebKit)
+    needs: statique
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      CI: "true"
+      OBY_MOTEURS: chromium,firefox,webkit
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+      - name: Dépendances de test
+        run: npm install --no-audit --no-fund
+      - name: Navigateurs Playwright
+        run: npx playwright install --with-deps chromium firefox webkit
+      - name: Tests (pages, navigation, liens, interactions, contact, accessibilité)
+        run: npx playwright test --grep-invert @captures
+      - name: Résumé des tests
+        if: always()
+        run: node tests/resume-resultats.js test-results/resultats.json
+      - name: Captures pleine page (5 largeurs)
+        if: always()
+        env:
+          PLAYWRIGHT_HTML_OUTPUT_DIR: rapport-captures
+        run: npx playwright test --project=captures --reporter=html --output=captures
+      - name: Rapports et captures
+        if: always()
+        uses: actions/upload-artifact@v5
+        with:
+          name: rapports-navigateur
+          path: |
+            playwright-report
+            test-results
+            rapport-captures
+          retention-days: 14
+          if-no-files-found: ignore
+
+  dependances:
+    name: Dépendances de test (npm audit)
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+      - name: Installation sans exécution de scripts
+        run: npm install --no-audit --no-fund --ignore-scripts
+      - name: Vulnérabilités connues (niveau élevé ou critique)
+        run: npm audit --audit-level=high
+
+  performance:
+    name: Performance et bonnes pratiques (Lighthouse, mobile et ordinateur)
+    needs: statique
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+      - name: Lighthouse — mobile
+        run: npx --yes @lhci/cli@0.14.0 autorun --config=lighthouserc.json --upload.outputDir=rapports-lighthouse/mobile
+      - name: Lighthouse — ordinateur
+        if: always()
+        run: npx --yes @lhci/cli@0.14.0 autorun --config=lighthouserc.json --collect.settings.preset=desktop --upload.outputDir=rapports-lighthouse/ordinateur
+      - name: Résumé Lighthouse
+        if: always()
+        run: python3 scripts/resume_lighthouse.py rapports-lighthouse
+      - name: Rapports Lighthouse
+        if: always()
+        uses: actions/upload-artifact@v5
+        with:
+          name: rapports-lighthouse
+          path: rapports-lighthouse
+          retention-days: 14
+          if-no-files-found: ignore

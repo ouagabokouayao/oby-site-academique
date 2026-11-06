@@ -1,0 +1,19 @@
+{
+  "name": "oby-site-academique",
+  "private": true,
+  "description": "Outils de contrôle du site OBY. Le site publié n'a aucune dépendance : ces paquets servent uniquement aux tests.",
+  "license": "UNLICENSED",
+  "scripts": {
+    "qa": "python3 scripts/qa_site.py --root .",
+    "test": "playwright test --grep-invert @captures",
+    "test:a11y": "playwright test tests/e2e/accessibilite.spec.js",
+    "test:captures": "playwright test --project=captures"
+  },
+  "devDependencies": {
+    "axe-core": "4.10.2",
+    "playwright": "1.63.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
