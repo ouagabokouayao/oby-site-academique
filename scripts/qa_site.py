@@ -343,6 +343,21 @@ def main():
         for line in sorted(ROBOTS_REQUIRED_LINES - robots_lines):
             add(errors, "ROBOTS_GUARD", robots_path, f"Ligne absente : {line}")
 
+    # Le sitemap n'est soumis à aucun moteur tant que le noindex est maintenu,
+    # mais il doit être juste le jour de l'ouverture : toutes les pages de
+    # contenu, et aucun gabarit qui n'a de sens qu'avec un identifiant.
+    sitemap_path = root / "sitemap.xml"
+    if sitemap_path.exists():
+        base = "https://ouagabokouayao.github.io/oby-site-academique/"
+        listees = set(re.findall(r"<loc>([^<]+)</loc>", sitemap_path.read_text(encoding="utf-8")))
+        gabarits = {"404.html", "analyse.html", "participation.html"}
+        for page in pages:
+            adresse = base if page.name == "index.html" else base + page.name
+            if page.name in gabarits and adresse in listees:
+                add(errors, "SITEMAP_GABARIT", sitemap_path, page.name)
+            elif page.name not in gabarits and adresse not in listees:
+                add(errors, "SITEMAP_PAGE_ABSENTE", sitemap_path, page.name)
+
     dynamic_id_sources = {
         "mediatheque.html": root / "assets/data/mediatheque-oby.json",
         "veille-agenda.html": root / "assets/data/veille-agenda-oby.json",
