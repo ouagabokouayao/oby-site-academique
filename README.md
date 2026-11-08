@@ -4,7 +4,8 @@ Site personnel de **OUAGA Bokoua Yao**.
 
 Statut courant : version publique de travail — noindex maintenu.
 
-URL publique GitHub Pages : <https://ouagabokouayao.github.io/oby-site-academique/>
+Adresse publique : <https://www.ouagabokouayao.com/> (domaine personnel, hébergé par GitHub Pages).
+Adresse GitHub Pages d'origine, redirigée vers le domaine : <https://ouagabokouayao.github.io/oby-site-academique/>
 
 ## Description
 
@@ -144,3 +145,15 @@ Chaque page porte une Content-Security-Policy stricte (ressources limitées au s
 6. GitHub Pages publie le site depuis `main/root`.
 
 GitHub reste la source de référence du site public. Netlify n'est plus l'hébergement public principal.
+
+## Adresse du site et domaine personnel
+
+`scripts/domaine.py` est la source unique de l'adresse (`ADRESSE`). Les chemins internes sont tous relatifs : seules les métadonnées absolues en dépendent (canoniques, Open Graph, cartes sociales, JSON-LD, sitemap, robots.txt, mentions légales). La QA refuse l'ancienne adresse et tout chemin interne absolu ; `tests/e2e/chemins.spec.js` vérifie que chaque page fonctionne à la racine d'un domaine comme sous `/oby-site-academique/`.
+
+Ordre de mise en service du domaine `www.ouagabokouayao.com` :
+
+1. DNS (OVHcloud) : `www` en CNAME vers `ouagabokouayao.github.io.` ; pour le domaine nu, A vers `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` et AAAA vers `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153`.
+2. GitHub, réglages du compte → Pages : vérifier le domaine (enregistrement TXT fourni par GitHub), pour empêcher son détournement.
+3. Réglages du dépôt → Pages : domaine personnalisé `www.ouagabokouayao.com`, attendre le certificat, cocher « Enforce HTTPS ». GitHub crée alors le fichier `CNAME` sur `main` et redirige l'ancienne adresse vers le domaine.
+4. Fusionner la branche de préparation du domaine : canoniques, métadonnées, sitemap et surveillance prennent la nouvelle adresse.
+5. Lancer manuellement « Surveillance du site publié » : domaine, redirections, `noindex` et configuration Pages doivent passer.
