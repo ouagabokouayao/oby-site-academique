@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Surveillance du site publié, en lecture seule.
 
-    python3 scripts/surveiller_site.py --base https://ouagabokouayao.github.io/oby-site-academique/ --root .
+    python3 scripts/surveiller_site.py --base https://www.ouagabokouayao.com/ --root . \
+        --ancienne https://ouagabokouayao.github.io/oby-site-academique/ --apex https://ouagabokouayao.com/
 
 Contrôles :
 - disponibilité : chaque page du dépôt répond 200 sur le site publié ;
@@ -12,7 +13,11 @@ Contrôles :
 - page d'erreur : une adresse inexistante renvoie 404 ;
 - HTTPS : l'adresse en http redirige vers https (site distant seulement) ;
 - dérive (--comparer) : chaque page publiée est identique au fichier du dépôt.
-  À n'activer que sur main : une branche de travail diffère par nature.
+  À n'activer que sur main : une branche de travail diffère par nature ;
+- ancienne adresse (--ancienne) : elle redirige (301) vers la nouvelle, au
+  même chemin, pour la racine et pour une page ;
+- domaine nu (--apex) : il redirige vers la nouvelle adresse. Avertissement
+  seulement : cette redirection dépend de la configuration DNS.
 
 Aucune donnée n'est envoyée : uniquement des requêtes GET et HEAD.
 """
@@ -78,11 +83,25 @@ class SansRedirection(HTTPRedirectHandler):
         return None
 
 
+def redirection(url):
+    """Adresse vers laquelle `url` redirige de façon permanente (301 ou 308), sinon None."""
+    try:
+        build_opener(SansRedirection).open(Request(url, headers={"User-Agent": AGENT}), timeout=20)
+    except HTTPError as erreur:
+        if erreur.code in (301, 308):
+            return erreur.headers.get("Location", "")
+    except (URLError, OSError):
+        pass
+    return None
+
+
 def main():
     analyseur = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     analyseur.add_argument("--base", required=True, help="adresse racine du site publié, terminée par /")
     analyseur.add_argument("--root", type=Path, default=Path("."))
     analyseur.add_argument("--comparer", action="store_true", help="exiger l'identité des pages publiées et du dépôt")
+    analyseur.add_argument("--ancienne", help="ancienne adresse du site, qui doit rediriger vers --base")
+    analyseur.add_argument("--apex", help="domaine nu, qui devrait rediriger vers --base")
     analyseur.add_argument("--json-report", type=Path)
     args = analyseur.parse_args()
     base = args.base if args.base.endswith("/") else args.base + "/"
@@ -148,6 +167,17 @@ def main():
                 erreurs.append(f"HTTPS_NON_FORCE redirection {erreur.code} vers {cible!r}")
         except (URLError, OSError) as erreur:
             avertissements.append(f"HTTPS non vérifié : {erreur}")
+
+    if args.ancienne:
+        ancienne = args.ancienne if args.ancienne.endswith("/") else args.ancienne + "/"
+        for chemin in ("", "profil.html"):
+            cible = redirection(ancienne + chemin)
+            if cible != base + chemin:
+                erreurs.append(f"REDIRECTION_ANCIENNE {ancienne + chemin} → {cible!r} au lieu de {base + chemin}")
+    if args.apex:
+        cible = redirection(args.apex)
+        if not (cible or "").startswith(base):
+            avertissements.append(f"REDIRECTION_APEX {args.apex} → {cible!r} au lieu de {base}")
 
     for ligne in erreurs:
         print(f"ERROR {ligne}")
