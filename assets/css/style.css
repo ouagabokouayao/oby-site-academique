@@ -5137,3 +5137,22 @@ a.analysis-collection .analysis-card-meta::after {
     font-size: 1.24rem;
   }
 }
+
+/* --- Styles autrefois en ligne ----------------------------------------------
+   La Content-Security-Policy des pages (style-src 'self') bloque les styles
+   écrits dans le HTML : ils vivent désormais ici. */
+
+/* Bibliothèque publique : seules les notices confirmées sont présentées, le
+   badge de statut n'a donc rien à distinguer. */
+.resources-public .library-status {
+  display: none;
+}
+
+.resources-public .library-card-top {
+  justify-content: flex-start;
+}
+
+/* Carnet d'idées : seconde grille détachée de la première. */
+.grid-espace-haut {
+  margin-top: 28px;
+}

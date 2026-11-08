@@ -343,6 +343,21 @@ def main():
         for line in sorted(ROBOTS_REQUIRED_LINES - robots_lines):
             add(errors, "ROBOTS_GUARD", robots_path, f"Ligne absente : {line}")
 
+    # Le sitemap n'est soumis à aucun moteur tant que le noindex est maintenu,
+    # mais il doit être juste le jour de l'ouverture : toutes les pages de
+    # contenu, et aucun gabarit qui n'a de sens qu'avec un identifiant.
+    sitemap_path = root / "sitemap.xml"
+    if sitemap_path.exists():
+        base = "https://ouagabokouayao.github.io/oby-site-academique/"
+        listees = set(re.findall(r"<loc>([^<]+)</loc>", sitemap_path.read_text(encoding="utf-8")))
+        gabarits = {"404.html", "analyse.html", "participation.html"}
+        for page in pages:
+            adresse = base if page.name == "index.html" else base + page.name
+            if page.name in gabarits and adresse in listees:
+                add(errors, "SITEMAP_GABARIT", sitemap_path, page.name)
+            elif page.name not in gabarits and adresse not in listees:
+                add(errors, "SITEMAP_PAGE_ABSENTE", sitemap_path, page.name)
+
     dynamic_id_sources = {
         "mediatheque.html": root / "assets/data/mediatheque-oby.json",
         "veille-agenda.html": root / "assets/data/veille-agenda-oby.json",
@@ -355,7 +370,15 @@ def main():
         try:
             records = json.loads(data_path.read_text(encoding="utf-8"))
             if isinstance(records, list):
-                parser.ids.update(str(record["id"]) for record in records if isinstance(record, dict) and record.get("id"))
+                # La médiathèque n'affiche que les albums « public-valide » : un
+                # album retenu n'a pas d'ancre dans la page rendue.
+                parser.ids.update(
+                    str(record["id"])
+                    for record in records
+                    if isinstance(record, dict)
+                    and record.get("id")
+                    and (page_name != "mediatheque.html" or record.get("statut") == "public-valide")
+                )
         except (OSError, UnicodeError, json.JSONDecodeError):
             pass
 
@@ -446,6 +469,21 @@ def main():
                 if fragment not in page_ids:
                     add(errors, "CROSS_ID_MISSING", media_data, f"{ident} -> {lien}")
 
+        # Un renvoi vers la médiathèque n'a de sens que si l'album y est publié :
+        # sinon l'ancre tombe dans le vide, la page ne montrant que les albums
+        # « public-valide ». Une fiche publique ne renvoie pas non plus à une
+        # ancre nue : affichée dans participation.html, elle ne mène nulle part.
+        publics = {str(r.get("id")) for r in records if isinstance(r, dict) and r.get("statut") == "public-valide"}
+        for record in participation_records:
+            if not isinstance(record, dict) or record.get("affichage_participations") is False:
+                continue
+            renvoi = str(record.get("mediatheque") or "")
+            if renvoi.startswith("mediatheque.html#") and renvoi.split("#", 1)[1] not in publics:
+                add(errors, "MEDIA_LINK_NOT_PUBLIC", participation_data, f"{record.get('id')} -> {renvoi}")
+            for lien_fiche in record.get("liens") or []:
+                if isinstance(lien_fiche, dict) and str(lien_fiche.get("url") or "").startswith("#"):
+                    add(errors, "PARTICIPATION_BARE_ANCHOR", participation_data, f"{record.get('id')} -> {lien_fiche.get('url')}")
+
     # --- médias déclarés dans les JSON -------------------------------------
     # qa_site vérifie les assets référencés depuis le HTML ; ceux des galeries
     # ne vivent que dans les JSON et échapperaient sinon à tout contrôle.
@@ -534,6 +572,12 @@ def main():
     import navigation
     for ecart in navigation.divergences(root):
         add(errors, "NAVIGATION_DIVERGENTE", root, ecart)
+
+    # --- vignettes de la médiathèque ---
+    import vignettes
+    if root == vignettes.RACINE:
+        for code, ident in vignettes.ecarts():
+            add(errors, code, root / "assets/img/media/vignettes", ident)
 
     # --- concordance liste / JSON des participations -----------------------
     # La liste compacte et le JSON canonique doivent décrire exactement le même

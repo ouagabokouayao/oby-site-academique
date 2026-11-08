@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Participation — OUAGA Bokoua Yao</title>
   <meta name="description" content="Contexte, rôle établi, thématiques associées et sources officielles d'une participation du parcours de OUAGA Bokoua Yao.">
   <meta name="author" content="OUAGA Bokoua Yao">
@@ -110,7 +112,7 @@
         <div class="section-heading">
           <div><div class="eyebrow">Traces</div><h2 class="section-title">Photographies de cette participation.</h2></div>
         </div>
-        <div class="event-media-gallery" data-participation-galerie aria-label="Photographies de la participation"></div>
+        <div class="event-media-gallery" data-participation-galerie role="group" aria-label="Photographies de la participation"></div>
       </div>
     </section>
 

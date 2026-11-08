@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Cartographie intellectuelle — OUAGA Bokoua Yao</title>
   <meta name="description" content="Explorer les liens entre thèmes, territoires, travaux, participations et ressources du site OUAGA Bokoua Yao : droit de la mer, littoral, médiation et règlement des différends, innovation et prospective.">
   <meta name="author" content="OUAGA Bokoua Yao">
@@ -116,7 +118,7 @@
         </div>
         <div>
           <p class="lead">La cartographie rassemble des éléments déjà présents dans le site : sujets de recherche, bibliothèque de travail et médiathèque documentaire. Elle ne remplace pas les pages de fond ; elle sert d'entrée exploratoire vers les axes, travaux, lectures, événements et échanges possibles.</p>
-          <div class="map-summary" aria-label="Indicateurs de cartographie">
+          <div class="map-summary" role="group" aria-label="Indicateurs de cartographie">
             <div><strong data-map-total>26</strong><span>Sujets structurés</span></div>
             <div><strong data-ref-count>19</strong><span>Références bibliographiques</span></div>
             <div><strong data-media-count>50</strong><span>Entrées médiathèque</span></div>
