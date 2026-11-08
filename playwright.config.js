@@ -67,13 +67,25 @@ module.exports = defineConfig({
     screenshot: "only-on-failure",
     trace: "retain-on-failure",
   },
-  webServer: {
-    command: `python3 -m http.server ${PORT} --bind 127.0.0.1`,
-    url: `http://127.0.0.1:${PORT}/index.html`,
-    reuseExistingServer: !process.env.CI,
-    timeout: 30_000,
-    stdout: "ignore",
-    stderr: "ignore",
-  },
+  // Deux serveurs : le site à la racine, comme sur www.ouagabokouayao.com,
+  // et sous /oby-site-academique/, comme sur l'adresse GitHub Pages d'origine.
+  webServer: [
+    {
+      command: `python3 -m http.server ${PORT} --bind 127.0.0.1`,
+      url: `http://127.0.0.1:${PORT}/index.html`,
+      reuseExistingServer: !process.env.CI,
+      timeout: 30_000,
+      stdout: "ignore",
+      stderr: "ignore",
+    },
+    {
+      command: `python3 tests/serveur_sous_chemin.py ${PORT + 1} /oby-site-academique/`,
+      url: `http://127.0.0.1:${PORT + 1}/oby-site-academique/index.html`,
+      reuseExistingServer: !process.env.CI,
+      timeout: 30_000,
+      stdout: "ignore",
+      stderr: "ignore",
+    },
+  ],
   projects: projets,
 });
