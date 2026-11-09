@@ -4,8 +4,9 @@
     python3 scripts/verifier_dns.py --domaine ouagabokouayao.com [--exiger-cible] [--json-report dns.json]
 
 Sans option, le script fait l'inventaire des enregistrements publics utiles
-(web, messagerie, sécurité) : une copie de l'état visible, à garder avant et
-après toute intervention. Il ne remplace pas la copie de la zone exportée
+(web de www et du domaine nu, messagerie, sécurité) : une copie de l'état
+visible, à garder avant et après toute intervention, qui sert au retour
+arrière. Il ne remplace pas la copie de la zone exportée
 depuis OVHcloud, qui seule contient tous les enregistrements.
 
 Avec --exiger-cible, il vérifie la configuration attendue pour GitHub Pages :
@@ -58,6 +59,9 @@ def inventaire(domaine, interroger=interroger_dig):
     www = f"www.{domaine}"
     requetes = {
         "www CNAME": (www, "CNAME"),
+        "www A": (www, "A"),
+        "www AAAA": (www, "AAAA"),
+        "www TXT": (www, "TXT"),
         "domaine nu A": (domaine, "A"),
         "domaine nu AAAA": (domaine, "AAAA"),
         "domaine nu MX": (domaine, "MX"),
@@ -125,7 +129,7 @@ def main():
     print("|---|---|")
     for cle, valeurs in inv.items():
         texte = "non vérifiable ici" if valeurs is None else (", ".join(valeurs) if valeurs else "aucun")
-        print(f"| {cle} | {texte.replace('|', '/')} |")
+        print(f"| {cle} | {texte.replace('|', chr(92) + '|')} |")
     print()
     for ligne in erreurs:
         print(f"ERROR {ligne}")

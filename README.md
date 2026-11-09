@@ -184,7 +184,7 @@ Les actions sur les comptes (GitHub, OVHcloud) relèvent du seul titulaire, sur 
 
 ### Procédure de bascule
 
-Préalables, la veille : CI de la branche de préparation verte, copie de la zone faite, TTL abaissés, valeurs web actuelles notées (A, AAAA et TXT de `www` et du domaine nu, redirections OVH), SHA de `main` relevé (`git rev-parse origin/main`).
+Préalables, la veille : CI de la branche de préparation verte, copie de la zone faite, TTL abaissés, valeurs web actuelles notées (A, AAAA et TXT de `www` et du domaine nu, redirections OVH ; `python3 scripts/verifier_dns.py --domaine ouagabokouayao.com --json-report dns-avant.json` les relève, comme l'artefact « surveillance » de chaque exécution), SHA de `main` relevé (`git rev-parse origin/main`).
 
 1. **Vérifier la propriété du domaine.** Réglages du compte GitHub → Pages → « Add a domain » → `ouagabokouayao.com`. GitHub affiche le nom et la valeur du TXT : les reporter tels quels dans la zone OVH (sous-domaine `_github-pages-challenge-ouagabokouayao`), puis « Verify ». Délai : celui de la propagation du nouvel enregistrement ; on peut réessayer. Effet sur le site : aucun. Laisser ce TXT en place.
 2. **Déclarer le domaine dans Pages** (après 1). Réglages du dépôt → Pages → Custom domain → `www.ouagabokouayao.com` → « Save ». Effets immédiats : GitHub ajoute sur `main` un commit qui crée `CNAME`, et l'ancienne adresse redirige vers le domaine. Jusqu'à ce que l'étape 4 ait pris effet, le domaine ne sert pas le site : l'ancienne adresse est coupée. Enchaîner donc les étapes 2 à 4 sans pause, à une heure creuse. GitHub recommande cet ordre (domaine déclaré avant le DNS) pour qu'aucun tiers ne puisse servir un site sous le domaine.

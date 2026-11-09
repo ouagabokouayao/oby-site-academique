@@ -74,6 +74,14 @@ class ConfigurationCible(unittest.TestCase):
         erreurs, _ = evaluer({(DOMAINE, "MX"): [], (DOMAINE, "TXT"): []})
         self.assertEqual(erreurs, [])
 
+    def test_inventaire_conserve_les_valeurs_web_actuelles(self):
+        actuelles = {("www.ouagabokouayao.com", "A"): ["213.186.33.5"],
+                     ("www.ouagabokouayao.com", "TXT"): ['"3|welcome"']}
+        inv = dns.inventaire(DOMAINE, interroger=lambda nom, type_: actuelles.get((nom, type_), []))
+        self.assertEqual(inv["www A"], ["213.186.33.5"])
+        self.assertEqual(inv["www TXT"], ['"3|welcome"'])
+        self.assertEqual(inv["www AAAA"], [])
+
     def test_inventaire_seul_ne_bloque_jamais(self):
         erreurs, avertissements = evaluer({("www.ouagabokouayao.com", "CNAME"): []}, exiger=False)
         self.assertEqual((erreurs, avertissements), ([], []))
