@@ -17,7 +17,11 @@ Le contrôle exige :
   qui existent dans le dépôt ;
 - que le sitemap et robots.txt pointent vers ADRESSE ;
 - qu'aucun chemin interne ne soit absolu (« /… ») : il casserait selon
-  que le site est servi à la racine d'un domaine ou sous un chemin.
+  que le site est servi à la racine d'un domaine ou sous un chemin ;
+- que le fichier CNAME, s'il existe, désigne exactement DOMAINE. Ce fichier
+  n'est jamais créé à la main : GitHub l'ajoute sur main quand le domaine
+  est déclaré dans les réglages Pages, et il remonte dans une branche par
+  synchronisation avec main.
 """
 
 import json
@@ -92,6 +96,12 @@ def ecarts(racine=RACINE):
                 continue
             if isinstance(donnees, dict) and donnees.get("url") and donnees["url"] != ADRESSE:
                 problemes.append(("JSON_LD_URL", page.name, donnees["url"]))
+
+    cname = racine / "CNAME"
+    if cname.exists():
+        contenu = cname.read_text(encoding="utf-8").strip()
+        if contenu != DOMAINE:
+            problemes.append(("CNAME_INCOHERENT", "CNAME", f"« {contenu} » au lieu de « {DOMAINE} »"))
 
     sitemap = racine / "sitemap.xml"
     if sitemap.exists():
