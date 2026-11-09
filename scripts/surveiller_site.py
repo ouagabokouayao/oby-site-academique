@@ -10,6 +10,8 @@ Contrôles :
   nosnippet, et robots.txt garde ses lignes de protection ;
 - ressources : images, feuilles de style, scripts et icônes des pages, ainsi
   que les images déclarées dans les registres JSON publiés, répondent 200 ;
+  une erreur transitoire du serveur (429, 5xx) est retentée deux fois avant
+  d'être retenue ;
 - page d'erreur : une adresse inexistante renvoie 404 ;
 - HTTPS : l'adresse en http redirige vers https (site distant seulement) ;
 - dérive (--comparer) : chaque page publiée est identique au fichier du dépôt.
@@ -34,6 +36,7 @@ import hashlib
 import json
 import re
 import sys
+import time
 from concurrent.futures import ThreadPoolExecutor
 from html.parser import HTMLParser
 from pathlib import Path
@@ -49,6 +52,9 @@ LIGNES_ROBOTS = {
     "Allow: /",
 }
 REGISTRES_MEDIAS = ("assets/data/mediatheque-oby.json", "assets/data/participations-oby.json")
+# Réponses d'un serveur momentanément surchargé : retentées avant de conclure.
+TRANSITOIRES = {429, 500, 502, 503, 504}
+REPRISES = 2
 
 
 class Lecteur(HTMLParser):
@@ -68,15 +74,25 @@ class Lecteur(HTMLParser):
 
 
 def lire_avec_adresse(url, methode="GET", delai=20):
-    """(statut, corps, adresse finale après d'éventuelles redirections)."""
-    requete = Request(url, method=methode, headers={"User-Agent": AGENT})
-    try:
-        with urlopen(requete, timeout=delai) as reponse:
-            return reponse.status, reponse.read() if methode == "GET" else b"", reponse.geturl()
-    except HTTPError as erreur:
-        return erreur.code, b"", url
-    except (URLError, TimeoutError, OSError) as erreur:
-        return None, str(erreur).encode(), url
+    """(statut, corps, adresse finale après d'éventuelles redirections).
+
+    Une réponse transitoire du serveur (429, 5xx) est retentée REPRISES fois,
+    à quelques secondes d'intervalle ; si elle persiste, elle est rendue telle
+    quelle et reste bloquante. Un serveur injoignable n'est pas retenté.
+    """
+    for essai in range(REPRISES + 1):
+        if essai:
+            time.sleep(2 * essai)
+        requete = Request(url, method=methode, headers={"User-Agent": AGENT})
+        try:
+            with urlopen(requete, timeout=delai) as reponse:
+                return reponse.status, reponse.read() if methode == "GET" else b"", reponse.geturl()
+        except HTTPError as erreur:
+            if erreur.code in TRANSITOIRES and essai < REPRISES:
+                continue
+            return erreur.code, b"", url
+        except (URLError, TimeoutError, OSError) as erreur:
+            return None, str(erreur).encode(), url
 
 
 def lire(url, methode="GET", delai=20):

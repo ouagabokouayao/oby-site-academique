@@ -4,8 +4,9 @@
 
 Un serveur local sert le dépôt et simule, scénario par scénario, les
 défauts à détecter : redirections absentes ou erronées, page redirigée,
-directive noindex retirée, image de galerie absente, domaine qui répond sans
-servir le site. Chaque défaut bloquant doit faire échouer la surveillance ;
+directive noindex retirée, image de galerie absente ou en panne, domaine qui
+répond sans servir le site. Une erreur transitoire du serveur, elle, ne doit
+pas faire échouer la surveillance. Chaque défaut bloquant doit faire échouer la surveillance ;
 les avertissements ne le doivent pas.
 """
 
@@ -35,6 +36,8 @@ class Gestionnaire(http.server.SimpleHTTPRequestHandler):
     sans_noindex = set()
     absents = set()
     pages_redirigees = {}
+    transitoires = {}  # chemin → nombre de réponses 503 avant de servir normalement
+    en_panne = set()  # chemins qui répondent toujours 503
     racine_servie = RACINE
 
     def log_message(self, *args):
@@ -57,6 +60,13 @@ class Gestionnaire(http.server.SimpleHTTPRequestHandler):
         if chemin in self.absents:
             self.send_error(404)
             return None
+        if chemin in self.en_panne:
+            self.send_error(503)
+            return None
+        if self.transitoires.get(chemin, 0) > 0:
+            self.transitoires[chemin] -= 1
+            self.send_error(503)
+            return None
         nom = chemin.lstrip("/") or "index.html"
         if nom in self.sans_noindex:
             texte = (self.racine_servie / nom).read_text(encoding="utf-8")
@@ -72,7 +82,7 @@ class Gestionnaire(http.server.SimpleHTTPRequestHandler):
 class Serveur:
     def __init__(self, **defauts):
         attributs = {"redirections": {}, "sans_noindex": set(), "absents": set(), "pages_redirigees": {},
-                     "racine_servie": RACINE}
+                     "transitoires": {}, "en_panne": set(), "racine_servie": RACINE}
         attributs.update(defauts)
         classe = type("GestionnaireEssai", (Gestionnaire,), attributs)
         self.httpd = http.server.ThreadingHTTPServer(
@@ -206,6 +216,22 @@ class SiteSurveille(unittest.TestCase):
             code, sortie = surveiller(serveur.base)
         self.assertEqual(code, 1)
         self.assertIn(f"RESSOURCE_ABSENTE {image}", sortie)
+
+    def test_erreur_transitoire_du_serveur_est_retentee(self):
+        image = "/assets/img/media/events/convention-abidjan-cop12-2017/oby_convention_abidjan_cop12_2017_05.webp"
+        with Serveur() as serveur:
+            serveur.httpd.RequestHandlerClass.func.transitoires = {image: 1, "/profil.html": 2}
+            code, sortie = surveiller(serveur.base)
+        self.assertEqual(code, 0, sortie)
+        self.assertIn("SURVEILLANCE PASS", sortie)
+
+    def test_image_en_panne_persistante_echoue(self):
+        image = "/assets/img/media/events/convention-abidjan-cop12-2017/oby_convention_abidjan_cop12_2017_05.webp"
+        with Serveur() as serveur:
+            serveur.httpd.RequestHandlerClass.func.en_panne = {image}
+            code, sortie = surveiller(serveur.base)
+        self.assertEqual(code, 1)
+        self.assertIn(f"RESSOURCE_ABSENTE {image} : 503", sortie)
 
     def test_perte_du_noindex_echoue(self):
         with Serveur() as serveur:
