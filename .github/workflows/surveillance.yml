@@ -52,19 +52,26 @@ jobs:
         run: |
           set -o pipefail
           pages=$(gh api "repos/${GITHUB_REPOSITORY}/pages")
-          echo "$pages" | jq '{source, https_enforced, cname, build_type}'
-          test "$(jq -r .source.branch <<<"$pages")" = "main"
-          test "$(jq -r .source.path <<<"$pages")" = "/"
-          test "$(jq -r .https_enforced <<<"$pages")" = "true"
-          statut=$(gh api "repos/${GITHUB_REPOSITORY}/pages/builds/latest" --jq .status)
-          echo "Dernière publication : $statut"
-          test "$statut" = "built"
+          echo "$pages" | jq '{source, https_enforced, cname, build_type, https_certificate}'
           # Le mode suit le domaine déclaré dans Pages, jamais la seule réponse
           # du domaine : un domaine déclaré mais défaillant fait échouer le contrôle.
           python3 scripts/surveiller_site.py --choisir-mode --cname "$(jq -r .cname <<<"$pages")" \
             --evenement "$GITHUB_EVENT_NAME" --ref "$GITHUB_REF" \
             --domaine "$DOMAINE" --adresse "$SITE" --ancienne "$SITE_ANCIEN" >> "$GITHUB_OUTPUT"
+          # Écarts de configuration : bloquants, mais les contrôles DNS et du
+          # site s'exécutent quand même, pour diagnostiquer une bascule en cours.
+          statut=$(gh api "repos/${GITHUB_REPOSITORY}/pages/builds/latest" --jq .status)
+          ecarts=0
+          attendu() {
+            if [ "$2" != "$3" ]; then echo "::error::Pages, $1 : « $2 » au lieu de « $3 »"; ecarts=1; fi
+          }
+          attendu "branche source" "$(jq -r .source.branch <<<"$pages")" "main"
+          attendu "dossier source" "$(jq -r .source.path <<<"$pages")" "/"
+          attendu "HTTPS forcé" "$(jq -r .https_enforced <<<"$pages")" "true"
+          attendu "dernière publication" "$statut" "built"
+          exit $ecarts
       - name: DNS du domaine (cible exigée une fois le domaine déclaré, inventaire sinon)
+        if: ${{ !cancelled() && (steps.mode.outputs.mode == 'domaine' || steps.mode.outputs.mode == 'ancienne') }}
         env:
           MODE: ${{ steps.mode.outputs.mode }}
         run: |
@@ -74,6 +81,7 @@ jobs:
           if [ "$MODE" = "domaine" ]; then option="--exiger-cible"; fi
           python3 scripts/verifier_dns.py --domaine "${DOMAINE#www.}" $option --json-report dns.json | tee -a "$GITHUB_STEP_SUMMARY"
       - name: Site publié (pages, noindex, robots.txt, ressources, 404, HTTPS, redirections)
+        if: ${{ !cancelled() && (steps.mode.outputs.mode == 'domaine' || steps.mode.outputs.mode == 'ancienne') }}
         env:
           BASE: ${{ steps.mode.outputs.base }}
           MODE: ${{ steps.mode.outputs.mode }}
@@ -86,6 +94,7 @@ jobs:
           if [ "${GITHUB_REF}" = "refs/heads/main" ]; then options="$options --comparer"; fi
           python3 scripts/surveiller_site.py --base "$BASE" --root . $options --json-report surveillance.json | tee -a "$GITHUB_STEP_SUMMARY"
       - name: Dernier contrôle QA de main
+        if: ${{ !cancelled() }}
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
