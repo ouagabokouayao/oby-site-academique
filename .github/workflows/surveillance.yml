@@ -7,9 +7,12 @@ name: Surveillance du site publié
 # la branche par défaut (main). Sur une autre branche, une poussée qui modifie
 # la surveillance en lance une exécution d'essai contre le site publié.
 #
-# Adresse surveillée : le domaine personnel. Tant qu'il ne répond pas, un essai
-# (poussée) se replie sur l'adresse GitHub Pages actuelle ; une exécution
-# planifiée ou manuelle échoue, car le site doit alors être servi au domaine.
+# Mode de surveillance, d'après le domaine déclaré dans GitHub Pages :
+# - domaine déclaré : surveillance stricte du domaine, des redirections et du
+#   DNS cible, sans aucun repli ;
+# - aucun domaine déclaré, hors de main : essai sur l'adresse GitHub Pages
+#   actuelle, avec inventaire DNS ;
+# - aucun domaine déclaré sur main, ou domaine différent : échec.
 on:
   schedule:
     - cron: "23 5 * * *" # chaque jour : disponibilité, noindex, ressources, configuration
@@ -42,50 +45,46 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
-      - name: Adresse à contrôler
-        id: adresse
-        run: |
-          if curl -sSf -o /dev/null --max-time 20 "$SITE"; then
-            echo "base=$SITE" >> "$GITHUB_OUTPUT"
-            echo "actif=oui" >> "$GITHUB_OUTPUT"
-            echo "Domaine personnel actif : $SITE"
-          elif [ "$GITHUB_EVENT_NAME" = "push" ]; then
-            echo "base=$SITE_ANCIEN" >> "$GITHUB_OUTPUT"
-            echo "actif=non" >> "$GITHUB_OUTPUT"
-            echo "::notice::$SITE ne répond pas encore : essai sur l'adresse actuelle, $SITE_ANCIEN"
-          else
-            echo "::error::Le domaine $SITE ne répond pas."
-            exit 1
-          fi
-      - name: Site publié (pages, noindex, robots.txt, ressources, 404, HTTPS, redirections)
-        env:
-          BASE: ${{ steps.adresse.outputs.base }}
-          ACTIF: ${{ steps.adresse.outputs.actif }}
-        run: |
-          set -o pipefail
-          options=""
-          # Domaine actif : l'ancienne adresse et le domaine nu doivent y rediriger.
-          if [ "$ACTIF" = "oui" ]; then options="--ancienne $SITE_ANCIEN --apex $APEX"; fi
-          # Sur main, le site publié doit être identique au dépôt.
-          if [ "${GITHUB_REF}" = "refs/heads/main" ]; then options="$options --comparer"; fi
-          python3 scripts/surveiller_site.py --base "$BASE" --root . $options --json-report surveillance.json | tee -a "$GITHUB_STEP_SUMMARY"
-      - name: Configuration GitHub Pages (source main, racine, HTTPS forcé, domaine, dernière publication)
+      - name: Configuration GitHub Pages et mode de surveillance
+        id: mode
         env:
           GH_TOKEN: ${{ github.token }}
-          ACTIF: ${{ steps.adresse.outputs.actif }}
         run: |
+          set -o pipefail
           pages=$(gh api "repos/${GITHUB_REPOSITORY}/pages")
           echo "$pages" | jq '{source, https_enforced, cname, build_type}'
-          test "$(echo "$pages" | jq -r .source.branch)" = "main"
-          test "$(echo "$pages" | jq -r .source.path)" = "/"
-          test "$(echo "$pages" | jq -r .https_enforced)" = "true"
-          # Domaine actif : il doit être celui déclaré dans GitHub Pages.
-          attendu="null"
-          if [ "$ACTIF" = "oui" ]; then attendu="$DOMAINE"; fi
-          test "$(echo "$pages" | jq -r .cname)" = "$attendu"
+          test "$(jq -r .source.branch <<<"$pages")" = "main"
+          test "$(jq -r .source.path <<<"$pages")" = "/"
+          test "$(jq -r .https_enforced <<<"$pages")" = "true"
           statut=$(gh api "repos/${GITHUB_REPOSITORY}/pages/builds/latest" --jq .status)
           echo "Dernière publication : $statut"
           test "$statut" = "built"
+          # Le mode suit le domaine déclaré dans Pages, jamais la seule réponse
+          # du domaine : un domaine déclaré mais défaillant fait échouer le contrôle.
+          python3 scripts/surveiller_site.py --choisir-mode --cname "$(jq -r .cname <<<"$pages")" \
+            --evenement "$GITHUB_EVENT_NAME" --ref "$GITHUB_REF" \
+            --domaine "$DOMAINE" --adresse "$SITE" --ancienne "$SITE_ANCIEN" >> "$GITHUB_OUTPUT"
+      - name: DNS du domaine (cible exigée une fois le domaine déclaré, inventaire sinon)
+        env:
+          MODE: ${{ steps.mode.outputs.mode }}
+        run: |
+          set -o pipefail
+          command -v dig >/dev/null || { sudo apt-get update -qq && sudo apt-get install -y -qq dnsutils; }
+          option=""
+          if [ "$MODE" = "domaine" ]; then option="--exiger-cible"; fi
+          python3 scripts/verifier_dns.py --domaine "${DOMAINE#www.}" $option --json-report dns.json | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Site publié (pages, noindex, robots.txt, ressources, 404, HTTPS, redirections)
+        env:
+          BASE: ${{ steps.mode.outputs.base }}
+          MODE: ${{ steps.mode.outputs.mode }}
+        run: |
+          set -o pipefail
+          options=""
+          # Domaine déclaré : l'ancienne adresse et le domaine nu doivent y rediriger.
+          if [ "$MODE" = "domaine" ]; then options="--ancienne $SITE_ANCIEN --apex $APEX"; fi
+          # Sur main, le site publié doit être identique au dépôt.
+          if [ "${GITHUB_REF}" = "refs/heads/main" ]; then options="$options --comparer"; fi
+          python3 scripts/surveiller_site.py --base "$BASE" --root . $options --json-report surveillance.json | tee -a "$GITHUB_STEP_SUMMARY"
       - name: Dernier contrôle QA de main
         env:
           GH_TOKEN: ${{ github.token }}
@@ -98,7 +97,9 @@ jobs:
         uses: actions/upload-artifact@v5
         with:
           name: surveillance
-          path: surveillance.json
+          path: |
+            surveillance.json
+            dns.json
           if-no-files-found: ignore
 
   liens-externes:

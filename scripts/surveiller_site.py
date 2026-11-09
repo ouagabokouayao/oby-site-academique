@@ -16,8 +16,15 @@ Contrôles :
   À n'activer que sur main : une branche de travail diffère par nature ;
 - ancienne adresse (--ancienne) : elle redirige (301) vers la nouvelle, au
   même chemin, pour la racine et pour une page ;
-- domaine nu (--apex) : il redirige vers la nouvelle adresse. Avertissement
-  seulement : cette redirection dépend de la configuration DNS.
+- domaine nu (--apex) : il redirige vers la nouvelle adresse. Une redirection
+  vers une autre adresse est bloquante ; un domaine nu qui ne répond pas
+  n'est qu'un avertissement (il dépend des enregistrements A et AAAA) ;
+- page redirigée : une page du site doit répondre elle-même, sans redirection.
+
+Choix du mode (--choisir-mode), d'après le domaine déclaré dans GitHub Pages :
+- domaine déclaré : surveillance stricte du domaine, sans aucun repli ;
+- aucun domaine déclaré, hors de main : essai sur l'adresse actuelle ;
+- aucun domaine déclaré sur main, ou domaine différent : échec.
 
 Aucune donnée n'est envoyée : uniquement des requêtes GET et HEAD.
 """
@@ -60,15 +67,21 @@ class Lecteur(HTMLParser):
             self.ressources.append(a["href"])
 
 
-def lire(url, methode="GET", delai=20):
+def lire_avec_adresse(url, methode="GET", delai=20):
+    """(statut, corps, adresse finale après d'éventuelles redirections)."""
     requete = Request(url, method=methode, headers={"User-Agent": AGENT})
     try:
         with urlopen(requete, timeout=delai) as reponse:
-            return reponse.status, reponse.read() if methode == "GET" else b""
+            return reponse.status, reponse.read() if methode == "GET" else b"", reponse.geturl()
     except HTTPError as erreur:
-        return erreur.code, b""
+        return erreur.code, b"", url
     except (URLError, TimeoutError, OSError) as erreur:
-        return None, str(erreur).encode()
+        return None, str(erreur).encode(), url
+
+
+def lire(url, methode="GET", delai=20):
+    statut, corps, _ = lire_avec_adresse(url, methode, delai)
+    return statut, corps
 
 
 def statut_ressource(url):
@@ -95,7 +108,37 @@ def redirection(url):
     return None
 
 
+def choisir_mode(cname, evenement, ref, domaine, adresse, ancienne):
+    """(mode, base, message) d'après le domaine déclaré dans GitHub Pages.
+
+    mode vaut « domaine », « ancienne » ou « erreur ». Le repli sur l'ancienne
+    adresse ne dépend jamais de la réponse du domaine : un domaine déclaré
+    mais défaillant reste surveillé, et ses défauts font échouer le contrôle.
+    """
+    cname = (cname or "").strip().lower()
+    if cname == domaine.lower():
+        return "domaine", adresse, f"{domaine} est déclaré dans GitHub Pages : surveillance stricte du domaine."
+    if cname in ("", "null", "none"):
+        if ref != "refs/heads/main":
+            return "ancienne", ancienne, f"Aucun domaine déclaré dans GitHub Pages : essai sur l'adresse actuelle ({ancienne})."
+        return "erreur", "", (f"Aucun domaine déclaré dans GitHub Pages, alors que main attend {domaine} : "
+                              "bascule non effectuée ou annulée sans retour arrière du contenu.")
+    return "erreur", "", f"GitHub Pages déclare {cname}, et non {domaine}."
+
+
 def main():
+    if "--choisir-mode" in sys.argv:
+        choix = argparse.ArgumentParser()
+        choix.add_argument("--choisir-mode", action="store_true")
+        for option in ("--cname", "--evenement", "--ref", "--domaine", "--adresse", "--ancienne"):
+            choix.add_argument(option, default="")
+        a = choix.parse_args()
+        mode, base, message = choisir_mode(a.cname, a.evenement, a.ref, a.domaine, a.adresse, a.ancienne)
+        print(f"mode={mode}")
+        print(f"base={base}")
+        print(message, file=sys.stderr)
+        return 1 if mode == "erreur" else 0
+
     analyseur = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     analyseur.add_argument("--base", required=True, help="adresse racine du site publié, terminée par /")
     analyseur.add_argument("--root", type=Path, default=Path("."))
@@ -113,10 +156,12 @@ def main():
 
     for nom in pages:
         url = urljoin(base, "" if nom == "index.html" else nom)
-        statut, corps = lire(url)
+        statut, corps, finale = lire_avec_adresse(url)
         if statut != 200:
             erreurs.append(f"PAGE_INDISPONIBLE {nom} : {statut}")
             continue
+        if finale != url:
+            erreurs.append(f"PAGE_REDIRIGEE {nom} : {url} → {finale}")
         lecteur = Lecteur()
         lecteur.feed(corps.decode("utf-8", "replace"))
         directives = {d.strip().lower() for d in (lecteur.robots or "").split(",")}
@@ -176,8 +221,10 @@ def main():
                 erreurs.append(f"REDIRECTION_ANCIENNE {ancienne + chemin} → {cible!r} au lieu de {base + chemin}")
     if args.apex:
         cible = redirection(args.apex)
-        if not (cible or "").startswith(base):
-            avertissements.append(f"REDIRECTION_APEX {args.apex} → {cible!r} au lieu de {base}")
+        if cible is None:
+            avertissements.append(f"REDIRECTION_APEX {args.apex} ne redirige pas (A et AAAA du domaine nu à vérifier)")
+        elif not cible.startswith(base):
+            erreurs.append(f"REDIRECTION_APEX {args.apex} → {cible!r} au lieu de {base}")
 
     for ligne in erreurs:
         print(f"ERROR {ligne}")

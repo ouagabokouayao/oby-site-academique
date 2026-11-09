@@ -37,6 +37,10 @@ jobs:
         run: python3 scripts/controle_code.py --root . --json-report controle-code.json
       - name: Navigation commune identique sur toutes les pages
         run: python3 scripts/navigation.py --verifier
+      - name: Adresse du site (domaine, canoniques, métadonnées, CNAME)
+        run: python3 scripts/domaine.py --verifier
+      - name: Scénarios de surveillance et de DNS
+        run: python3 -m unittest discover -s tests/surveillance -v
       - name: Validation HTML (html-validate, préréglage « standard »)
         run: npx --yes html-validate@8.18.2 --formatter stylish *.html
       - name: Rapports
