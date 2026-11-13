@@ -68,8 +68,21 @@ jobs:
           node-version: "22"
       - name: Dépendances de test
         run: npm install --no-audit --no-fund
+      - name: Cache des navigateurs Playwright
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('package.json') }}
       - name: Navigateurs Playwright
-        run: npx playwright install --with-deps chromium firefox webkit
+        # L'exécuteur perd parfois l'accès aux dépôts Ubuntu (« Temporary
+        # failure resolving ») : trois essais espacés avant de conclure.
+        run: |
+          for essai in 1 2 3; do
+            if npx playwright install --with-deps chromium firefox webkit; then exit 0; fi
+            echo "::warning::Installation des navigateurs : essai $essai échoué"
+            sleep $((essai * 45))
+          done
+          exit 1
       - name: Tests (pages, navigation, liens, interactions, contact, accessibilité)
         run: npx playwright test --grep-invert @captures
       - name: Résumé des tests
