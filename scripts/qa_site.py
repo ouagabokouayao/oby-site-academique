@@ -103,8 +103,9 @@ ROBOTS_REQUIRED_LINES = {
     "User-agent: *",
     "Disallow: /assets/documents/cv/",
     "Allow: /",
-    "Sitemap: https://ouagabokouayao.github.io/oby-site-academique/sitemap.xml",
 }
+# La ligne Sitemap, qui porte l'adresse du site, est contrôlée par
+# scripts/domaine.py, source unique de cette adresse.
 
 
 def dimensions_webp(chemin):
@@ -229,9 +230,7 @@ def local_target(root, source, raw_ref):
     if parsed.scheme.lower() in REMOTE_SCHEMES:
         return None, ""
     rel_path = unquote(parsed.path)
-    if rel_path.startswith("/oby-site-academique/"):
-        target = root / rel_path[len("/oby-site-academique/"):]
-    elif rel_path.startswith("/"):
+    if rel_path.startswith("/"):
         target = root / rel_path.lstrip("/")
     elif rel_path:
         target = source.parent / rel_path
@@ -348,7 +347,9 @@ def main():
     # contenu, et aucun gabarit qui n'a de sens qu'avec un identifiant.
     sitemap_path = root / "sitemap.xml"
     if sitemap_path.exists():
-        base = "https://ouagabokouayao.github.io/oby-site-academique/"
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        import domaine
+        base = domaine.ADRESSE
         listees = set(re.findall(r"<loc>([^<]+)</loc>", sitemap_path.read_text(encoding="utf-8")))
         gabarits = {"404.html", "analyse.html", "participation.html"}
         for page in pages:
@@ -572,6 +573,12 @@ def main():
     import navigation
     for ecart in navigation.divergences(root):
         add(errors, "NAVIGATION_DIVERGENTE", root, ecart)
+
+    # --- adresse publique du site ---
+    import domaine
+    if root == domaine.RACINE:
+        for code, cible, detail in domaine.ecarts(root):
+            add(errors, code, root / cible, detail)
 
     # --- vignettes de la médiathèque ---
     import vignettes

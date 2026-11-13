@@ -2,4 +2,4 @@ User-agent: *
 Disallow: /assets/documents/cv/
 Allow: /
 
-Sitemap: https://ouagabokouayao.github.io/oby-site-academique/sitemap.xml
+Sitemap: https://www.ouagabokouayao.com/sitemap.xml

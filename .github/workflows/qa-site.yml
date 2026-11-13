@@ -37,6 +37,10 @@ jobs:
         run: python3 scripts/controle_code.py --root . --json-report controle-code.json
       - name: Navigation commune identique sur toutes les pages
         run: python3 scripts/navigation.py --verifier
+      - name: Adresse du site (domaine, canoniques, métadonnées, CNAME)
+        run: python3 scripts/domaine.py --verifier
+      - name: Scénarios de surveillance et de DNS
+        run: python3 -m unittest discover -s tests/surveillance -v
       - name: Validation HTML (html-validate, préréglage « standard »)
         run: npx --yes html-validate@8.18.2 --formatter stylish *.html
       - name: Rapports
@@ -64,8 +68,21 @@ jobs:
           node-version: "22"
       - name: Dépendances de test
         run: npm install --no-audit --no-fund
+      - name: Cache des navigateurs Playwright
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('package.json') }}
       - name: Navigateurs Playwright
-        run: npx playwright install --with-deps chromium firefox webkit
+        # L'exécuteur perd parfois l'accès aux dépôts Ubuntu (« Temporary
+        # failure resolving ») : trois essais espacés avant de conclure.
+        run: |
+          for essai in 1 2 3; do
+            if npx playwright install --with-deps chromium firefox webkit; then exit 0; fi
+            echo "::warning::Installation des navigateurs : essai $essai échoué"
+            sleep $((essai * 45))
+          done
+          exit 1
       - name: Tests (pages, navigation, liens, interactions, contact, accessibilité)
         run: npx playwright test --grep-invert @captures
       - name: Résumé des tests

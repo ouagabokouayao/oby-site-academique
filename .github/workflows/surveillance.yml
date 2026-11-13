@@ -6,6 +6,13 @@ name: Surveillance du site publié
 # Les déclencheurs planifiés ne s'activent que lorsque ce fichier se trouve sur
 # la branche par défaut (main). Sur une autre branche, une poussée qui modifie
 # la surveillance en lance une exécution d'essai contre le site publié.
+#
+# Mode de surveillance, d'après le domaine déclaré dans GitHub Pages :
+# - domaine déclaré : surveillance stricte du domaine, des redirections et du
+#   DNS cible, sans aucun repli ;
+# - aucun domaine déclaré, hors de main : essai sur l'adresse GitHub Pages
+#   actuelle, avec inventaire DNS ;
+# - aucun domaine déclaré sur main, ou domaine différent : échec.
 on:
   schedule:
     - cron: "23 5 * * *" # chaque jour : disponibilité, noindex, ressources, configuration
@@ -23,7 +30,10 @@ permissions:
   actions: read
 
 env:
-  SITE: https://ouagabokouayao.github.io/oby-site-academique/
+  SITE: https://www.ouagabokouayao.com/
+  DOMAINE: www.ouagabokouayao.com
+  APEX: https://ouagabokouayao.com/
+  SITE_ANCIEN: https://ouagabokouayao.github.io/oby-site-academique/
 
 jobs:
   site-publie:
@@ -35,26 +45,56 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
-      - name: Site publié (pages, noindex, robots.txt, ressources, 404, HTTPS)
-        run: |
-          option=""
-          # Sur main, le site publié doit être identique au dépôt.
-          if [ "${GITHUB_REF}" = "refs/heads/main" ]; then option="--comparer"; fi
-          python3 scripts/surveiller_site.py --base "$SITE" --root . $option --json-report surveillance.json | tee -a "$GITHUB_STEP_SUMMARY"
-      - name: Configuration GitHub Pages (source main, racine, HTTPS forcé, dernière publication)
+      - name: Configuration GitHub Pages et mode de surveillance
+        id: mode
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          set -o pipefail
           pages=$(gh api "repos/${GITHUB_REPOSITORY}/pages")
-          echo "$pages" | jq '{source, https_enforced, cname, build_type}'
-          test "$(echo "$pages" | jq -r .source.branch)" = "main"
-          test "$(echo "$pages" | jq -r .source.path)" = "/"
-          test "$(echo "$pages" | jq -r .https_enforced)" = "true"
-          test "$(echo "$pages" | jq -r .cname)" = "null"
+          echo "$pages" | jq '{source, https_enforced, cname, build_type, https_certificate}'
+          # Le mode suit le domaine déclaré dans Pages, jamais la seule réponse
+          # du domaine : un domaine déclaré mais défaillant fait échouer le contrôle.
+          python3 scripts/surveiller_site.py --choisir-mode --cname "$(jq -r .cname <<<"$pages")" \
+            --evenement "$GITHUB_EVENT_NAME" --ref "$GITHUB_REF" \
+            --domaine "$DOMAINE" --adresse "$SITE" --ancienne "$SITE_ANCIEN" >> "$GITHUB_OUTPUT"
+          # Écarts de configuration : bloquants, mais les contrôles DNS et du
+          # site s'exécutent quand même, pour diagnostiquer une bascule en cours.
           statut=$(gh api "repos/${GITHUB_REPOSITORY}/pages/builds/latest" --jq .status)
-          echo "Dernière publication : $statut"
-          test "$statut" = "built"
+          ecarts=0
+          attendu() {
+            if [ "$2" != "$3" ]; then echo "::error::Pages, $1 : « $2 » au lieu de « $3 »"; ecarts=1; fi
+          }
+          attendu "branche source" "$(jq -r .source.branch <<<"$pages")" "main"
+          attendu "dossier source" "$(jq -r .source.path <<<"$pages")" "/"
+          attendu "HTTPS forcé" "$(jq -r .https_enforced <<<"$pages")" "true"
+          attendu "dernière publication" "$statut" "built"
+          exit $ecarts
+      - name: DNS du domaine (cible exigée une fois le domaine déclaré, inventaire sinon)
+        if: ${{ !cancelled() && (steps.mode.outputs.mode == 'domaine' || steps.mode.outputs.mode == 'ancienne') }}
+        env:
+          MODE: ${{ steps.mode.outputs.mode }}
+        run: |
+          set -o pipefail
+          command -v dig >/dev/null || { sudo apt-get update -qq && sudo apt-get install -y -qq dnsutils; }
+          option=""
+          if [ "$MODE" = "domaine" ]; then option="--exiger-cible"; fi
+          python3 scripts/verifier_dns.py --domaine "${DOMAINE#www.}" $option --json-report dns.json | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Site publié (pages, noindex, robots.txt, ressources, 404, HTTPS, redirections)
+        if: ${{ !cancelled() && (steps.mode.outputs.mode == 'domaine' || steps.mode.outputs.mode == 'ancienne') }}
+        env:
+          BASE: ${{ steps.mode.outputs.base }}
+          MODE: ${{ steps.mode.outputs.mode }}
+        run: |
+          set -o pipefail
+          options=""
+          # Domaine déclaré : l'ancienne adresse et le domaine nu doivent y rediriger.
+          if [ "$MODE" = "domaine" ]; then options="--ancienne $SITE_ANCIEN --apex $APEX"; fi
+          # Sur main, le site publié doit être identique au dépôt.
+          if [ "${GITHUB_REF}" = "refs/heads/main" ]; then options="$options --comparer"; fi
+          python3 scripts/surveiller_site.py --base "$BASE" --root . $options --json-report surveillance.json | tee -a "$GITHUB_STEP_SUMMARY"
       - name: Dernier contrôle QA de main
+        if: ${{ !cancelled() }}
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -66,7 +106,9 @@ jobs:
         uses: actions/upload-artifact@v5
         with:
           name: surveillance
-          path: surveillance.json
+          path: |
+            surveillance.json
+            dns.json
           if-no-files-found: ignore
 
   liens-externes:
@@ -102,10 +144,15 @@ jobs:
         with:
           node-version: "22"
       - name: Mesures (mobile)
-        run: >
-          npx --yes @lhci/cli@0.14.0 collect
-          --url="${SITE}" --url="${SITE}profil.html" --url="${SITE}contact.html"
-          --numberOfRuns=1 --settings.chromeFlags="--no-sandbox --headless=new"
+        run: |
+          base="$SITE"
+          if ! curl -sSf -o /dev/null --max-time 20 "$SITE"; then
+            echo "::notice::$SITE ne répond pas encore : mesures sur $SITE_ANCIEN"
+            base="$SITE_ANCIEN"
+          fi
+          npx --yes @lhci/cli@0.14.0 collect \
+            --url="${base}" --url="${base}profil.html" --url="${base}contact.html" \
+            --numberOfRuns=1 --settings.chromeFlags="--no-sandbox --headless=new"
       - name: Rapports
         run: npx --yes @lhci/cli@0.14.0 upload --target=filesystem --outputDir=rapports-lighthouse/en-ligne
       - name: Résumé
