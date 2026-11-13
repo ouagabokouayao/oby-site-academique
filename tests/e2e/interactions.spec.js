@@ -85,6 +85,20 @@ test.describe("Idées & analyses", () => {
 });
 
 test.describe("médiathèque — visionneuse", () => {
+  test("le séminaire des plages présente neuf photos sans doublon et ouvre la dernière", async ({ page }) => {
+    await page.goto("/mediatheque.html", { waitUntil: "networkidle" });
+    const album = page.locator("#devenir-plages-arbois-2026");
+    await expect(album.locator(".media-photo-count")).toHaveText("9 photos");
+    await album.locator(".media-card-disclosure summary").click();
+    const images = album.locator(".media-card-gallery img");
+    await expect(images).toHaveCount(8);
+    const sources = await images.evaluateAll((items) => items.map((img) => img.getAttribute("src")));
+    expect(new Set(sources).size).toBe(8);
+    await album.locator(".media-gallery-trigger").last().click();
+    await expect(page.locator("[data-media-lightbox-count]")).toHaveText("9 / 9");
+    await expect(page.locator("[data-media-lightbox-image]")).toHaveJSProperty("complete", true);
+  });
+
   test("s'ouvre en fenêtre modale, fait défiler les photos, Échap la ferme et rend le focus", async ({ page }) => {
     await page.goto("/mediatheque.html", { waitUntil: "networkidle" });
     // Le premier album qui compte plusieurs photographies.
@@ -126,6 +140,12 @@ test.describe("fiches de participation", () => {
     await expect(page.locator("[data-participation-titre]")).toHaveText(publique.titre.trim());
     await expect(page.locator("[data-participation-galerie] img")).toHaveCount(publique.galerie.length);
     expect(erreurs).toEqual([]);
+  });
+
+  test("la fiche du séminaire présente les neuf images liées à sa médiathèque", async ({ page }) => {
+    await page.goto("/participation.html?id=devenir-plages-arbois-2026", { waitUntil: "networkidle" });
+    await expect(page.locator("[data-participation-galerie] img")).toHaveCount(9);
+    await expect(page.locator("[data-participation-section-galerie]")).toBeVisible();
   });
 
   test("une fiche masquée ou inconnue n'est pas lisible par son adresse", async ({ page }) => {

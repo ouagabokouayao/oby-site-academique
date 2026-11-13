@@ -1465,7 +1465,71 @@
       }
     ],
     "liens": [],
-    "galerie": [],
+    "galerie": [
+      {
+        "fichier": "assets/img/media/events/devenir-plages-arbois-2026/oby_devenir_plages_arbois_2026_01.webp",
+        "alt": "Joseph debout devant l'entrée du Forum, sous une grande enseigne « FORUM » ; l'affiche du séminaire est visible sur la porte vitrée.",
+        "legende": "Joseph OUAGA devant l'entrée du Forum du Technopôle de l'Arbois, à l'occasion du séminaire « Le devenir des plages », le 16 octobre 2026.",
+        "largeur": 1050,
+        "hauteur": 1400
+      },
+      {
+        "fichier": "assets/img/media/events/devenir-plages-arbois-2026/oby_devenir_plages_arbois_2026_02.webp",
+        "alt": "Vue de la salle du séminaire avec un intervenant devant deux écrans affichant le projet TRACE.",
+        "legende": "Ouverture d'une présentation au séminaire « Le devenir des plages », Aix-en-Provence, 16 octobre 2026. Photographie : Joseph OUAGA.",
+        "largeur": 1536,
+        "hauteur": 1152
+      },
+      {
+        "fichier": "assets/img/media/events/devenir-plages-arbois-2026/oby_devenir_plages_arbois_2026_03.webp",
+        "alt": "Écran de présentation consacré à la plage de galets de Nice, à sa dynamique et à sa gestion.",
+        "legende": "Présentation sur la plage de galets de Nice, lors du séminaire. Photographie : Joseph OUAGA.",
+        "largeur": 1536,
+        "hauteur": 1152
+      },
+      {
+        "fichier": "assets/img/media/events/devenir-plages-arbois-2026/oby_devenir_plages_arbois_2026_04.webp",
+        "alt": "Intervenant à côté d'un écran montrant une présentation sur le littoral de Nice.",
+        "legende": "Intervention consacrée au littoral de Nice. Photographie : Joseph OUAGA.",
+        "largeur": 1536,
+        "hauteur": 1152
+      },
+      {
+        "fichier": "assets/img/media/events/devenir-plages-arbois-2026/oby_devenir_plages_arbois_2026_05.webp",
+        "alt": "Intervenante devant un écran projetant une carte du littoral pendant le séminaire.",
+        "legende": "Présentation scientifique appuyée sur une carte du littoral. Photographie : Joseph OUAGA.",
+        "largeur": 1536,
+        "hauteur": 1152
+      },
+      {
+        "fichier": "assets/img/media/events/devenir-plages-arbois-2026/oby_devenir_plages_arbois_2026_06.webp",
+        "alt": "Trois personnes échangent devant un écran pendant une séquence du séminaire.",
+        "legende": "Échanges entre intervenants au séminaire « Le devenir des plages ». Photographie : Joseph OUAGA.",
+        "largeur": 1536,
+        "hauteur": 1152
+      },
+      {
+        "fichier": "assets/img/media/events/devenir-plages-arbois-2026/oby_devenir_plages_arbois_2026_07.webp",
+        "alt": "Intervenant debout devant un écran de présentation dans la salle du séminaire.",
+        "legende": "Une intervention lors de la journée du 16 octobre 2026. Photographie : Joseph OUAGA.",
+        "largeur": 1152,
+        "hauteur": 1536
+      },
+      {
+        "fichier": "assets/img/media/events/devenir-plages-arbois-2026/oby_devenir_plages_arbois_2026_08.webp",
+        "alt": "Vue de la salle et d'une présentation projetée, avec une intervenante près de l'écran.",
+        "legende": "Présentation et échanges dans la salle du Forum du Technopôle de l'Arbois. Photographie : Joseph OUAGA.",
+        "largeur": 1536,
+        "hauteur": 1152
+      },
+      {
+        "fichier": "assets/img/media/events/devenir-plages-arbois-2026/oby_devenir_plages_arbois_2026_09.webp",
+        "alt": "Écran présentant un paysage côtier et intervenant s'adressant à la salle.",
+        "legende": "Présentation sur les transformations du littoral au séminaire. Photographie : Joseph OUAGA.",
+        "largeur": 1536,
+        "hauteur": 1152
+      }
+    ],
     "mediatheque": "mediatheque.html#devenir-plages-arbois-2026",
     "mediathequeLibelle": "Voir les photographies dans la Médiathèque",
     "famille_canonique": "Mer, littoral & gouvernance",
