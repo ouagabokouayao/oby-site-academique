@@ -1267,8 +1267,8 @@ const loadWatchAgendaItems = () =>
     });
 
   Promise.all([
-    fetchJson("assets/data/mediatheque-oby.json?v=oby-v3-11", "Media data unavailable"),
-    fetchJson("assets/data/participations-oby.json?v=oby-v3-11", "Participation data unavailable"),
+    fetchJson("assets/data/mediatheque-oby.json?v=oby-v3-12", "Media data unavailable"),
+    fetchJson("assets/data/participations-oby.json?v=oby-v3-12", "Participation data unavailable"),
   ])
     .then(([items, participations]) => {
       const canonicalDates = new Map(
@@ -1453,7 +1453,7 @@ window.addEventListener("hashchange", revealHashTarget);
     return;
   }
 
-  fetch("assets/data/participations-oby.json?v=oby-v3-11")
+  fetch("assets/data/participations-oby.json?v=oby-v3-12")
     .then((reponse) => {
       if (!reponse.ok) {
         throw new Error("Participations indisponibles");
