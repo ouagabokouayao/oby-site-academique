@@ -103,7 +103,7 @@ jobs:
           test "$conclusion" != "failure"
       - name: Rapport
         if: always()
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v7
         with:
           name: surveillance
           path: |
@@ -126,7 +126,7 @@ jobs:
         run: python3 scripts/check_external_links.py --root . --json-report liens-externes.json
       - name: Rapport
         if: always()
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v7
         with:
           name: liens-externes
           path: liens-externes.json
@@ -159,7 +159,7 @@ jobs:
         run: python3 scripts/resume_lighthouse.py rapports-lighthouse
       - name: Rapports Lighthouse
         if: always()
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v7
         with:
           name: lighthouse-en-ligne
           path: rapports-lighthouse

@@ -45,7 +45,7 @@ jobs:
         run: npx --yes html-validate@8.18.2 --formatter stylish *.html
       - name: Rapports
         if: always()
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v7
         with:
           name: controles-statiques
           path: |
@@ -95,7 +95,7 @@ jobs:
         run: npx playwright test --project=captures --reporter=html --output=captures
       - name: Rapports et captures
         if: always()
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v7
         with:
           name: rapports-navigateur
           path: |
@@ -140,7 +140,7 @@ jobs:
         run: python3 scripts/resume_lighthouse.py rapports-lighthouse
       - name: Rapports Lighthouse
         if: always()
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v7
         with:
           name: rapports-lighthouse
           path: rapports-lighthouse
