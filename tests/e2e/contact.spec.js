@@ -38,14 +38,28 @@ test("page Contact : appels à l'action visibles et cliquables", async ({ page }
   const objet = new URL(await principal.getAttribute("href")).searchParams.get("subject");
   expect(objet).toContain("OBY");
 
-  const qualifications = page.locator('.contact-qualification a[href^="mailto:"]');
-  expect(await qualifications.count()).toBeGreaterThanOrEqual(5);
+  // Cinq portes d'entrée : chacune prépare un courriel distinct, repéré OBY.
+  const portes = page.locator("#sollicitations .contact-path");
+  await expect(portes).toHaveCount(5);
+  const boutons = portes.locator('a.button[href^="mailto:"]');
+  await expect(boutons).toHaveCount(5);
+  const objets = await boutons.evaluateAll((liens) => liens.map((lien) => new URL(lien.href).searchParams.get("subject")));
+  expect(new Set(objets).size).toBe(5);
+  for (const sujet of objets) expect(sujet).toContain("OBY");
+  for (const bouton of await boutons.all()) {
+    await bouton.scrollIntoViewIfNeeded();
+    await expect(bouton).toBeVisible();
+  }
   if (estPetitEcran(page)) {
-    const petites = await qualifications.evaluateAll((liens) =>
+    const petites = await boutons.evaluateAll((liens) =>
       liens.filter((lien) => lien.getBoundingClientRect().height < 24).map((lien) => lien.textContent.trim())
     );
     expect(petites, "cibles tactiles trop petites").toEqual([]);
   }
+
+  // « Choisir un sujet » conduit à ces portes.
+  await page.locator('a[href="#sollicitations"]').first().click();
+  await expect(page).toHaveURL(/#sollicitations$/);
 });
 
 test("aucun formulaire n'envoie de données hors du site", async ({ page }) => {
