@@ -57,6 +57,13 @@ test("page Contact : appels à l'action visibles et cliquables", async ({ page }
     expect(petites, "cibles tactiles trop petites").toEqual([]);
   }
 
+  // Les autres sollicitations (affiliation, séminaire, panel, médiation…) gardent un courriel préparé.
+  const autre = page.locator('#autres-sollicitations a[href^="mailto:"]');
+  await expect(autre).toHaveCount(1);
+  expect(new URL(await autre.getAttribute("href")).searchParams.get("subject")).toContain("OBY");
+  // La porte « Partenariat ou projet » reste dans le périmètre d'OBY, sans renvoi vers les structures autonomes.
+  await expect(page.locator('#partenariat a[href="ecosysteme.html"]')).toHaveCount(0);
+
   // « Choisir un sujet » conduit à ces portes.
   await page.locator('a[href="#sollicitations"]').first().click();
   await expect(page).toHaveURL(/#sollicitations$/);
