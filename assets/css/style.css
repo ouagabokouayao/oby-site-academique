@@ -2770,7 +2770,7 @@ main:focus {
 
 .contact-paths {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
@@ -2782,8 +2782,16 @@ main:focus {
   border-left: 1px solid var(--line);
 }
 
-.contact-path:first-child {
+.contact-path:nth-child(odd) {
   border-left: 0;
+}
+
+.contact-path:nth-child(n+3) {
+  border-top: 1px solid var(--line);
+}
+
+.contact-path:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
 }
 
 .request-list {
@@ -3236,6 +3244,10 @@ main:focus {
   .contact-path {
     border-top: 1px solid var(--line);
     border-left: 0;
+  }
+
+  .contact-path:last-child:nth-child(odd) {
+    grid-column: auto;
   }
 
   .contact-path:first-child {
